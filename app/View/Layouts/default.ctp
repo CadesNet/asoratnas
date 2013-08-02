@@ -56,7 +56,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
  </script> 
 	</head>
 
-	<body style="padding-right: 0px; padding-left: 0px;">
+	<body onload="Carousel();" style="padding-right: 0px; padding-left: 0px;">
 		<div id="main-container">
 		
 			<div id="header" class="container">
@@ -67,7 +67,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                  <?php echo $this->element('carusel/carrusel2'); ?>
 				<?php echo $this->element('contenido/contenido1'); ?>
 				
-				<?php echo $this->fetch('content'); ?>
+				
 
 
 				<?php echo $this->Session->flash(); ?>
