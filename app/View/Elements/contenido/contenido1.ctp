@@ -3,7 +3,7 @@
     <div class="row">
 		<div class="span7" style="">
 			<div class="row" style="">
-					<h4>beneficios salud</h4>
+					<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beneficios salud</h4>
 			</div>
 			<div class="row" style="border-bottom: 1px solid black;">				
 						<div class="span2" style="">
@@ -48,7 +48,7 @@
 					<a href="">leer mas articulos</a>
 				</div>
 				<div class="row" style="">
-					encuentranos en ..
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encuentranos en..</p>
 					
 				</div>
 				
