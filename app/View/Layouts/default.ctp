@@ -28,8 +28,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $title_for_layout; ?>
 		</title>
 		<?php
-			echo $this->html->css('estilos');
-
+			echo $this->Html->css('estilos');
+			echo $this->Html->css('customStyles');
 			echo $this->Html->meta('icon');
 			
 			echo $this->fetch('meta');
@@ -59,9 +59,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<body onload="Carousel();" style="padding-right: 0px; padding-left: 0px;">
 		<div id="main-container">
 		
-			<div id="header" class="container">
+			
 				<?php echo $this->element('menu/top_menu'); ?>
-			</div><!-- #header .container -->
+			
 			<div id="content" class="container">
                  
                  <?php echo $this->element('carusel/carrusel2'); ?>
