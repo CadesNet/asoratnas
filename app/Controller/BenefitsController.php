@@ -95,10 +95,9 @@ class BenefitsController extends AppController {
 	}
 	//conulta propias
 	public function select2(){
-if (!$this->Benefit->exists($id)) {
-		throw new NotFoundException(__('Invalid benefit'));
-		}
-		$options = array('conditions' => array('Benefit.' . $this->Benefit->primaryKey => $id, 'limit' => 2));
-		$this->set('benefit', $this->Benefit->find('first', $options));		
+
+		//$options = array('conditions' => array('limit' => 2));
+		//$this->User->find('all', array('limit' => 1));
+		$this->set('benefit', $this->Benefit->find('all', array('limit' => 2)));		
 	}
 }
