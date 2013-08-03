@@ -1,23 +1,36 @@
 
   <header>
-    
+    <div class="topdesign" >
     <!--start: Container -->
-    <div class="container" style="background-color: #FFFFFF;">
+    <div class="container" >
       <div class="row">
       <!--start: Navbar -->
-      <div class="navbar navbar-inverse">
-          <div class="navbar-inner" style="padding:0px; background-image: linear-gradient(to bottom,#FFFFFF,#FFFFFF); border: 0px solid #ccc; ">
+      <div class="navbar ">
+          <div class="" >
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href=""> <img src="img/logo.png" /> </a>
+                <div> 
+                <a class="brand" href="">  <?php echo $this->Html->image('logosantarosa.png') ;?> </a>
+              </div>
                 <div class="nav-collapse collapse">
                <ul class="nav pull-right">
                 <li><a style="padding: 6px 12px;"  href="#"><i class="icon-home"></i></a></li>
                 <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
-                                          <li><a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Empresa</b></font></font></a></li>
+                                         
+                                           <li class="dropdown">
+                                            <a style="padding: 6px 12px;" class="dropdown-toggle" data-toggle="dropdown" href="#"><font><font style="color: #157858"><b>Empresa</b></font></font><b class="caret"></b></a>
+                                            <ul class="dropdown-menu" style="left:inherit; padding:0;">
+                                              <li><a style="padding: 8px 12px;" href="#"><font><font style="color: #157858"><b>Acion s</b></font></font></a></li>
+                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>Otra accion</b></font></font></a></li>
+                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>mmmmmm</b></font></font></a></li>
+                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>Enlace separado</b></font></font></a></li>
+                                            </ul>
+                                          </li>
+
+
                                           <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
                               
                                           <li class="dropdown">
@@ -78,4 +91,5 @@
     </div>
     <!--end: Container-->     
   </div>
+</div>
   </header>
