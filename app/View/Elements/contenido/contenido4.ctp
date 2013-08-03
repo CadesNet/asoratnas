@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="span8">
 			<div class="row">
-				<div class="span4">
+				<div class="span8">
 					<div class="row">
 						<div class="span1">
 							<img src="img/items/1.png"  title="">
@@ -14,107 +14,127 @@
 								</div>
 							</div>
 							<div class="row" >
-								<div class="span3" style="height: 6px;
+								<div class="span2" style="height: 6px;
 background-color: black;">
 								</div>
 							</div>
 							<br>
-							<div class="row">
-								<div class="span3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequuntur, laborum, non cum odit mollitia placeat vitae necessitatibus dolorem soluta iusto est cumque molestiae facere officia ad veritatis repudiandae consequatur.</p>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
-				<div class="span4">
+				<div class="span7 offset1" style="text-align: center;">
 					<div class="row">
-						<div class="span1">
-							<img src="img/items/1.png"  title="">
+						<div class="span4">
+							<img src="img/items/2.png"  title="">
 						</div>
-						<div class="span3">
+						<div class="span3" style="text-align: left;">
 							<div class="row">
 								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
+									<form class="form-horizontal">
+										<h3>Pavo entero</h3>
+										<p>presentacion  sdfsd sdf sdf</p>
+							
+  									<div class="control-group">
+    									<label class="control-label" for="inputCantidad" style="width: 55px;margin-right: 5px;">Cantidad</label>
+    									
+      										<input type="text" id="inputCantidad" placeholder="Camtidad" style="width: 70px">
+  									</div>
+  									<div class="control-group">
+      										<button type="submit" class="btn" style="width: 144px">Cotizar</button>
+  									</div>
+									</form>
 								</div>
 							</div>
-							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="span3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequuntur, laborum, non cum odit mollitia placeat vitae necessitatibus dolorem soluta iusto est cumque molestiae facere officia ad veritatis repudiandae consequatur.</p>
-								</div>
-							</div>
+								
 						</div>
+				</div>
+				<br>
+				<br>
+				<div class="row">
+					<div class="span7" style="background-color: aqua; text-align:right">
+						<p>Facebook</p>
 					</div>
 				</div>
-				<div class="span4">
-					<div class="row">
-						<div class="span1">
-							<img src="img/items/1.png"  title="">
-						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
-								</div>
-							</div>
-							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="span3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequuntur, laborum, non cum odit mollitia placeat vitae necessitatibus dolorem soluta iusto est cumque molestiae facere officia ad veritatis repudiandae consequatur.</p>
-								</div>
-							</div>
-						</div>
+				<br>
+				<br>
+				<div class="row">
+					<div class="span7">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
 					</div>
 				</div>
-				<div class="span4">
-					<div class="row">
-						<div class="span1">
-							<img src="img/items/1.png"  title="">
-						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
-								</div>
-							</div>
-							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="span3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequuntur, laborum, non cum odit mollitia placeat vitae necessitatibus dolorem soluta iusto est cumque molestiae facere officia ad veritatis repudiandae consequatur.</p>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
+			</div>
 			</div>
 			<br>
 			<br>
-			<div class="row">
-				<div class="span9" style="background-color: aqua;">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quaerat beatae nesciunt iure nemo odio voluptatum</p>
+				<div class="row">
+					<div class="span1 offset1" style="background-color: aqua; text-align:left">
+						<a href="">Volver</a>
+					</div>
+				</div>			
+		</div>
+		<div class="span4">
+		<div class="row">
+			<div class="span3 offset1" style="text-align:center;">
+				<img src="img/noticias/1.png" alt="">
+				<br>
+				<br>
+				<br>
+			</div>
+			<div class="span3 offset1" style="text-align:center;">
+				<div style="padding: 8px;background: #FFF;">
+					<div class="row" style="">
+					<div class="span3">
+						<h2>la receta del dia</h2>
+					</div>
+					
+				</div>
+				<div class="row" style="">
+					<div class="span3">
+						<img src="img/img-recetas/Captura.png" alt="">
+					</div>
+					
+				</div>
+				<div class="row" style="">
+					<div class="span3">
+						<h5>nombre de la receta</h5>
+					</div>
+				</div>
+				<div class="row" style="">
+					<div class="span3">
+						<a class="btn" href="#">Ver receta</a>
+					</div>
+					
+				</div>
 				</div>
 				
-			</div>
-			<div class="row">
-				<div class="span9">
+			</div>			
+		</div>
+		</div>
+	</div>
+	<div class="row">
+						<div class="span1">
+							<img src="img/items/1.png"  title="">
+						</div>
+						<div class="span11">
+							<div class="row">
+								<div class="span11">
+									<h3 style="line-height: 20px;"><a href="">Algunas sugerencias para degustar en familia</a></h3>
+								</div>
+							</div>
+							<div class="row" >
+								<div class="span6" style="height: 6px;
+background-color: black;">
+								</div>
+							</div>
+							<br>
+						</div>
+	</div>
+	<div class="row">
+		<div class="span12">
 					<?php $array = array("img/iper/i1.png","http://www.dynamicdrive.com",
 "img/iper/i1.png","http://www.javascriptkit.com",
 "img/iper/i1.png","http://www.google.com", //this slide isn't linked
@@ -216,43 +236,8 @@ function C_Rstrt(){C_Stppd=false}
 <br>
 <br>
 <br>
-				</div>
-			</div>
-		</div>
-		<div class="span4">
-		<div class="row">
-			<div class="span3 offset1" style="text-align:center;">
-				<img src="img/noticias/1.png" alt="">
-				<br>
-				<br>
-				<br>
-			</div>
-			<div class="span3 offset1" style="text-align:center;">
-				<div class="row" style="">
-					<div class="span3">
-						<h2>la receta del dia</h2>
-					</div>
-					
-				</div>
-				<div class="row" style="">
-					<div class="span3">
-						<img src="img/img-recetas/Captura.png" alt="">
-					</div>
-					
-				</div>
-				<div class="row" style="">
-					<div class="span3">
-						<h5>nombre de la receta</h5>
-					</div>
-				</div>
-				<div class="row" style="">
-					<div class="span3">
-						<a class="btn" href="#">Ver receta</a>
-					</div>
-					
-				</div>
-			</div>			
-		</div>
 		</div>
 	</div>
+
+
 </div>

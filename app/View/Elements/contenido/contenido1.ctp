@@ -1,9 +1,8 @@
-<div class="container" >
-	<!--  span span row-->
+<div class="container">
     <div class="row">
 		<div class="span7" style="">
 			<div class="row" style="">
-					<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beneficios salud</h4>
+					<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beneficios salud</h4>
 			</div>
 			<div class="row" style="border-bottom: 1px solid black;">				
 						<div class="span2" style="">
@@ -48,7 +47,7 @@
 					<a href="">leer mas articulos</a>
 				</div>
 				<div class="row" style="">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encuentranos en..</p>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encuentranos en..</p>
 					
 				</div>
 				
@@ -66,7 +65,7 @@ foreach($array as $indicador)
 ?>
 <script language="JavaScript">
 // 7 variables to control behavior
-var Car_Image_Width=36;
+var Car_Image_Width=38;
 var Car_Image_Height=100;
 var Car_Border=true;	 // true or false
 var Car_Border_Color="white";
@@ -138,6 +137,21 @@ function C_LdLnk(){if(this.lnk)window.location.href=this.lnk}
 function C_Stp(){this.style.cursor=this.lnk?"pointer":"default";C_Stppd=true;}
 function C_Rstrt(){C_Stppd=false}
 </script>
+<a href="#myModal" role="button" class="btn" data-toggle="modal">add carrusel</a>
+
+<?php $this->Js->get('#myModal')->event(
+'change',
+$this->Js->request(
+array('controller' => 'Pages', 'action' => 'getByCategory'),
+array(
+'update' => '#subcategoria',
+'async' => true,
+'dataExpression' => true,
+'method' => 'post',
+'data' => $this->Js->serializeForm(array('isForm' => true, 'inline' => true))
+)
+)
+); ?>
 
 <div  id="Carousel" class="row" style="position:relative ; ">
 <!--<img src="" width="600" height="150"> --> <!-- esta es la foto de fondo-->
@@ -156,16 +170,27 @@ function C_Rstrt(){C_Stppd=false}
 			</div>
 			<div class="span5" style="text-align:center;">
 				<div class="row" style="">
-					<h2>la receta del dia</h2>
+					<div class="span5">
+						<h2>la receta del dia</h2>
+					</div>
+					
 				</div>
 				<div class="row" style="">
-					<img src="img/img-recetas/Captura.png" alt="">
+					<div class="span5">
+						<img src="img/img-recetas/Captura.png" alt="">
+					</div>
+					
 				</div>
 				<div class="row" style="">
-					<h5>nombre de la receta</h5>
+					<div class="span5">
+						<h5>nombre de la receta</h5>
+					</div>
 				</div>
 				<div class="row" style="">
-					<a class="btn" href="#">Ver receta</a>
+					<div class="span5">
+						<a class="btn" href="#">Ver receta</a>
+					</div>
+					
 				</div>
 			</div>
 			

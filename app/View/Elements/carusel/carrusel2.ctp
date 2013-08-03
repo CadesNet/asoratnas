@@ -1,28 +1,30 @@
-<section id="contenido">
+<div class="container">
+  <div class="row">
+    <section id="contenido">
    <section id="principal">
 <article id="galeria-inicio">
          <div class="flexslider">
-	    <ul class="slides">
-	    	<li>
-               <a href="http://bextlan.com"> <img src="img/carusel/side-0.jpeg" alt=""/> </a>    
+      <ul class="slides">
+        <li>
+               <a href="http://bextlan.com"> <img src="img/carrusel2/1.png" alt=""/> </a>    
                <p class="flex-caption">bextlam.com | mmmmmmm</p>
               </li>
               <li>
-                <img src="img/carusel/side-1.jpeg" alt=""/>    
+                <img src="img/carrusel2/1.png" alt=""/>     
                 <p class="flex-caption">curso html5</p>
               </li>          
               <li>
-                <img src="img/carusel/side-2.jpeg" alt=""/>
+                <img src="img/carrusel2/1.png" alt=""/> 
                              
               </li>
               <li>
-              <a href="http://bextlan.com"><img src="img/carusel/side-3.jpeg" alt=""/>
+              <a href="http://bextlan.com"><img src="img/carrusel2/1.png" alt=""/> 
                </a>
                <p class="flex-caption"> mmmmmmmmm
                </p>                                      
              </li>
              <li>
-               <a href="http://bextlan.com"><img src="img/carusel/side-3.jpeg" alt=""/>
+               <a href="http://bextlan.com"><img src="img/carrusel2/1.png" alt=""/> 
                </a>       
              </li>
           </ul>
@@ -30,3 +32,5 @@
       </article>
    </section>
 </section>
+  </div>
+</div>
