@@ -8,9 +8,13 @@
 	background-image: url('../img/bg_generalbig.jpg');
 
 }
-.container div[id=contenido]{
+.container{
 
-	background-color: #f8f6e9;
-	padding: 15px;	
+	
 
+}
+
+.colorcontainer{
+background-color: #f8f6e9;
+	padding: 15px;
 }

@@ -67,7 +67,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                  <?php echo $this->element('carusel/carrusel2'); ?>
 				<?php echo $this->element('contenido/contenido4'); ?>
 				
-				<div id="contenido" class="container">
+				<div  class="container colorcontainer">
 	                  <?php echo $this->fetch('content'); ?>
 					<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  					<div class="modal-header">
