@@ -46,7 +46,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			
 			echo $this->fetch('script');
                         
-                        echo $this->Html->css('caruse2/flexslider1');
+                        echo $this->Html->css('carusel/flexslider1');
                         echo $this->Html->script('carusel/jquery.flexslider1');    
 		?>
              <script type="text/javascript">
@@ -63,14 +63,11 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<?php echo $this->element('menu/top_menu'); ?>
 			
 			
+                 
                  <?php echo $this->element('carusel/carrusel2'); ?>
 				
-
-
-				<div id="contenido" class="container">
-					<?php echo $this->element('contenido/contenido4'); ?>
-	                  
-
+				<div  class="container colorcontainer">
+	                  <?php echo $this->fetch('content'); ?>
 					<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  					<div class="modal-header">
 	    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
