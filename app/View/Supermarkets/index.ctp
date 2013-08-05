@@ -6,6 +6,7 @@
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
 			<th><?php echo $this->Paginator->sort('filename'); ?></th>
 			<th><?php echo $this->Paginator->sort('dir'); ?></th>
+			<th><?php echo $this->Paginator->sort('link'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
@@ -15,6 +16,7 @@
 		<td><?php echo h($supermarket['Supermarket']['name']); ?>&nbsp;</td>
 		<td><?php echo h($supermarket['Supermarket']['filename']); ?>&nbsp;</td>
 		<td><?php echo h($supermarket['Supermarket']['dir']); ?>&nbsp;</td>
+		<td><?php echo h($supermarket['Supermarket']['link']); ?>&nbsp;</td>
 		<td><?php echo h($supermarket['Supermarket']['description']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $supermarket['Supermarket']['id'])); ?>

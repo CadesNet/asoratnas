@@ -1,20 +1,23 @@
+
 <div class="container">
     <div class="row">
 		<div class="span7" style="">
 			<div class="row" style="">
-					<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beneficios salud</h4>
+					<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beneficios para  salud</h4>
 			</div>
+			<?php foreach($benefits as $benefit): ?>
+
 			<div class="row" style="border-bottom: 1px solid black;">				
 						<div class="span2" style="">
-							<a href=""><img src="img/img-recetas/r1.png" alt=""></a>
+							<a href=""><?php echo $this->Html->image("benefit/filename/".$benefit['Benefit']['filename']."")?></a>
 							<br><br>
 						</div>
 						<div class="span5" style="">
 							<div class="row" style="">
-								<strong>titulo</strong>
+								<strong><? echo $benefit['Benefit']['title'] ?></strong>
 							</div>
 							<div class="row" style="">
-								<p><font><font>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, cum, tempora, corporis ipsum non sequi.</font></font></p>
+								<p><font><font><? echo $benefit['Benefit']['description'] ?></font></font></p>
 							</div>
 							<div class="row" style="">
 								<a href="" class="btn "> saber mas..</a>
@@ -22,27 +25,10 @@
 							<br>
 
 						</div>
-				</div>
+			</div>
+			<?php endforeach; ?>
 				<br>
-				<div class="row" style="border-bottom: 1px solid black;">				
-						<div class="span2" style="">
-							<a href=""><img src="img/img-recetas/r1.png" alt=""></a>
-							<br><br>
-						</div>
-						<div class="span5" style="">
-							<div class="row" style="">
-								<strong>titulo</strong>
-							</div>
-							<div class="row" style="">
-								<p><font><font>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, cum, tempora, corporis ipsum non sequi.</font></font></p>
-							</div>
-							<div class="row" style="">
-								<a href="" class="btn "> saber mas..</a>
-							</div>
-							<br>
-
-						</div>
-				</div>				
+			
 				<div class="row" style="text-align: right;">
 					<a href="">leer mas articulos</a>
 				</div>
@@ -52,10 +38,14 @@
 				</div>
 				
 					
-<?php $array = array("img/iper/i1.png","http://www.dynamicdrive.com",
-"img/iper/i1.png","http://www.javascriptkit.com",
-"img/iper/i1.png","http://www.google.com", //this slide isn't linked
-"img/iper/i1.png","http://www.google.com"); 
+
+
+<?php
+$datos="";
+foreach($supermarkets as $supermarket){
+ $datos .= "/santarosa/img/supermarket/filename/".$supermarket['Supermarket']['filename'].'","'.$supermarket['Supermarket']['link'];
+}
+ $array = array($datos); 
 $myData ="";
 foreach($array as $indicador) 
                       {$myData .= '"'.$indicador.'"'.",";} 
@@ -73,7 +63,7 @@ var Car_Speed=4; //velocidad
 var Car_Direction=true;	 // true or false
 var Car_NoOfSides=8;	 // must be 4, 6, 8 or 12
 
-
+//minimo de las imagenes a cargar 4
 Car_Image_Sources = new Array (<?=$myData; ?>);				  
 /***************** DO NOT EDIT BELOW **********************************/
 CW_I=new Array(Car_NoOfSides/2+1);C_ClcW=new Array(Car_NoOfSides/2);
@@ -137,27 +127,29 @@ function C_LdLnk(){if(this.lnk)window.location.href=this.lnk}
 function C_Stp(){this.style.cursor=this.lnk?"pointer":"default";C_Stppd=true;}
 function C_Rstrt(){C_Stppd=false}
 </script>
-<a href="#myModal" role="button" class="btn" data-toggle="modal">add carrusel</a>
 
-<?php $this->Js->get('#myModal')->event(
-'change',
-$this->Js->request(
-array('controller' => 'Pages', 'action' => 'getByCategory'),
-array(
-'update' => '#subcategoria',
-'async' => true,
-'dataExpression' => true,
-'method' => 'post',
-'data' => $this->Js->serializeForm(array('isForm' => true, 'inline' => true))
-)
-)
-); ?>
+<a id="edit-link" href="/santarosa/supermarkets/add" ><button>Edit</button></a>
+<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+<script>
+	$('#edit-link').click(function(){
+$.ajax({
+  type: "GET",
+  url: $(this).attr('href')
+}).done(function(html_form) {
+  $('#myModal').html(html_form);
+});
+return false;
+});
+</script>
+
+
 
 <div  id="Carousel" class="row" style="position:relative ; ">
 <!--<img src="" width="600" height="150"> --> <!-- esta es la foto de fondo-->
 
 <!--photo4.jpg los  de las fotos en el js van seguidos de un link -->
 </div>
+
 <br>	
 <br>
 <br>
@@ -177,15 +169,24 @@ array(
 				</div>
 				<div class="row" style="">
 					<div class="span5">
-						<img src="img/img-recetas/Captura.png" alt="">
+						<?php 
+						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
+						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						}
+						?>
 					</div>
 					
 				</div>
 				<div class="row" style="">
 					<div class="span5">
-						<h5>nombre de la receta</h5>
+						<h5><?=$recipes['Recipe']['title'] ?></h5>
 					</div>
 				</div>
+				<div class="row" style="">
+					<div class="span5">
+						<h5><?=$recipes['Recipe']['information'] ?></h5>
+					</div>
+				</div>				
 				<div class="row" style="">
 					<div class="span5">
 						<a class="btn" href="#">Ver receta</a>
@@ -196,3 +197,6 @@ array(
 			
 	</div>
 </div>
+
+
+

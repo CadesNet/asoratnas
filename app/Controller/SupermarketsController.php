@@ -7,6 +7,16 @@ App::uses('AppController', 'Controller');
  */
 class SupermarketsController extends AppController {
 
+	 public $helpers = array('Js');
+/*ajax
+	public $components = array('RequestHandler','Session');
+	public function beforeFilter(){
+		parent::beforeFilter();
+		//Cambio de Presentación de peticiones Ajax 
+		if($this->request->is('ajax')){
+			$this->layout = 'ajax';
+		}
+	}*/
 /**
  * index method
  *
@@ -37,6 +47,10 @@ class SupermarketsController extends AppController {
  *
  * @return void
  */
+
+
+
+
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Supermarket->create();
@@ -46,7 +60,9 @@ class SupermarketsController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The supermarket could not be saved. Please, try again.'));
 			}
+			$this->layout = 'ajax';
 		}
+		
 	}
 
 /**
