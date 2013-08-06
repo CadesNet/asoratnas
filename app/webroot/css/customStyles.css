@@ -2,6 +2,15 @@
 
 	background-image: url('../img/bg_top.jpg');
 	border-bottom: 15px solid #028b71;
+}
 
+.bggeneral{
+	background-image: url('../img/bg_generalbig.jpg');
+
+}
+.container div[id=contenido]{
+
+	background-color: #f8f6e9;
+	padding: 15px;	
 
 }
