@@ -93,4 +93,13 @@ class CategoriesController extends AppController {
 		$this->Session->setFlash(__('Category was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+		//conulta propias
+	public function select3(){
+       $this->loadModel('Recipe');
+		//$options = array('conditions' => array('limit' => 2));
+		$Category = $this->Category->find('all');
+		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
+		$this->set(compact('Category','Recipe'));
+	}
+
 }

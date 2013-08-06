@@ -63,27 +63,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<?php echo $this->element('menu/top_menu'); ?>
 			
 			
-                 <?php echo $this->element('carusel/carrusel2'); ?>
+                 <?php echo $this->element('carusel/carrusel1'); ?>
 				
 
 				
 				<div id="contenido" class="container">
-					<?php echo $this->element('contenido/contenido4'); ?>
-	                  
-					<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  					<div class="modal-header">
-	    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	    					<h3 id="myModalLabel">Modal header1</h3>
-	  					</div>
-	  					<div class="modal-body">
-	    					<p>One fine body…</p>
-	  					</div>
-	  					<div class="modal-footer">
-	    					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-	    					<button class="btn btn-primary">Save changes</button>
-	    					<a href="#myModal1" role="button" class="btn" data-toggle="modal1">Launch demo modal</a>
-	  					</div>
-	  				</div>
+	                  <?php echo $this->fetch('content'); ?>
+					
 				
 				</div>
 
@@ -96,6 +82,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<div id="footer" >
 				<?php //Silence is golden ?>
 				<?php echo $this->element('footer/footer1'); ?>
+				<?php echo $this->element('sql_dump'); ?>
 			</div><!-- #footer .container -->
 			
 		</div><!-- #main-container -->

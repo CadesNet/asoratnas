@@ -2,108 +2,39 @@
 	<div class="row">
 		<div class="span8">
 			<div class="row">
-				<div class="span4">
-					<div class="row">
-						<div class="span1">
-							<img src="img/items/1.png"  title="">
-						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
-								</div>
-							</div>
-							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="span3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequuntur, laborum, non cum odit mollitia placeat vitae necessitatibus dolorem soluta iusto est cumque molestiae facere officia ad veritatis repudiandae consequatur.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="span4">
-					<div class="row">
-						<div class="span1">
-							<img src="img/items/1.png"  title="">
-						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
-								</div>
-							</div>
-							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="span3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequuntur, laborum, non cum odit mollitia placeat vitae necessitatibus dolorem soluta iusto est cumque molestiae facere officia ad veritatis repudiandae consequatur.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="span4">
-					<div class="row">
-						<div class="span1">
-							<img src="img/items/1.png"  title="">
-						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
-								</div>
-							</div>
-							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="span3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequuntur, laborum, non cum odit mollitia placeat vitae necessitatibus dolorem soluta iusto est cumque molestiae facere officia ad veritatis repudiandae consequatur.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="span4">
-					<div class="row">
-						<div class="span1">
-							<img src="img/items/1.png"  title="">
-						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
-								</div>
-							</div>
-							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="span3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequuntur, laborum, non cum odit mollitia placeat vitae necessitatibus dolorem soluta iusto est cumque molestiae facere officia ad veritatis repudiandae consequatur.</p>
-								</div>
-							</div>
 
+				<?php 
+
+					$datos="";
+				foreach ($categories as $category):
+					?>
+
+				<div class="span4">
+					<div class="row">
+						<div class="span1">
+							<?php echo $this->Html->image("category/filename/".$category['Category']['filename']."")?>
+						</div>
+						<div class="span3">
+							<div class="row">
+								<div class="span3">
+									<h3 style="line-height: 20px;"><?php $this->Html->link(__($category['Category']['name']), array('action' => '')); ?></h3>
+								</div>
+							</div>
+							<div class="row" >
+								<div class="span3" style="height: 6px;
+background-color: black;">
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="span3">
+								<p><?php echo substr($category['Category']['description'], 0, 11); ?> </p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-
+			
 			</div>
 			<br>
 			<br>
@@ -115,11 +46,14 @@ background-color: black;">
 			</div>
 			<div class="row">
 				<div class="span9">
-					<?php $array = array("img/iper/i1.png","http://www.dynamicdrive.com",
-"img/iper/i1.png","http://www.javascriptkit.com",
-"img/iper/i1.png","http://www.google.com", //this slide isn't linked
-"img/iper/i1.png","http://www.google.com"); 
+<?php
+
+
+ $datos .= "/santarosa/img/Category/filename/".$category['Category']['filename'];
+endforeach; 
+ $array = array($datos); 
 $myData ="";
+
 foreach($array as $indicador) 
                       {$myData .= '"'.$indicador.'"'.",";} 
                        $myData =  substr_replace($myData, "", -1); 
@@ -236,17 +170,25 @@ function C_Rstrt(){C_Stppd=false}
 				</div>
 				<div class="row" style="">
 					<div class="span3">
-						<img src="img/img-recetas/Captura.png" alt="">
+						<?php 
+						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
+						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						}?>
 					</div>
 					
 				</div>
 				<div class="row" style="">
-					<div class="span3">
-						<h5>nombre de la receta</h5>
+					<div class="span5">
+						<h5><?=$recipes['Recipe']['title'] ?></h5>
 					</div>
 				</div>
 				<div class="row" style="">
-					<div class="span3">
+					<div class="span5">
+						<h5><?=$recipes['Recipe']['information'] ?></h5>
+					</div>
+				</div>				
+				<div class="row" style="">
+					<div class="span5">
 						<a class="btn" href="#">Ver receta</a>
 					</div>
 					
