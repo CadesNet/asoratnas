@@ -63,34 +63,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<?php echo $this->element('menu/top_menu'); ?>
 			
 			
-                 
-<<<<<<< HEAD
-                 <?php echo $this->element('carusel/carrusel1'); ?>
-				
-                  <?php echo $this->fetch('content'); ?>
-				
-				 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal header1</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-    <a href="#myModal" role="button" class="btn" data-toggle="modal1">Launch demo modal</a>
-  </div>
-
-</div>
-=======
                  <?php echo $this->element('carusel/carrusel2'); ?>
-				<?php echo $this->element('contenido/contenido4'); ?>
->>>>>>> 78b389a2b5e8c80be81e7ad6a41b3b0200ef36ce
+				
+
 				
 				<div id="contenido" class="container">
-	                  <?php echo $this->fetch('content'); ?>
+					<?php echo $this->element('contenido/contenido4'); ?>
+	                  
 					<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  					<div class="modal-header">
 	    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
