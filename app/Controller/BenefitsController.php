@@ -7,6 +7,9 @@ App::uses('AppController', 'Controller');
  */
 class BenefitsController extends AppController {
 
+
+
+
 /**
  * index method
  *
@@ -95,9 +98,12 @@ class BenefitsController extends AppController {
 	}
 	//conulta propias
 	public function select2(){
-
+       $this->loadModel('Supermarket');
+       $this->loadModel('Recipe');
 		//$options = array('conditions' => array('limit' => 2));
-		//$this->User->find('all', array('limit' => 1));
-		$this->set('benefit', $this->Benefit->find('all', array('limit' => 2)));		
+       	$Supermarket = $this->Supermarket->find('all');	
+		$Benefit = $this->Benefit->find('all', array('limit' => 2));
+		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
+		$this->set(compact('Supermarket','Benefit','Recipe'));
 	}
 }

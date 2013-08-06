@@ -68,4 +68,24 @@ class Recipe extends AppModel {
 			),
 		),
 	);
-Campo requerido
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'ImagesRecipe' => array(
+			'className' => 'ImagesRecipe',
+			'foreignKey' => 'recipe_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+}

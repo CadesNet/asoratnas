@@ -21,6 +21,11 @@
 			<?php echo h($supermarket['Supermarket']['dir']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Link'); ?></dt>
+		<dd>
+			<?php echo h($supermarket['Supermarket']['link']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Description'); ?></dt>
 		<dd>
 			<?php echo h($supermarket['Supermarket']['description']); ?>
