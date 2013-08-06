@@ -43,8 +43,9 @@
 <?php
 $datos="";
 foreach($supermarkets as $supermarket){
- $datos .= "/santarosa/img/supermarket/filename/".$supermarket['Supermarket']['filename'].'","'.$supermarket['Supermarket']['link'];
+ $datos .= "/santarosa/img/supermarket/filename/".$supermarket['Supermarket']['filename'].'","'.$supermarket['Supermarket']['link']."";
 }
+echo $datos;
  $array = array($datos); 
 $myData ="";
 foreach($array as $indicador) 

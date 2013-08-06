@@ -84,7 +84,26 @@ class Item extends AppModel {
 			'order' => ''
 		)
 	);
-
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'ImagesItem' => array(
+			'className' => 'ImagesItem',
+			'foreignKey' => 'item_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
 /**
  * hasMany associations
  *

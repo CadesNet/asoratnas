@@ -8,9 +8,29 @@
 	background-image: url('../img/bg_generalbig.jpg');
 
 }
-.container div[id=contenido]{
+.container{
 
-	background-color: #f8f6e9;
-	padding: 15px;	
+		
 
 }
+
+.container .colorcontainer{
+background-color: #f8f6e9;
+	padding: 15px;
+}
+
+.footer{
+	border-top: 10px solid #d2ccb6;
+background-image: url('../img/bg_footer.jpg');
+	color: #d2ccb6;
+
+}
+
+.footer a{
+	color: #d2ccb6;
+}
+.footer a:hover{
+ text-decoration: none;
+ 	color: white;
+ }
+

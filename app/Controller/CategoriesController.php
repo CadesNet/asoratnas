@@ -95,11 +95,13 @@ class CategoriesController extends AppController {
 	}
 		//conulta propias
 	public function select3(){
+       $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
 		//$options = array('conditions' => array('limit' => 2));
+       	$Supermarket = $this->Supermarket->find('all');	
 		$Category = $this->Category->find('all');
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
-		$this->set(compact('Category','Recipe'));
+		$this->set(compact('Supermarket','Category','Benefit','Recipe'));
 	}
 
 }
