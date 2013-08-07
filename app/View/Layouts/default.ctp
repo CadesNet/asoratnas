@@ -64,7 +64,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<div id="contenido" class="container">
 			<div class = "row">
 				<div  class="container colorcontainer">
-			
+
                  <?php echo $this->element('carusel/carrusel2'); ?>
 				
 
