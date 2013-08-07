@@ -48,14 +48,14 @@ background-color: black;">
 				<div class="span9">
 <?php
 $datos="";
-foreach($supermarkets as $supermarket){
- $datos .= "/santarosa/img/supermarket/filename/".$supermarket['Supermarket']['filename'].'","'.$supermarket['Supermarket']['link']."";
+foreach ($categories as $category){
+ $datos .= "/santarosa/img/category/filename/".$category['Category']['filename'].'","'.$category['Category']['dir'].'","';
 }
  $array = array($datos); 
 $myData ="";
 foreach($array as $indicador) 
-                      {$myData .= '"'.$indicador.'"'.",";} 
-                       $myData =  substr_replace($myData, "", -1); 
+                      {$myData .= '"'.$indicador.'"'."";} 
+                       $myData =  substr_replace($myData, "", -3); 
                      // echo $myData
 					  
 ?>

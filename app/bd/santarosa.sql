@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 06-08-2013 a las 12:29:57
+-- Tiempo de generación: 08-08-2013 a las 17:05:55
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -138,20 +138,26 @@ CREATE TABLE IF NOT EXISTS `branches_images` (
 
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` char(100) NOT NULL,
-  `filename` text NOT NULL,
-  `dir` text NOT NULL,
-  `description` text,
+  `name` char(100) CHARACTER SET utf8 NOT NULL,
+  `filename` text CHARACTER SET utf8 COLLATE utf8_estonian_ci NOT NULL,
+  `dir` text CHARACTER SET utf8 NOT NULL,
+  `description` text CHARACTER SET utf8,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `filename`, `dir`, `description`) VALUES
-(1, 'perimera', 'GNIFP.PNG', 'img\\category\\filename', 'mmmm'),
-(2, 'bnnnnnnnnnn', '357925_920.jpg', 'img\\category\\filename', 'bvvvvvvvvv');
+(1, 'perimera', 'GNIFP.PNG', 'mmmmm', 'mmmm'),
+(2, 'bnnnnnnnnnn', '357925_920.jpg', 'mmmmm', 'bvvvvvvvvv'),
+(3, 'categoria 1', 'CaptJJJura.PNG', 'mmmmm', 'mmmmmmmmm'),
+(4, 'categoria 2', 'CaptJJJura-0.PNG', 'mmmmm', 'sssssss'),
+(5, 'perimera', 'GNIFP.PNG', 'mmmmmmmm', 'mmmmm'),
+(6, 'mmss', 'GNIFP.PNG', 'ijoijoio', 'njnjk'),
+(7, 'perimera', 'GNIFP.PNG', 'mmmmmmmm', 'mmmmm'),
+(8, 'mmss', 'GNIFP.PNG', 'ijoijoio', 'njnjk');
 
 -- --------------------------------------------------------
 
@@ -201,7 +207,18 @@ CREATE TABLE IF NOT EXISTS `images_items` (
   `item_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `images_items`
+--
+
+INSERT INTO `images_items` (`id`, `filename`, `dir`, `description`, `item_id`) VALUES
+(1, 'CaptJJJura.PNG', 'img\\images_item\\filename', 'fasasdfa', 1),
+(2, 'Captura.png', 'img\\images_item\\filename', 'ssssssssss', 2),
+(3, 'Captura-0.png', 'img\\images_item\\filename', 'sssssssss', 3),
+(4, 'Captura-1.png', 'img\\images_item\\filename', 'sssssssss', 4),
+(5, 'Captura-2.png', 'img\\images_item\\filename', 'sdfsf', 5);
 
 -- --------------------------------------------------------
 
@@ -217,14 +234,18 @@ CREATE TABLE IF NOT EXISTS `images_recipes` (
   `recipe_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `recipe_id` (`recipe_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `images_recipes`
 --
 
 INSERT INTO `images_recipes` (`id`, `filename`, `dir`, `description`, `recipe_id`) VALUES
-(1, 'receta.PNG', 'img\\images_recipe\\filename', 'sdsdsd', 2);
+(1, 'receta.PNG', 'img\\images_recipe\\filename', 'sdsdsd', 2),
+(2, 'receta-0.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 3),
+(3, 'receta-1.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 4),
+(4, 'receta-2.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 5),
+(5, 'receta-3.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 6);
 
 -- --------------------------------------------------------
 
@@ -239,14 +260,18 @@ CREATE TABLE IF NOT EXISTS `item` (
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `item`
 --
 
 INSERT INTO `item` (`id`, `name`, `description`, `category_id`) VALUES
-(1, 'mmmmm', 'ghgh', 1);
+(1, 'mmmmm', 'ghgh', 1),
+(2, 'item 3', 'mmmmmmmmm', 1),
+(3, 'item 4', 'on nnon oikn', 1),
+(4, 'item 4', 'smdosmdom', 1),
+(5, 'item 5', 'mms mpsmp smp', 1);
 
 -- --------------------------------------------------------
 
@@ -282,7 +307,7 @@ CREATE TABLE IF NOT EXISTS `recipes` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `recipes`
@@ -290,7 +315,11 @@ CREATE TABLE IF NOT EXISTS `recipes` (
 
 INSERT INTO `recipes` (`id`, `title`, `description`, `ingredients`, `preparation`, `recommendations`, `information`, `created`, `modified`) VALUES
 (1, 'primera re', 'kjjljlkj', 'jljkljlkjlk', ' mn n kjnjnjk', 'mklmklm', '44min-21personas', '2013-08-04 12:31:32', '2013-08-04 12:31:32'),
-(2, 'segunda receta', 'donl', 'lklnk', 'nklnlk', 'lknlknlkn', '7min-45personas', '2013-08-04 12:32:13', '2013-08-04 12:32:13');
+(2, 'segunda receta', 'donl', 'lklnk', 'nklnlk', 'lknlknlkn', '7min-45personas', '2013-08-04 12:32:13', '2013-08-04 12:32:13'),
+(3, 'receta 1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '45-12', '2013-08-08 14:09:38', '2013-08-08 14:09:38'),
+(4, 'receta 2', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '12-4', '2013-08-08 14:10:03', '2013-08-08 14:10:03'),
+(5, 'receta 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '12-4', '2013-08-08 14:10:30', '2013-08-08 14:10:30'),
+(6, 'receta 4', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '4-4', '2013-08-08 14:10:54', '2013-08-08 14:10:54');
 
 -- --------------------------------------------------------
 

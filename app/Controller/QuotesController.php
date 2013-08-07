@@ -97,4 +97,26 @@ class QuotesController extends AppController {
 		$this->Session->setFlash(__('Quote was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+//conulta propias
+	public function select5($id = null,$id2 = null){
+		$this->loadModel('Category');
+       $this->loadModel('Recipe');
+       $this->loadModel('Item');
+		if(!$this->Category->exists($id) and !$this->Item->exists($id2)){
+			$this->redirect(array('controller' => 'Items', 'action' => 'select4'));
+			//throw new NotFoundException(__('Invalid Category'));
+		}else{
+
+		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id)));
+		$Item = $this->Item->find('all',array('conditions' => array('Item.' . $this->Item->primaryKey => $id2)));
+		//$this->set('item', $this->Item->find('all', $options));
+		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
+		$Recipes1 = $this->Recipe->find('all');
+		$this->set(compact('Category','Item','Recipe','Recipes1'));
+
+		}
+		
+		
+	}	
 }
