@@ -13,7 +13,7 @@
 						<div class="span3">
 							<div class="row">
 								<div class="span3">
-									<h3 style="line-height: 20px;"><?php $category['Category']['name'] ?></h3>
+									<h3 style="line-height: 20px;"><?php echo $category['Category']['name'] ?></h3>
 								</div>
 							</div>
 							<div class="row" >
@@ -31,8 +31,11 @@ background-color: black;">
 				<div class="span4" style="text-align: center;">
 					<div class="row">
 						<div class="span4">
-
-							
+							<?php foreach ($item['ImagesItem'] as $image): ?>
+							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
+							<?php 
+								break;
+							endforeach ?>
 						</div>
 					</div>
 					<div class="row">

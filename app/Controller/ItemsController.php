@@ -13,7 +13,7 @@ class ItemsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Item->recursive = 1;
+		$this->Item->recursive = 0;
 		$this->set('items', $this->paginate());
 	}
 
@@ -103,10 +103,11 @@ class ItemsController extends AppController {
        $this->loadModel('Recipe');
 
 		if(!$this->Category->exists($id)){
-			throw new NotFoundException(__('Invalid Category'));
+			$this->redirect(array('controller' => 'Category', 'action' => 'select3'));
+			//throw new NotFoundException(__('Invalid Category'));
 		}else{
 
-		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id)));
+		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id),'recursive'  => 2));
 		//$this->set('item', $this->Item->find('all', $options));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$this->set(compact('Category','Recipe'));
