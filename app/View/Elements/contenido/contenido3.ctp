@@ -5,12 +5,12 @@
 				<div class="span8">
 					<div class="row">
 						<div class="span1">
-							<img src="img/items/1.png"  title="">
+							<?php echo $this->Html->image("category/filename/".$categories['Category']['filename']."")?>
 						</div>
 						<div class="span3">
 							<div class="row">
 								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
+									<h3 style="line-height: 20px;"><?php $categories['Category']['name'] ?></h3>
 								</div>
 							</div>
 							<div class="row" >
@@ -22,82 +22,29 @@ background-color: black;">
 						</div>
 					</div>
 				</div>
+				<?php foreach ($category['Item'] as $item) { ?>
+					
+				
 				<div class="span4" style="text-align: center;">
 					<div class="row">
 						<div class="span4">
-							<img src="img/items/2.png"  title="">
+
+							<?php echo $this->Html->image("Item/filename/".$item['ImagesItem']['filename']."") ?>
 						</div>
 					</div>
 					<div class="row">
 						<div class="span4">
-							<p>texto sdfsdf </p>
+							<p><?=$item['Item']['name'] ?> </p>
 						</div>
-					
 						<div class="span4">
-							mas texto
+							<p><?=$item['Item']['description'] ?> </p>
 						</div>
 						<div class="span4">
 							<a href="" class="btn">saber mas</a>
 						</div>
 					</div>
 				</div>
-				<div class="span4" style="text-align: center;">
-					<div class="row">
-						<div class="span4">
-							<img src="img/items/2.png"  title="">
-						</div>
-					</div>
-					<div class="row">
-						<div class="span4">
-							<p>texto sdfsdf </p>
-						</div>
-					
-						<div class="span4">
-							mas texto
-						</div>
-						<div class="span4">
-							<a href="" class="btn">saber mas</a>
-						</div>
-					</div>
-				</div>
-				<div class="span4" style="text-align: center;">
-					<div class="row">
-						<div class="span4">
-							<img src="img/items/2.png"  title="">
-						</div>
-					</div>
-					<div class="row">
-						<div class="span4">
-							<p>texto sdfsdf </p>
-						</div>
-					
-						<div class="span4">
-							mas texto
-						</div>
-						<div class="span4">
-							<a href="" class="btn">saber mas</a>
-						</div>
-					</div>
-				</div>
-				<div class="span4" style="text-align: center;">
-					<div class="row">
-						<div class="span4">
-							<img src="img/items/2.png"  title="">
-						</div>
-					</div>
-					<div class="row">
-						<div class="span4">
-							<p>texto sdfsdf </p>
-						</div>
-					
-						<div class="span4">
-							mas texto
-						</div>
-						<div class="span4">
-							<a href="" class="btn">saber mas</a>
-						</div>
-					</div>
-				</div>				
+				<?php } ?>
 
 			</div>
 		</div>

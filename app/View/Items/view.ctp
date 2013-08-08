@@ -32,9 +32,48 @@
 		<li><?php echo $this->Html->link(__('New Item'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Images Items'), array('controller' => 'images_items', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Images Item'), array('controller' => 'images_items', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Quotes'), array('controller' => 'quotes', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add')); ?> </li>
 	</ul>
+</div>
+<div class="related">
+	<h3><?php echo __('Related Images Items'); ?></h3>
+	<?php if (!empty($item['ImagesItem'])): ?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Filename'); ?></th>
+		<th><?php echo __('Dir'); ?></th>
+		<th><?php echo __('Description'); ?></th>
+		<th><?php echo __('Item Id'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($item['ImagesItem'] as $imagesItem): ?>
+		<tr>
+			<td><?php echo $imagesItem['id']; ?></td>
+			<td><?php echo $imagesItem['filename']; ?></td>
+			<td><?php echo $imagesItem['dir']; ?></td>
+			<td><?php echo $imagesItem['description']; ?></td>
+			<td><?php echo $imagesItem['item_id']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'images_items', 'action' => 'view', $imagesItem['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'images_items', 'action' => 'edit', $imagesItem['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'images_items', 'action' => 'delete', $imagesItem['id']), null, __('Are you sure you want to delete # %s?', $imagesItem['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Images Item'), array('controller' => 'images_items', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
 </div>
 <div class="related">
 	<h3><?php echo __('Related Quotes'); ?></h3>

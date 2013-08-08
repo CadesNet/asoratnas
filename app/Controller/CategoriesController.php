@@ -13,7 +13,7 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Category->recursive = 0;
+		$this->Category->recursive = 2;
 		$this->set('categories', $this->paginate());
 	}
 
@@ -98,7 +98,7 @@ class CategoriesController extends AppController {
        $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
 		//$options = array('conditions' => array('limit' => 2));
-       	$Supermarket = $this->Supermarket->find('all');	
+       	$Supermarket = $this->Supermarket->find('all');
 		$Category = $this->Category->find('all');
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$this->set(compact('Supermarket','Category','Benefit','Recipe'));

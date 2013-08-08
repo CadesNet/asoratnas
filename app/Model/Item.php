@@ -84,13 +84,14 @@ class Item extends AppModel {
 			'order' => ''
 		)
 	);
+
 /**
  * hasMany associations
  *
  * @var array
  */
 	public $hasMany = array(
-		'ImagesItem' => array(
+'ImagesItem' => array(
 			'className' => 'ImagesItem',
 			'foreignKey' => 'item_id',
 			'dependent' => false,
@@ -102,14 +103,7 @@ class Item extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
-	);
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
+		),		
 		'Quote' => array(
 			'className' => 'Quote',
 			'foreignKey' => 'item_id',

@@ -13,7 +13,7 @@ class ItemsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Item->recursive = 0;
+		$this->Item->recursive = 1;
 		$this->set('items', $this->paginate());
 	}
 
@@ -97,4 +97,24 @@ class ItemsController extends AppController {
 		$this->Session->setFlash(__('Item was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+		//conulta propias
+	public function select4($id = null){
+       $this->loadModel('Category');
+       $this->loadModel('Recipe');
+
+		if(!$this->Category->exists($id)){
+			throw new NotFoundException(__('Invalid Category'));
+		}else{
+
+		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id, 'Item.' . )));
+		//$this->set('item', $this->Item->find('all', $options));
+		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
+		$this->set(compact('Category','Recipe'));
+
+		}
+		
+		
+	}
+
+		
 }
