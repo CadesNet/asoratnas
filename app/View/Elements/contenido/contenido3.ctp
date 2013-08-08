@@ -59,7 +59,7 @@ background-color: black;">
 		<div class="span4">
 		<div class="row">
 			<div class="span3 offset1" style="text-align:center;">
-				<img src="img/noticias/1.png" alt="">
+				<?php echo $this->Html->image("noticias/1.png")?>
 				<br>
 				<br>
 				<br>
@@ -73,17 +73,25 @@ background-color: black;">
 				</div>
 				<div class="row" style="">
 					<div class="span3">
-						<img src="img/img-recetas/Captura.png" alt="">
+						<?php 
+						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
+						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						}?>
 					</div>
 					
 				</div>
 				<div class="row" style="">
-					<div class="span3">
-						<h5>nombre de la receta</h5>
+					<div class="span5">
+						<h5><?=$recipes['Recipe']['title'] ?></h5>
 					</div>
 				</div>
 				<div class="row" style="">
-					<div class="span3">
+					<div class="span5">
+						<h5><?=$recipes['Recipe']['information'] ?></h5>
+					</div>
+				</div>				
+				<div class="row" style="">
+					<div class="span5">
 						<a class="btn" href="#">Ver receta</a>
 					</div>
 					

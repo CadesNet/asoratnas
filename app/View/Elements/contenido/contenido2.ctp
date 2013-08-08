@@ -16,7 +16,7 @@
 						<div class="span3">
 							<div class="row">
 								<div class="span3">
-									<h3 style="line-height: 20px;"><?php $this->Html->link(__($category['Category']['name']), array('action' => '')); ?></h3>
+									<h3 style="line-height: 20px;"><?php $this->Html->link(__($category['Category']['name']), array('controller' => 'Items', 'action' => 'select4',$category['Category']['id'])); ?></h3>
 								</div>
 							</div>
 							<div class="row" >
@@ -182,7 +182,7 @@ return false;
 		<div class="span4">
 		<div class="row">
 			<div class="span3 offset1" style="text-align:center;">
-				<img src="img/noticias/1.png" alt="">
+				<?php echo $this->Html->image("noticias/1.png")?>
 				<br>
 				<br>
 				<br>
