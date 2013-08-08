@@ -5,12 +5,15 @@
 				<div class="span8">
 					<div class="row">
 						<div class="span1">
-							<?php echo $this->Html->image("category/filename/".$categories['Category']['filename']."")?>
+							<?php foreach ($categories as $category): ?>
+								
+							
+							<?php echo $this->Html->image("category/filename/".$category['Category']['filename']."")?>
 						</div>
 						<div class="span3">
 							<div class="row">
 								<div class="span3">
-									<h3 style="line-height: 20px;"><?php $categories['Category']['name'] ?></h3>
+									<h3 style="line-height: 20px;"><?php $category['Category']['name'] ?></h3>
 								</div>
 							</div>
 							<div class="row" >
@@ -29,22 +32,24 @@ background-color: black;">
 					<div class="row">
 						<div class="span4">
 
-							<?php echo $this->Html->image("Item/filename/".$item['ImagesItem']['filename']."") ?>
+							
 						</div>
 					</div>
 					<div class="row">
 						<div class="span4">
-							<p><?=$item['Item']['name'] ?> </p>
+							<p><?php echo $item['name'] ?> </p>
 						</div>
 						<div class="span4">
-							<p><?=$item['Item']['description'] ?> </p>
+							<p><?php echo $item['description'] ?> </p>
 						</div>
 						<div class="span4">
 							<a href="" class="btn">saber mas</a>
 						</div>
 					</div>
-				</div>
-				<?php } ?>
+				</div>	
+			<?php } ?>
+
+			<?php endforeach ?>
 
 			</div>
 		</div>

@@ -106,7 +106,7 @@ class ItemsController extends AppController {
 			throw new NotFoundException(__('Invalid Category'));
 		}else{
 
-		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id, 'Item.' . )));
+		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id)));
 		//$this->set('item', $this->Item->find('all', $options));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$this->set(compact('Category','Recipe'));
