@@ -54,6 +54,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
  $('.flexslider').flexslider();
  });
  </script> 
+ <link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body onload="Carousel();" style="padding-right: 0px; padding-left: 0px;">
@@ -73,9 +74,18 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	                  <?php echo $this->fetch('content'); ?>
 			
 				
+
+
+
 				</div>
 
 				<?php echo $this->Session->flash(); ?>
+
+
+				<br>
+				<br>
+				<br>
+				<br>
 			</div>
 			
 		</div>
