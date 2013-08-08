@@ -47,7 +47,7 @@
 							<p><?php echo $item['description'] ?> </p>
 						</div>
 						<div class="span4">
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select5',$category['Category']['id'],$item['id']), array('class' => 'btn')); ?>
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn')); ?>
 						</div>
 					</div>
 

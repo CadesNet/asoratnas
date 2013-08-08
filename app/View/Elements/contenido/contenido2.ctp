@@ -16,7 +16,7 @@
 						<div class="span3">
 							<div class="row">
 								<div class="span3">
-									<h3 style="line-height: 20px;"><?php $this->Html->link(__($category['Category']['name']), array('controller' => 'Items', 'action' => 'select4',$category['Category']['id'])); ?></h3>
+									<h3 style="line-height: 20px;"><?php $this->Html->link(__($category['Category']['name']), array('controller' => 'Items', 'action' => 'select',$category['Category']['id'])); ?></h3>
 								</div>
 							</div>
 							<div class="row" >
