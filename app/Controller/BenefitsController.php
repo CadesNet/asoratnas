@@ -100,7 +100,9 @@ class BenefitsController extends AppController {
 	public function select2(){
        $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
+       //$this->loadModel('Category');
 		//$options = array('conditions' => array('limit' => 2));
+       	//$Category = $this->Category->find('all');
        	$Supermarket = $this->Supermarket->find('all');	
 		$Benefit = $this->Benefit->find('all', array('limit' => 2));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));

@@ -103,7 +103,7 @@ class ItemsController extends AppController {
        $this->loadModel('Recipe');
 
 		if(!$this->Category->exists($id)){
-			$this->redirect(array('controller' => 'Category', 'action' => 'select3'));
+			$this->redirect(array('controller' => 'Categories', 'action' => 'select3'));
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
 

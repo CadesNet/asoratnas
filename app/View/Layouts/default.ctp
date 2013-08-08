@@ -63,7 +63,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<?php echo $this->element('menu/top_menu'); ?>
 			
 			
-                 <?php echo $this->element('carusel/carrusel1'); ?>
+                 <?php echo $this->element('carusel/carrusel2'); ?>
 				
 
 				

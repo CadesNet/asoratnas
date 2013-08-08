@@ -2,15 +2,16 @@
 	<div class="row">
 		<div class="span8">
 			<div class="row">
+				<?php  foreach ($categories as $category) { ?>
 				<div class="span8">
 					<div class="row">
 						<div class="span1">
-							<img src="img/items/1.png"  title="">
+							<?php echo $this->Html->image("category/filename/".$category['Category']['filename']."")?>
 						</div>
 						<div class="span3">
 							<div class="row">
 								<div class="span3">
-									<h3 style="line-height: 20px;"><a href="">titulo</a></h3>
+									<h3 style="line-height: 20px;"><?php echo $category['Category']['name'] ?></h3>
 								</div>
 							</div>
 							<div class="row" >
@@ -22,16 +23,23 @@ background-color: black;">
 						</div>
 					</div>
 				</div>
+				<?php } ?>
+
+				<?php foreach ($items as $item) { ?>
 				<div class="span7 offset1" style="text-align: center;">
 					<div class="row">
 						<div class="span4">
-							<img src="img/items/2.png"  title="">
+							<?php foreach ($item['ImagesItem'] as $image): ?>
+							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
+							<?php 
+								break;
+							endforeach ?>
 						</div>
 						<div class="span3" style="text-align: left;">
 							<div class="row">
 								<div class="span3">
 									<form class="form-horizontal">
-										<h3>Pavo entero</h3>
+										<h3><?php echo $item['Item']['name'] ?></h3>
 										<p>presentacion  sdfsd sdf sdf</p>
 							
   									<div class="control-group">
@@ -59,14 +67,13 @@ background-color: black;">
 				<br>
 				<div class="row">
 					<div class="span7">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eligendi cum officiis sint eveniet omnis eius quo. Et iusto eos dolor ratione nesciunt praesentium eveniet distinctio repellat. Quas, soluta, ipsam.</p>
+					  <?php echo $item['Item']['description']; ?>
 					</div>
 				</div>
 			</div>
+			<?php 
+		}
+	?>
 			</div>
 			<br>
 			<br>
@@ -79,14 +86,13 @@ background-color: black;">
 		<div class="span4">
 		<div class="row">
 			<div class="span3 offset1" style="text-align:center;">
-				<img src="img/noticias/1.png" alt="">
+				<?php echo $this->Html->image("noticias/1.png")?>
 				<br>
 				<br>
 				<br>
 			</div>
 			<div class="span3 offset1" style="text-align:center;">
-				<div style="padding: 8px;background: #FFF;">
-					<div class="row" style="">
+				<div class="row" style="">
 					<div class="span3">
 						<h2>la receta del dia</h2>
 					</div>
@@ -94,30 +100,37 @@ background-color: black;">
 				</div>
 				<div class="row" style="">
 					<div class="span3">
-						<img src="img/img-recetas/Captura.png" alt="">
+						<?php 
+						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
+						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						break;
+						} ?>
 					</div>
 					
 				</div>
 				<div class="row" style="">
-					<div class="span3">
-						<h5>nombre de la receta</h5>
+					<div class="span5">
+						<h5><?=$recipes['Recipe']['title'] ?></h5>
 					</div>
 				</div>
 				<div class="row" style="">
-					<div class="span3">
+					<div class="span5">
+						<h5><?=$recipes['Recipe']['information'] ?></h5>
+					</div>
+				</div>				
+				<div class="row" style="">
+					<div class="span5">
 						<a class="btn" href="#">Ver receta</a>
 					</div>
 					
 				</div>
-				</div>
-				
-			</div>			
+			</div>
 		</div>
 		</div>
 	</div>
 	<div class="row">
 						<div class="span1">
-							<img src="img/items/1.png"  title="">
+							<?php echo $this->Html->image("sugerencia.png")?>
 						</div>
 						<div class="span11">
 							<div class="row">
@@ -135,14 +148,26 @@ background-color: black;">
 	</div>
 	<div class="row">
 		<div class="span12">
-					<?php $array = array("img/iper/i1.png","http://www.dynamicdrive.com",
-"img/iper/i1.png","http://www.javascriptkit.com",
-"img/iper/i1.png","http://www.google.com", //this slide isn't linked
-"img/iper/i1.png","http://www.google.com"); 
+<?php
+
+$datos="";
+foreach($recipes1 as $recipe1){
+	foreach ($recipe1['ImagesRecipe'] as $recip) {
+
+ $datos .= "/santarosa/img/images_recipe/filename/".$recip['filename'].'","'.$recipe1['Recipe']['id'].'","';
+ break;
+
+ }
+
+}
+echo $datos;
+echo ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,";
+ $array = array($datos); 
 $myData ="";
 foreach($array as $indicador) 
-                      {$myData .= '"'.$indicador.'"'.",";} 
-                       $myData =  substr_replace($myData, "", -1); 
+                      {$myData .= '"'.$indicador.'"'."";} 
+                       $myData =  substr_replace($myData, "", -3); 
+                       echo $myData;
                      // echo $myData
 					  
 ?>
