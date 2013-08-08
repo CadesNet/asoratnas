@@ -13,14 +13,14 @@
                   <span class="icon-bar"></span>
                 </a>
                 <div> 
-                <a class="brand" href="">  <?php echo $this->Html->image('logosantarosa.png') ;?> </a>
+                <a class="brand" href=""> <?php echo $this->Html->image('logosantarosa.png') ;?> </a>
               </div>
                 <div class="nav-collapse collapse">
                <ul class="nav pull-right">
                 <li>
 
 
-                  <a style="padding: 6px 12px;"  href="http://localhost/santarosa/benefits/select2"><i class="icon-home"></i></a></li>
+                  <a style="padding: 6px 12px;"  href="http://localhost/santarosa/benefits/select"><i class="icon-home"></i></a></li>
                 <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
                                          
                                            <li class="dropdown">
@@ -73,16 +73,16 @@
 
           <div class="nav-collapse collapse" style="">
            <ul class="nav pull-right">
-          <li class="dropdown"><a href="#" class=" dropdown-toggle btn  tracker" data-toggle="dropdown" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class="boton1">Productos</font></font></a>
+          <li class="dropdown"><a href="http://localhost/santarosa/Categories/select" class=" dropdown-toggle btn  tracker" data-toggle="dropdown" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class="boton1">Productos</font></font></a>
               <ul class="dropdown-menu" style="padding: 0; min-width: 0; left: 0;" >
                 
-                <li> <?php echo $this->Html->link(__("Pechua de Pavo"), array('controller' => 'Items', 'action' => 'select4',$category['Category']['id'])); ?>
+                <li> <?php echo $this->Html->link(__("Pechua de Pavo"), array('controller' => 'Items', 'action' => 'select',1)); ?>
                 </li>
-<li> <?php echo $this->Html->link(__("Jamon de Pavo"), array('controller' => 'Items', 'action' => 'select4',$category['Category']['id'])); ?>
+<li> <?php echo $this->Html->link(__("Jamon de Pavo"), array('controller' => 'Items', 'action' => 'select',2)); ?>
                 </li>                
-<li> <?php echo $this->Html->link(__("Pete de Pavo"), array('controller' => 'Items', 'action' => 'select4',$category['Category']['id'])); ?>
+<li> <?php echo $this->Html->link(__("Pete de Pavo"), array('controller' => 'Items', 'action' => 'select',3)); ?>
                 </li>                
-<li> <?php echo $this->Html->link(__("Pavo Santa Rosa"), array('controller' => 'Items', 'action' => 'select4',$category['Category']['id'])); ?>
+<li> <?php echo $this->Html->link(__("Pavo Santa Rosa"), array('controller' => 'Items', 'action' => 'select',4)); ?>
                 </li>                
 
               </ul>

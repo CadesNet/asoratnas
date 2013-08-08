@@ -94,7 +94,7 @@ class CategoriesController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 		//conulta propias
-	public function select3(){
+	public function select(){
        $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
 		//$options = array('conditions' => array('limit' => 2));

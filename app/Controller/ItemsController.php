@@ -98,7 +98,7 @@ class ItemsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 		//conulta propias
-	public function select4($id = null){
+	public function select($id = null){
        $this->loadModel('Category');
        $this->loadModel('Recipe');
 

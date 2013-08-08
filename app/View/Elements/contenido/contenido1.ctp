@@ -186,6 +186,7 @@ return false;
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						break;
 						}
 						?>
 					</div>

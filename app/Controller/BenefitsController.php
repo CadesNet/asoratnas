@@ -97,7 +97,7 @@ class BenefitsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	//conulta propias
-	public function select2(){
+	public function select(){
        $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
        //$this->loadModel('Category');

@@ -99,7 +99,7 @@ class QuotesController extends AppController {
 	}
 
 //conulta propias
-	public function select5($id = null,$id2 = null){
+	public function select($id = null,$id2 = null){
 		$this->loadModel('Category');
        $this->loadModel('Recipe');
        $this->loadModel('Item');
