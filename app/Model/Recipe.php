@@ -20,27 +20,29 @@ class Recipe extends AppModel {
  */
 	public $validate = array(
 		'title' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
 			'maxlength' => array(
-				'rule' => array('maxlength',150),
-				'message' => 'Maximo 150 caracteres',
+				'rule' => array('maxlength',180),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'description' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
+		'time' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'portion' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -50,7 +52,7 @@ class Recipe extends AppModel {
 		'ingredients' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -60,7 +62,7 @@ class Recipe extends AppModel {
 		'preparation' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
