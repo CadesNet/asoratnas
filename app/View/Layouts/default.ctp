@@ -37,12 +37,16 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			echo $this->Html->css('bootstrap/bootstrap');
 			echo $this->Html->css('bootstrap/bootstrap-responsive');
 			echo $this->Html->css('bootstrap/core');
+			//video
+			echo $this->Html->css('video-default.css');
 			
 
 			echo $this->fetch('css');
 			
 			echo $this->Html->script('bootstrap/vendor/jquery-1.10.1');
 			echo $this->Html->script('bootstrap/vendor/bootstrap');
+			//video
+			echo $this->Html->script('jquery.video-ui');
 			
 			echo $this->fetch('script');
                         
@@ -66,11 +70,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<div  class="container colorcontainer">
 
                  <?php echo $this->element('carusel/carrusel2'); ?>
-				
-
-				
 			
-	                  <?php echo $this->fetch('content'); ?>
+	                  <?php  echo $this->fetch('content');  ?>
 			
 				
 				</div>
