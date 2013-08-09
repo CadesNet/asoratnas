@@ -26,27 +26,19 @@
                                            <li class="dropdown">
                                             <a style="padding: 6px 12px;" class="dropdown-toggle" data-toggle="dropdown" href="#"><font><font style="color: #157858"><b>Empresa</b></font></font><b class="caret"></b></a>
                                             <ul class="dropdown-menu" style="left:inherit; padding:0;">
-                                              <li><a style="padding: 8px 12px;" href="#"><font><font style="color: #157858"><b>Acion s</b></font></font></a></li>
-                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>Otra accion</b></font></font></a></li>
-                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>mmmmmm</b></font></font></a></li>
-                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>Enlace separado</b></font></font></a></li>
+                                              <li><a style="padding: 8px 12px;" href="#"><font><font style="color: #157858"><b>Historia</b></font></font></a></li>
+                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>Requerimientos de personal</b></font></font></a></li>
                                             </ul>
                                           </li>
 
 
                                           <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
                               
-                                          <li class="dropdown">
-                                            <a style="padding: 6px 12px;" class="dropdown-toggle" data-toggle="dropdown" href="#"><font><font style="color: #157858"><b>Servicios</b></font></font><b class="caret"></b></a>
-                                            <ul class="dropdown-menu" style="left:inherit; padding:0;">
-                                              <li><a style="padding: 8px 12px;" href="#"><font><font style="color: #157858"><b>Acion s</b></font></font></a></li>
-                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>Otra accion</b></font></font></a></li>
-                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>mmmmmm</b></font></font></a></li>
-                                              <li><a style="padding: 8px 12px;"  href="#"><font><font style="color: #157858"><b>Enlace separado</b></font></font></a></li>
-                                            </ul>
-                                          </li>
+                                          <li><a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Servicios</b></font></font></a></li>
                                           <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
-                                          <li><a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>En otro en</b></font></font></a></li>
+                                          <li><a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Contactos</b></font></font></a></li>
+                                          <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
+                                          <li><a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Cotizar: 0 Items</b></font></font></a></li>
                                         </ul>
                 </div>
                 <br class="visible-desktop" >
@@ -73,7 +65,7 @@
 
           <div class="nav-collapse collapse" style="">
            <ul class="nav pull-right">
-          <li class="dropdown"><a href="http://localhost/santarosa/Categories/select" class=" dropdown-toggle btn  tracker" data-toggle="dropdown" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class="boton1">Productos</font></font></a>
+          <li class="dropdown"><a href="http://localhost/santarosa/Categories/select" class=" dropdown-toggle btn  tracker" data-toggle="dropdown" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class="boton1"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Productos &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font></font></a>
               <ul class="dropdown-menu" style="padding: 0; min-width: 0; left: 0;" >
                 
                 <li> <?php echo $this->Html->link(__("Pechua de Pavo"), array('controller' => 'Items', 'action' => 'select',1)); ?>
@@ -87,9 +79,9 @@
 
               </ul>
           </li>
-          <li> <a href="#" class="btn  tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class="">Menu Empresa</font></font></a></li>
-          <li> <a href="#" class="btn tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class="">Menu Empresa</font></font></a></li>
-          <li><a href="#" class="btn  tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"  ><font><font class="">Menu Empresa</font></font></a></li>
+          <li> <a href="#" class="btn  tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Recetas &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font></font></a></li>
+          <li> <a href="#" class="btn tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class=""> &nbsp;Beneficios del pavo &nbsp;</font></font></a></li>
+          <li><a href="#" class="btn  tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"  ><font><font class=""> &nbsp; &nbsp;Cuida tu Salud &nbsp; &nbsp;</font></font></a></li>
         </ul>
                   </div>
 
