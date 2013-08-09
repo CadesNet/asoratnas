@@ -39,11 +39,11 @@
 						</div>
 				
 					<div class = "">
-						<div class="span12 itemname">
-							<p><?php echo $item['name'] ?> </p>
+						<div class="span12 ">
+							<h3 class = "itemname"><?php echo $item['name'] ?> </h3>
 						</div>
-						<div class="span12 itemdescription">
-							<p><?php echo $item['description'] ?> </p>
+						<div class="span12 ">
+							<p class = "itemdescription"><?php echo $item['description'] ?> </p>
 						</div>
 						<div class="span6 offset3">
 							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger btn-large')); ?>

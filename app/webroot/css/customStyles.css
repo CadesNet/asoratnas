@@ -66,25 +66,33 @@ border-radius: 20px;
  .itemname{
  	color:#911a21;
  	text-align: center;
- 	font-size: 1.2em;
+ 	font-size: 2em;
  	font-weight: bold;
  }
 
  .itemdescription{
  	color:#aaa;
  	text-align: center;
+ 	font-size: 1.2em;
 
  }
 
  .cuadrodetalle{
  	border-radius: 20px;
  	/*border-top: 3px solid gray;*/
- background-color: red;
- height: 20px;
+ border: 2px solid #ddd; 
+ padding: 20px;
 
  }
 
+.imagendetalle{
+	border: 2px solid #ddd;
+}
+
  .btn-guindo{
- 	
+
+ }
+ .itemtext{
+ 	color: #666;
  }
 

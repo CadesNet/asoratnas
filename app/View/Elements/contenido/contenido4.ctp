@@ -1,24 +1,20 @@
 <div class="container">
-	<div class="row">
-		<div class="span8">
-			<div class="row">
+	<div class="row-fluid">
+		<div class="span9">
+			<div class="row-fluid">
 				<?php  foreach ($categories as $category) { ?>
-				<div class="span8">
-					<div class="row">
+				
+					<div class="row-fluid">
 						<div class="span1">
 							<?php echo $this->Html->image("category/filename/".$category['Category']['filename']."")?>
 						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;"><?php echo $category['Category']['name'] ?></h3>
+						<div class="span11">
+							<div class="row-fluid">
+								<div class="span12">
+									<h3 class = "producttitle"><?php echo $category['Category']['name'] ?></h3>
 								</div>
 							</div>
-							<div class="row" >
-								<div class="span2" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
+							
 							<br>
 						</div>
 					</div>
@@ -26,29 +22,30 @@ background-color: black;">
 				<?php } ?>
 
 				<?php foreach ($items as $item) { ?>
-				<div class="span7 offset1" style="text-align: center;">
-					<div class="row">
-						<div class="span4">
-							<?php foreach ($item['ImagesItem'] as $image): ?>
-							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
+				<div class="span12 cuadrodetalle" >
+					<div class="row-fluid">
+						<div class="span5">
+							<div class = "imagendetalle"> <?php foreach ($item['ImagesItem'] as $image): ?>
+							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?></div>
 							<?php 
 								break;
 							endforeach ?>
 						</div>
-						<div class="span3" style="text-align: left;">
-							<div class="row">
-								<div class="span3">
+						<div class="span7" >
+							<div class="row-fluid">
+								<div class="span12">
 									<form class="form-horizontal">
-										<h3><?php echo $item['Item']['name'] ?></h3>
-										<p>presentacion  sdfsd sdf sdf</p>
-							
-  									<div class="control-group">
-    									<label class="control-label" for="inputCantidad" style="width: 55px;margin-right: 5px;">Cantidad</label>
-    									
-      										<input type="text" id="inputCantidad" placeholder="Camtidad" style="width: 70px">
-  									</div>
-  									<div class="control-group">
-      										<button type="submit" class="btn" style="width: 144px">Cotizar</button>
+										<h3 class = "itemname"><?php echo $item['Item']['name'] ?></h3>
+										<p class = "itemdescription">asdfasdfasdfasdfasd fasd fasd fpresentacion  sdfsd sdf sdf</p>
+									<div class = "span8 offset3">
+	  									<div class="control-group">
+	    									<label class="control-label" for="inputCantidad" style="width: 55px;margin-right: 5px;">Cantidad</label>
+	    									
+	      										<input type="text" id="inputCantidad" placeholder="Camtidad" style="width: 200px">
+	  									</div>
+	  									<div class="control-group">
+	      										<button type="submit" class="btn" style="width: 144px">Cotizar</button>
+	  									</div>
   									</div>
 									</form>
 								</div>
@@ -58,48 +55,45 @@ background-color: black;">
 				</div>
 				<br>
 				<br>
-				<div class="row">
-					<div class="span7" style="background-color: aqua; text-align:right">
+				<div class="row-fluid">
+					<div class="span7 offset10" >
 						<p>Facebook</p>
 					</div>
 				</div>
 				<br>
 				<br>
-				<div class="row">
-					<div class="span7">
+				<div class="row-fluid">
+					<div class="span12 itemtext">
 					  <?php echo $item['Item']['description']; ?>
 					</div>
 				</div>
+					<div class="row-fluid">
+					<div class="span2" >
+						<a class = "btn">Volver</a>
+					</div>
+				</div>	
+			</div>
 			</div>
 			<?php 
 		}
 	?>
-			</div>
-			<br>
-			<br>
-				<div class="row">
-					<div class="span1 offset1" style="background-color: aqua; text-align:left">
-						<a href="">Volver</a>
-					</div>
-				</div>			
-		</div>
-		<div class="span4">
-		<div class="row">
-			<div class="span3 offset1" style="text-align:center;">
+
+			
+						
+		
+		<div class="span3">
+		
+			<div class="span12" >
 				<?php echo $this->Html->image("noticias/1.png")?>
-				<br>
-				<br>
-				<br>
+				
 			</div>
-			<div class="span3 offset1" style="text-align:center;">
-				<div class="row" style="">
-					<div class="span3">
+			
+					<div class="span12">
 						<h2>la receta del dia</h2>
 					</div>
 					
-				</div>
-				<div class="row" style="">
-					<div class="span3">
+				
+					<div class="span12">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
@@ -107,46 +101,37 @@ background-color: black;">
 						} ?>
 					</div>
 					
-				</div>
-				<div class="row" style="">
-					<div class="span5">
+				
+					<div class="span12">
 						<h5><?=$recipes['Recipe']['title'] ?></h5>
-					</div>
 				</div>
-				<div class="row" style="">
-					<div class="span5">
+					<div class="span12">
 						<h5><?=$recipes['Recipe']['information'] ?></h5>
-					</div>
 				</div>				
-				<div class="row" style="">
-					<div class="span5">
+					<div class="span12">
 						<a class="btn" href="#">Ver receta</a>
 					</div>
 					
-				</div>
-			</div>
-		</div>
+				
+			
+	
 		</div>
 	</div>
-	<div class="row">
+	<div class="row-fluid">
 						<div class="span1">
 							<?php echo $this->Html->image("sugerencia.png")?>
 						</div>
 						<div class="span11">
-							<div class="row">
+							<div class="row-fluid">
 								<div class="span11">
-									<h3 style="line-height: 20px;"><a href="">Algunas sugerencias para degustar en familia</a></h3>
+									<h3 class = "producttitle">Algunas sugerencias para degustar en familia</h3>
 								</div>
 							</div>
-							<div class="row" >
-								<div class="span6" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
+							
 							<br>
 						</div>
 	</div>
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span12">
 <?php
 
@@ -244,7 +229,7 @@ function C_Stp(){this.style.cursor=this.lnk?"pointer":"default";C_Stppd=true;}
 function C_Rstrt(){C_Stppd=false}
 </script>
 
-<div  id="Carousel" class="row" style="position:relative ; ">
+<div  id="Carousel" class="row-fluid" style="position:relative ; ">
 <!--<img src="" width="600" height="150"> --> <!-- esta es la foto de fondo-->
 
 <!--photo4.jpg los  de las fotos en el js van seguidos de un link -->
