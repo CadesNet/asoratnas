@@ -93,4 +93,30 @@ class RecipesController extends AppController {
 		$this->Session->setFlash(__('Recipe was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+
+		public $paginate = array(
+        'fields' => array('Post.id', 'Post.created'),
+        'limit' => 25,
+        'order' => array(
+            'Post.title' => 'asc'
+        )
+    );
+
+
+
+
+//conulta propias
+	public function select(){
+		 //$this->layout = 'ajax';
+        $this->paginate = array(
+                                'order' => array('Recipe.title' => 'desc'), 
+                                'recursive' => 1,
+                                "limit" => 4
+                                );
+         
+        //$conditions['Module.module_type'] = $module_type;
+        $Recipe = $this->paginate("Recipe");
+        $this->set(compact("Recipe"));  
+	}
 }
