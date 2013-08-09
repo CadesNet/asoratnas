@@ -38,8 +38,19 @@ background-image: url('../img/bg_footer.jpg');
  .productformat{
 
  }
+ .producttitle{
+ 	color: #911a21;
+ 	border-bottom:  8px solid #911a21;
+ }
 
  .titlecategory{
- 	dddd
+ 	
+ }
+
+ .cuadroproducto{
+ 	background-color: #f8f6ea;
+ 	box-shadow: 1px 1px 5px 5px gray;
+ 	border: 1px solid gray;
+ 	padding: 15px;
  }
 
