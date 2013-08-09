@@ -160,14 +160,12 @@ foreach($recipes1 as $recipe1){
  }
 
 }
-echo $datos;
-echo ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,";
+
  $array = array($datos); 
 $myData ="";
 foreach($array as $indicador) 
                       {$myData .= '"'.$indicador.'"'."";} 
                        $myData =  substr_replace($myData, "", -3); 
-                       echo $myData;
                      // echo $myData
 					  
 ?>

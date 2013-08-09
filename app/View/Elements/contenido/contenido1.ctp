@@ -45,13 +45,11 @@ $datos="";
 foreach($supermarkets as $supermarket){
  $datos .= "/santarosa/img/supermarket/filename/".$supermarket['Supermarket']['filename'].'","'.$supermarket['Supermarket']['link'].'","';
 }
-echo $datos . ".....................";
  $array = array($datos); 
 $myData ="";
 foreach($array as $indicador) 
                       {$myData .= '"'.$indicador.'"'."";} 
                        $myData =  substr_replace($myData, "", -3); 
-                      echo $myData
 					  
 ?>
 <script language="JavaScript">

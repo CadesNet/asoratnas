@@ -32,4 +32,15 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array('controller' => 'users', 'action' => 'index'),//una ves q se login se redicsionara a index
+            'logoutRedirect' => array('controller' => 'users', 'action' => 'login')//si no se logueo se autoredirecsionaa a login
+        )
+    );
+
+    public function beforeFilter() {
+        $this->Auth->allow('select');//no requiere inicio de session
+    }	
 }

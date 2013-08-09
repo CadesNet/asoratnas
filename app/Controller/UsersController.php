@@ -12,7 +12,59 @@ class UsersController extends AppController {
  *
  * @return void
  */
-	public function index() {
+
+
+public function beforeFilter() {
+
+    parent::beforeFilter();//lo q puede hacer cualquier usuario sin login
+    //$this->Auth->allow('add'); // / / Dejar que los usuarios se registran 
+    $this->Auth->autorediRect=false;
+	}
+
+	public function login() {//lo q hace cuando se loguea o cuando quiere loguearce 
+	    if ($this->request->is('post')) {
+	        if ($this->Auth->login()) {
+	            $this->redirect($this->Auth->redirect());
+	        } else {
+	            $this->Session->setFlash(__('Invalid username or password, try again'));
+	        }
+	    }
+	}
+
+	public function logout() { //sierra sesion 
+		
+	    $this->redirect($this->Auth->logout());
+	}
+	public function index(){
+		$id = $this->Auth->user('id');
+		$var = array('id' => $id);
+		$this->set('users',$var);
+
+	}
+   public function mostrar()
+	{
+		# code...
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public function index2() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
 	}
