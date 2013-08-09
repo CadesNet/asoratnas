@@ -49,8 +49,42 @@ background-image: url('../img/bg_footer.jpg');
 
  .cuadroproducto{
  	background-color: #f8f6ea;
- 	box-shadow: 1px 1px 5px 5px gray;
- 	border: 1px solid gray;
+ 	-moz-box-shadow: 0 0 3px 3px #888;
+-webkit-box-shadow: 0 0 3px 3px#888;
+box-shadow: 0 0 3px 3px #888;
+ 
  	padding: 15px;
+ 	margin-bottom: 30px;
+ 	height: 400px;
+border-radius: 20px;
+ }
+
+ .recipetitle{
+ 	color:#911a21;
+ }
+
+ .itemname{
+ 	color:#911a21;
+ 	text-align: center;
+ 	font-size: 1.2em;
+ 	font-weight: bold;
+ }
+
+ .itemdescription{
+ 	color:#aaa;
+ 	text-align: center;
+
+ }
+
+ .cuadrodetalle{
+ 	border-radius: 20px;
+ 	/*border-top: 3px solid gray;*/
+ background-color: red;
+ height: 20px;
+
+ }
+
+ .btn-guindo{
+ 	
  }
 

@@ -82,10 +82,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<?php echo $this->Session->flash(); ?>
 
 
-				<br>
-				<br>
-				<br>
-				<br>
+				
 			</div>
 			
 		</div>

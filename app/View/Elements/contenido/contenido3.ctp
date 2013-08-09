@@ -1,8 +1,7 @@
 <div class="container">
 	<div class="row-fluid">
-		<div class="span8">
-			<div class="row-fluid">
-				<div class="span8">
+		<div class="span9">
+			
 					<div class="row-fluid">
 						<div class="span1">
 							<?php foreach ($categories as $category): ?>
@@ -10,7 +9,7 @@
 							
 							<?php echo $this->Html->image("category/filename/".$category['Category']['filename']."")?>
 						</div>
-						<div class="span10">
+						<div class="span11">
 							<div class="row-fluid">
 								<div class="span12">
 									<h2 class = "producttitle"><?php echo $category['Category']['name'] ?></h2>
@@ -23,14 +22,14 @@
 							<br>
 						</div>
 					</div>
-				</div>
+			
 
-				<div class = "row-fluid">
+				
 				<?php foreach ($category['Item'] as $item) { ?>
 					
 			
-				<div class="span6 cuadroproducto">
-					<div class="row-fluid">
+				<div class="span5 cuadroproducto">
+					
 						<div class="span6 offset3">
 							<?php foreach ($item['ImagesItem'] as $image): ?>
 							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
@@ -38,16 +37,16 @@
 								break;
 							endforeach ?>
 						</div>
-					</div>
-					<div class="row-fluid">
-						<div class="span4">
+				
+					<div class = "">
+						<div class="span12 itemname">
 							<p><?php echo $item['name'] ?> </p>
 						</div>
-						<div class="span4">
+						<div class="span12 itemdescription">
 							<p><?php echo $item['description'] ?> </p>
 						</div>
-						<div class="span4">
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn')); ?>
+						<div class="span6 offset3">
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger btn-large')); ?>
 						</div>
 					</div>
 
@@ -56,11 +55,11 @@
 			<?php } ?>
 
 			<?php endforeach ?>
-			</div>
+			
 
-			</div>
+			
 		</div>
-		<div class="span4">
+		<div class="span3">
 		<div class="row-fluid">
 			<div class="span12" >
 				<?php echo $this->Html->image("noticias/1.png")?>
@@ -86,7 +85,7 @@
 					
 				
 				
-					<div class="span12">
+					<div class="span12 recipetitle">
 						<h3><?=$recipes['Recipe']['title'] ?></h3>
 					</div>
 				
