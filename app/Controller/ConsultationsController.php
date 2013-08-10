@@ -37,16 +37,25 @@ class ConsultationsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function select() {
 		if ($this->request->is('post')) {
 			$this->Consultation->create();
 			if ($this->Consultation->save($this->request->data)) {
 				$this->Session->setFlash(__('The consultation has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The consultation could not be saved. Please, try again.'));
 			}
 		}
+       $this->loadModel('Branch');
+       $this->loadModel('Supermarket');
+
+		//$options = array('conditions' => array('limit' => 2));
+       	$Branch = $this->Branch->find('all');
+       	$Branch1 = $this->Branch->find('first',array('order' => 'Branch.id ASC'));
+       	$Supermarket = $this->Supermarket->find('all');
+		$this->set(compact('Branch','Branch1','Supermarket'));
+
 	}
 
 /**

@@ -36,7 +36,7 @@
                               
                                           <li><a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Servicios</b></font></font></a></li>
                                           <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
-                                          <li><a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Contactos</b></font></font></a></li>
+                                          <li><a style="padding: 6px 12px;" href="http://localhost/santarosa/Consultations/select"><font><font style="color: #157858"><b>Contactos</b></font></font></a></li>
                                           <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
                                           <li><a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Cotizar: 0 Items</b></font></font></a></li>
                                         </ul>

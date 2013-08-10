@@ -5,6 +5,7 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('company_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
+			<th><?php echo $this->Paginator->sort('type'); ?></th>
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
 			<th><?php echo $this->Paginator->sort('movil'); ?></th>
@@ -19,6 +20,7 @@
 			<?php echo $this->Html->link($branch['Company']['name'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
 		</td>
 		<td><?php echo h($branch['Branch']['name']); ?>&nbsp;</td>
+		<td><?php echo h($branch['Branch']['type']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['address']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['phone']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['movil']); ?>&nbsp;</td>

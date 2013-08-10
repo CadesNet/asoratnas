@@ -16,6 +16,11 @@
 			<?php echo h($branch['Branch']['name']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Type'); ?></dt>
+		<dd>
+			<?php echo h($branch['Branch']['type']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Address'); ?></dt>
 		<dd>
 			<?php echo h($branch['Branch']['address']); ?>

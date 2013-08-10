@@ -6,6 +6,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('company_id');
 		echo $this->Form->input('name');
+		echo $this->Form->input('type');
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
 		echo $this->Form->input('movil');

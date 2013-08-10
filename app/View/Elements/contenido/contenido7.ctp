@@ -1,63 +1,111 @@
 <div class="container">
-	<div class="row">
-		<div class="span8">
-			<div class="row">
-
-				<?php 
-				foreach ($categories as $category){
-					?>
-
-				<div class="span4">
-					<div class="row">
-						<div class="span1">
-							<?php 
-							echo $this->Html->image("category/filename/".$category['Category']['filename']."")?>
-						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;">
-										<?php echo $this->Html->link(($category['Category']['name']), array('controller' => 'Items', 'action' => 'select',$category['Category']['id'])) ?>
-									</h3>
+	<div class="row-fluid">
+		<div class="span12">
+			
+					<div class="row-fluid">
+						<div class="span12">
+							<div class="row-fluid">
+								<div class="span12">
+									<h2 class = "producttitle">Contactos</h2>
 								</div>
 							</div>
-							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
+							<div class="row-fluid" >
+								<div class="span12" >
 								</div>
 							</div>
+							<div class="row-fluid" >
+								<div class="span12">
+								<?php echo $branch1['Branch']['name'] ?>
+								<br> 
+								<?php echo $branch1['Branch']['type'] ?>
+								<br>
+								Direccion: <?php echo $branch1['Branch']['address'] ?>
+								<br>
+								Telefono: <?php echo $branch1['Branch']['phone'] ?>
+								Telf(fax):<?php echo $branch1['Branch']['fax'] ?>
+								Telf Movil: <?php echo $branch1['Branch']['movil'] ?>
+								<br>
+
+								Contacto: <?php echo $branch1['Branch']['contact'] ?>
+								<br>
+								</div>
+							</div>
+							<div class="row-fluid">
+								<?php foreach ($branch as $branches) { ?>
+								<div class="span4">
+									<div class="row-fluid">
+										<div class="span12">
+											<?php echo $branches['Branch']['name'] ?>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="span12">
+											<?php echo $branches['Branch']['type'] ?>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="span3">
+											Direccion:
+										</div>
+										<div class="span9">
+											<?php echo $branches['Branch']['address'] ?>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="span12">
+										Telefono: <?php echo $branches['Branch']['phone'] ?>
+										Telf(fax):<?php echo $branches['Branch']['fax'] ?>
+										Telf Movil: <?php echo $branches['Branch']['movil'] ?>
+										</div>
+									</div>									
+									<div class="row-fluid">
+										<div class="span3">
+											Contacto:
+										</div>
+										<div class="span9">
+											<?php echo $branches['Branch']['contact'] ?>
+										</div>
+									</div>
+								</div>
+								<?php } ?>
+							</div>
+
 							<br>
-							<div class="row">
-								<div class="span3">
-								<p><?php echo substr($category['Category']['description'], 0, 11); ?> </p>
-								</div>
-							</div>
 						</div>
 					</div>
-				</div>
-			<?php } ?>
-			</div>
-			<br>
-			<br>
-			<div class="row">
-				<div class="span9" style="background-color: aqua;">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quaerat beatae nesciunt iure nemo odio voluptatum</p>
-				</div>
-				
-			</div>
-			<div class="row">
-				<div class="span9">
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="sapn12">
+			<div class="consultations form">
+<?php echo $this->Form->create('Consultation'); ?>
+	<fieldset>
+		<legend><?php echo __('Add Consultation'); ?></legend>
+	<?php
+		echo $this->Form->input('name');
+		echo $this->Form->input('address');
+		echo $this->Form->input('phone');
+		echo $this->Form->input('email');
+		echo $this->Form->input('message');
+	?>
+	</fieldset>
+<?php echo $this->Form->end(__('Submit')); ?>
+</div>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="sapn12">
+		
 <?php
 $datos="";
-foreach ($categories as $category){
- $datos .= "/santarosa/img/category/filename/".$category['Category']['filename'].'","'.$category['Category']['dir'].'","';
+foreach($supermarkets as $supermarket){
+ $datos .= "/santarosa/img/supermarket/filename/".$supermarket['Supermarket']['filename'].'","'.$supermarket['Supermarket']['link'].'","';
 }
  $array = array($datos); 
 $myData ="";
 foreach($array as $indicador) 
                       {$myData .= '"'.$indicador.'"'."";} 
                        $myData =  substr_replace($myData, "", -3); 
-                     // echo $myData
 					  
 ?>
 <script language="JavaScript">
@@ -135,6 +183,8 @@ function C_Stp(){this.style.cursor=this.lnk?"pointer":"default";C_Stppd=true;}
 function C_Rstrt(){C_Stppd=false}
 </script>
 
+
+
 <div  id="Carousel" class="row" style="position:relative ; ">
 <!--<img src="" width="600" height="150"> --> <!-- esta es la foto de fondo-->
 
@@ -148,52 +198,6 @@ function C_Rstrt(){C_Stppd=false}
 <br>
 <br>
 
-				</div>
-			</div>
-		</div>
-		<div class="span4">
-		<div class="row">
-			<div class="span3 offset1" style="text-align:center;">
-				<?php echo $this->Html->image("noticias/1.png")?>
-				<br>
-				<br>
-				<br>
-			</div>
-			<div class="span3 offset1" style="text-align:center;">
-				<div class="row" style="">
-					<div class="span3">
-						<h2>la receta del dia</h2>
-					</div>
-					
-				</div>
-				<div class="row" style="">
-					<div class="span3">
-						<?php 
-						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
-						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
-						break;
-						}?>
-					</div>
-					
-				</div>
-				<div class="row" style="">
-					<div class="span5">
-						<h5><?=$recipes['Recipe']['title'] ?></h5>
-					</div>
-				</div>
-				<div class="row" style="">
-					<div class="span5">
-						<h5><?=$recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
-					</div>
-				</div>				
-				<div class="row" style="">
-					<div class="span5">
-						<a class="btn" href="#">Ver receta</a>
-					</div>
-					
-				</div>
-			</div>			
-		</div>
 		</div>
 	</div>
 </div>
