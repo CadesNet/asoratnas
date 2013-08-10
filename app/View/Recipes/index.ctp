@@ -6,7 +6,6 @@
 			<th><?php echo $this->Paginator->sort('title'); ?></th>
 			<th><?php echo $this->Paginator->sort('time'); ?></th>
 			<th><?php echo $this->Paginator->sort('portion'); ?></th>
-			<th><?php echo $this->Paginator->sort('ingredients'); ?></th>
 			<th><?php echo $this->Paginator->sort('preparation'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
@@ -18,7 +17,6 @@
 		<td><?php echo h($recipe['Recipe']['title']); ?>&nbsp;</td>
 		<td><?php echo h($recipe['Recipe']['time']); ?>&nbsp;</td>
 		<td><?php echo h($recipe['Recipe']['portion']); ?>&nbsp;</td>
-		<td><?php echo h($recipe['Recipe']['ingredients']); ?>&nbsp;</td>
 		<td><?php echo h($recipe['Recipe']['preparation']); ?>&nbsp;</td>
 		<td><?php echo h($recipe['Recipe']['created']); ?>&nbsp;</td>
 		<td><?php echo h($recipe['Recipe']['modified']); ?>&nbsp;</td>
@@ -48,5 +46,9 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Recipe'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Ingredients'), array('controller' => 'ingredients', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Ingredient'), array('controller' => 'ingredients', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Images Recipes'), array('controller' => 'images_recipes', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Images Recipe'), array('controller' => 'images_recipes', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

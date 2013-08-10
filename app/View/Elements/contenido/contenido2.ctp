@@ -211,7 +211,7 @@ return false;
 				</div>
 				<div class="row" style="">
 					<div class="span5">
-						<h5><?=$recipes['Recipe']['information'] ?></h5>
+						<h5><?=$recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
 				</div>				
 				<div class="row" style="">

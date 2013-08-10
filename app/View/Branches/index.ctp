@@ -4,9 +4,11 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('company_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('name'); ?></th>
+			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
+			<th><?php echo $this->Paginator->sort('movil'); ?></th>
 			<th><?php echo $this->Paginator->sort('fax'); ?></th>
-			<th><?php echo $this->Paginator->sort('mobile'); ?></th>
 			<th><?php echo $this->Paginator->sort('contact'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
@@ -16,9 +18,11 @@
 		<td>
 			<?php echo $this->Html->link($branch['Company']['name'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
 		</td>
+		<td><?php echo h($branch['Branch']['name']); ?>&nbsp;</td>
+		<td><?php echo h($branch['Branch']['address']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['phone']); ?>&nbsp;</td>
+		<td><?php echo h($branch['Branch']['movil']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['fax']); ?>&nbsp;</td>
-		<td><?php echo h($branch['Branch']['mobile']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['contact']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $branch['Branch']['id'])); ?>

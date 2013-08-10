@@ -20,45 +20,19 @@ class Consultation extends AppModel {
  */
 	public $validate = array(
 		'name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
 			'maxlength' => array(
-				'rule' => array('maxlength',100),
-				'message' => 'Maximo 100 caracteres',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),			
-		),
-		'company' => array(
-			'maxlength' => array(
-				'rule' => array('maxlength',100),
-				'message' => 'Maximo 100 caracteres',
+				'rule' => array('maxlength',50),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'email' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'email' => array(
-				'rule' => array('email'),
-				'message' => 'La direccion de correro no es valida',
+		'address' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength',80),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -66,9 +40,19 @@ class Consultation extends AppModel {
 			),
 		),
 		'phone' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'ingrese solo numeros',
+			'maxlength' => array(
+				'rule' => array('maxlength',20),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'email' => array(
+			'email' => array(
+				'rule' => array('email'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -77,8 +61,8 @@ class Consultation extends AppModel {
 		),
 		'message' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1500),
-				'message' => 'Maximo 1500 caracteres',
+				'rule' => array('maxlength',1000),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

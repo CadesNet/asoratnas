@@ -2,6 +2,7 @@
 	<div class="row-fluid">
 		<div class="span9">
 			<div class="row-fluid">
+				
 				<?php  foreach ($categories as $category) { ?>
 				
 					<div class="row-fluid">

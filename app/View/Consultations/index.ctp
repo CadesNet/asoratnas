@@ -4,9 +4,9 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('company'); ?></th>
-			<th><?php echo $this->Paginator->sort('email'); ?></th>
+			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
+			<th><?php echo $this->Paginator->sort('email'); ?></th>
 			<th><?php echo $this->Paginator->sort('message'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
@@ -16,9 +16,9 @@
 	<tr>
 		<td><?php echo h($consultation['Consultation']['id']); ?>&nbsp;</td>
 		<td><?php echo h($consultation['Consultation']['name']); ?>&nbsp;</td>
-		<td><?php echo h($consultation['Consultation']['company']); ?>&nbsp;</td>
-		<td><?php echo h($consultation['Consultation']['email']); ?>&nbsp;</td>
+		<td><?php echo h($consultation['Consultation']['address']); ?>&nbsp;</td>
 		<td><?php echo h($consultation['Consultation']['phone']); ?>&nbsp;</td>
+		<td><?php echo h($consultation['Consultation']['email']); ?>&nbsp;</td>
 		<td><?php echo h($consultation['Consultation']['message']); ?>&nbsp;</td>
 		<td><?php echo h($consultation['Consultation']['created']); ?>&nbsp;</td>
 		<td><?php echo h($consultation['Consultation']['modified']); ?>&nbsp;</td>

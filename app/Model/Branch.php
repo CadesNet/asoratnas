@@ -10,6 +10,13 @@ App::uses('AppModel', 'Model');
 class Branch extends AppModel {
 
 /**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'name';
+
+/**
  * Validation rules
  *
  * @var array
@@ -18,7 +25,27 @@ class Branch extends AppModel {
 		'company_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Ingrese solo numeros',
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'name' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'address' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -28,27 +55,7 @@ class Branch extends AppModel {
 		'phone' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'fax' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'mobile' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -56,9 +63,9 @@ class Branch extends AppModel {
 			),
 		),
 		'contact' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
+			'maxlength' => array(
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -70,7 +77,7 @@ class Branch extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * belongsTo associations  //para la tabla muchos 
+ * belongsTo associations
  *
  * @var array
  */
@@ -85,8 +92,8 @@ class Branch extends AppModel {
 	);
 
 /**
- * hasMany associations //para la tabla uno
- * 
+ * hasMany associations
+ *
  * @var array
  */
 	public $hasMany = array(
@@ -105,19 +112,6 @@ class Branch extends AppModel {
 		),
 		'Requirement' => array(
 			'className' => 'Requirement',
-			'foreignKey' => 'branch_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'BranchesImage' => array(
-			'className' => 'BranchesImage',
 			'foreignKey' => 'branch_id',
 			'dependent' => false,
 			'conditions' => '',

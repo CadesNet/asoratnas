@@ -79,7 +79,7 @@
 
               </ul>
           </li>
-          <li> <a href="#" class="btn  tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Recetas &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font></font></a></li>
+          <li> <a href="http://localhost/santarosa/Recipes/select" class="btn  tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Recetas &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font></font></a></li>
           <li> <a href="#" class="btn tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"><font><font class=""> &nbsp;Beneficios del pavo &nbsp;</font></font></a></li>
           <li><a href="#" class="btn  tracker" data-tracker-action="Click" data-tracker-cat="Nav Login Button" style="background-position: 0;"  ><font><font class=""> &nbsp; &nbsp;Cuida tu Salud &nbsp; &nbsp;</font></font></a></li>
         </ul>

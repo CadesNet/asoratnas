@@ -11,19 +11,19 @@
 			<?php echo h($consultation['Consultation']['name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Company'); ?></dt>
+		<dt><?php echo __('Address'); ?></dt>
 		<dd>
-			<?php echo h($consultation['Consultation']['company']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Email'); ?></dt>
-		<dd>
-			<?php echo h($consultation['Consultation']['email']); ?>
+			<?php echo h($consultation['Consultation']['address']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Phone'); ?></dt>
 		<dd>
 			<?php echo h($consultation['Consultation']['phone']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Email'); ?></dt>
+		<dd>
+			<?php echo h($consultation['Consultation']['email']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Message'); ?></dt>

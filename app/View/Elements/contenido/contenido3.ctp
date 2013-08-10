@@ -91,7 +91,7 @@
 				
 				
 					<div class="span12">
-						<h4><?=$recipes['Recipe']['information'] ?></h4>
+						<h4><h5><?=$recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5></h4>
 					</div>
 						
 				

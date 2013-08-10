@@ -1,11 +1,11 @@
 <?php
-App::uses('Recipe', 'Model');
+App::uses('Branch', 'Model');
 
 /**
- * Recipe Test Case
+ * Branch Test Case
  *
  */
-class RecipeTest extends CakeTestCase {
+class BranchTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -13,8 +13,10 @@ class RecipeTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.recipe',
-		'app.ingredient'
+		'app.branch',
+		'app.company',
+		'app.address',
+		'app.requirement'
 	);
 
 /**
@@ -24,7 +26,7 @@ class RecipeTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->Recipe = ClassRegistry::init('Recipe');
+		$this->Branch = ClassRegistry::init('Branch');
 	}
 
 /**
@@ -33,7 +35,7 @@ class RecipeTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->Recipe);
+		unset($this->Branch);
 
 		parent::tearDown();
 	}

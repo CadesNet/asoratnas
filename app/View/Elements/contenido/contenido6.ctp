@@ -27,12 +27,10 @@ background-color: black;">
 
 			<div class="row">
 				<div class="span7 offset1">
-					<?php
-						$coun = 1;
-					 foreach ($recipes as $recipes) { ?>
+					<?php foreach ($recipes as $recipes) { ?>
 						
-				<div  class="row">
-				<div class="span3">
+				<div class="row">
+				<div class="span4">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
@@ -63,17 +61,32 @@ background-color: black;">
 					<br>
 					<div class="row">
 						<div class="span3">
-							<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],$coun++), array('class' => 'btn btn-danger btn-large')); ?>
+							<?php echo $this->Html->link(__('Volver al recetario'), array('controller' => 'Recipes', 'action' => 'select'), array('class' => 'btn btn-danger btn-large')); ?>
 						</div>
 					</div>
 				</div>
-				<div class="span2">
+				<div class="span1">
 					
 				</div>
-			</div>
+				</div>
+				<div class="row">
+					<div class="span7">
+						<h3>ingredientes</h3>
+						<?php foreach ($recipes['Ingredient'] as $ingredients) {?>
+						<p> <?php echo $ingredients['amount']; ?> : <?php echo $ingredients['name']; ?> </p>
+							
+						<?php } ?>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="span7">
+						<h3>Preparacion</h3>
+						<p><?php echo $recipes['Recipe']['preparation'] ?>personas</p>
+					</div>
+				</div>
 			<?} ?>
-				
-			<div class="paginator">
+<div class="paginator">
 <?php 
 
 
@@ -87,7 +100,11 @@ echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled'))
 //echo $this->Paginator->counter();
         ?>
 </div>
+
+
+			
 				</div>
+
 			</div>
 
 			

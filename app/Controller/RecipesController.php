@@ -95,28 +95,46 @@ class RecipesController extends AppController {
 	}
 
 
-		public $paginate = array(
-        'fields' => array('Post.id', 'Post.created'),
-        'limit' => 25,
-        'order' => array(
-            'Post.title' => 'asc'
-        )
-    );
-
-
-
-
 //conulta propias
 	public function select(){
-		 //$this->layout = 'ajax';
-        $this->paginate = array(
-                                'order' => array('Recipe.title' => 'desc'), 
+
+	$conditions = "id = 6";
+//$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
+		$this->paginate = array(
+                                'order' => array('Recipe.title' => 'asc'), 
                                 'recursive' => 1,
-                                "limit" => 4
+                                "limit" => 4,
+                                'page' => 1
+                                //'conditions' => $conditions
                                 );
          
-        //$conditions['Module.module_type'] = $module_type;
+        
         $Recipe = $this->paginate("Recipe");
-        $this->set(compact("Recipe"));  
+        $this->set(compact("Recipe"));
+	}
+
+
+
+
+	public function select1($id=null,$pagina){
+	  if(!$this->Recipe->exists($id)){
+
+
+			$this->redirect(array('controller' => 'Recipes', 'action' => 'select'));
+			//throw new NotFoundException(__('Invalid Category'));
+		}else{
+
+					$this->paginate = array(
+                                'order' => array('Recipe.title' => 'asc'), 
+                                'recursive' => 1,
+                                "limit" => 1,
+                                'page' => $pagina
+                                //'conditions' => $conditions
+                                );
+
+		$Recipe = $this->paginate("Recipe");
+		//$Recipe = $this->Recipe->find('all',array('conditions' => array('Recipe.' . $this->Recipe->primaryKey => $id),'recursive'  => 1));
+		$this->set(compact('Recipe'));
+		}
 	}
 }

@@ -5,9 +5,11 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('company_id');
+		echo $this->Form->input('name');
+		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
+		echo $this->Form->input('movil');
 		echo $this->Form->input('fax');
-		echo $this->Form->input('mobile');
 		echo $this->Form->input('contact');
 	?>
 	</fieldset>

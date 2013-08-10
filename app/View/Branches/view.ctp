@@ -11,19 +11,29 @@
 			<?php echo $this->Html->link($branch['Company']['name'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Name'); ?></dt>
+		<dd>
+			<?php echo h($branch['Branch']['name']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Address'); ?></dt>
+		<dd>
+			<?php echo h($branch['Branch']['address']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Phone'); ?></dt>
 		<dd>
 			<?php echo h($branch['Branch']['phone']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Movil'); ?></dt>
+		<dd>
+			<?php echo h($branch['Branch']['movil']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Fax'); ?></dt>
 		<dd>
 			<?php echo h($branch['Branch']['fax']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Mobile'); ?></dt>
-		<dd>
-			<?php echo h($branch['Branch']['mobile']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Contact'); ?></dt>
