@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-08-2013 a las 17:05:55
+-- Tiempo de generación: 10-08-2013 a las 13:35:33
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -106,13 +106,29 @@ INSERT INTO `benefits` (`id`, `title`, `description`, `filename`, `dir`) VALUES
 CREATE TABLE IF NOT EXISTS `branches` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `company_id` int(11) NOT NULL,
+  `name` char(100) NOT NULL,
+  `address` varchar(300) NOT NULL,
   `phone` char(50) NOT NULL,
+  `movil` int(11) NOT NULL,
   `fax` char(50) NOT NULL,
-  `mobile` char(50) NOT NULL,
   `contact` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Volcado de datos para la tabla `branches`
+--
+
+INSERT INTO `branches` (`id`, `company_id`, `name`, `address`, `phone`, `movil`, `fax`, `contact`) VALUES
+(1, 1, 'Cochabamba', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore ', '484645564', 744946, '264684', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'),
+(2, 1, 'oruro', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.', '45786789', 79646546, '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'),
+(3, 1, 'Cochabamba', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore ', '484645564', 744946, '264684', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'),
+(4, 1, 'oruro', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.', '45786789', 79646546, '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'),
+(5, 1, 'Cochabamba', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore ', '484645564', 744946, '264684', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'),
+(6, 1, 'oruro', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.', '45786789', 79646546, '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'),
+(7, 1, 'Cochabamba', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore ', '484645564', 744946, '264684', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'),
+(8, 1, 'oruro', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.', '45786789', 79646546, '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.');
 
 -- --------------------------------------------------------
 
@@ -173,7 +189,14 @@ CREATE TABLE IF NOT EXISTS `companies` (
   `values` text NOT NULL,
   `history` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `companies`
+--
+
+INSERT INTO `companies` (`id`, `name`, `mission`, `vision`, `values`, `history`) VALUES
+(1, 'santarosa', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.\r\n', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque aperiam maxime nemo omnis? Labore, aspernatur, magni. Sapiente, molestiae, consectetur, laboriosam ipsam suscipit dolor aperiam commodi tempore earum porro magnam.');
 
 -- --------------------------------------------------------
 
@@ -184,9 +207,9 @@ CREATE TABLE IF NOT EXISTS `companies` (
 CREATE TABLE IF NOT EXISTS `consultations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` char(100) NOT NULL,
-  `company` char(100) DEFAULT NULL,
-  `email` char(50) NOT NULL,
-  `phone` char(15) DEFAULT NULL,
+  `address` text NOT NULL,
+  `phone` char(20) NOT NULL,
+  `email` char(50) DEFAULT NULL,
   `message` text,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
@@ -234,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `images_recipes` (
   `recipe_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `recipe_id` (`recipe_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `images_recipes`
@@ -245,7 +268,31 @@ INSERT INTO `images_recipes` (`id`, `filename`, `dir`, `description`, `recipe_id
 (2, 'receta-0.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 3),
 (3, 'receta-1.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 4),
 (4, 'receta-2.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 5),
-(5, 'receta-3.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 6);
+(5, 'receta-3.PNG', 'img\\images_recipe\\filename', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 6),
+(6, 'receta-4.PNG', 'img\\images_recipe\\filename', 'kbjbkj', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ingredients`
+--
+
+CREATE TABLE IF NOT EXISTS `ingredients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `amount` char(10) NOT NULL,
+  `name` text NOT NULL,
+  `recipe_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `recipe_id` (`recipe_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `ingredients`
+--
+
+INSERT INTO `ingredients` (`id`, `amount`, `name`, `recipe_id`) VALUES
+(1, '1/2', 'fs sf sdfsd fsd', 1),
+(2, '11', 'papa', 1);
 
 -- --------------------------------------------------------
 
@@ -299,11 +346,9 @@ CREATE TABLE IF NOT EXISTS `quotes` (
 CREATE TABLE IF NOT EXISTS `recipes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` char(150) NOT NULL,
-  `description` text NOT NULL,
-  `ingredients` text NOT NULL,
+  `time` int(11) NOT NULL,
+  `portion` int(11) NOT NULL,
   `preparation` text NOT NULL,
-  `recommendations` text,
-  `information` text,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -313,13 +358,13 @@ CREATE TABLE IF NOT EXISTS `recipes` (
 -- Volcado de datos para la tabla `recipes`
 --
 
-INSERT INTO `recipes` (`id`, `title`, `description`, `ingredients`, `preparation`, `recommendations`, `information`, `created`, `modified`) VALUES
-(1, 'primera re', 'kjjljlkj', 'jljkljlkjlk', ' mn n kjnjnjk', 'mklmklm', '44min-21personas', '2013-08-04 12:31:32', '2013-08-04 12:31:32'),
-(2, 'segunda receta', 'donl', 'lklnk', 'nklnlk', 'lknlknlkn', '7min-45personas', '2013-08-04 12:32:13', '2013-08-04 12:32:13'),
-(3, 'receta 1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '45-12', '2013-08-08 14:09:38', '2013-08-08 14:09:38'),
-(4, 'receta 2', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '12-4', '2013-08-08 14:10:03', '2013-08-08 14:10:03'),
-(5, 'receta 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '12-4', '2013-08-08 14:10:30', '2013-08-08 14:10:30'),
-(6, 'receta 4', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '4-4', '2013-08-08 14:10:54', '2013-08-08 14:10:54');
+INSERT INTO `recipes` (`id`, `title`, `time`, `portion`, `preparation`, `created`, `modified`) VALUES
+(1, 'aa primera re', 0, 0, ' mn n kjnjnjk', '2013-08-04 12:31:32', '2013-08-04 12:31:32'),
+(2, 'segunda receta', 0, 0, 'nklnlk', '2013-08-04 12:32:13', '2013-08-04 12:32:13'),
+(3, 'receta 1', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '2013-08-08 14:09:38', '2013-08-08 14:09:38'),
+(4, 'receta 2', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '2013-08-08 14:10:03', '2013-08-08 14:10:03'),
+(5, 'receta 3', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '2013-08-08 14:10:30', '2013-08-08 14:10:30'),
+(6, 'receta 4', 0, 0, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, hic, asperiores, optio voluptas repudiandae iure nulla totam at itaque laudantium aliquam fugit tempora quaerat et nemo repellat reiciendis fuga magnam!', '2013-08-08 14:10:54', '2013-08-08 14:10:54');
 
 -- --------------------------------------------------------
 
@@ -391,7 +436,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `role`, `email`, `created`, `modified`) VALUES
+(1, 'oss', 'b5bbe947ae65ab349481e8a245d39825bc49e318', '1', 'ronaldo_racso@hotmail.com', '2013-08-08 00:00:00', '2013-08-08 00:00:00');
 
 --
 -- Restricciones para tablas volcadas
@@ -426,6 +478,12 @@ ALTER TABLE `images_items`
 --
 ALTER TABLE `images_recipes`
   ADD CONSTRAINT `images_recipes_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`);
+
+--
+-- Filtros para la tabla `ingredients`
+--
+ALTER TABLE `ingredients`
+  ADD CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`);
 
 --
 -- Filtros para la tabla `item`
