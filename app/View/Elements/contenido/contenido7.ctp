@@ -14,8 +14,10 @@
 								</div>
 							</div>
 							<div class="row-fluid" >
-								<div class="span12">
+								<div class="span12 cuadrodireccion">
+									<div class = "dirciudad">
 								<?php echo $branch1['Branch']['name'] ?>
+								</div>
 								<br> 
 								<?php echo $branch1['Branch']['type'] ?>
 								<br>
@@ -32,10 +34,10 @@
 							</div>
 							<div class="row-fluid">
 								<?php foreach ($branch as $branches) { ?>
-								<div class="span4">
+								<div class="span4 cuadrodireccion">
 									<div class="row-fluid">
 										<div class="span12">
-											<?php echo $branches['Branch']['name'] ?>
+										<div class = "dirciudad">	<?php echo $branches['Branch']['name'] ?> </div>
 										</div>
 									</div>
 									<div class="row-fluid">
@@ -45,22 +47,43 @@
 									</div>
 									<div class="row-fluid">
 										<div class="span3">
-											Direccion:
+											<div class = "tipodedireccion">Direccion: </div>
 										</div>
 										<div class="span9">
 											<?php echo $branches['Branch']['address'] ?>
 										</div>
 									</div>
 									<div class="row-fluid">
-										<div class="span12">
-										Telefono: <?php echo $branches['Branch']['phone'] ?>
-										Telf(fax):<?php echo $branches['Branch']['fax'] ?>
-										Telf Movil: <?php echo $branches['Branch']['movil'] ?>
+										<div class="span3">
+										<div class = "tipodedireccion">Telefono: </div> 
 										</div>
-									</div>									
+										<div class="span9">
+											<?php echo $branches['Branch']['phone'] ?>
+										</div>
+									</div>
+
 									<div class="row-fluid">
 										<div class="span3">
-											Contacto:
+										<div class = "tipodedireccion">Telf(fax):</div>
+										</div>
+										<div class="span9">
+
+											<?php echo $branches['Branch']['fax'] ?>
+										</div> 
+									</div>
+
+									<div class="row-fluid">
+										<div class="span3">
+											<div class = "tipodedireccion">Telf Movil: </div>
+										</div>
+										<div class="span9">
+									<?php echo $branches['Branch']['movil'] ?>
+										</div>
+									</div>	
+
+									<div class="row-fluid">
+										<div class="span3">
+											<div class = "tipodedireccion">Contacto: </div>
 										</div>
 										<div class="span9">
 											<?php echo $branches['Branch']['contact'] ?>
