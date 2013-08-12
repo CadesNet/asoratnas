@@ -96,7 +96,7 @@
 				<?php 
 				echo $this->Html->link(("Productos"), array('controller' => 'Categories', 'action' => 'select'), array('class'=> 'dropdown-toggle btn  tracker','data-toggle' => 'dropdown')); 
 				?>
-              <ul class="dropdown-menu" style="padding: 0; min-width: 0; left: 0;" >
+              <ul class="dropdown-menu" >
                 
                 <li> <?php echo $this->Html->link(__("Pechua de Pavo"), array('controller' => 'Items', 'action' => 'select',1)); ?>
                 </li>
