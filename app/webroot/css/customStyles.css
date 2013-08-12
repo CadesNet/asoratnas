@@ -14,8 +14,20 @@
 
 }
 
+.dirbarbottom{
+	background-image: url('../img/dir_bar_bottom.png');
+	height: 71px;
+	
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 50;
+	bottom: 1px;
+
+}
+
 .container .colorcontainer{
-background-color: #f8f6e9;
+background-color: #f8f6ea;
 	padding: 15px;
 }
 
@@ -113,4 +125,6 @@ border-radius: 20px;
  .tipodedireccion{
  	color: #06816a;
  }
+
+
 

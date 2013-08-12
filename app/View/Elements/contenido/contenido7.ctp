@@ -9,10 +9,7 @@
 									<h2 class = "producttitle">Contactos</h2>
 								</div>
 							</div>
-							<div class="row-fluid" >
-								<div class="span12" >
-								</div>
-							</div>
+							
 							<div class="row-fluid" >
 								<div class="span12 cuadrodireccion">
 									<div class = "dirciudad">
@@ -20,16 +17,54 @@
 								</div>
 								<br> 
 								<?php echo $branch1['Branch']['type'] ?>
-								<br>
-								Direccion: <?php echo $branch1['Branch']['address'] ?>
-								<br>
-								Telefono: <?php echo $branch1['Branch']['phone'] ?>
-								Telf(fax):<?php echo $branch1['Branch']['fax'] ?>
-								Telf Movil: <?php echo $branch1['Branch']['movil'] ?>
-								<br>
+								
+									<div class="row-fluid">
+										<div class="span1">
+											<div class = "tipodedireccion">Direccion: </div>
+										</div>
+										<div class="span11">
+											<?php echo $branch1['Branch']['address'] ?>
+										</div>
+									</div>
+								
+									<div class="row-fluid">
+										<div class="span1">
+										<div class = "tipodedireccion">Telefono: </div> 
+										</div>
+										<div class="span11">
+											<?php echo $branch1['Branch']['phone'] ?>
+										</div>
+									</div>
 
-								Contacto: <?php echo $branch1['Branch']['contact'] ?>
-								<br>
+									<div class="row-fluid">
+										<div class="span1">
+										<div class = "tipodedireccion">Telf(fax):</div>
+										</div>
+										<div class="span11">
+
+											<?php echo $branch1['Branch']['fax'] ?>
+										</div> 
+									</div>
+
+									<div class="row-fluid">
+										<div class="span1">
+											<div class = "tipodedireccion">Telf Movil: </div>
+										</div>
+										<div class="span11">
+									<?php echo $branch1['Branch']['movil'] ?>
+										</div>
+									</div>
+						
+
+									<div class="row-fluid">
+										<div class="span1">
+											<div class = "tipodedireccion">Contacto: </div>
+										</div>
+										<div class="span11">
+											<?php echo $branch1['Branch']['contact'] ?>
+										</div>
+									</div>
+							
 								</div>
 							</div>
 							<div class="row-fluid">
