@@ -126,7 +126,7 @@ function C_LdLnk(){if(this.lnk)window.location.href=this.lnk}
 function C_Stp(){this.style.cursor=this.lnk?"pointer":"default";C_Stppd=true;}
 function C_Rstrt(){C_Stppd=false}
 </script>
-<div  id="Carousel" class="row" style="position:relative ; ">
+<div  id="Carousel" class="row-fluid" style="position:relative ; ">
 <!--<img src="" width="600" height="150"> --> <!-- esta es la foto de fondo-->
 
 <!--photo4.jpg los  de las fotos en el js van seguidos de un link -->
@@ -142,14 +142,14 @@ function C_Rstrt(){C_Stppd=false}
 
 			
 			</div>
-			<div class="span3" style="text-align:center;">
-				<div class="row-fluid" style="">
+			<div class="span3">
+				<div class="row-fluid" >
 					<div class="span12">
 						<h2>la receta del dia</h2>
 					</div>
 					
 				</div>
-				<div class="row-fluid" style="">
+				<div class="row-fluid" >
 					<div class="span12">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
@@ -160,17 +160,17 @@ function C_Rstrt(){C_Stppd=false}
 					</div>
 					
 				</div>
-				<div class="row-fluid" style="">
+				<div class="row-fluid" >
 					<div class="span12">
 						<h3><?=$recipes['Recipe']['title'] ?></h3>
 					</div>
 				</div>
-				<div class="row-fluid" style="">
+				<div class="row-fluid" >
 					<div class="span12">
 						<h5><?=$recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
 				</div>				
-				<div class="row-fluid" style="">
+				<div class="row-fluid">
 					<div class="span5">
 						<a class="btn" href="#">Ver receta</a>
 					</div>

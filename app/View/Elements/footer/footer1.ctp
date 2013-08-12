@@ -4,75 +4,65 @@
 
 
 <div class = "footer" >
-	<div class="container" style="top:111px">
-		<div class="row">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, velit vitae aut minus a veniam explicabo laudantium reiciendis  .</p>
+	<div class="container" >
 		
-		<div class="row" >
+			
+		
+		<div class="row-fluid" >
+			<div class = "contentbottom">
 			<div class="span2" >
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Inicio</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Empresa</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Servicios</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Contactos</font></a>
+				
 
 			</div>
 			<div class="span2" >
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Productos</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Pechuga de Pavo</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Jamón de Pavo</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Paté de Pavo</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Pavo Entero</font></a>
 
 			</div>
 			<div class="span2">
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Novedades</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Recetas</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Beneficios del Pavo</font></a>
+				
 
 			</div>
 			<div class="span2" >
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Distribuidores</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Proveedores</font></a>
+				
+
+			</div>
+			<div class="span2" >
+				<a href="#"><font>Facebook</font></a>
 				<br>
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
+				<a href="#"><font>Twitter</font></a>
+				
 
 			</div>
 			<div class="span2">
-
+				<a href="#"><font>WebMail</font></a>
+				<br>
+				<a href="#"><font>Visitas: 10000</font></a>
+				
 
 			</div>
-			<div class="span2" >
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
-				<br>
-				<a href="#"><font>primer</font></a>
-
-
 			</div>
 		</div>
 	</div>

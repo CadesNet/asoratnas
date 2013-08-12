@@ -16,10 +16,7 @@
 									<h2 class = "producttitle"><?php echo $category['Category']['name'] ?></h2>
 								</div>
 							</div>
-							<div class="row-fluid" >
-								<div class="span2" >
-								</div>
-							</div>
+							
 							<br>
 						</div>
 					</div>
@@ -28,7 +25,7 @@
 				
 				<?php foreach ($category['Item'] as $item) { ?>
 					
-			
+		
 				<div class="span5 cuadroproducto">
 					
 						<div class="span6 offset3">
@@ -39,7 +36,7 @@
 							endforeach ?>
 						</div>
 				
-					<div class = "">
+					
 						<div class="span12 ">
 							<h3 class = "itemname"><?php echo $item['name'] ?> </h3>
 						</div>
@@ -49,7 +46,7 @@
 						<div class="span6 offset3">
 							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger btn-large')); ?>
 						</div>
-					</div>
+					
 
 				</div>	
 			
