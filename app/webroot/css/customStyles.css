@@ -17,7 +17,7 @@
 .dirbarbottom{
 	background-image: url('../img/dir_bar_bottom.png');
 	height: 71px;
-	
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;

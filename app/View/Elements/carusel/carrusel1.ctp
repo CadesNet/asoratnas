@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row-fluid">
     <section id="contenido">
    <section id="principal">
 <article id="galeria-inicio">

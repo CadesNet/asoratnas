@@ -1,25 +1,25 @@
 <?php echo $this->element('carusel/carrusel1'); ?>
 <div class="container">
-    <div class="row">
-		<div class="span7" style="">
-			<div class="row" style="">
+    <div class="row-fluid">
+		<div class="span9" >
+			<div class="row-fluid" >
 					<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beneficios para  salud</h4>
 			</div>
 			<?php foreach($benefits as $benefit): ?>
 
-			<div class="row" style="border-bottom: 1px solid black;">				
+			<div class="row-fluid" style="border-bottom: 1px solid black;">				
 						<div class="span2" style="">
 							<a href=""><?php echo $this->Html->image("benefit/filename/".$benefit['Benefit']['filename']."")?></a>
 							<br><br>
 						</div>
 						<div class="span5" style="">
-							<div class="row" style="">
+							<div class="row-fluid" style="">
 								<strong><? echo $benefit['Benefit']['title'] ?></strong>
 							</div>
-							<div class="row" style="">
+							<div class="row-fluid" style="">
 								<p><font><font><? echo $benefit['Benefit']['description'] ?></font></font></p>
 							</div>
-							<div class="row" style="">
+							<div class="row-fluid" style="">
 								<a href="" class="btn "> saber mas..</a>
 							</div>
 							<br>
@@ -29,10 +29,10 @@
 			<?php endforeach; ?>
 				<br>
 			
-				<div class="row" style="text-align: right;">
+				<div class="row-fluid" style="text-align: right;">
 					<a href="">leer mas articulos</a>
 				</div>
-				<div class="row" style="">
+				<div class="row-fluid" style="">
 					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encuentranos en..</p>
 					
 				</div>
@@ -142,15 +142,15 @@ function C_Rstrt(){C_Stppd=false}
 
 			
 			</div>
-			<div class="span5" style="text-align:center;">
-				<div class="row" style="">
-					<div class="span5">
+			<div class="span3" style="text-align:center;">
+				<div class="row-fluid" style="">
+					<div class="span12">
 						<h2>la receta del dia</h2>
 					</div>
 					
 				</div>
-				<div class="row" style="">
-					<div class="span5">
+				<div class="row-fluid" style="">
+					<div class="span12">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
@@ -160,17 +160,17 @@ function C_Rstrt(){C_Stppd=false}
 					</div>
 					
 				</div>
-				<div class="row" style="">
-					<div class="span5">
-						<h5><?=$recipes['Recipe']['title'] ?></h5>
+				<div class="row-fluid" style="">
+					<div class="span12">
+						<h3><?=$recipes['Recipe']['title'] ?></h3>
 					</div>
 				</div>
-				<div class="row" style="">
-					<div class="span5">
+				<div class="row-fluid" style="">
+					<div class="span12">
 						<h5><?=$recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
 				</div>				
-				<div class="row" style="">
+				<div class="row-fluid" style="">
 					<div class="span5">
 						<a class="btn" href="#">Ver receta</a>
 					</div>
