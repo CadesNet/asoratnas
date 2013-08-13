@@ -1,3 +1,8 @@
+<div>
+				<div class= "dirbarbottom"></div>
+				</div>
+
+
 <div class = "footer" >
 	<div class="container" style="top:111px">
 		<div class="row">
