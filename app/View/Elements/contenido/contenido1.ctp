@@ -1,30 +1,32 @@
 <?php echo $this->element('carusel/carrusel1'); ?>
 <div class="container">
     <div class="row-fluid">
-		<div class="span9" >
+		<div class="span7" >
 			<div class="row-fluid" >
-					<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beneficios para  salud</h4>
+					<h3 class = "benefitstitle">Beneficios para  salud</h4>
 			</div>
 			<?php foreach($benefits as $benefit): ?>
 
-			<div class="row-fluid" style="border-bottom: 1px solid black;">				
-						<div class="span2" style="">
+			<div class="row-fluid" >		
+			<div class= "benefitsbody">		
+						<div class="span3" style="">
 							<a href=""><?php echo $this->Html->image("benefit/filename/".$benefit['Benefit']['filename']."")?></a>
 							<br><br>
 						</div>
-						<div class="span5" style="">
-							<div class="row-fluid" style="">
-								<strong><? echo $benefit['Benefit']['title'] ?></strong>
+						<div class="span9" >
+							<div class="row-fluid" >
+								<h4 class = "benefitssubtitle"><? echo $benefit['Benefit']['title'] ?></h4>
 							</div>
 							<div class="row-fluid" style="">
-								<p><font><font><? echo $benefit['Benefit']['description'] ?></font></font></p>
+								<p class ="benefitsdescription"><? echo $benefit['Benefit']['description'] ?></p>
 							</div>
 							<div class="row-fluid" style="">
-								<a href="" class="btn "> saber mas..</a>
+								<a href="" class="btn btn-success"> saber mas..</a>
 							</div>
 							<br>
 
 						</div>
+					</div>
 			</div>
 			<?php endforeach; ?>
 				<br>
@@ -33,7 +35,7 @@
 					<a href="">leer mas articulos</a>
 				</div>
 				<div class="row-fluid" style="">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encuentranos en..</p>
+					<p>encuentranos en..</p>
 					
 				</div>
 				
@@ -142,7 +144,7 @@ function C_Rstrt(){C_Stppd=false}
 
 			
 			</div>
-			<div class="span3">
+			<div class="span5">
 				<div class="row-fluid" >
 					<div class="span12">
 						<h2>la receta del dia</h2>

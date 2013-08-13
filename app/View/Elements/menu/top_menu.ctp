@@ -28,7 +28,7 @@
 
 
                   <a style="padding: 6px 12px;"  href="http://localhost/santarosa/benefits/select"><i class="icon-home"></i></a></li>
-                <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
+                <li class="visible-desktop" ></li>
                                          
                                            <li class="dropdown">
                                            <?php echo $this->Html->link(("Empresa"), array('controller' => '', 'action' => ''),array('class'=>'dropdown-toggle', 'data-toggle'=>'dropdown')); ?>
@@ -44,7 +44,7 @@
                                           </li>
 
 
-                                          <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
+                                          <li class="visible-desktop" ></li>
                               
                                           <li>
                                           <?php echo $this->Html->link(("Servicios"), array('controller' => 'benefits', 'action' => 'select')); 
@@ -52,12 +52,12 @@
                                          <!--  <a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Servicios</b></font></font></a> -->
 
                                           </li>
-                                          <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
+                                          <li class="visible-desktop" ></li>
                                           <li>
                                           <?php echo $this->Html->link(("Contactos"), array('controller' => 'consultations', 'action' => 'select')); 
                                           ?>
                                           </li>
-                                          <li class="visible-desktop" style="border-left: 1px solid rgb(41, 14, 14);width: 1px;margin:7px;height: 16px;"></li>
+                                          <li class="visible-desktop" ></li>
                                           <li>
                                           	<?php echo $this->Html->link(("Cotizar: 0 Items"), array('controller' => 'benefits', 'action' => 'select')); 
                                           ?>
@@ -117,11 +117,11 @@
 
           </li>
           <li> 
-			<?php echo $this->Html->link(("Beneficios del pavo"), array('controller' => 'Beneficios', 'action' => 'select'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
+			<?php echo $this->Html->link(("Beneficios del pavo"), array('controller' => 'Benefits', 'action' => 'select'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
 				?>
           </li>
           <li>
-          <?php echo $this->Html->link(("Cuida tu Salud"), array('controller' => 'Beneficios', 'action' => 'select'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
+          <?php echo $this->Html->link(("Cuida tu Salud"), array('controller' => 'Benefits', 'action' => 'select'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
 				?>
           </li>
         </ul>

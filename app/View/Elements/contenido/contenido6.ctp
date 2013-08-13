@@ -60,7 +60,7 @@
 					</div>
 					<div class="row-fluid">
 						<div class="span5">
-							<?php echo $this->Html->link(__('Volver al recetario'), array('controller' => 'Recipes', 'action' => 'select'), array('class' => 'btn btn-danger btn-large')); ?>
+							<?php echo $this->Html->link(__('Volver al recetario'), array('controller' => 'Recipes', 'action' => 'select'), array('class' => 'btn btn-info ')); ?>
 						</div>
 					</div>
 				</div>

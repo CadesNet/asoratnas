@@ -58,7 +58,7 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
  $('.flexslider').flexslider();
  });
  </script> 
- <link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body onload="Carousel();" style="padding-right: 0px; padding-left: 0px;">

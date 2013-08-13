@@ -26,9 +26,9 @@
 				<?php foreach ($category['Item'] as $item) { ?>
 					
 		
-				<div class="span5 cuadroproducto">
+				<div class="span4 offset1 cuadroproducto">
 					
-						<div class="span6 offset3">
+						<div class="span8 offset2">
 							<?php foreach ($item['ImagesItem'] as $image): ?>
 							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
 							<?php 
@@ -44,7 +44,7 @@
 							<p class = "itemdescription"><?php echo $item['description'] ?> </p>
 						</div>
 						<div class="span6 offset3">
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger btn-large')); ?>
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger')); ?>
 						</div>
 					
 

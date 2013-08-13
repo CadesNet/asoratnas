@@ -69,7 +69,7 @@
 							</div>
 							<div class="row-fluid">
 								<?php foreach ($branch as $branches) { ?>
-								<div class="span4 cuadrodireccion">
+								<div class="span3 cuadrodireccion">
 									<div class="row-fluid">
 										<div class="span12">
 										<div class = "dirciudad">	<?php echo $branches['Branch']['name'] ?> </div>
