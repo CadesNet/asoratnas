@@ -2,12 +2,11 @@
  $i=1;
 		foreach ($this->Session->read('item') as $val) {
 			//echo  $i++;
-			echo $val['id'];
-		 foreach ($val as $valu) {
+			echo $val['id'].",,,,,,,,,,,,,,,"; 
+			echo $val['img'].",,,,,,,,,,,,,,,"; 
+			echo $val['cantidad'].",,,,,,,,,,,,,,,"; 
 
-		 	echo $valu['cantidad'];
-				# code...
-			};
+		
 		}
 
 			

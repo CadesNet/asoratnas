@@ -109,13 +109,21 @@ class ItemsQuotesController extends AppController {
 			$this->redirect(array('controller' => 'Items', 'action' => 'select'));
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
-		$array=array('gato' => 'perro',
+		/*$array= array('id' =>  'perro',
          'mesa' => 'silla',
          'alto' => 'bajo',
          'fijo' => 'móvil',
-         );
-		print_r($array);
-		$items = array('item' => array( 'id' => array($id => array('img' => $img, 'cantidad' => $cantidad))));
+         );*/
+		//print_r($array);
+		//$items = array('item' => array($id => array('id'=> $id, 'img' => $img, 'cantidad' => $cantidad)));
+		$items = array('item' => array([1] => array('id'=> 1, 'img' => 'img1', 'cantidad' => 1),
+									   [2] => array('id'=> 2, 'img' => 'img2', 'cantidad' => 2),
+									   [3] => array('id'=> 3, 'img' => 'img3', 'cantidad' => 3),
+									   [4] => array('id'=> 4, 'img' => 'img4', 'cantidad' => 4),
+									   [5] => array('id'=> 5, 'img' => 'img5', 'cantidad' => 5),
+									   [6] => array('id'=> 6, 'img' => 'img6', 'cantidad' => 6)
+									  )
+					  );
 		
 		$this->Session->write($items);
 		//muestra el contenido 
