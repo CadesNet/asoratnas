@@ -9,6 +9,7 @@
 		echo $this->Form->input('names');
 		echo $this->Form->input('date_of_birth');
 		echo $this->Form->input('sex');
+		echo $this->FormEnum->input('Requirement.sex',array('empty' =>false));
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
 		echo $this->Form->input('cellular');

@@ -1,26 +1,12 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Item Model
+ * ItemsQuote Model
  *
- * @property Category $Category
+ * @property Item $Item
  * @property Quote $Quote
  */
-class Item extends AppModel {
-
-/**
- * Use table
- *
- * @var mixed False or table name
- */
-	public $useTable = 'item';
-
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'name';
+class ItemsQuote extends AppModel {
 
 /**
  * Validation rules
@@ -28,35 +14,37 @@ class Item extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
+		'item_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		'maxlength' => array(
-				'rule' => array('maxlength',50),
-				'message' => 'Maximo 50 caracteres',
+		),
+		'quote_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),			
+			),
 		),
-		'description' => array(
+		'detail' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1500),
-				'message' => 'Maximo 1500 caracteres',
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'category_id' => array(
+		'amount' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -76,34 +64,22 @@ class Item extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Category' => array(
-			'className' => 'Category',
-			'foreignKey' => 'category_id',
+		'Item' => array(
+			'className' => 'Item',
+			'foreignKey' => 'item_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Quote' => array(
+			'className' => 'Quote',
+			'foreignKey' => 'quote_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
-
-/**
- * hasMany associations
- *
- * @var array
- */
 	public $hasMany = array(
-'ImagesItem' => array(
-			'className' => 'ImagesItem',
-			'foreignKey' => 'item_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 'ItemsQuote' => array(
 			'className' => 'ItemsQuote',
 			'foreignKey' => 'item_id',
@@ -118,5 +94,4 @@ class Item extends AppModel {
 			'counterQuery' => ''
 		),
 	);
-
 }

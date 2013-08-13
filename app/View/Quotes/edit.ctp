@@ -4,9 +4,11 @@
 		<legend><?php echo __('Edit Quote'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('item_id');
-		echo $this->Form->input('amount');
-		echo $this->Form->input('description');
+		echo $this->Form->input('fullname');
+		echo $this->Form->input('address');
+		echo $this->Form->input('phone');
+		echo $this->Form->input('email');
+		echo $this->Form->input('message');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

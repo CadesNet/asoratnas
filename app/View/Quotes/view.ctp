@@ -6,19 +6,29 @@
 			<?php echo h($quote['Quote']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Item'); ?></dt>
+		<dt><?php echo __('Fullname'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($quote['Item']['name'], array('controller' => 'items', 'action' => 'view', $quote['Item']['id'])); ?>
+			<?php echo h($quote['Quote']['fullname']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Amount'); ?></dt>
+		<dt><?php echo __('Address'); ?></dt>
 		<dd>
-			<?php echo h($quote['Quote']['amount']); ?>
+			<?php echo h($quote['Quote']['address']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Description'); ?></dt>
+		<dt><?php echo __('Phone'); ?></dt>
 		<dd>
-			<?php echo h($quote['Quote']['description']); ?>
+			<?php echo h($quote['Quote']['phone']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Email'); ?></dt>
+		<dd>
+			<?php echo h($quote['Quote']['email']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Message'); ?></dt>
+		<dd>
+			<?php echo h($quote['Quote']['message']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Created'); ?></dt>

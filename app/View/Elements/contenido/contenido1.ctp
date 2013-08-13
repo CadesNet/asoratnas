@@ -1,4 +1,4 @@
-
+<?php echo $this->element('carusel/carrusel1'); ?>
 <div class="container">
     <div class="row">
 		<div class="span7" style="">

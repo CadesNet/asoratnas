@@ -1,10 +1,10 @@
 <div class="supermarkets form">
-<?php echo $this->Form->create('Supermarket'); ?>
+<?php echo $this->Form->create('Supermarket',array('type' => 'file')); ?>
 	<fieldset>
 		<legend><?php echo __('Add Supermarket'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
-		echo $this->Form->input('filename');
+		echo $this->Form->input('filename',array('type' => 'file'));
 		echo $this->Form->input('dir');
 		echo $this->Form->input('link');
 		echo $this->Form->input('description');

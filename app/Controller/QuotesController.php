@@ -97,14 +97,13 @@ class QuotesController extends AppController {
 		$this->Session->setFlash(__('Quote was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
-
-//conulta propias
+	//conulta propias
 	public function select($id = null,$id2 = null){
 		$this->loadModel('Category');
        $this->loadModel('Recipe');
        $this->loadModel('Item');
 		if(!$this->Category->exists($id) and !$this->Item->exists($id2)){
-			$this->redirect(array('controller' => 'Items', 'action' => 'select4'));
+			$this->redirect(array('controller' => 'Items', 'action' => 'select'));
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
 
@@ -116,7 +115,5 @@ class QuotesController extends AppController {
 		$this->set(compact('Category','Item','Recipe','Recipes1'));
 
 		}
-		
-		
-	}	
+	}
 }

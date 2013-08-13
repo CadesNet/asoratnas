@@ -3,9 +3,11 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('item_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('amount'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
+			<th><?php echo $this->Paginator->sort('fullname'); ?></th>
+			<th><?php echo $this->Paginator->sort('address'); ?></th>
+			<th><?php echo $this->Paginator->sort('phone'); ?></th>
+			<th><?php echo $this->Paginator->sort('email'); ?></th>
+			<th><?php echo $this->Paginator->sort('message'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -13,11 +15,11 @@
 	<?php foreach ($quotes as $quote): ?>
 	<tr>
 		<td><?php echo h($quote['Quote']['id']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($quote['Item']['name'], array('controller' => 'items', 'action' => 'view', $quote['Item']['id'])); ?>
-		</td>
-		<td><?php echo h($quote['Quote']['amount']); ?>&nbsp;</td>
-		<td><?php echo h($quote['Quote']['description']); ?>&nbsp;</td>
+		<td><?php echo h($quote['Quote']['fullname']); ?>&nbsp;</td>
+		<td><?php echo h($quote['Quote']['address']); ?>&nbsp;</td>
+		<td><?php echo h($quote['Quote']['phone']); ?>&nbsp;</td>
+		<td><?php echo h($quote['Quote']['email']); ?>&nbsp;</td>
+		<td><?php echo h($quote['Quote']['message']); ?>&nbsp;</td>
 		<td><?php echo h($quote['Quote']['created']); ?>&nbsp;</td>
 		<td><?php echo h($quote['Quote']['modified']); ?>&nbsp;</td>
 		<td class="actions">

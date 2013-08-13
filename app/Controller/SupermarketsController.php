@@ -52,6 +52,7 @@ class SupermarketsController extends AppController {
 
 
 	public function add() {
+		$this->layout = 'modal';
 		if ($this->request->is('post')) {
 			$this->Supermarket->create();
 			if ($this->Supermarket->save($this->request->data)) {

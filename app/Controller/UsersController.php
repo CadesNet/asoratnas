@@ -43,6 +43,7 @@ public function beforeFilter() {
 	}
    public function mostrar()
 	{
+		
 		# code...
 	}
 
