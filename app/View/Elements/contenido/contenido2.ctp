@@ -30,15 +30,19 @@ background-color: black;">
 							<br>
 							<div class="row">
 								<div class="span3">
-								<?php foreach ($category['item'] as $value) { ?>
+								
+								<?php foreach ($category['Item'] as $value) { ?>
+								<div class="row">
+									<div class="span3">
 									<?php echo $this->Html->link(($value['name']), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$value['id'])) ?>
-								  <br>
-								  	<?php echo $value['presentacion'] ?>
+									</div>
+								</div>
+								<div class="row">
+										<div class="span3">
+									 	<?php echo $value['presentacion'] ?>
+										</div>
+									</div>
 								<?php } ?>
-
-								<!-- items -->
-
-								<p><?php echo substr($category['Category']['description'], 0, 11); ?> </p>
 								</div>
 							</div>
 						</div>

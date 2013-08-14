@@ -23,22 +23,44 @@
 				</div>
 				<?php } ?>
 
-				<?php foreach ($items as $item) { ?>
+				<?php
+					$img = null;
+				 foreach ($items as $item) { ?>
 				<div class="span12 cuadrodetalle" >
 					<div class="row-fluid">
 						<div class="span5">
-							<div class = "imagendetalle"> <?php foreach ($item['ImagesItem'] as $image): ?>
-							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?></div>
+							<div class = "imagendetalle"> 
+							<?php foreach ($item['ImagesItem'] as $image): ?>
+							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
+							</div>
 							<?php 
+							$img = $image['filename'];
 								break;
 							endforeach ?>
 						</div>
 						<div class="span7" >
 							<div class="row-fluid">
 								<div class="span12">
-									<form class="form-horizontal">
-										<h3 class = "itemname"><?php echo $item['Item']['name'] ?></h3>
-										<p class = "itemdescription">asdfasdfasdfasdfasd fasd fasd fpresentacion  sdfsd sdf sdf</p>
+									
+										
+											<h3 class = "itemname"><?php echo $item['Item']['name'] ?></h3>
+											<p class = "itemdescription"><?php echo $item['Item']['presentacion'] ?></p>
+	    								<?php 	
+	    										echo $this->Form->create(null, array('action' => 'select1')); ?>
+	    										<fieldset>	    										
+	    										<?php 
+												echo $this->Form->input('id',array('type' => 'hidden','default'=>  $item['Item']['id']));
+												echo $this->Form->input('img',array('type' => 'hidden','default'=>  $img));
+												echo $this->Form->input('name',array('type' => 'hidden','default'=>  $item['Item']['name']));
+												echo $this->Form->input('cantidad',array('type' => 'text','placeholder' => 'cantidad'));
+												?>
+												</fieldset>
+												<?php
+												echo $this->Form->end('Cotizar'); 
+										?>
+									<!--<form class="form-horizontal">
+										<h3 class = "itemname"><?php ?></h3>
+										<p class = "itemdescription"><?php  ?></p>
 									<div class = "span8 offset3">
 	  									<div class="control-group">
 	    									<label class="control-label" for="inputCantidad" style="width: 55px;margin-right: 5px;">Cantidad</label>
@@ -49,7 +71,9 @@
 	      										<button type="submit" class="btn" style="width: 144px">Cotizar</button>
 	  									</div>
   									</div>
-									</form>
+									</form> -->
+
+
 								</div>
 							</div>
 								

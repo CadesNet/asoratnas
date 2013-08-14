@@ -103,7 +103,7 @@ class QuotesController extends AppController {
        $this->loadModel('Recipe');
        $this->loadModel('Item');
 		if(!$this->Category->exists($id) and !$this->Item->exists($id2)){
-			$this->redirect(array('controller' => 'Items', 'action' => 'select'));
+			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
 
@@ -114,6 +114,91 @@ class QuotesController extends AppController {
 		$Recipes1 = $this->Recipe->find('all');
 		$this->set(compact('Category','Item','Recipe','Recipes1'));
 
+		}
+	}
+
+	 	public function modificar(){
+
+	 		if ($this->request->is('post')) {
+	   			if (!empty($this->data)) { 
+	   				$id =  $this->data['Quote']['id'];
+					$cantidad = $this->request->data['Quote']['cantidad'];
+
+					$va  = array('pp' => $this->Session->read('pp'));
+					$this->Session->delete('pp');
+
+					$va['pp'][$id]['cantidad'] = $cantidad;
+					//echo $id;
+			     	$this->Session->write($va);
+			        //$items = array('pp' => array_merge((array)$this->Session->read('pp')));
+			     	//$this->Session->write($items);
+					$this->redirect(array('controller' => 'Quotes', 'action' => 'select1')); 
+			      //$this->request= false;
+				}
+			}else{
+
+				$this->redirect(array('controller' => 'Quotes', 'action' => 'select1'));
+
+			}
+
+
+
+
+
+
+
+
+	 	}
+
+		public function quitar($id = null){
+		
+		$va  = array('pp' => $this->Session->read('pp'));
+		$this->Session->delete('pp');
+        unset($va['pp'][$id]);
+     	$this->Session->write($va);
+        $items = array('pp' => array_merge((array)$this->Session->read('pp')));
+     	$this->Session->write($items);
+		$this->redirect(array('controller' => 'Quotes', 'action' => 'select1')); 
+		}
+		public function select1(){
+		if ($this->request->is('post')) {
+	   		if (!empty($this->data)) {		
+			$id =  $this->data['Quote']['id'];
+			$img = $this->request->data['Quote']['img'];
+			$name = $this->request->data['Quote']['name']; 
+			$cantidad = $this->request->data['Quote']['cantidad'];
+
+	        $this->loadModel('Item');
+					if(!$this->Item->exists($id)){
+						$this->redirect(array('controller' => 'Cateories', 'action' => 'select'));
+						//throw new NotFoundException(__('Invalid Category'));
+					}else{
+					$bool = false;
+						if($this->Session->check('pp')){
+				 			foreach ($this->Session->read('pp') as $valu) {
+					        	if( $valu['id'] == $id){
+					        		$bool = true;
+								}
+
+				        	}
+
+				        }
+				        if(!$bool){
+						        $items =null;
+						        if($this->Session->check('pp')){
+						        		$items = array('pp' => array_merge((array)$this->Session->read('pp') , array($id => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => ''))));
+						        }else{
+						        	
+						        		$items = array('pp' => array(0  => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => '')));
+						        }
+								$this->Session->write($items);
+					 	}
+				 	}
+			}
+		}else{
+			if(!$this->Session->check('pp')){
+				$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
+			}
 		}
 	}
 }
