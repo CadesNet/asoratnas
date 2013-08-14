@@ -1,73 +1,66 @@
-<?php echo $this->element('carusel/carrusel2'); ?>
 <div class="container">
 	<div class="row">
-
 		<div class="span9">
 			<div class="row-fluid">
-
 				
-				<div class="span8">
-					<div class="row">
+			
 						<div class="span1">
 							<?php echo $this->Html->image("sugerencia.png")?>
 						</div>
-						<div class="span3">
-							<div class="row">
-								<div class="span3">
-									<h3 style="line-height: 20px;">nam e</h3>
+						<div class="span10">
+							<div class="row-fluid">
+								<div class="span12">
+									<h3 class = "recipetitle">nam e</h3>
 								</div>
 							</div>
-							<div class="row" >
-								<div class="span8" style="height: 6px;
-background-color: black;">
-								</div>
-							</div>
+							
 							<br>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 
 			<div class="row-fluid">
 				<div class="span11 offset1">
-
 					<?php
 						$coun = 1;
 					 foreach ($recipes as $recipes) { ?>
-						
-				<div  class="row">
-				<div class="span3">
+			<div class= "itemreceta">
+				<div  class="row-fluid">
+				<div class="span5">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
 						break;
 						} ?>
 				</div>
-				<div class="span3">
-					<div class="row">
-						<div class="span3">
-							<h3><?php echo $recipes['Recipe']['title'] ?></h3>
+				<div class="span7">
+					<div class="row-fluid">
+						<div class="span12">
+							<h3 class = "recipeitemtitle"><?php echo $recipes['Recipe']['title'] ?></h3>
 						</div>
 					</div>
-					<div class="row">
-						<div class="span3">
-							<p><?php echo $recipes['Recipe']['time'] ?> min</p>
-						</div>
+					<div class="row-fluid">
+							<div class="span3">
+								<div class = "recipetitledescription"> Tiempo </div>
+							</div>
+							<div class="span9">
+								<p><?php echo $recipes['Recipe']['time'] ?> min</p>
+							</div>
 					</div>
-					<div class="row">
-						<div class="span3">
-							<p><?php echo $recipes['Recipe']['portion'] ?>personas</p>
-						</div>
+					
+
+					<div class="row-fluid">
+							<div class="span3">
+								<div class = "recipetitledescription"> Tiempo </div>
+							</div>
+							<div class="span9">
+								<p><?php echo $recipes['Recipe']['portion'] ?>personas</p>
+							</div>
 					</div>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<div class="row">
-						<div class="span3">
-							<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],$coun++), array('class' => 'btn btn-danger btn-large')); ?>
+					
+					<div class="row-fluid">
+						<div class="span5">
+							<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
 						</div>
 					</div>
 				</div>
@@ -75,6 +68,7 @@ background-color: black;">
 					
 				</div>
 			</div>
+		</div>
 			<?} ?>
 				
 			<div class="paginator">
