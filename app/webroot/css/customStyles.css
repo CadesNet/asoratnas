@@ -17,13 +17,18 @@
 .dirbarbottom{
 	background-image: url('../img/dir_bar_bottom.png');
 	height: 71px;
-	
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 	z-index: 50;
 	bottom: 1px;
 
+}
+
+.contentbottom{
+	padding-top: 20px;
+	padding-bottom: 50px;
 }
 
 .container .colorcontainer{
@@ -59,12 +64,40 @@ background-image: url('../img/bg_footer.jpg');
  	border-bottom: 8px solid #1db8d2;
  }
 
+
+ .benefitstitle{
+ 	color: #25a781;
+ 	border-bottom: 8px solid #25a781;
+ }
+
+ .benefitsbody{
+   background-color: white;
+   min-height: 150px;
+	padding: 20px;
+	border-bottom: 3px solid #25a781;
+
+ }
+
+ .benefitssubtitle{
+ 	color:#1c8ca1;
+ 	font-weight: bold;
+ }
+ .benefitsdescription{
+ 	color:#94999a;
+
+ }
+
  .recipetitledescription{
  		color: #1db8d2;
  }
 
  .recipeitemtitle{
  	color: #a9aca3;
+ }
+
+
+  .recipeitemsubtitle{
+ 	color: #1db8d2;
  }
 
  .titlecategory{
@@ -74,13 +107,19 @@ background-image: url('../img/bg_footer.jpg');
  .cuadroproducto{
  	background-color: #f8f6ea;
  	-moz-box-shadow: 0 0 3px 3px #888;
--webkit-box-shadow: 0 0 3px 3px#888;
-box-shadow: 0 0 1px 1px #888;
- 
+	-webkit-box-shadow: 0 0 3px 3px#888;
+	box-shadow: 0 0 1px 1px #888;
  	padding: 15px;
- 	margin-bottom: 30px;
- 	height: 400px;
-border-radius: 20px;
+ 	margin-bottom: 40px;
+ 	margin-right: 20px;
+ 	height: 300px;
+	border-radius: 20px;
+ }
+ .detalleproducto{
+ 	border:1px solid red;
+ 	height: 30px;
+ 	width: 50px;
+ 	position: static;
  }
 
  .itemname{

@@ -1,8 +1,10 @@
 <?php echo $this->element('carusel/carrusel2'); ?>
 <div class="container">
 	<div class="row">
-		<div class="span8">
-			<div class="row">
+
+		<div class="span9">
+			<div class="row-fluid">
+
 				
 				<div class="span8">
 					<div class="row">
@@ -26,8 +28,9 @@ background-color: black;">
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="span7 offset1">
+			<div class="row-fluid">
+				<div class="span11 offset1">
+
 					<?php
 						$coun = 1;
 					 foreach ($recipes as $recipes) { ?>
@@ -94,15 +97,15 @@ echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled'))
 			
 
 		</div>
-		<div class="span4">
-		<div class="row">
-			<div class="span3 offset1" style="text-align:center;">
+		<div class="span3">
+		<div class="row-fluid">
+			<div class="span12 " >
 				<?php echo $this->Html->image("noticias/1.png")?>
 				<br>
 				<br>
 				<br>
 			</div>
-<div class="span3 offset1" style="text-align:center;">
+<div class="span12 " >
 				<?php echo $this->Html->image("noticias/1.png")?>
 				<br>
 				<br>
@@ -111,9 +114,9 @@ echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled'))
 			 
         
 
-            <div class="span3 offset1" style="text-align:center;">
+            <div class="span12 " >
 					<div class="videoUiWrapper thumbnail">
-					  <video width="370" height="214" id="demo1">
+					  <video width="250" height="214" id="demo1">
                             <source src="http://ia700305.us.archive.org/18/items/CopyingIsNotTheft/CINT_Nik_H264_720.ogv" type="video/ogg"> 
                             <source src="http://ia700305.us.archive.org/18/items/CopyingIsNotTheft/CINT_Nik_H264_720_512kb.mp4" type="video/mp4">
 					    Your browser does not support the video tag.

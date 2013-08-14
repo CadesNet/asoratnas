@@ -1,39 +1,41 @@
 <?php echo $this->element('carusel/carrusel1'); ?>
 <div class="container">
-    <div class="row">
-		<div class="span7" style="">
-			<div class="row" style="">
-					<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beneficios para  salud</h4>
+    <div class="row-fluid">
+		<div class="span7" >
+			<div class="row-fluid" >
+					<h3 class = "benefitstitle">Beneficios para  salud</h4>
 			</div>
 			<?php foreach($benefits as $benefit): ?>
 
-			<div class="row" style="border-bottom: 1px solid black;">				
-						<div class="span2" style="">
+			<div class="row-fluid" >		
+			<div class= "benefitsbody">		
+						<div class="span3" style="">
 							<a href=""><?php echo $this->Html->image("benefit/filename/".$benefit['Benefit']['filename']."")?></a>
 							<br><br>
 						</div>
-						<div class="span5" style="">
-							<div class="row" style="">
-								<strong><? echo $benefit['Benefit']['title'] ?></strong>
+						<div class="span9" >
+							<div class="row-fluid" >
+								<h4 class = "benefitssubtitle"><? echo $benefit['Benefit']['title'] ?></h4>
 							</div>
-							<div class="row" style="">
-								<p><font><font><? echo $benefit['Benefit']['description'] ?></font></font></p>
+							<div class="row-fluid" style="">
+								<p class ="benefitsdescription"><? echo $benefit['Benefit']['description'] ?></p>
 							</div>
-							<div class="row" style="">
-								<a href="" class="btn "> saber mas..</a>
+							<div class="row-fluid" style="">
+								<a href="" class="btn btn-success"> saber mas..</a>
 							</div>
 							<br>
 
 						</div>
+					</div>
 			</div>
 			<?php endforeach; ?>
 				<br>
 			
-				<div class="row" style="text-align: right;">
+				<div class="row-fluid" style="text-align: right;">
 					<a href="">leer mas articulos</a>
 				</div>
-				<div class="row" style="">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encuentranos en..</p>
+				<div class="row-fluid" style="">
+					<p>encuentranos en..</p>
 					
 				</div>
 				
@@ -126,7 +128,7 @@ function C_LdLnk(){if(this.lnk)window.location.href=this.lnk}
 function C_Stp(){this.style.cursor=this.lnk?"pointer":"default";C_Stppd=true;}
 function C_Rstrt(){C_Stppd=false}
 </script>
-<div  id="Carousel" class="row" style="position:relative ; ">
+<div  id="Carousel" class="row-fluid" style="position:relative ; ">
 <!--<img src="" width="600" height="150"> --> <!-- esta es la foto de fondo-->
 
 <!--photo4.jpg los  de las fotos en el js van seguidos de un link -->
@@ -142,15 +144,15 @@ function C_Rstrt(){C_Stppd=false}
 
 			
 			</div>
-			<div class="span5" style="text-align:center;">
-				<div class="row" style="">
-					<div class="span5">
+			<div class="span5">
+				<div class="row-fluid" >
+					<div class="span12">
 						<h2>la receta del dia</h2>
 					</div>
 					
 				</div>
-				<div class="row" style="">
-					<div class="span5">
+				<div class="row-fluid" >
+					<div class="span12">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
@@ -160,17 +162,17 @@ function C_Rstrt(){C_Stppd=false}
 					</div>
 					
 				</div>
-				<div class="row" style="">
-					<div class="span5">
-						<h5><?=$recipes['Recipe']['title'] ?></h5>
+				<div class="row-fluid" >
+					<div class="span12">
+						<h3><?=$recipes['Recipe']['title'] ?></h3>
 					</div>
 				</div>
-				<div class="row" style="">
-					<div class="span5">
+				<div class="row-fluid" >
+					<div class="span12">
 						<h5><?=$recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
 				</div>				
-				<div class="row" style="">
+				<div class="row-fluid">
 					<div class="span5">
 						<a class="btn" href="#">Ver receta</a>
 					</div>

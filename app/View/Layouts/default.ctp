@@ -16,7 +16,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistemas');
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,8 +24,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<head>
 		<?php echo $this->Html->charset(); ?>
 		<title>
-			<?php echo $cakeDescription ?>:
-			<?php echo $title_for_layout; ?>
+			
+			<?php echo 'Avicola Santa Rosa - '. $title_for_layout; ?>
 		</title>
 		<?php
 			echo $this->Html->css('estilos');
@@ -58,7 +58,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
  $('.flexslider').flexslider();
  });
  </script> 
- <link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body onload="Carousel();" style="padding-right: 0px; padding-left: 0px;">
@@ -91,7 +91,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<?php //Silence is golden ?>
 				
 				<?php echo $this->element('footer/footer1'); ?>
-				<?php echo $this->element('sql_dump'); ?>
+				<?php //echo $this->element('sql_dump'); ?>
 			</div><!-- #footer .container -->
 			
 		</div><!-- #main-container -->

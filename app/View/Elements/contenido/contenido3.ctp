@@ -16,10 +16,7 @@
 									<h2 class = "producttitle"><?php echo $category['Category']['name'] ?></h2>
 								</div>
 							</div>
-							<div class="row-fluid" >
-								<div class="span2" >
-								</div>
-							</div>
+							
 							<br>
 						</div>
 					</div>
@@ -28,10 +25,10 @@
 				
 				<?php foreach ($category['Item'] as $item) { ?>
 					
-			
-				<div class="span5 cuadroproducto">
+		
+				<div class="span4 offset1 cuadroproducto">
 					
-						<div class="span6 offset3">
+						<div class="span8 offset2">
 							<?php foreach ($item['ImagesItem'] as $image): ?>
 							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
 							<?php 
@@ -39,7 +36,7 @@
 							endforeach ?>
 						</div>
 				
-					<div class = "">
+					
 						<div class="span12 ">
 							<h3 class = "itemname"><?php echo $item['name'] ?> </h3>
 						</div>
@@ -47,9 +44,9 @@
 							<p class = "itemdescription"><?php echo $item['description'] ?> </p>
 						</div>
 						<div class="span6 offset3">
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger btn-large')); ?>
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger')); ?>
 						</div>
-					</div>
+					
 
 				</div>	
 			
