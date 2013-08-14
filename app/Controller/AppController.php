@@ -42,6 +42,6 @@ public $components = array(
     );
 
     public function beforeFilter() {
-        $this->Auth->allow('select','select1');//no requiere inicio de session
+        $this->Auth->allow('select','select1','select2');//no requiere inicio de session
     }	
 }

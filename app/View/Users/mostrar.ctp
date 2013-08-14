@@ -23,7 +23,7 @@ return false;
 	  					<div class="modal-body">
 	    					<p>One fine body…</p>
 	  					</div>
-	  					<div class="modal-footer">
+	  					<div class="modal-footer" style="">
 	  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, magnam, adipisci nam mollitia at aspernatur id voluptates veniam aliquam fuga quam impedit fugiat libero voluptatibus iusto rerum ipsum placeat qui.</p>
 	  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, magnam, adipisci nam mollitia at aspernatur id voluptates veniam aliquam fuga quam impedit fugiat libero voluptatibus iusto rerum ipsum placeat qui.</p>
 	  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, magnam, adipisci nam mollitia at aspernatur id voluptates veniam aliquam fuga quam impedit fugiat libero voluptatibus iusto rerum ipsum placeat qui.</p>

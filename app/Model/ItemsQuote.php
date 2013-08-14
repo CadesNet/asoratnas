@@ -79,19 +79,5 @@ class ItemsQuote extends AppModel {
 			'order' => ''
 		)
 	);
-	public $hasMany = array(
-'ItemsQuote' => array(
-			'className' => 'ItemsQuote',
-			'foreignKey' => 'item_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-	);
+	
 }

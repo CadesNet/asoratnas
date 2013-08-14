@@ -1,3 +1,4 @@
+<?php echo $this->element('carusel/carrusel2'); ?>
 <div class="container">
 	<div class="row">
 		<div class="span8">
@@ -29,6 +30,14 @@ background-color: black;">
 							<br>
 							<div class="row">
 								<div class="span3">
+								<?php foreach ($category['item'] as $value) { ?>
+									<?php echo $this->Html->link(($value['name']), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$value['id'])) ?>
+								  <br>
+								  	<?php echo $value['presentacion'] ?>
+								<?php } ?>
+
+								<!-- items -->
+
 								<p><?php echo substr($category['Category']['description'], 0, 11); ?> </p>
 								</div>
 							</div>

@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('filename',array('type' => 'file'));
-		echo $this->Form->input('dir');
+		echo $this->Form->input('dir', array('type' => 'hidden'));
 		echo $this->Form->input('link');
 		echo $this->Form->input('description');
 	?>

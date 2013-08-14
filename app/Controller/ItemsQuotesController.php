@@ -102,43 +102,74 @@ class ItemsQuotesController extends AppController {
 
 
 	////////////
-	public function select($id = null,$img = null, $cantidad=null){
-       $this->loadModel('Quote');
-       $this->loadModel('Item');
+	public function select($id = null,$img = null,$name =null , $cantidad=null , $detalle = null){
+       //$this->loadModel('Quote');
+      $this->loadModel('Item');
 		if(!$this->Item->exists($id)){
 			$this->redirect(array('controller' => 'Items', 'action' => 'select'));
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
-		/*$array= array('id' =>  'perro',
-         'mesa' => 'silla',
-         'alto' => 'bajo',
-         'fijo' => 'móvil',
-         );*/
-		//print_r($array);
-		//$items = array('item' => array($id => array('id'=> $id, 'img' => $img, 'cantidad' => $cantidad)));
-		$items = array('item' => array([1] => array('id'=> 1, 'img' => 'img1', 'cantidad' => 1),
-									   [2] => array('id'=> 2, 'img' => 'img2', 'cantidad' => 2),
-									   [3] => array('id'=> 3, 'img' => 'img3', 'cantidad' => 3),
-									   [4] => array('id'=> 4, 'img' => 'img4', 'cantidad' => 4),
-									   [5] => array('id'=> 5, 'img' => 'img5', 'cantidad' => 5),
-									   [6] => array('id'=> 6, 'img' => 'img6', 'cantidad' => 6)
+		$bool = false;
+		/*if(isset($this->Session->read('pp')){
+ 			//foreach ($this->Session->read('pp') as $valu) {
+
+        	if( $valu['id'] == $id){
+        		$bool = true;
+			}
+
+        }
+
+       // }*/
+       // if(!$bool){
+        $items =null;
+		//$items = array('pp' => array_merge((array)$this->Session->read('pp') , array($id => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => $detalle))));
+		//$items =  $this->Session->read('item');
+		$items = array('pp' => array('1' => array('id'=> 1,'img' => 'sdfsdf','name' => 'sss', 'cantidad' => 1 , 'detalle' => 'det1'),
+									   'ssss' => array('id'=> 2, 'img' => 'img2','name' => 'sss',  'cantidad' => 2 , 'detalle' => 'det1'),
+									   'sdsd' => array('id'=> 3, 'img' => 'img3', 'name' => 'sss', 'cantidad' => 3 , 'detalle' => 'det1'),
+									   'hola' => array('id'=> 4, 'img' => 'img4', 'name' => 'sss', 'cantidad' => 4 , 'detalle' => 'det1'),
+									   '5' => array('id'=> 5, 'img' => 'img5', 'name' => 'sss', 'cantidad' => 5 , 'detalle' => 'det1'),
+									   '6' => array('id'=> 6, 'img' => 'img6','name' => 'sss',  'cantidad' => 6 , 'detalle' => 'det1')
 									  )
 					  );
-		
+		//unset($items['item']['1']);
 		$this->Session->write($items);
-		//muestra el contenido 
-		//$this->Session->read('Persona.colorOjos');
 
-		//$valores = array(1,2,3,4,5,6);
-		//$this->Items->find('all',array('conditions'=>array('NOT'=>array('Item.id' => $valores),'Modelo.columna2' => 'valor2')))
+		//$this->Session->delete('pp');
+	
+		$va  = array('pp' => $this->Session->read('pp'));
+		//$this->Session->destroy();
+		//$this->Session->delete('pp');
+		//$this->Session->destroy('pp');
+        //unset($va['pp']["'".$id."'"]);
+        unset($va['pp'][$id]);
+     	$this->Session->write($va);
 
-		//$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id),'recursive'  => 2));
-		//$this->set('item', $this->Item->find('all', $options));
-//Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
-		//$this->set(compact('Category','Recipe'));
-		//$this->redirect(array('controller' => ''))
+
+
+	 	}
+
+	//}
+
+		
+		
+	}
+	public function select1($id = null){
+    $this->loadModel('Item');
+
+		if(!$this->Item->exists($id)){
+			$this->redirect(array('controller' => 'Items', 'action' => 'select'));
+			//throw new NotFoundException(__('Invalid Category'));
+		}else{
+		$va  = array('pp' => $this->Session->read('item'));
+		//$this->Session->destroy();
+		$this->Session->delete('pp.'.$id);
+        //unset($va['pp']["'".$id."'"]);
+        
+     	$this->Session->write($va);
+
 		}
-		
-		
+
+		$this->redirect(array('controller' => 'ItemsQuotes', 'action' => 'select'));
 	}
 }
