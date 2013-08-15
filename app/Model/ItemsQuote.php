@@ -36,7 +36,7 @@ class ItemsQuote extends AppModel {
 		),
 		'detail' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
+				'rule' => array('maxlength',1000),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

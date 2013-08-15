@@ -3,7 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * Requirement Model
  *
- * @property Branch $Branch
+ * @property Charge $Charge
  */
 class Requirement extends AppModel {
 
@@ -13,7 +13,7 @@ class Requirement extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'branch_id' => array(
+		'charge_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -23,47 +23,10 @@ class Requirement extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'charge' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo de texto requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'surnames' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo de texto requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+		'fullname' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',60),
-				'message' => 'Maximo 60 caracteres',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-
-		),
-		'names' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo de texto requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'maxlength' => array(
-				'rule' => array('maxlength',50),
-				'message' => 'Maximo 50 caracteres',
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -71,17 +34,9 @@ class Requirement extends AppModel {
 			),
 		),
 		'date_of_birth' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo de texto requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
 			'date' => array(
 				'rule' => array('date'),
-				'message' => 'Fecha no valida',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -91,7 +46,17 @@ class Requirement extends AppModel {
 		'sex' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Campo de texto requerido',
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'address' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -99,27 +64,9 @@ class Requirement extends AppModel {
 			),
 		),
 		'phone' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'Ingrese solo numeros',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'cellular' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo de texto requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'Ingrese solo numeros',
+			'maxlength' => array(
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -127,27 +74,9 @@ class Requirement extends AppModel {
 			),
 		),
 		'email' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo de texto requerido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
 			'email' => array(
 				'rule' => array('email'),
-				'message' => 'El correro no es valido',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'message' => array(
-			'maxlength' => array(
-				'rule' => array('maxlength',1500),
-				'message' => 'Maximo 1500 caracteres',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -157,7 +86,17 @@ class Requirement extends AppModel {
 		'curriculum' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				'message' => 'Campo de texto requerido',
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'message' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -174,9 +113,9 @@ class Requirement extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Branch' => array(
-			'className' => 'Branch',
-			'foreignKey' => 'branch_id',
+		'Charge' => array(
+			'className' => 'Charge',
+			'foreignKey' => 'charge_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

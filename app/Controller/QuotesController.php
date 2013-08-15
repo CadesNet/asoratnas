@@ -121,32 +121,31 @@ class QuotesController extends AppController {
 
 	 		if ($this->request->is('post')) {
 	   			if (!empty($this->data)) { 
-	   				$id =  $this->data['Quote']['id'];
-					$cantidad = $this->request->data['Quote']['cantidad'];
+
+	   					$id1 = $this->request->data['Quote']['id1'];
+	   					$id =  $this->request->data['Quote']['id'];
+						$img = $this->request->data['Quote']['img'];
+						$name = $this->request->data['Quote']['name']; 
+						$cantidad = $this->request->data['Quote']['cantidad'];
+						$detalle = $this->request->data['Quote']['detalle'];
 
 					$va  = array('pp' => $this->Session->read('pp'));
 					$this->Session->delete('pp');
+					
+					unset($va['pp'][$id1]);
+     				$this->Session->write($va);	
 
-					$va['pp'][$id]['cantidad'] = $cantidad;
-					//echo $id;
-			     	$this->Session->write($va);
-			        //$items = array('pp' => array_merge((array)$this->Session->read('pp')));
-			     	//$this->Session->write($items);
+			    	$items = array('pp' => array_merge((array)$this->Session->read('pp') , array($id => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => $detalle))));
+					$this->Session->write($items);
+				 	
 					$this->redirect(array('controller' => 'Quotes', 'action' => 'select1')); 
-			      //$this->request= false;
+			      // $this->request= false;
 				}
 			}else{
 
 				$this->redirect(array('controller' => 'Quotes', 'action' => 'select1'));
 
 			}
-
-
-
-
-
-
-
 
 	 	}
 
@@ -156,14 +155,17 @@ class QuotesController extends AppController {
 		$this->Session->delete('pp');
         unset($va['pp'][$id]);
      	$this->Session->write($va);
+
         $items = array('pp' => array_merge((array)$this->Session->read('pp')));
+        $this->Session->delete('pp');
      	$this->Session->write($items);
 		$this->redirect(array('controller' => 'Quotes', 'action' => 'select1')); 
+
 		}
 		public function select1(){
 		if ($this->request->is('post')) {
 	   		if (!empty($this->data)) {		
-			$id =  $this->data['Quote']['id'];
+			$id =  $this->request->data['Quote']['id'];
 			$img = $this->request->data['Quote']['img'];
 			$name = $this->request->data['Quote']['name']; 
 			$cantidad = $this->request->data['Quote']['cantidad'];
@@ -200,5 +202,34 @@ class QuotesController extends AppController {
 				$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			}
 		}
+	}
+
+	public function cotizar(){
+		$this->loadModel('ItemsQuote');
+
+		if ($this->request->is('post')) {
+			$this->Quote->create();
+			if ($this->Quote->save($this->request->data)) {
+				$this->Session->setFlash(__('The quote has been saved'));
+
+				$quote = $this->Quote->find('first',array('order' => 'Quote.created DESC'));
+
+					foreach ($this->Session->read('pp') as $value) {
+						$data['ItemsQuote']['id'] =  null; 
+						$data['ItemsQuote']['item_id'] = $value['id'];
+						$data['ItemsQuote']['quote_id'] = $quote['Quote']['id'];
+						$data['ItemsQuote']['detail'] = $value['detalle'];
+						$data['ItemsQuote']['amount'] = $value['cantidad'];
+
+						$this->ItemsQuote->save($data);
+					}
+					$this->Session->delete('pp');
+
+				$this->redirect(array('action' => 'select'));
+			} else {
+				$this->Session->setFlash(__('The quote could not be saved. Please, try again.'));
+			}
+		}
+		
 	}
 }

@@ -108,4 +108,43 @@ class BenefitsController extends AppController {
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$this->set(compact('Supermarket','Benefit','Recipe'));
 	}
+	public function select1(){
+
+	//$conditions = "id = 6";
+//$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
+		$this->paginate = array(
+                                'order' => array('Benefit.title' => 'asc'), 
+                                'recursive' => 0,
+                                "limit" => 4,
+                                'page' => 1
+                                //'conditions' => $conditions
+                                );
+         
+        
+        $Benefit = $this->paginate("Benefit");
+        $this->set(compact("Benefit"));
+	}
+	public function select2($id=null,$pagina){
+
+		if(!$this->Benefit->exists($id)){
+
+
+			$this->redirect(array('controller' => 'Benefits', 'action' => 'select1'));
+			//throw new NotFoundException(__('Invalid Category'));
+		}else{
+
+					$this->paginate = array(
+                                'order' => array('Benefit.title' => 'asc'), 
+                                'recursive' => 1,
+                                "limit" => 1,
+                                'page' => $pagina
+                                //'conditions' => $conditions
+                                );
+
+		$Benefit = $this->paginate("Benefit");
+		//$Recipe = $this->Recipe->find('all',array('conditions' => array('Recipe.' . $this->Recipe->primaryKey => $id),'recursive'  => 1));
+		$this->set(compact('Benefit'));
+		}
+
+	}
 }

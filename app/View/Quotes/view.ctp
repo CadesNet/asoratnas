@@ -50,7 +50,44 @@
 		<li><?php echo $this->Form->postLink(__('Delete Quote'), array('action' => 'delete', $quote['Quote']['id']), null, __('Are you sure you want to delete # %s?', $quote['Quote']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Quotes'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Quote'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Items'), array('controller' => 'items', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item'), array('controller' => 'items', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Items Quotes'), array('controller' => 'items_quotes', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Items Quote'), array('controller' => 'items_quotes', 'action' => 'add')); ?> </li>
 	</ul>
+</div>
+<div class="related">
+	<h3><?php echo __('Related Items Quotes'); ?></h3>
+	<?php if (!empty($quote['ItemsQuote'])): ?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Item Id'); ?></th>
+		<th><?php echo __('Quote Id'); ?></th>
+		<th><?php echo __('Detail'); ?></th>
+		<th><?php echo __('Amount'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($quote['ItemsQuote'] as $itemsQuote): ?>
+		<tr>
+			<td><?php echo $itemsQuote['id']; ?></td>
+			<td><?php echo $itemsQuote['item_id']; ?></td>
+			<td><?php echo $itemsQuote['quote_id']; ?></td>
+			<td><?php echo $itemsQuote['detail']; ?></td>
+			<td><?php echo $itemsQuote['amount']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'items_quotes', 'action' => 'view', $itemsQuote['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'items_quotes', 'action' => 'edit', $itemsQuote['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'items_quotes', 'action' => 'delete', $itemsQuote['id']), null, __('Are you sure you want to delete # %s?', $itemsQuote['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Items Quote'), array('controller' => 'items_quotes', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
 </div>

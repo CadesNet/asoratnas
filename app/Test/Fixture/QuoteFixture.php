@@ -12,7 +12,7 @@ class QuoteFixture extends CakeTestFixture {
  */
 	public $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
-		'fullname' => array('type' => 'integer', 'null' => false, 'default' => null),
+		'fullname' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'address' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'phone' => array('type' => 'integer', 'null' => false, 'default' => null),
 		'email' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
@@ -33,13 +33,13 @@ class QuoteFixture extends CakeTestFixture {
 	public $records = array(
 		array(
 			'id' => 1,
-			'fullname' => 1,
+			'fullname' => 'Lorem ipsum dolor sit amet',
 			'address' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
 			'phone' => 1,
 			'email' => 'Lorem ipsum dolor sit amet',
 			'message' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-			'created' => '2013-08-13 11:45:09',
-			'modified' => '2013-08-13 11:45:09'
+			'created' => '2013-08-15 10:58:12',
+			'modified' => '2013-08-15 10:58:12'
 		),
 	);
 

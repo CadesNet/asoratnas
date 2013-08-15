@@ -1,10 +1,19 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Quote Model
+ * Charge Model
  *
+ * @property Branch $Branch
+ * @property Requirement $Requirement
  */
-class Quote extends AppModel {
+class Charge extends AppModel {
+
+/**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'title';
 
 /**
  * Validation rules
@@ -12,27 +21,7 @@ class Quote extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'fullname' => array(
-			'maxlength' => array(
-				'rule' => array('maxlength',49),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'address' => array(
-			'maxlength' => array(
-				'rule' => array('maxlength',200),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'phone' => array(
+		'branch_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -42,9 +31,9 @@ class Quote extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'email' => array(
-			'email' => array(
-				'rule' => array('email'),
+		'title' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -52,9 +41,29 @@ class Quote extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'message' => array(
+		'deadline' => array(
+			'date' => array(
+				'rule' => array('date'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'description' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1000),
+				'rule' => array('maxlength'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'formation' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -63,10 +72,33 @@ class Quote extends AppModel {
 			),
 		),
 	);
-public $hasMany = array(
-'ItemsQuote' => array(
-			'className' => 'ItemsQuote',
-			'foreignKey' => 'quote_id',
+
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+/**
+ * belongsTo associations
+ *
+ * @var array
+ */
+	public $belongsTo = array(
+		'Branch' => array(
+			'className' => 'Branch',
+			'foreignKey' => 'branch_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Requirement' => array(
+			'className' => 'Requirement',
+			'foreignKey' => 'charge_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
@@ -76,6 +108,7 @@ public $hasMany = array(
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
+		)
 	);
+
 }

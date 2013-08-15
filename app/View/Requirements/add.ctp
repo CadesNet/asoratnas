@@ -3,18 +3,15 @@
 	<fieldset>
 		<legend><?php echo __('Add Requirement'); ?></legend>
 	<?php
-		echo $this->Form->input('branch_id');
-		echo $this->Form->input('charge');
-		echo $this->Form->input('surnames');
-		echo $this->Form->input('names');
+		echo $this->Form->input('charge_id');
+		echo $this->Form->input('fullname');
 		echo $this->Form->input('date_of_birth');
-		echo $this->FormEnum->input('Requirement.sex',array('empty' =>false));
+		echo $this->Form->input('sex');
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
-		echo $this->Form->input('cellular');
 		echo $this->Form->input('email');
-		echo $this->Form->input('message');
 		echo $this->Form->input('curriculum');
+		echo $this->Form->input('message');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

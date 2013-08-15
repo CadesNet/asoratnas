@@ -3,18 +3,15 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('branch_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('charge'); ?></th>
-			<th><?php echo $this->Paginator->sort('surnames'); ?></th>
-			<th><?php echo $this->Paginator->sort('names'); ?></th>
+			<th><?php echo $this->Paginator->sort('charge_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('fullname'); ?></th>
 			<th><?php echo $this->Paginator->sort('date_of_birth'); ?></th>
 			<th><?php echo $this->Paginator->sort('sex'); ?></th>
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
-			<th><?php echo $this->Paginator->sort('cellular'); ?></th>
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
-			<th><?php echo $this->Paginator->sort('message'); ?></th>
 			<th><?php echo $this->Paginator->sort('curriculum'); ?></th>
+			<th><?php echo $this->Paginator->sort('message'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -22,20 +19,15 @@
 	<?php foreach ($requirements as $requirement): ?>
 	<tr>
 		<td><?php echo h($requirement['Requirement']['id']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($requirement['Branch']['id'], array('controller' => 'branches', 'action' => 'view', $requirement['Branch']['id'])); ?>
-		</td>
-		<td><?php echo h($requirement['Requirement']['charge']); ?>&nbsp;</td>
-		<td><?php echo h($requirement['Requirement']['surnames']); ?>&nbsp;</td>
-		<td><?php echo h($requirement['Requirement']['names']); ?>&nbsp;</td>
+		<td><?php echo h($requirement['Requirement']['charge_id']); ?>&nbsp;</td>
+		<td><?php echo h($requirement['Requirement']['fullname']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['date_of_birth']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['sex']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['address']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['phone']); ?>&nbsp;</td>
-		<td><?php echo h($requirement['Requirement']['cellular']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['email']); ?>&nbsp;</td>
-		<td><?php echo h($requirement['Requirement']['message']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['curriculum']); ?>&nbsp;</td>
+		<td><?php echo h($requirement['Requirement']['message']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['created']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['modified']); ?>&nbsp;</td>
 		<td class="actions">

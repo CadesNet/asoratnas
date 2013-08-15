@@ -14,7 +14,6 @@
                 
                   <td><?php echo $value['cantidad'] ?></td>
                   <td><?php echo $value['detalle'] ?></td>
-                  <td><?php echo $this->Html->link(__('quitar'), array('controller' => 'ItemsQuotes', 'action' => 'select1',$value['id'])); ?></td>
                 </tr>
                <?php } ?>
               </tbody>
@@ -23,7 +22,7 @@
 <div class="quotes form">
 <?php echo $this->Form->create('Quote'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Quote'); ?></legend>
+		<legend><?php echo __('Complete sus datos correctos para enviarle la cotizacion, gracias...'); ?></legend>
 	<?php
 		echo $this->Form->input('fullname');
 		echo $this->Form->input('address');
@@ -32,6 +31,6 @@
 		echo $this->Form->input('message');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Enviar datos')); ?>
 </div>
 

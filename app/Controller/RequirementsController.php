@@ -6,13 +6,12 @@ App::uses('AppController', 'Controller');
  * @property Requirement $Requirement
  */
 class RequirementsController extends AppController {
-public $helpers = array('FormEnum');
+
 /**
  * index method
  *
  * @return void
  */
-
 	public function index() {
 		$this->Requirement->recursive = 0;
 		$this->set('requirements', $this->paginate());

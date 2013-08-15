@@ -59,7 +59,7 @@
                                           </li>
                                           <li class="visible-desktop" ></li>
                                           <li>
-                                          	<?php echo $this->Html->link(("Cotizar: 0 Items"), array('controller' => 'benefits', 'action' => 'select')); 
+                                          	<?php $a = 'ppp'; echo $this->Html->link(("Cotizar: ".count($this->Session->read('pp'))." Items"), array('controller' => 'Quotes', 'action' => 'cotizar')); 
                                           ?>
                                           </li>
                                         </ul>
@@ -117,7 +117,7 @@
 
           </li>
           <li> 
-			<?php echo $this->Html->link(("Beneficios del pavo"), array('controller' => 'Benefits', 'action' => 'select'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
+			<?php echo $this->Html->link(("Beneficios del pavo"), array('controller' => 'Benefits', 'action' => 'select1'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
 				?>
           </li>
           <li>
