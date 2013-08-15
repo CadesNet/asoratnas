@@ -59,6 +59,8 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			echo $this->Html->script('mini-carrusel/jquery.transit.min');
 			///// editor
 			echo $this->Html->script('ckeditor/ckeditor');
+			///modal
+			echo $this->Html->script('even_ajax');
 			///
 			echo $this->fetch('script');
                         
@@ -80,16 +82,24 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 				<?php echo $this->element('menu/top_menu'); ?>
 				<div id="contenido" class="container">
 			<div class = "row">
-				<div  class="container colorcontainer">
-
-                 
-			
+				<div  class="container colorcontainer">		
 	                  <?php  echo $this->fetch('content');  ?>
-			
-				
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width="600" height="1500"">
+	  					<div class="modal-header">
+	    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    					<h3 id="myModalLabel">Modal header1</h3>
+	  					</div>
+	  					<div id="bod" class="modal-body">
+	    					<p>One fine body…</p>
+	  					</div>
+	  					<div class="modal-footer" style="">
+	  						<button id="ok" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	    					<button class="btn btn-primary">Save changes</button>
+	    					<a  href="#myModal1" role="button" class="btn" data-toggle="modal1">Launch demo modal</a>
+	  					</div>
+	  					
 
-
-
+	  	</div>
 				</div>
 
 				<?php echo $this->Session->flash(); ?>
@@ -108,6 +118,21 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			
 		</div><!-- #main-container -->
 		</div><!-- #header .container -->
+
+			
+				<script type="text/javascript">
+				$('#idamd').click(function(){
+		$.ajax({
+		  type: "GET",
+		  url: $(this).attr('href')
+		  }).done(function(html_form) {
+		  $('#bod').html(html_form);
+		  $("#myModal").modal("show");
+		});
+		return false;
+});
+		</script>
+
 	</body>
 
 

@@ -108,11 +108,11 @@ background-image: url('../img/bg_footer.jpg');
  	background-color: #f8f6ea;
  	-moz-box-shadow: 0 0 3px 3px #888;
 	-webkit-box-shadow: 0 0 3px 3px#888;
-	box-shadow: 0 0 1px 1px #888;
+	box-shadow: 0 0 10px 0px #888;
  	padding: 15px;
  	margin-bottom: 40px;
  	margin-right: 20px;
- 	height: 300px;
+ 	max-height: 500px;
 	border-radius: 20px;
  }
  .detalleproducto{
