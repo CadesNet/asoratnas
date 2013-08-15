@@ -111,7 +111,7 @@ class RequirementsController extends AppController {
 	   ///funcion  q valide q id no pueda ser pos 
 	  $filename=null;
 	  if ($this->request->is('post')) {
-	  	//Subir imagenes
+	  	//Subir archivos
 			if ($this->request->data['Requirement']['curriculum']) {
 				
 				$file = new File($this->request->data['Requirement']['curriculum']['tmp_name']);
@@ -126,15 +126,13 @@ class RequirementsController extends AppController {
 					$date = $this->request->data['Requirement']['curriculum']['name'];
 					$filename = $this->request->data['Requirement']['charge_id'].$this->request->data['Requirement']['email'].$date;
 					
-					$data = $file->read();
-					$file->close();
-					
+					$data = $file->read();			
 					$file = new File(WWW_ROOT.'img/requirement/curriculum/'.$filename,true);
 					$file->write($data);
 					$file->close();
 				}
 			}
-			//Fin subir imagenes
+			//Fin subir archivos
 			
 			$this->request->data['Requirement']['curriculum'] = $filename."holamundo";
 

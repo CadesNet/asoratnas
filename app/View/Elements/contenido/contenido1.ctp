@@ -5,7 +5,9 @@
 			<div class="row-fluid" >
 					<h3 class = "benefitstitle">Beneficios para  salud</h4>
 			</div>
-			<?php foreach($benefits as $benefit): ?>
+			<?php 
+			$coun=0;
+			foreach($benefits as $benefit): ?>
 
 			<div class="row-fluid" >		
 			<div class= "benefitsbody">		
@@ -21,7 +23,10 @@
 								<p class ="benefitsdescription"><? echo $benefit['Benefit']['description'] ?></p>
 							</div>
 							<div class="row-fluid" style="">
-								<a href="" class="btn btn-success"> saber mas..</a>
+
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn btn-info btn-large'));
+							 ?>
+								
 							</div>
 							<br>
 
@@ -32,7 +37,8 @@
 				<br>
 			
 				<div class="row-fluid" style="text-align: right;">
-					<a href="">leer mas articulos</a>
+				<?php echo $this->Html->link(__('Leer todos los articulos'), array('controller' => 'Benefits', 'action' => 'select1'));
+							 ?>
 				</div>
 				<div class="row-fluid" style="">
 					<p>encuentranos en..</p>
@@ -80,7 +86,7 @@ $(function() {
 			<div class="span5">
 				<div class="row-fluid" >
 					<div class="span12">
-						<h2>la receta del dia</h2>
+						<h2>La receta del dia</h2>
 					</div>
 					
 				</div>
@@ -97,17 +103,18 @@ $(function() {
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h3><?=$recipes['Recipe']['title'] ?></h3>
+						<h3><?php echo $recipes['Recipe']['title'] ?></h3>
 					</div>
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h5><?=$recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
+						<h5><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
 				</div>				
 				<div class="row-fluid">
-					<div class="span5">
-						<a class="btn" href="#">Ver receta</a>
+					<div class="span12">
+						<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],1), array('class' => 'btn btn-info btn-large'));
+							 ?>
 					</div>
 					
 				</div>

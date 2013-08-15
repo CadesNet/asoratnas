@@ -101,7 +101,7 @@ class RecipesController extends AppController {
 	$conditions = "id = 6";
 //$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
 		$this->paginate = array(
-                                'order' => array('Recipe.title' => 'asc'), 
+                                'order' => array('Recipe.id' => 'DESC'), 
                                 'recursive' => 1,
                                 "limit" => 4,
                                 'page' => 1
@@ -125,7 +125,7 @@ class RecipesController extends AppController {
 		}else{
 
 					$this->paginate = array(
-                                'order' => array('Recipe.title' => 'asc'), 
+                                'order' => array('Recipe.id' => 'DESC'), 
                                 'recursive' => 1,
                                 "limit" => 1,
                                 'page' => $pagina
