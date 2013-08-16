@@ -4,15 +4,12 @@
 		<legend><?php echo __('Edit Company'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('name');
-		echo $this->Form->input('mission');
-		echo $this->Form->input('vision');
-		echo $this->Form->input('values');
-		echo $this->Form->input('history');
+		echo $this->Form->textarea('content',array('class'=>'ckeditor'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
+
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>

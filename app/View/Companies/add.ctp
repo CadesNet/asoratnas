@@ -1,13 +1,9 @@
 <div class="companies form">
 <?php echo $this->Form->create('Company'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Company'); ?></legend>
+		<legend><?php echo __('Edit Company'); ?></legend>
 	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('mission');
-		echo $this->Form->input('vision');
-		echo $this->Form->input('values');
-		echo $this->Form->input('history');
+		echo $this->Form->textarea('content',array('class'=>'ckeditor'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

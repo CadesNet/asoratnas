@@ -28,6 +28,10 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			<?php echo 'Avicola Santa Rosa - '. $title_for_layout; ?>
 		</title>
 		<?php
+		  //minicarrusel css
+			echo $this->Html->css('mini-carrusel/estilo.css');
+		
+  //////////
 			echo $this->Html->css('estilos');
 			echo $this->Html->css('customStyles');
 			echo $this->Html->meta('icon');
@@ -39,8 +43,7 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			echo $this->Html->css('bootstrap/core');
 			//video
 			echo $this->Html->css('video-default');
-			//minicarrusel css
-			echo $this->Html->css('mini-carrusel/estilo.css');
+			
 
 			echo $this->fetch('css');
 			
@@ -54,7 +57,9 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			echo $this->Html->script('mini-carrusel/jquery.mousewheel.min');
 			echo $this->Html->script('mini-carrusel/jquery.touchSwipe.min');
 			echo $this->Html->script('mini-carrusel/jquery.transit.min');
-			/////
+			///// editor
+			echo $this->Html->script('ckeditor/ckeditor');
+			///
 			echo $this->fetch('script');
                         
                         echo $this->Html->css('carusel/flexslider1');

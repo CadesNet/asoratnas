@@ -93,9 +93,15 @@
 					  <?php echo $item['Item']['description']; ?>
 					</div>
 				</div>
+				<br>
+				<br>
+				<br>
+				<br>
 					<div class="row-fluid">
 					<div class="span2" >
-						<a class = "btn">Volver</a>
+						<?php 
+					echo $this->Html->link("Volver", array( 'controller' => 'Items', 'action' => "select",$category['Category']['id']),array('escape' => false , 'class' => 'brand'));  
+			    	    ?>
 					</div>
 				</div>	
 			</div>

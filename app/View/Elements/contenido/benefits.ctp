@@ -46,7 +46,7 @@
 					
 					<div class="row-fluid">
 						<div class="span5">
-							<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
+							<?php echo $this->Html->link(__('Ver Beneficio'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
 						</div>
 					</div>
 				</div>

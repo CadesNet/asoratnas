@@ -3,21 +3,13 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('mission'); ?></th>
-			<th><?php echo $this->Paginator->sort('vision'); ?></th>
-			<th><?php echo $this->Paginator->sort('values'); ?></th>
-			<th><?php echo $this->Paginator->sort('history'); ?></th>
+			<th><?php echo $this->Paginator->sort('content'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($companies as $company): ?>
 	<tr>
 		<td><?php echo h($company['Company']['id']); ?>&nbsp;</td>
-		<td><?php echo h($company['Company']['name']); ?>&nbsp;</td>
-		<td><?php echo h($company['Company']['mission']); ?>&nbsp;</td>
-		<td><?php echo h($company['Company']['vision']); ?>&nbsp;</td>
-		<td><?php echo h($company['Company']['values']); ?>&nbsp;</td>
-		<td><?php echo h($company['Company']['history']); ?>&nbsp;</td>
+		<td><?php echo h($company['Company']['content']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $company['Company']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $company['Company']['id'])); ?>

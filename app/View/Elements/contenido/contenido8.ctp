@@ -29,12 +29,10 @@
 				    
 	              ?></td>
 	              <td>
-	              	<?php  $value['detalle'];	echo $this->Form->input('detalle',array('type' => 'text')); ?>
+	              	<?php echo $value['detalle'];	
+	              	echo $this->Form->input('detalle',array('type' => 'text')); ?>
 	              </td>
-
-	              <td><?php echo $value['detalle'] ?></td>
-                  <td><?php echo $this->Html->link(__('Quitar'), array('controller' => 'Quotes', 'action' => 'quitar',$j++)); ?></td>
-						
+                  <td><?php echo $this->Html->link(__('Quitar'), array('controller' => 'Quotes', 'action' => 'quitar',$j++)); ?></td>						
 				  <td>
 		          <?php echo $this->Form->end('Modificar'); ?>
 		          </td>

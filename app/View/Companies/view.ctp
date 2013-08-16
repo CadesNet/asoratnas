@@ -6,29 +6,9 @@
 			<?php echo h($company['Company']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Name'); ?></dt>
+		<dt><?php echo __('Content'); ?></dt>
 		<dd>
-			<?php echo h($company['Company']['name']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Mission'); ?></dt>
-		<dd>
-			<?php echo h($company['Company']['mission']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Vision'); ?></dt>
-		<dd>
-			<?php echo h($company['Company']['vision']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Values'); ?></dt>
-		<dd>
-			<?php echo h($company['Company']['values']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('History'); ?></dt>
-		<dd>
-			<?php echo h($company['Company']['history']); ?>
+			<?php echo h($company['Company']['content']); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -51,9 +31,14 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Company Id'); ?></th>
+		<th><?php echo __('Name'); ?></th>
+		<th><?php echo __('Filename'); ?></th>
+		<th><?php echo __('Dir'); ?></th>
+		<th><?php echo __('Type'); ?></th>
+		<th><?php echo __('Address'); ?></th>
 		<th><?php echo __('Phone'); ?></th>
+		<th><?php echo __('Movil'); ?></th>
 		<th><?php echo __('Fax'); ?></th>
-		<th><?php echo __('Mobile'); ?></th>
 		<th><?php echo __('Contact'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
@@ -63,9 +48,14 @@
 		<tr>
 			<td><?php echo $branch['id']; ?></td>
 			<td><?php echo $branch['company_id']; ?></td>
+			<td><?php echo $branch['name']; ?></td>
+			<td><?php echo $branch['filename']; ?></td>
+			<td><?php echo $branch['dir']; ?></td>
+			<td><?php echo $branch['type']; ?></td>
+			<td><?php echo $branch['address']; ?></td>
 			<td><?php echo $branch['phone']; ?></td>
+			<td><?php echo $branch['movil']; ?></td>
 			<td><?php echo $branch['fax']; ?></td>
-			<td><?php echo $branch['mobile']; ?></td>
 			<td><?php echo $branch['contact']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'branches', 'action' => 'view', $branch['id'])); ?>

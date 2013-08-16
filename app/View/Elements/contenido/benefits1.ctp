@@ -39,7 +39,7 @@
 					
 					<div class="row-fluid">
 						<div class="span5">
-							<?php echo $this->Html->link(__('Volver a los veneficios'), array('controller' => 'Benefits', 'action' => 'select1'), array('class' => 'btn btn-info ')); ?>
+							<?php echo $this->Html->link(__('Volver a los Beneficios'), array('controller' => 'Benefits', 'action' => 'select1'), array('class' => 'btn btn-info ')); ?>
 						</div>
 					</div>
 				</div>

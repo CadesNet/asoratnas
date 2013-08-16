@@ -31,7 +31,7 @@
                 <li class="visible-desktop" ></li>
                                          
                                            <li class="dropdown">
-                                           <?php echo $this->Html->link(("Empresa"), array('controller' => '', 'action' => ''),array('class'=>'dropdown-toggle', 'data-toggle'=>'dropdown')); ?>
+                                           <?php echo $this->Html->link(("Empresa"), array('controller' => 'Companies', 'action' => 'select'),array('class'=>'dropdown-toggle', 'data-toggle'=>'dropdown')); ?>
                                             <ul class="dropdown-menu" style="left:inherit; padding:0;">
                                               <li>
 
@@ -47,7 +47,7 @@
                                           <li class="visible-desktop" ></li>
                               
                                           <li>
-                                          <?php echo $this->Html->link(("Servicios"), array('controller' => 'benefits', 'action' => 'select')); 
+                                          <?php echo $this->Html->link(("Servicios"), array('controller' => 'Services', 'action' => 'select')); 
                                           ?>
                                          <!--  <a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Servicios</b></font></font></a> -->
 

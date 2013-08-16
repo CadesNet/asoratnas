@@ -93,4 +93,8 @@ class CompaniesController extends AppController {
 		$this->Session->setFlash(__('Company was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+	public function select(){
+		$Company = $this->Company->find('all');
+		$this->set(compact('Company'));
+	}
 }

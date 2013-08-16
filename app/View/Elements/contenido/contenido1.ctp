@@ -39,28 +39,15 @@
 					
 				</div>
 				
-					
-
-
-
-
-
-<div class="list_carousel">
+			<div class="list_carousel">
 				<ul id="foo1">
 					<?php foreach($supermarkets as $supermarket) { ?>
 						<li>
 						<?php 
 					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
 			    	    ?>
-
 						</li>
 						<?php }  
-							// la url tiene q tener http  completo si no no da 
-
-
-						//$datos .= ,"'.$supermarket['Supermarket']['link'].'","';
-						//"supermarket/filename/".$supermarket['Supermarket']['filename'].""
-
 						 ?>
 					?>
 
