@@ -16,8 +16,10 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->layout = 'ajax';
 		$this->Benefit->recursive = 0;
 		$this->set('benefits', $this->paginate());
+
 	}
 
 /**
@@ -28,6 +30,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Benefit->exists($id)) {
 			throw new NotFoundException(__('Invalid benefit'));
 		}
@@ -41,6 +44,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->layout = 'modal';
 		if ($this->request->is('post')) {
 			$this->Benefit->create();
 			if ($this->Benefit->save($this->request->data)) {
@@ -60,6 +64,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Benefit->exists($id)) {
 			throw new NotFoundException(__('Invalid benefit'));
 		}
@@ -84,6 +89,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+
 		$this->Benefit->id = $id;
 		if (!$this->Benefit->exists()) {
 			throw new NotFoundException(__('Invalid benefit'));

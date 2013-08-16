@@ -17,9 +17,9 @@
 		<td><?php echo h($benefit['Benefit']['filename']); ?>&nbsp;</td>
 		<td><?php echo h($benefit['Benefit']['dir']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $benefit['Benefit']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $benefit['Benefit']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $benefit['Benefit']['id']), null, __('Are you sure you want to delete # %s?', $benefit['Benefit']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $benefit['Benefit']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -42,6 +42,29 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Benefit'), array('action' => 'add')); ?></li>
+		<li>
+
+
+		<?php 
+		echo $this->Html->link(__('New Benefit'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large'));
+		 ?>
+			
+		</li>
 	</ul>
 </div>
+<script type="text/javascript">
+						$('.ok').click(function(){
+					$.ajax({
+					  type: "GET",
+					  url: $(this).attr('href')
+					}).done(function(html_form) {
+					
+					 $('#bod').html(html_form);
+
+					 $("#myModal").modal('hide'); 
+					 setTimeout(function(){
+ 					$("#myModal").modal("show");},2000);					 
+					});
+					return false;
+					});
+			</script>
