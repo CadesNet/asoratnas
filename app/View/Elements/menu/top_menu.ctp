@@ -31,11 +31,11 @@
                 <li class="visible-desktop" ></li>
                                          
                                            <li class="dropdown">
-                                           <?php echo $this->Html->link(("Empresa"), array('controller' => 'Companies', 'action' => 'select'),array('class'=>'dropdown-toggle', 'data-toggle'=>'dropdown')); ?>
+                                           <?php echo $this->Html->link(("Empresa"), array('controller' => '', 'action' => ''),array('class'=>'dropdown-toggle', 'data-toggle'=>'dropdown')); ?>
                                             <ul class="dropdown-menu" style="left:inherit; padding:0;">
                                               <li>
 
-										<?php echo $this->Html->link(("Historia"), array('controller' => 'benefits', 'action' => 'select')); ?>
+										<?php echo $this->Html->link(("Historia"), array('controller' => 'Companies', 'action' => 'select')); ?>
                                               </li>
                                               <li>
 												<?php echo $this->Html->link(("Requerimientos de personal"), array('controller' => 'Branches', 'action' => 'select')); ?>

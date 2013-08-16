@@ -104,7 +104,7 @@ class BenefitsController extends AppController {
 		//$options = array('conditions' => array('limit' => 2));
        	//$Category = $this->Category->find('all');
        	$Supermarket = $this->Supermarket->find('all');	
-		$Benefit = $this->Benefit->find('all', array('limit' => 2));
+		$Benefit = $this->Benefit->find('all',array('order' => 'Benefit.id DESC', 'limit' => 2));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$this->set(compact('Supermarket','Benefit','Recipe'));
 	}
@@ -113,7 +113,7 @@ class BenefitsController extends AppController {
 	//$conditions = "id = 6";
 //$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
 		$this->paginate = array(
-                                'order' => array('Benefit.title' => 'asc'), 
+                                'order' => array('Benefit.id' => 'DESC'), 
                                 'recursive' => 0,
                                 "limit" => 4,
                                 'page' => 1
@@ -134,7 +134,7 @@ class BenefitsController extends AppController {
 		}else{
 
 					$this->paginate = array(
-                                'order' => array('Benefit.title' => 'asc'), 
+                                'order' => array('Benefit.id' => 'DESC'), 
                                 'recursive' => 1,
                                 "limit" => 1,
                                 'page' => $pagina

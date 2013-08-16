@@ -112,41 +112,56 @@
 
 			
 						
-		
 		<div class="span3">
-		
-			<div class="span12" >
+		<div class="row-fluid" >
+			<div class="span12" style="text-align:center;">
 				<?php echo $this->Html->image("noticias/1.png")?>
-				
+				<br>
+				<br>
+				<br>
 			</div>
+
 			
+
+
+
+			<div class="span12" style="text-align:center;">
+				<div class="row-fluid" >
 					<div class="span12">
-						<h2>la receta del dia</h2>
+						<h2>La receta del dia</h2>
 					</div>
 					
-				
+				</div>
+				<div class="row-fluid" >
 					<div class="span12">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
 						break;
-						} ?>
+						}
+						?>
 					</div>
 					
-				
-					<div class="span12">
-						<h5><?=$recipes['Recipe']['title'] ?></h5>
 				</div>
+				<div class="row-fluid" >
 					<div class="span12">
-						<h5><?=$recipes['Recipe']['information'] ?></h5>
+						<h3><?php echo $recipes['Recipe']['title'] ?></h3>
+					</div>
+				</div>
+				<div class="row-fluid" >
+					<div class="span12">
+						<h5><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
+					</div>
 				</div>				
+				<div class="row-fluid">
 					<div class="span12">
-						<a class="btn" href="#">Ver receta</a>
+						<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],1), array('class' => 'btn btn-info btn-large'));
+							 ?>
 					</div>
 					
-				
-			
-	
+				</div>
+			</div>		
+		</div>
 		</div>
 	</div>
 	<div class="row-fluid">
