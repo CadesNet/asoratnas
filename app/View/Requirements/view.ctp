@@ -6,9 +6,9 @@
 			<?php echo h($requirement['Requirement']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Charge Id'); ?></dt>
+		<dt><?php echo __('Charge'); ?></dt>
 		<dd>
-			<?php echo h($requirement['Requirement']['charge_id']); ?>
+			<?php echo $this->Html->link($requirement['Charge']['title'], array('controller' => 'charges', 'action' => 'view', $requirement['Charge']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Fullname'); ?></dt>
@@ -70,7 +70,7 @@
 		<li><?php echo $this->Form->postLink(__('Delete Requirement'), array('action' => 'delete', $requirement['Requirement']['id']), null, __('Are you sure you want to delete # %s?', $requirement['Requirement']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Requirements'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Requirement'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Branches'), array('controller' => 'branches', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Branch'), array('controller' => 'branches', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

@@ -1,10 +1,12 @@
 <div class="branches form">
-<?php echo $this->Form->create('Branch'); ?>
+<?php echo $this->Form->create('Branch',array('type' => 'file')); ?>
 	<fieldset>
 		<legend><?php echo __('Add Branch'); ?></legend>
 	<?php
 		echo $this->Form->input('company_id');
 		echo $this->Form->input('name');
+		echo $this->Form->input('filename',array('type' => 'file'));
+		echo $this->Form->input('dir',array('type' => 'hidden'));
 		echo $this->Form->input('type');
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
@@ -24,7 +26,7 @@
 		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Addresses'), array('controller' => 'addresses', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Address'), array('controller' => 'addresses', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Requirements'), array('controller' => 'requirements', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Requirement'), array('controller' => 'requirements', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

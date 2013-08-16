@@ -12,6 +12,8 @@ class RequirementsController extends AppController {
  *
  * @return void
  */
+	public $helpers = array('FormEnum');
+	
 	public function index() {
 		$this->Requirement->recursive = 0;
 		$this->set('requirements', $this->paginate());
@@ -47,8 +49,8 @@ class RequirementsController extends AppController {
 				$this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
 			}
 		}
-		$branches = $this->Requirement->Branch->find('list');
-		$this->set(compact('branches'));
+		$charges = $this->Requirement->Charge->find('list');
+		$this->set(compact('charges'));
 	}
 
 /**
@@ -73,8 +75,8 @@ class RequirementsController extends AppController {
 			$options = array('conditions' => array('Requirement.' . $this->Requirement->primaryKey => $id));
 			$this->request->data = $this->Requirement->find('first', $options);
 		}
-		$branches = $this->Requirement->Branch->find('list');
-		$this->set(compact('branches'));
+		$charges = $this->Requirement->Charge->find('list');
+		$this->set(compact('charges'));
 	}
 
 /**
@@ -97,4 +99,65 @@ class RequirementsController extends AppController {
 		$this->Session->setFlash(__('Requirement was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+		public function select1(){
+			$this->Session->write('cargo.id',$this->request->data['Requirement']['id']);
+			$this->redirect(array('action' => 'select'));
+		}
+
+		public function select(){
+			
+	  $id = $this->Session->read('cargo.id');
+	   ///funcion  q valide q id no pueda ser pos 
+	  $filename=null;
+	  if ($this->request->is('post')) {
+	  	//Subir imagenes
+			if ($this->request->data['Requirement']['curriculum']) {
+				
+				$file = new File($this->request->data['Requirement']['curriculum']['tmp_name']);
+				$path_parts = pathinfo($this->request->data['Requirement']['curriculum']['name']);
+				$ext = $path_parts['extension'];
+				
+				
+				if ($ext != 'docx' /* && $ext != 'doc' && $ext != 'gif' && $ext != 'png'*/) {
+					$this->Session->setFlash('Solo puedes subir docx.');
+					$this->render();
+				} else {
+					$date = $this->request->data['Requirement']['curriculum']['name'];
+					$filename = $this->request->data['Requirement']['charge_id'].$this->request->data['Requirement']['email'].$date;
+					
+					$data = $file->read();
+					$file->close();
+					
+					$file = new File(WWW_ROOT.'img/requirement/curriculum/'.$filename,true);
+					$file->write($data);
+					$file->close();
+				}
+			}
+			//Fin subir imagenes
+			
+			$this->request->data['Requirement']['curriculum'] = $filename;
+
+
+			$this->Requirement->create();
+			if ($this->Requirement->save($this->request->data)) {
+				$this->Session->setFlash(__('The requirement has been saved'));
+				$this->redirect(array('controller' => 'Branches','action' => 'select'));
+			} else {
+				$this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
+			}
+		}
+		else{
+			 $this->loadModel('Charge');
+			if(!$this->Charge->exists($id)){
+				$this->redirect(array('controller' => 'Branches', 'action' => 'select'));
+				
+			}else{
+			$Charge = $this->Charge->find('all',array('conditions' => array('Charge.' . $this->Charge->primaryKey => $id)));
+			$this->set(compact('Charge'));
+			}
+		}
+		
+	}
+
 }

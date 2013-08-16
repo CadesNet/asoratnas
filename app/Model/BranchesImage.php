@@ -55,8 +55,7 @@ var $actsAs = array(
 		'Branch' => array(
 			'className' => 'Branch',
 			'foreignKey' => 'branch_id',
-			'conditions' => '',
-			'fields' => '',
+			'conditions' => '',		'fields' => '',
 			'order' => ''
 		)
 	);

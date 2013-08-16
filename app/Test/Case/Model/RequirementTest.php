@@ -14,6 +14,7 @@ class RequirementTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.requirement',
+		'app.charge',
 		'app.branch',
 		'app.company',
 		'app.address'

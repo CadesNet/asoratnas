@@ -5,6 +5,8 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('company_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
+			<th><?php echo $this->Paginator->sort('filename'); ?></th>
+			<th><?php echo $this->Paginator->sort('dir'); ?></th>
 			<th><?php echo $this->Paginator->sort('type'); ?></th>
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
@@ -20,6 +22,8 @@
 			<?php echo $this->Html->link($branch['Company']['name'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
 		</td>
 		<td><?php echo h($branch['Branch']['name']); ?>&nbsp;</td>
+		<td><?php echo h($branch['Branch']['filename']); ?>&nbsp;</td>
+		<td><?php echo h($branch['Branch']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['type']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['address']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['phone']); ?>&nbsp;</td>
@@ -56,7 +60,7 @@
 		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Addresses'), array('controller' => 'addresses', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Address'), array('controller' => 'addresses', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Requirements'), array('controller' => 'requirements', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Requirement'), array('controller' => 'requirements', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

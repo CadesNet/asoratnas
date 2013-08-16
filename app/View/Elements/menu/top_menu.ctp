@@ -38,7 +38,7 @@
 										<?php echo $this->Html->link(("Historia"), array('controller' => 'benefits', 'action' => 'select')); ?>
                                               </li>
                                               <li>
-												<?php echo $this->Html->link(("Requerimientos de personal"), array('controller' => 'benefits', 'action' => 'select')); ?>
+												<?php echo $this->Html->link(("Requerimientos de personal"), array('controller' => 'Branches', 'action' => 'select')); ?>
                                              </li>
                                             </ul>
                                           </li>

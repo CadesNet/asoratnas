@@ -38,8 +38,9 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			echo $this->Html->css('bootstrap/bootstrap-responsive');
 			echo $this->Html->css('bootstrap/core');
 			//video
-			echo $this->Html->css('video-default.css');
-			
+			echo $this->Html->css('video-default');
+			//minicarrusel css
+			echo $this->Html->css('mini-carrusel/estilo.css');
 
 			echo $this->fetch('css');
 			
@@ -47,7 +48,13 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			echo $this->Html->script('bootstrap/vendor/bootstrap');
 			//video
 			echo $this->Html->script('jquery.video-ui');
-			
+			//minicarucel
+			echo $this->Html->script('mini-carrusel/jquery.ba-throttle-debounce.min');
+			echo $this->Html->script('mini-carrusel/jquery.carouFredSel-6.2.1-packed');
+			echo $this->Html->script('mini-carrusel/jquery.mousewheel.min');
+			echo $this->Html->script('mini-carrusel/jquery.touchSwipe.min');
+			echo $this->Html->script('mini-carrusel/jquery.transit.min');
+			/////
 			echo $this->fetch('script');
                         
                         echo $this->Html->css('carusel/flexslider1');

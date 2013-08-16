@@ -19,7 +19,9 @@
 	<?php foreach ($requirements as $requirement): ?>
 	<tr>
 		<td><?php echo h($requirement['Requirement']['id']); ?>&nbsp;</td>
-		<td><?php echo h($requirement['Requirement']['charge_id']); ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($requirement['Charge']['title'], array('controller' => 'charges', 'action' => 'view', $requirement['Charge']['id'])); ?>
+		</td>
 		<td><?php echo h($requirement['Requirement']['fullname']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['date_of_birth']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['sex']); ?>&nbsp;</td>
@@ -56,7 +58,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Requirement'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Branches'), array('controller' => 'branches', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Branch'), array('controller' => 'branches', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

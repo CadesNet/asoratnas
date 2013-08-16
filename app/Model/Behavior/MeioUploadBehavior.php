@@ -41,9 +41,9 @@ class MeioUploadBehavior extends ModelBehavior {
     'filePermission' => 0755, // Set permission of uploaded files in the server
     'removeOriginal' => false,
     'maxSize' => 2097152, // 2MB
-    'allowedMime' => array('image/jpeg', 'image/pjpeg', 'image/png', 'image/gif', 'image/bmp', 'image/x-icon', 'image/vnd.microsoft.icon'),
-    'allowedExt' => array('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico'),
-    'default' => false, // Not sure what this does
+    'allowedMime' => array('image/jpeg', 'image/pjpeg', 'image/png', 'image/gif', 'image/bmp', 'image/x-icon','document/docx', 'image/vnd.microsoft.icon'),
+    'allowedExt' => array('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico','.docx'),
+    'default' => false, // Not sure what this does,
     'zoomCrop' => false, // Whether to use ZoomCrop or not with PHPThumb
     'thumbnails' => true,
     'thumbsizes' => array(

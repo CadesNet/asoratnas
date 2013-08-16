@@ -97,9 +97,18 @@ class BranchesController extends AppController {
 		$this->Session->setFlash(__('Branch was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+	public function select(){
 
-
-
-
-
+		$Branch = $this->Branch->find('all');
+		$this->set(compact('Branch'));
+	}
+	public function select1($id=null){
+		if (!$this->Branch->exists($id)) {
+			$this->redirect(array('action' => 'select'));
+			//throw new NotFoundException(__('Invalid branch'));
+		}else{
+		$Branch = $this->Branch->find('all',array('conditions' => array('Branch.' . $this->Branch->primaryKey => $id),'recursive'  => 1));
+		$this->set(compact('Branch'));
+		}
+	}
 }

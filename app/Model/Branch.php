@@ -5,9 +5,21 @@ App::uses('AppModel', 'Model');
  *
  * @property Company $Company
  * @property Address $Address
- * @property Requirement $Requirement
+ * @property Charge $Charge
  */
 class Branch extends AppModel {
+
+
+
+/**
+ * img field
+ *
+ */
+var $actsAs = array(
+        'MeioUpload' => array('filename')
+    );
+
+
 
 /**
  * Display field
@@ -34,7 +46,7 @@ class Branch extends AppModel {
 		),
 		'name' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
+				'rule' => array('maxlength',100),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -44,7 +56,7 @@ class Branch extends AppModel {
 		),
 		'type' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
+				'rule' => array('maxlength',50),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -54,7 +66,7 @@ class Branch extends AppModel {
 		),
 		'address' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
+				'rule' => array('maxlength',300),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -85,16 +97,6 @@ class Branch extends AppModel {
 		'fax' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'contact' => array(
-			'maxlength' => array(
-				'rule' => array('maxlength'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -140,8 +142,8 @@ class Branch extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Requirement' => array(
-			'className' => 'Requirement',
+		'Charge' => array(
+			'className' => 'Charge',
 			'foreignKey' => 'branch_id',
 			'dependent' => false,
 			'conditions' => '',

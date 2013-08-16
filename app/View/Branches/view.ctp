@@ -16,6 +16,16 @@
 			<?php echo h($branch['Branch']['name']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Filename'); ?></dt>
+		<dd>
+			<?php echo h($branch['Branch']['filename']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Dir'); ?></dt>
+		<dd>
+			<?php echo h($branch['Branch']['dir']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Type'); ?></dt>
 		<dd>
 			<?php echo h($branch['Branch']['type']); ?>
@@ -59,8 +69,8 @@
 		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Addresses'), array('controller' => 'addresses', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Address'), array('controller' => 'addresses', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Requirements'), array('controller' => 'requirements', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Requirement'), array('controller' => 'requirements', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -113,50 +123,36 @@
 	</div>
 </div>
 <div class="related">
-	<h3><?php echo __('Related Requirements'); ?></h3>
-	<?php if (!empty($branch['Requirement'])): ?>
+	<h3><?php echo __('Related Charges'); ?></h3>
+	<?php if (!empty($branch['Charge'])): ?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Branch Id'); ?></th>
-		<th><?php echo __('Charge'); ?></th>
-		<th><?php echo __('Surnames'); ?></th>
-		<th><?php echo __('Names'); ?></th>
-		<th><?php echo __('Date Of Birth'); ?></th>
-		<th><?php echo __('Sex'); ?></th>
-		<th><?php echo __('Address'); ?></th>
-		<th><?php echo __('Phone'); ?></th>
-		<th><?php echo __('Cellular'); ?></th>
-		<th><?php echo __('Email'); ?></th>
-		<th><?php echo __('Message'); ?></th>
-		<th><?php echo __('Curriculum'); ?></th>
+		<th><?php echo __('Title'); ?></th>
+		<th><?php echo __('Deadline'); ?></th>
+		<th><?php echo __('Description'); ?></th>
+		<th><?php echo __('Formation'); ?></th>
 		<th><?php echo __('Created'); ?></th>
 		<th><?php echo __('Modified'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
 		$i = 0;
-		foreach ($branch['Requirement'] as $requirement): ?>
+		foreach ($branch['Charge'] as $charge): ?>
 		<tr>
-			<td><?php echo $requirement['id']; ?></td>
-			<td><?php echo $requirement['branch_id']; ?></td>
-			<td><?php echo $requirement['charge']; ?></td>
-			<td><?php echo $requirement['surnames']; ?></td>
-			<td><?php echo $requirement['names']; ?></td>
-			<td><?php echo $requirement['date_of_birth']; ?></td>
-			<td><?php echo $requirement['sex']; ?></td>
-			<td><?php echo $requirement['address']; ?></td>
-			<td><?php echo $requirement['phone']; ?></td>
-			<td><?php echo $requirement['cellular']; ?></td>
-			<td><?php echo $requirement['email']; ?></td>
-			<td><?php echo $requirement['message']; ?></td>
-			<td><?php echo $requirement['curriculum']; ?></td>
-			<td><?php echo $requirement['created']; ?></td>
-			<td><?php echo $requirement['modified']; ?></td>
+			<td><?php echo $charge['id']; ?></td>
+			<td><?php echo $charge['branch_id']; ?></td>
+			<td><?php echo $charge['title']; ?></td>
+			<td><?php echo $charge['deadline']; ?></td>
+			<td><?php echo $charge['description']; ?></td>
+			<td><?php echo $charge['formation']; ?></td>
+			<td><?php echo $charge['created']; ?></td>
+			<td><?php echo $charge['modified']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'requirements', 'action' => 'view', $requirement['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'requirements', 'action' => 'edit', $requirement['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'requirements', 'action' => 'delete', $requirement['id']), null, __('Are you sure you want to delete # %s?', $requirement['id'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'charges', 'action' => 'view', $charge['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'charges', 'action' => 'edit', $charge['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'charges', 'action' => 'delete', $charge['id']), null, __('Are you sure you want to delete # %s?', $charge['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -165,7 +161,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Requirement'), array('controller' => 'requirements', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>

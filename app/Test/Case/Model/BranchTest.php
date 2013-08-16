@@ -16,6 +16,7 @@ class BranchTest extends CakeTestCase {
 		'app.branch',
 		'app.company',
 		'app.address',
+		'app.charge',
 		'app.requirement'
 	);
 
