@@ -44,12 +44,12 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'modal';
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->Benefit->create();
 			if ($this->Benefit->save($this->request->data)) {
 				$this->Session->setFlash(__('The benefit has been saved'));
-				$this->redirect(array('action' => 'index'));
+			    $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The benefit could not be saved. Please, try again.'));
 			}
@@ -89,7 +89,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-
+		$this->layout = 'ajax';
 		$this->Benefit->id = $id;
 		if (!$this->Benefit->exists()) {
 			throw new NotFoundException(__('Invalid benefit'));
@@ -104,6 +104,7 @@ class BenefitsController extends AppController {
 	}
 	//conulta propias
 	public function select(){
+		$this->loadModel('Ad');
        $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
        //$this->loadModel('Category');
@@ -115,7 +116,7 @@ class BenefitsController extends AppController {
 		$this->set(compact('Supermarket','Benefit','Recipe'));
 	}
 	public function select1(){
-
+		$this->loadModel('Ad');
 	//$conditions = "id = 6";
 //$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
 		$this->paginate = array(
@@ -126,12 +127,12 @@ class BenefitsController extends AppController {
                                 //'conditions' => $conditions
                                 );
          
-        
+        $Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
         $Benefit = $this->paginate("Benefit");
-        $this->set(compact("Benefit"));
+        $this->set(compact("Benefit",'Ad'));
 	}
 	public function select2($id=null,$pagina){
-
+		$this->loadModel('Ad');
 		if(!$this->Benefit->exists($id)){
 
 
@@ -146,10 +147,10 @@ class BenefitsController extends AppController {
                                 'page' => $pagina
                                 //'conditions' => $conditions
                                 );
-
+		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
 		$Benefit = $this->paginate("Benefit");
 		//$Recipe = $this->Recipe->find('all',array('conditions' => array('Recipe.' . $this->Recipe->primaryKey => $id),'recursive'  => 1));
-		$this->set(compact('Benefit'));
+		$this->set(compact('Benefit','Ad'));
 		}
 
 	}

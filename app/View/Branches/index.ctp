@@ -19,7 +19,7 @@
 	<tr>
 		<td><?php echo h($branch['Branch']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($branch['Company']['name'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
+			<?php echo $this->Html->link($branch['Company']['id'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
 		</td>
 		<td><?php echo h($branch['Branch']['name']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['filename']); ?>&nbsp;</td>
@@ -31,9 +31,9 @@
 		<td><?php echo h($branch['Branch']['fax']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['contact']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $branch['Branch']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $branch['Branch']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $branch['Branch']['id']), null, __('Are you sure you want to delete # %s?', $branch['Branch']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $branch['Branch']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -55,12 +55,10 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Branch'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Companies'), array('controller' => 'companies', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Addresses'), array('controller' => 'addresses', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Address'), array('controller' => 'addresses', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Branch'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
+		<li><?php echo $this->Html->link(__('List Companies'), array('controller' => 'companies', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>

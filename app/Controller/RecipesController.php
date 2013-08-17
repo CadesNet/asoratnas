@@ -13,6 +13,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->layout = 'ajax';
 		$this->Recipe->recursive = 0;
 		$this->set('recipes', $this->paginate());
 	}
@@ -25,6 +26,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Recipe->exists($id)) {
 			throw new NotFoundException(__('Invalid recipe'));
 		}
@@ -38,6 +40,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->Recipe->create();
 			if ($this->Recipe->save($this->request->data)) {
@@ -57,6 +60,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Recipe->exists($id)) {
 			throw new NotFoundException(__('Invalid recipe'));
 		}
@@ -81,6 +85,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->layout = 'ajax';
 		$this->Recipe->id = $id;
 		if (!$this->Recipe->exists()) {
 			throw new NotFoundException(__('Invalid recipe'));
@@ -97,8 +102,8 @@ class RecipesController extends AppController {
 
 //conulta propias
 	public function select(){
-
-	$conditions = "id = 6";
+		$this->loadModel('Ad');
+	//$conditions = "id = 6";
 //$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
 		$this->paginate = array(
                                 'order' => array('Recipe.id' => 'DESC'), 
@@ -110,13 +115,16 @@ class RecipesController extends AppController {
          
         
         $Recipe = $this->paginate("Recipe");
-        $this->set(compact("Recipe"));
+
+        $Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
+        $this->set(compact("Recipe","Ad"));
 	}
 
 
 
 
 	public function select1($id=null,$pagina){
+	  $this->loadModel('Ad');
 	  if(!$this->Recipe->exists($id)){
 
 
@@ -133,8 +141,8 @@ class RecipesController extends AppController {
                                 );
 
 		$Recipe = $this->paginate("Recipe");
-		//$Recipe = $this->Recipe->find('all',array('conditions' => array('Recipe.' . $this->Recipe->primaryKey => $id),'recursive'  => 1));
-		$this->set(compact('Recipe'));
+		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
+		$this->set(compact('Recipe','Ad'));
 		}
 	}
 }

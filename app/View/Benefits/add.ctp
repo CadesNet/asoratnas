@@ -9,7 +9,7 @@
 		echo $this->Form->input('dir',array('type' => 'hidden'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(array('label' => __('Submit', true), 'class' => 'ok btn btn-info btn-large')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
@@ -17,26 +17,8 @@
 
 		<li>
 		<?php 
-		echo $this->Html->link(__('List Benefits'), array('action' => 'index'),array('class' => ' ok btn btn-info btn-large'));
-		 ?>
-			<script type="text/javascript">
-						$('.ok').click(function(){
-					$.ajax({
-					  type: "GET",
-					  url: $(this).attr('href')
-					}).done(function(html_form) {
-					
-					 $('#bod').html(html_form);
-
-					 $("#myModal").modal('hide'); 
-					 setTimeout(function(){
- 					$("#myModal").modal("show");},2000);					 
-					});
-					return false;
-					});
-			</script>
-
-
-		</li>
+		echo $this->Html->link(__('List Benefits'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large'));
+		 ?> 
+		 </li>
 	</ul>
 </div>

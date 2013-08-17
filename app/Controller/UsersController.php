@@ -21,7 +21,9 @@ public function beforeFilter() {
     $this->Auth->autorediRect=false;
 	}
 
-	public function login() {//lo q hace cuando se loguea o cuando quiere loguearce 
+	public function login() {
+		//$this->layout = 'ajax';
+	//lo q hace cuando se loguea o cuando quiere loguearce 
 	    if ($this->request->is('post')) {
 	        if ($this->Auth->login()) {
 	            $this->redirect($this->Auth->redirect());
@@ -32,20 +34,10 @@ public function beforeFilter() {
 	}
 
 	public function logout() { //sierra sesion 
-		
+	//	$this->layout = 'ajax';
 	    $this->redirect($this->Auth->logout());
 	}
-	public function index(){
-		$id = $this->Auth->user('id');
-		$var = array('id' => $id);
-		$this->set('users',$var);
 
-	}
-   public function mostrar()
-	{
-		
-		# code...
-	}
 
 
 

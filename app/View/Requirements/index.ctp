@@ -20,7 +20,7 @@
 	<tr>
 		<td><?php echo h($requirement['Requirement']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($requirement['Charge']['title'], array('controller' => 'charges', 'action' => 'view', $requirement['Charge']['id'])); ?>
+			<?php echo $this->Html->link($requirement['Charge']['title'], array('controller' => 'charges', 'action' => 'view', $requirement['Charge']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 		</td>
 		<td><?php echo h($requirement['Requirement']['fullname']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['date_of_birth']); ?>&nbsp;</td>
@@ -33,9 +33,9 @@
 		<td><?php echo h($requirement['Requirement']['created']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $requirement['Requirement']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $requirement['Requirement']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $requirement['Requirement']['id']), null, __('Are you sure you want to delete # %s?', $requirement['Requirement']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $requirement['Requirement']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $requirement['Requirement']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $requirement['Requirement']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $requirement['Requirement']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -57,8 +57,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Requirement'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Requirement'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
+		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>

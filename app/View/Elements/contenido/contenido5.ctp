@@ -93,33 +93,22 @@ echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled'))
 		</div>
 		<div class="span3">
 		<div class="row-fluid">
+		<?php foreach ($ads as $value) { ?> 
 			<div class="span12 " >
-				<?php echo $this->Html->image("noticias/1.png")?>
-				<br>
-				<br>
-				<br>
-			</div>
-<div class="span12 " >
-				<?php echo $this->Html->image("noticias/1.png")?>
-				<br>
-				<br>
-				<br>
-			</div>
-			 
-        
 
-            <div class="span12 " >
-					<div class="videoUiWrapper thumbnail">
-					  <video width="250" height="214" id="demo1">
-                            <source src="http://ia700305.us.archive.org/18/items/CopyingIsNotTheft/CINT_Nik_H264_720.ogv" type="video/ogg"> 
-                            <source src="http://ia700305.us.archive.org/18/items/CopyingIsNotTheft/CINT_Nik_H264_720_512kb.mp4" type="video/mp4">
-					    Your browser does not support the video tag.
-					  </video>
-					</div>
+				 <?php if($value['Ad']['type'] !='video'){ 
+					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
+				} else{ ?>
+					<iframe width="100%" height="100%" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+				 <?php } ?>
+				
 				<br>
 				<br>
 				<br>
-			</div>			
+				
+
+			</div>		
+		<?php } ?>		
 		</div>
 		</div>
 	</div>

@@ -14,6 +14,6 @@
 	<ul>
 
 		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Service.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Service.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Services'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('List Services'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 	</ul>
 </div>

@@ -121,7 +121,7 @@
 				?>
           </li>
           <li>
-          <?php echo $this->Html->link(("Cuida tu Salud"), array('controller' => 'Benefits', 'action' => 'select'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
+          <?php echo $this->Html->link(("Cuida tu Salud"), array('controller' => 'Tips', 'action' => 'select1'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
 				?>
           </li>
         </ul>

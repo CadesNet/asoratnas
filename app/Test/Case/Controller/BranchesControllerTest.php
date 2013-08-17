@@ -15,7 +15,6 @@ class BranchesControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.branch',
 		'app.company',
-		'app.address',
 		'app.charge',
 		'app.requirement'
 	);

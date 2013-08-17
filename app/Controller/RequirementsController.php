@@ -15,6 +15,7 @@ class RequirementsController extends AppController {
 	public $helpers = array('FormEnum');
 	
 	public function index() {
+		$this->layout = 'ajax';
 		$this->Requirement->recursive = 0;
 		$this->set('requirements', $this->paginate());
 	}
@@ -27,6 +28,7 @@ class RequirementsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Requirement->exists($id)) {
 			throw new NotFoundException(__('Invalid requirement'));
 		}
@@ -40,6 +42,7 @@ class RequirementsController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->Requirement->create();
 			if ($this->Requirement->save($this->request->data)) {
@@ -61,6 +64,7 @@ class RequirementsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Requirement->exists($id)) {
 			throw new NotFoundException(__('Invalid requirement'));
 		}
@@ -87,6 +91,7 @@ class RequirementsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->layout = 'ajax';
 		$this->Requirement->id = $id;
 		if (!$this->Requirement->exists()) {
 			throw new NotFoundException(__('Invalid requirement'));

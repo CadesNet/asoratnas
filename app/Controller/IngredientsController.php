@@ -13,6 +13,7 @@ class IngredientsController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->layout = 'ajax';
 		$this->Ingredient->recursive = 1;
 		$this->set('ingredients', $this->paginate());
 	}
@@ -25,6 +26,7 @@ class IngredientsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Ingredient->exists($id)) {
 			throw new NotFoundException(__('Invalid ingredient'));
 		}
@@ -38,6 +40,7 @@ class IngredientsController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->Ingredient->create();
 			if ($this->Ingredient->save($this->request->data)) {
@@ -59,6 +62,7 @@ class IngredientsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Ingredient->exists($id)) {
 			throw new NotFoundException(__('Invalid ingredient'));
 		}
@@ -85,6 +89,7 @@ class IngredientsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->layout = 'ajax';
 		$this->Ingredient->id = $id;
 		if (!$this->Ingredient->exists()) {
 			throw new NotFoundException(__('Invalid ingredient'));

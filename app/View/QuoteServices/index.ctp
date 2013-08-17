@@ -29,9 +29,9 @@
 		<td><?php echo h($quoteService['QuoteService']['created']); ?>&nbsp;</td>
 		<td><?php echo h($quoteService['QuoteService']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $quoteService['QuoteService']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $quoteService['QuoteService']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $quoteService['QuoteService']['id']), null, __('Are you sure you want to delete # %s?', $quoteService['QuoteService']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $quoteService['QuoteService']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $quoteService['QuoteService']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $quoteService['QuoteService']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $quoteService['QuoteService']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -53,8 +53,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Quote Service'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Services'), array('controller' => 'services', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Service'), array('controller' => 'services', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Quote Service'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
+		<li><?php echo $this->Html->link(__('List Services'), array('controller' => 'services', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Service'), array('controller' => 'services', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>

@@ -167,7 +167,17 @@ function C_Rstrt(){C_Stppd=false}
 		<div class="span4">
 		<div class="row">
 			<div class="span3 offset1" style="text-align:center;">
-				<?php echo $this->Html->image("noticias/1.png")?>
+
+				
+				<?php
+				if($this->Session->read('Auth.User.id')){
+					 echo $this->Html->link(__('admin'), array('controller' => 'Ads', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large'));
+				}	
+
+
+
+				 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename'])?>
+			
 				<br>
 				<br>
 				<br>

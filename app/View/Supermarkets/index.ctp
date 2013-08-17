@@ -19,9 +19,9 @@
 		<td><?php echo h($supermarket['Supermarket']['link']); ?>&nbsp;</td>
 		<td><?php echo h($supermarket['Supermarket']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $supermarket['Supermarket']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $supermarket['Supermarket']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $supermarket['Supermarket']['id']), null, __('Are you sure you want to delete # %s?', $supermarket['Supermarket']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $supermarket['Supermarket']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -43,6 +43,6 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Supermarket'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Supermarket'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 	</ul>
 </div>
