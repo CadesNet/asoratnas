@@ -119,20 +119,6 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 		</div><!-- #main-container -->
 		</div><!-- #header .container -->
 
-			
-				<script type="text/javascript">
-				$('#idamd').click(function(){
-		$.ajax({
-		  type: "GET",
-		  url: $(this).attr('href')
-		  }).done(function(html_form) {
-		  $('#bod').html(html_form);
-		  $("#myModal").modal("show");
-		});
-		return false;
-});
-		</script>
-
 	</body>
 
 

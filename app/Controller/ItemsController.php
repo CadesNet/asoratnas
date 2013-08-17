@@ -101,6 +101,7 @@ class ItemsController extends AppController {
 	public function select($id = null){
        $this->loadModel('Category');
        $this->loadModel('Recipe');
+       $this->loadModel('Ad');
 		if(!$this->Category->exists($id)){
 			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			//throw new NotFoundException(__('Invalid Category'));
@@ -108,7 +109,8 @@ class ItemsController extends AppController {
 		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id),'recursive'  => 2));
 		//$this->set('item', $this->Item->find('all', $options));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
-		$this->set(compact('Category','Recipe'));
+		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
+		$this->set(compact('Category','Recipe','Ad'));
 		}
 		
 		

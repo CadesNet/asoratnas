@@ -25,9 +25,9 @@
 		<td><?php echo h($charge['Charge']['created']); ?>&nbsp;</td>
 		<td><?php echo h($charge['Charge']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $charge['Charge']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $charge['Charge']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $charge['Charge']['id']), null, __('Are you sure you want to delete # %s?', $charge['Charge']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $charge['Charge']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $charge['Charge']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $charge['Charge']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $charge['Charge']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -49,10 +49,10 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Charge'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Branches'), array('controller' => 'branches', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Branch'), array('controller' => 'branches', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Requirements'), array('controller' => 'requirements', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Requirement'), array('controller' => 'requirements', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Charge'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
+		<li><?php echo $this->Html->link(__('List Branches'), array('controller' => 'branches', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Branch'), array('controller' => 'branches', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Requirements'), array('controller' => 'requirements', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Requirement'), array('controller' => 'requirements', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>

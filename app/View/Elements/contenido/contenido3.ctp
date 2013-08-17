@@ -62,7 +62,7 @@
 		<div class="span3">
 		<div class="row-fluid" >
 			<div class="span12" style="text-align:center;">
-				<?php echo $this->Html->image("noticias/1.png")?>
+				<?php echo $this->Html->image('ad/filename/'.$ads['Ad']['filename'])?>
 				<br>
 				<br>
 				<br>

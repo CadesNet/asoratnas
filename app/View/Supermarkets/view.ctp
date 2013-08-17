@@ -36,9 +36,9 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Supermarket'), array('action' => 'edit', $supermarket['Supermarket']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Supermarket'), array('action' => 'delete', $supermarket['Supermarket']['id']), null, __('Are you sure you want to delete # %s?', $supermarket['Supermarket']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Supermarkets'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Supermarket'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit Supermarket'), array('action' => 'edit', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Supermarket'), array('action' => 'delete', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Supermarkets'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Supermarket'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>

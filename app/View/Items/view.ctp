@@ -18,7 +18,7 @@
 		</dd>
 		<dt><?php echo __('Category'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($item['Category']['name'], array('controller' => 'categories', 'action' => 'view', $item['Category']['id'])); ?>
+			<?php echo $this->Html->link($item['Category']['name'], array('controller' => 'categories', 'action' => 'view', $item['Category']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -26,16 +26,16 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Item'), array('action' => 'edit', $item['Item']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Item'), array('action' => 'delete', $item['Item']['id']), null, __('Are you sure you want to delete # %s?', $item['Item']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Items'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Images Items'), array('controller' => 'images_items', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Images Item'), array('controller' => 'images_items', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Quotes'), array('controller' => 'quotes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit Item'), array('action' => 'edit', $item['Item']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Item'), array('action' => 'delete', $item['Item']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $item['Item']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('List Items'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Item'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Images Items'), array('controller' => 'images_items', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Images Item'), array('controller' => 'images_items', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Quotes'), array('controller' => 'quotes', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -60,9 +60,9 @@
 			<td><?php echo $imagesItem['description']; ?></td>
 			<td><?php echo $imagesItem['item_id']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'images_items', 'action' => 'view', $imagesItem['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'images_items', 'action' => 'edit', $imagesItem['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'images_items', 'action' => 'delete', $imagesItem['id']), null, __('Are you sure you want to delete # %s?', $imagesItem['id'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'images_items', 'action' => 'view', $imagesItem['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'images_items', 'action' => 'edit', $imagesItem['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'images_items', 'action' => 'delete', $imagesItem['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $imagesItem['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -71,7 +71,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Images Item'), array('controller' => 'images_items', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('New Images Item'), array('controller' => 'images_items', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		</ul>
 	</div>
 </div>
@@ -99,9 +99,9 @@
 			<td><?php echo $quote['created']; ?></td>
 			<td><?php echo $quote['modified']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'quotes', 'action' => 'view', $quote['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'quotes', 'action' => 'edit', $quote['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'quotes', 'action' => 'delete', $quote['id']), null, __('Are you sure you want to delete # %s?', $quote['id'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'quotes', 'action' => 'view', $quote['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'quotes', 'action' => 'edit', $quote['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'quotes', 'action' => 'delete', $quote['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $quote['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -110,7 +110,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		</ul>
 	</div>
 </div>

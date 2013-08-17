@@ -13,6 +13,7 @@ class BranchesController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->layout = 'ajax';
 		$this->Branch->recursive = 0;
 		$this->set('branches', $this->paginate());
 	}
@@ -25,6 +26,7 @@ class BranchesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Branch->exists($id)) {
 			throw new NotFoundException(__('Invalid branch'));
 		}
@@ -38,6 +40,7 @@ class BranchesController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->Branch->create();
 			if ($this->Branch->save($this->request->data)) {
@@ -59,6 +62,7 @@ class BranchesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Branch->exists($id)) {
 			throw new NotFoundException(__('Invalid branch'));
 		}
@@ -85,6 +89,7 @@ class BranchesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->layout = 'ajax';
 		$this->Branch->id = $id;
 		if (!$this->Branch->exists()) {
 			throw new NotFoundException(__('Invalid branch'));

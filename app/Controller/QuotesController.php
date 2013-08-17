@@ -13,6 +13,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->layout = 'ajax';
 		$this->Quote->recursive = 0;
 		$this->set('quotes', $this->paginate());
 	}
@@ -25,6 +26,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Quote->exists($id)) {
 			throw new NotFoundException(__('Invalid quote'));
 		}
@@ -38,6 +40,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->Quote->create();
 			if ($this->Quote->save($this->request->data)) {
@@ -59,6 +62,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Quote->exists($id)) {
 			throw new NotFoundException(__('Invalid quote'));
 		}
@@ -85,6 +89,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->layout = 'ajax';
 		$this->Quote->id = $id;
 		if (!$this->Quote->exists()) {
 			throw new NotFoundException(__('Invalid quote'));
@@ -102,6 +107,8 @@ class QuotesController extends AppController {
 		$this->loadModel('Category');
        $this->loadModel('Recipe');
        $this->loadModel('Item');
+       $this->loadModel('Ad');
+
 		if(!$this->Category->exists($id) and !$this->Item->exists($id2)){
 			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			//throw new NotFoundException(__('Invalid Category'));
@@ -112,7 +119,9 @@ class QuotesController extends AppController {
 		//$this->set('item', $this->Item->find('all', $options));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$Recipes1 = $this->Recipe->find('all');
-		$this->set(compact('Category','Item','Recipe','Recipes1'));
+		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
+
+		$this->set(compact('Category','Item','Recipe','Recipes1','Ad'));
 
 		}
 	}

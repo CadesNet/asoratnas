@@ -13,6 +13,7 @@ class ChargesController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->layout = 'ajax';
 		$this->Charge->recursive = 0;
 		$this->set('charges', $this->paginate());
 	}
@@ -25,6 +26,7 @@ class ChargesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Charge->exists($id)) {
 			throw new NotFoundException(__('Invalid charge'));
 		}
@@ -38,6 +40,7 @@ class ChargesController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->Charge->create();
 			if ($this->Charge->save($this->request->data)) {
@@ -59,6 +62,7 @@ class ChargesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Charge->exists($id)) {
 			throw new NotFoundException(__('Invalid charge'));
 		}
@@ -85,6 +89,7 @@ class ChargesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->layout = 'ajax';
 		$this->Charge->id = $id;
 		if (!$this->Charge->exists()) {
 			throw new NotFoundException(__('Invalid charge'));

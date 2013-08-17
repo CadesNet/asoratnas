@@ -15,7 +15,6 @@ class BranchTest extends CakeTestCase {
 	public $fixtures = array(
 		'app.branch',
 		'app.company',
-		'app.address',
 		'app.charge',
 		'app.requirement'
 	);

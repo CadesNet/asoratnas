@@ -46,9 +46,9 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Consultation'), array('action' => 'edit', $consultation['Consultation']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Consultation'), array('action' => 'delete', $consultation['Consultation']['id']), null, __('Are you sure you want to delete # %s?', $consultation['Consultation']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Consultations'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Consultation'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit Consultation'), array('action' => 'edit', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Consultation'), array('action' => 'delete', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Consultations'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Consultation'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>

@@ -7,11 +7,10 @@
 			</div>
 			<?php 
 			if($this->Session->read('Auth.User.id')){
-				 echo $this->Html->link(__('admin'), array('controller' => 'Benefits', 'action' => 'index'), array('id' => "idamd" ,'class' => 'btn btn-info btn-large'));
+				 echo $this->Html->link(__('admin'), array('controller' => 'Benefits', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large'));
 			}
 			$coun=0;
 			foreach($benefits as $benefit): ?>
-
 			<div class="row-fluid" >		
 			<div class= "benefitsbody">		
 						<div class="span3" style="">

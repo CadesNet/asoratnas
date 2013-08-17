@@ -13,6 +13,7 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->layout = 'ajax';
 		$this->Category->recursive = 2;
 		$this->set('categories', $this->paginate());
 	}
@@ -25,6 +26,7 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Category->exists($id)) {
 			throw new NotFoundException(__('Invalid category'));
 		}
@@ -38,6 +40,7 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->Category->create();
 			if ($this->Category->save($this->request->data)) {
@@ -57,6 +60,7 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->layout = 'ajax';
 		if (!$this->Category->exists($id)) {
 			throw new NotFoundException(__('Invalid category'));
 		}
@@ -81,6 +85,7 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->layout = 'ajax';
 		$this->Category->id = $id;
 		if (!$this->Category->exists()) {
 			throw new NotFoundException(__('Invalid category'));
@@ -97,11 +102,13 @@ class CategoriesController extends AppController {
 	public function select(){
        $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
+       $this->loadModel('Ad');
 		//$options = array('conditions' => array('limit' => 2));
        	$Supermarket = $this->Supermarket->find('all');
 		$Category = $this->Category->find('all');
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
-		$this->set(compact('Supermarket','Category','Benefit','Recipe'));
+		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
+		$this->set(compact('Supermarket','Category','Benefit','Recipe','Ad'));
 	}
 
 }

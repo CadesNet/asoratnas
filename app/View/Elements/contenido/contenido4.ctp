@@ -114,12 +114,22 @@
 						
 		<div class="span3">
 		<div class="row-fluid" >
-			<div class="span12" style="text-align:center;">
-				<?php echo $this->Html->image("noticias/1.png")?>
+			<?php foreach ($ads as $value) { ?> 
+			<div class="span12 " >
+
+				 <?php if($value['Ad']['type'] !='video'){ 
+					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
+				} else{ ?>
+					<iframe width="560" height="315" src= <?=$value['Ad']['filename'] ?> frameborder="0" allowfullscreen></iframe>
+				 <?php } ?>
+				
 				<br>
 				<br>
 				<br>
-			</div>
+				
+
+			</div>		
+		<?php } ?>		
 
 			
 

@@ -82,33 +82,24 @@ echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 
 		</div>
 		<div class="span3">
 		
-			<div class="span12 ">
-				<?php echo $this->Html->image("noticias/1.png")?>
-				
-			
-			<div class="span12">
-				<?php echo $this->Html->image("noticias/1.png")?>
-				
-			</div>
-			 
-        
+<?php foreach ($ads as $value) { ?> 
+			<div class="span12 " >
 
-            <div class="span12" style="text-align:center;">
-					<div class="videoUiWrapper thumbnail">
-					  <video width="250" height="214" id="demo1">
-                            <source src="http://ia700305.us.archive.org/18/items/CopyingIsNotTheft/CINT_Nik_H264_720.ogv" type="video/ogg"> 
-                            <source src="http://ia700305.us.archive.org/18/items/CopyingIsNotTheft/CINT_Nik_H264_720_512kb.mp4" type="video/mp4">
-					    Your browser does not support the video tag.
-					  </video>
-					</div>
+				 <?php if($value['Ad']['type'] !='video'){ 
+					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
+				} else{ ?>
+					<iframe width="560" height="315" src= <?=$value['Ad']['filename'] ?> frameborder="0" allowfullscreen></iframe>
+				 <?php } ?>
 				
-			</div>			
+				<br>
+				<br>
+				<br>
+				
+
+			</div>		
+		<?php } ?>		
 		
 	</div>
 </div>
 </div>
 </div>
-
-<script type="text/javascript" >
-            $('#demo1').videoUI();
-        </script>
