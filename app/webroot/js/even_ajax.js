@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.idamd').click(function(){
+	/*$('.idamd').click(function(){
 		$.ajax({
 		  type: "GET",
 		  url: $(this).attr('href')
@@ -21,7 +21,7 @@ $(document).ready(function(){
 		});
 		return false;
 	});
-	/*$('#ok').submit(function(){	
+	$('#ok').submit(function(){	
 		$.ajax({
     	type: "POST",
 		url: $(this).attr('href'),

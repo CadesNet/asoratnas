@@ -24,6 +24,7 @@
 </div>
 
 <?php
+/*
 $this->Js->get('#ok')->event(
 'Submit',
 $this->Js->request(
@@ -37,5 +38,5 @@ array(
 )
 )
 );
-
+*/
  ?>

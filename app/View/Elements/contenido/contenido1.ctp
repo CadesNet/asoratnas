@@ -5,10 +5,9 @@
 			<div class="row-fluid" >
 					<h3 class = "benefitstitle">Beneficios para  salud</h4>
 			</div>
+
 			<?php 
-			if($this->Session->read('Auth.User.id')){
-				 echo $this->Html->link(__('admin'), array('controller' => 'Benefits', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large'));
-			}
+			
 			$coun=0;
 			foreach($benefits as $benefit): ?>
 			<div class="row-fluid" >		

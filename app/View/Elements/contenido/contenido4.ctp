@@ -120,7 +120,7 @@
 				 <?php if($value['Ad']['type'] !='video'){ 
 					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
 				} else{ ?>
-					<iframe width="560" height="315" src= <?=$value['Ad']['filename'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe width="560" height="315" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
 				
 				<br>

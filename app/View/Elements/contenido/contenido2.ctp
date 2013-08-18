@@ -164,24 +164,16 @@ function C_Rstrt(){C_Stppd=false}
 				</div>
 			</div>
 		</div>
-		<div class="span4">
-		<div class="row-fluid">
-			<div class="span3 offset1" style="text-align:center;">
-
-				
-				<?php
-				if($this->Session->read('Auth.User.id')){
-					 echo $this->Html->link(__('admin'), array('controller' => 'Ads', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large'));
-				}	?>
-
-
-				
+						
+		<div class="span3 offset1">
+		<div class="row-fluid" >
+			
 			<div class="span12 " >
 
-				 <?php if($ads['Ad']['type'] !='video'){ 
-					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
+				  <?php if($ads['Ad']['type'] !='video'){ 
+					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
 				} else{ ?>
-					<iframe  src= <?=$ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe src= <?php echo $ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
 				
 				<br>
@@ -189,19 +181,12 @@ function C_Rstrt(){C_Stppd=false}
 				<br>
 				
 
-			</div>				
-				
-			
-				<br>
-				<br>
-				<br>
-			</div>
-
+			</div>		
 			
 
 
 
-		<div class="span12" style="text-align:center;">
+			<div class="span12" style="text-align:center;">
 				<div class="row-fluid" >
 					<div class="span12">
 						<h2>La receta del dia</h2>
@@ -237,6 +222,7 @@ function C_Rstrt(){C_Stppd=false}
 					
 				</div>
 			</div>		
+		</div>
 		</div>
 		</div>
 	</div>

@@ -48,8 +48,8 @@ public $helpers = array('Js');
 		if ($this->request->is('post')) {
 			$this->Benefit->create();
 			if ($this->Benefit->save($this->request->data)) {
-				//$this->Session->setFlash(__('The benefit has been saved'));
-			   // $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The benefit has been saved'));
+			    $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The benefit could not be saved. Please, try again.'));
 			}
