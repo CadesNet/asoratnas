@@ -14,8 +14,8 @@ class Quote extends AppModel {
 	public $validate = array(
 		'fullname' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',49),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',50),
+				'message' => 'Maximo 50 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -24,8 +24,8 @@ class Quote extends AppModel {
 		),
 		'address' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',200),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',1000),
+				'message' => 'Maximo 1000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -54,8 +54,8 @@ class Quote extends AppModel {
 		),
 		'message' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1000),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',2000),
+				'message' => 'Maximo 2000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

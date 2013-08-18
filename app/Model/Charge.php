@@ -33,8 +33,8 @@ class Charge extends AppModel {
 		),
 		'title' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',150),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',200),
+				'message' => 'Maximo 200 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

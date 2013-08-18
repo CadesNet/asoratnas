@@ -31,7 +31,7 @@ class Requirement extends AppModel {
 		'fullname' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',100),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 100 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -51,7 +51,7 @@ class Requirement extends AppModel {
 		'address' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',1000),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 1000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -70,8 +70,8 @@ class Requirement extends AppModel {
 		),
 		'message' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1000),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',2000),
+				'message' => 'Maximo 2000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

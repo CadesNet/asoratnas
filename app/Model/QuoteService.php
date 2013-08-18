@@ -26,7 +26,7 @@ class QuoteService extends AppModel {
 		'fullname' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',100),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 100 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -36,7 +36,7 @@ class QuoteService extends AppModel {
 		'address' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',100),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 100 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -64,9 +64,9 @@ class QuoteService extends AppModel {
 			),
 		),
 		'message' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+			'maxlength' => array(
+				'rule' => array('maxlength',2000),
+				'message' => 'Maximo 2000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

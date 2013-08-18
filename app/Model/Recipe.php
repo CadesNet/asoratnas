@@ -22,8 +22,8 @@ class Recipe extends AppModel {
 	public $validate = array(
 		'title' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',100),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',150),
+				'message' => 'Maximo 150 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

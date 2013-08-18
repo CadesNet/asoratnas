@@ -1,12 +1,12 @@
 <div class="branches form">
-<?php echo $this->Form->create('Branch'); ?>
+<?php echo $this->Form->create('Branch',array('type' => 'file')); ?>
 	<fieldset>
 		<legend><?php echo __('Add Branch'); ?></legend>
 	<?php
 		echo $this->Form->input('company_id');
 		echo $this->Form->input('name');
-		echo $this->Form->input('filename');
-		echo $this->Form->input('dir');
+		echo $this->Form->input('filename',array('type' => 'file'));
+		echo $this->Form->input('dir', array('type' => 'hidden'));
 		echo $this->Form->input('type');
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
