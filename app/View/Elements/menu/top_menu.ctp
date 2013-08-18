@@ -27,7 +27,11 @@
                 <li>
 
 
-                  <a style="padding: 6px 12px;"  href="http://localhost/santarosa/benefits/select"><i class="icon-home"></i></a></li>
+            <?php echo $this->Html->link("<i class='icon-home'></i>",
+			    array('controller' => 'benefits', 'action' => 'select'),
+			    array('escape' => false ));
+            
+			     ?>
                 <li class="visible-desktop" ></li>
                                          
                                            <li class="dropdown">

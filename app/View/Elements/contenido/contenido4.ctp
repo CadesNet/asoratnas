@@ -114,13 +114,13 @@
 						
 		<div class="span3">
 		<div class="row-fluid" >
-			<?php foreach ($ads as $value) { ?> 
+			
 			<div class="span12 " >
-
-				 <?php if($value['Ad']['type'] !='video'){ 
-					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
+ 				
+ 				<?php if($ads['Ad']['type'] !='video'){ 
+					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
 				} else{ ?>
-					<iframe width="560" height="315" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe src= <?php echo $ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
 				
 				<br>
@@ -128,8 +128,7 @@
 				<br>
 				
 
-			</div>		
-		<?php } ?>		
+			</div>				
 
 			
 
