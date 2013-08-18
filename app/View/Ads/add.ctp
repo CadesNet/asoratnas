@@ -4,12 +4,12 @@
 		<legend><?php echo __('Add Ad'); ?></legend>
 	<?php
 		echo $this->FormEnum->input('type');
-		echo $this->Form->input('link');
-		echo $this->Form->input('filename',array('type' => 'file'));
-		echo $this->Form->input('dir', array('type' => 'hidden'));
+		echo $this->FormEnum->input('link');
+		echo $this->FormEnum->input('filename',array('type' => 'file'));
+		echo $this->FormEnum->input('dir', array('type' => 'hidden'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(array('label' => __('Submit', true), 'id' =>'ok' ,'class' => 'btn btn-info btn-large')); ?>
+<?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
