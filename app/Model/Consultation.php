@@ -21,8 +21,8 @@ class Consultation extends AppModel {
 	public $validate = array(
 		'name' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',50),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',100),
+				'message' => 'Maximo 100 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -31,7 +31,7 @@ class Consultation extends AppModel {
 		),
 		'address' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',80),
+				'rule' => array('maxlength',1000),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

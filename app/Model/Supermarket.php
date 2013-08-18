@@ -7,6 +7,13 @@ App::uses('AppModel', 'Model');
 class Supermarket extends AppModel {
 
 /**
+ * img field
+ *
+ */
+var $actsAs = array(
+        'MeioUpload' => array('filename')
+    );
+/**
  * Display field
  *
  * @var string
@@ -39,8 +46,8 @@ class Supermarket extends AppModel {
 		),
 		'description' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1500),
-				'message' => 'Maximo 1500 caracteres',
+				'rule' => array('maxlength',2000),
+				'message' => 'Maximo 2000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

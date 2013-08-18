@@ -164,30 +164,29 @@ function C_Rstrt(){C_Stppd=false}
 				</div>
 			</div>
 		</div>
-		<div class="span4">
-		<div class="row">
-			<div class="span3 offset1" style="text-align:center;">
+						
+		<div class="span3 offset1">
+		<div class="row-fluid" >
+			
+			<div class="span12 " >
 
+				  <?php if($ads['Ad']['type'] !='video'){ 
+					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
+				} else{ ?>
+					<iframe src= <?php echo $ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+				 <?php } ?>
 				
-				<?php
-				if($this->Session->read('Auth.User.id')){
-					 echo $this->Html->link(__('admin'), array('controller' => 'Ads', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large'));
-				}	
-
-
-
-				 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename'])?>
-			
 				<br>
 				<br>
 				<br>
-			</div>
+				
 
+			</div>		
 			
 
 
 
-			<div class="span3 offset1" style="text-align:center;">
+			<div class="span12" style="text-align:center;">
 				<div class="row-fluid" >
 					<div class="span12">
 						<h2>La receta del dia</h2>
@@ -223,6 +222,7 @@ function C_Rstrt(){C_Stppd=false}
 					
 				</div>
 			</div>		
+		</div>
 		</div>
 		</div>
 	</div>

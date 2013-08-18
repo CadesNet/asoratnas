@@ -20,8 +20,8 @@
  				
  					<td><?php echo $this->Html->image("images_item/filename/".$value['img']."")?> </td>
  					<td> <?php echo $value['name'] ?></td>  										
-	             <td><?php echo $value['cantidad'];  
-	             echo $this->Form->input('cantidad',array('type' => 'text'));
+	             <td><?php //echo $value['cantidad'];  
+	             echo $this->Form->input('numero',array('type' => 'text','default'=> $value['cantidad']));
 	             	echo $this->Form->input('id1',array('type' => 'hidden','default'=>  $i++));
 	             	echo $this->Form->input('id',array('type' => 'hidden','default'=>  $value['id']));
 					echo $this->Form->input('img',array('type' => 'hidden','default'=>   $value['img']));
@@ -29,8 +29,8 @@
 				    
 	              ?></td>
 	              <td>
-	              	<?php echo $value['detalle'];	
-	              	echo $this->Form->input('detalle',array('type' => 'text')); ?>
+	              	<?php // echo $value['detalle'];	
+	              	echo $this->Form->input('detalle',array('type' => 'text','default'=> $value['detalle'])); ?>
 	              </td>
                   <td><?php echo $this->Html->link(__('Quitar'), array('controller' => 'Quotes', 'action' => 'quitar',$j++)); ?></td>						
 				  <td>

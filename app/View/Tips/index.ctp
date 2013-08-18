@@ -17,9 +17,9 @@
 		<td><?php echo h($tip['Tip']['filename']); ?>&nbsp;</td>
 		<td><?php echo h($tip['Tip']['dir']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $tip['Tip']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $tip['Tip']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $tip['Tip']['id']), null, __('Are you sure you want to delete # %s?', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

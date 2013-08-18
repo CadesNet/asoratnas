@@ -16,7 +16,7 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */ //echo $this->Html->script('bootstrap/vendor/jquery-1.10.1');
-	echo $this->Html->script('even_ajax');
+//	echo $this->Html->script('even_ajax');
 ?>
 <?php echo $this->fetch('content'); ?>
 <?php echo $this->Session->flash(); ?>

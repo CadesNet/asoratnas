@@ -9,7 +9,7 @@
 		echo $this->Form->input('dir',array('type' => 'hidden'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(array('label' => __('Submit', true), 'class' => 'ok btn btn-info btn-large')); ?>
+<?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
@@ -22,3 +22,21 @@
 		 </li>
 	</ul>
 </div>
+
+<?php
+/*
+$this->Js->get('#ok')->event(
+'Submit',
+$this->Js->request(
+array('controller' => 'Benefits', 'action' => 'add'),
+array(
+//'update' => '#bod',
+'async' => true,
+'dataExpression' => true,
+'method' => 'post',
+'data' => $this->Js->serializeForm(array('isForm' => true, 'inline' => true))
+)
+)
+);
+*/
+ ?>

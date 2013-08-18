@@ -21,9 +21,9 @@
 		<td><?php echo h($ad['Ad']['filename']); ?>&nbsp;</td>
 		<td><?php echo h($ad['Ad']['dir']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $ad['Ad']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $ad['Ad']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $ad['Ad']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $ad['Ad']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $ad['Ad']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $ad['Ad']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $ad['Ad']['id']), null, __('Are you sure you want to delete # %s?', $ad['Ad']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -45,6 +45,6 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Ad'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
+		<li><?php echo $this->Html->link(__('New Ad'), array('action' => 'add')); ?></li>
 	</ul>
 </div>

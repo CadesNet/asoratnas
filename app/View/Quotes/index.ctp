@@ -23,8 +23,8 @@
 		<td><?php echo h($quote['Quote']['created']); ?>&nbsp;</td>
 		<td><?php echo h($quote['Quote']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $quote['Quote']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $quote['Quote']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $quote['Quote']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $quote['Quote']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $quote['Quote']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $quote['Quote']['id'])); ?>
 		</td>
 	</tr>

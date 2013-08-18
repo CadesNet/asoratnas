@@ -59,15 +59,24 @@
 
 			
 		</div>
+				
 		<div class="span3">
 		<div class="row-fluid" >
-			<div class="span12" style="text-align:center;">
-				<?php echo $this->Html->image('ad/filename/'.$ads['Ad']['filename'])?>
-				<br>
-				<br>
-				<br>
-			</div>
+			
+			<div class="span12 " >
 
+				 <?php if($ads['Ad']['type'] !='video'){ 
+					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
+				} else{ ?>
+					<iframe src= <?php echo $ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+				 <?php } ?>
+				
+				<br>
+				<br>
+				<br>
+				
+
+			</div>		
 			
 
 
@@ -108,7 +117,6 @@
 					
 				</div>
 			</div>		
-		</div>
 		</div>
 	</div>
 </div>

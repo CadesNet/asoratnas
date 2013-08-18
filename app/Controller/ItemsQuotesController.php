@@ -13,7 +13,7 @@ class ItemsQuotesController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->ItemsQuote->recursive = 0;
 		$this->set('itemsQuotes', $this->paginate());
 	}
@@ -26,7 +26,7 @@ class ItemsQuotesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->ItemsQuote->exists($id)) {
 			throw new NotFoundException(__('Invalid items quote'));
 		}
@@ -40,7 +40,7 @@ class ItemsQuotesController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'ajax';
+		
 		if ($this->request->is('post')) {
 			$this->ItemsQuote->create();
 			if ($this->ItemsQuote->save($this->request->data)) {
@@ -63,7 +63,7 @@ class ItemsQuotesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->ItemsQuote->exists($id)) {
 			throw new NotFoundException(__('Invalid items quote'));
 		}
@@ -91,7 +91,7 @@ class ItemsQuotesController extends AppController {
  * @return void
  */
 	public function delete($id = null,$cantidad=null) {
-		$this->layout = 'ajax';
+		
 		$this->ItemsQuote->id = $id;
 		if (!$this->ItemsQuote->exists()) {
 			throw new NotFoundException(__('Invalid items quote'));

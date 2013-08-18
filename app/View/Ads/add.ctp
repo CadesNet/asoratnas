@@ -4,9 +4,9 @@
 		<legend><?php echo __('Add Ad'); ?></legend>
 	<?php
 		echo $this->FormEnum->input('type');
-		echo $this->Form->input('link');
-		echo $this->Form->input('filename',array('type' => 'file'));
-		echo $this->Form->input('dir', array('type' => 'hidden'));
+		echo $this->FormEnum->input('link');
+		echo $this->FormEnum->input('filename',array('type' => 'file'));
+		echo $this->FormEnum->input('dir', array('type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

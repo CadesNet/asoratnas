@@ -1,13 +1,13 @@
 <div class="ads form">
-<?php echo $this->FormEnum->create('Ad'); ?>
+<?php echo $this->FormEnum->create('Ad',array('type' => 'file')); ?>
 	<fieldset>
 		<legend><?php echo __('Edit Ad'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
+		echo $this->FormEnum->input('id');
 		echo $this->FormEnum->input('type');
-		echo $this->Form->input('link');
-		echo $this->Form->input('filename');
-		echo $this->Form->input('dir');
+		echo $this->FormEnum->input('link');
+		echo $this->FormEnum->input('filename',array('type' => 'file'));
+		echo $this->FormEnum->input('dir', array('type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
