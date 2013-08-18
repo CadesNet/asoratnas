@@ -22,7 +22,7 @@ public function beforeFilter() {
 	}
 
 	public function login() {
-		//$this->layout = 'ajax';
+		//carrusel1
 	//lo q hace cuando se loguea o cuando quiere loguearce 
 	    if ($this->request->is('post')) {
 	        if ($this->Auth->login()) {
@@ -34,7 +34,7 @@ public function beforeFilter() {
 	}
 
 	public function logout() { //sierra sesion 
-	//	$this->layout = 'ajax';
+	//	carrusel1
 	    $this->redirect($this->Auth->logout());
 	}
 

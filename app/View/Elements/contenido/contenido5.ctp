@@ -10,7 +10,7 @@
 						<div class="span10">
 							<div class="row-fluid">
 								<div class="span12">
-									<h3 class = "recipetitle">nam e</h3>
+									<h3 class = "recipetitle">name</h3>
 								</div>
 							</div>
 							

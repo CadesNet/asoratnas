@@ -13,7 +13,7 @@ class ServicesController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->Service->recursive = 0;
 		$this->set('services', $this->paginate());
 	}
@@ -26,7 +26,7 @@ class ServicesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Service->exists($id)) {
 			throw new NotFoundException(__('Invalid service'));
 		}
@@ -40,7 +40,7 @@ class ServicesController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'ajax';
+		
 		if ($this->request->is('post')) {
 			$this->Service->create();
 			if ($this->Service->save($this->request->data)) {
@@ -60,7 +60,7 @@ class ServicesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Service->exists($id)) {
 			throw new NotFoundException(__('Invalid service'));
 		}
@@ -85,7 +85,7 @@ class ServicesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		
 		$this->Service->id = $id;
 		if (!$this->Service->exists()) {
 			throw new NotFoundException(__('Invalid service'));

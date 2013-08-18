@@ -13,7 +13,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->Recipe->recursive = 0;
 		$this->set('recipes', $this->paginate());
 	}
@@ -26,7 +26,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Recipe->exists($id)) {
 			throw new NotFoundException(__('Invalid recipe'));
 		}
@@ -40,7 +40,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'ajax';
+		
 		if ($this->request->is('post')) {
 			$this->Recipe->create();
 			if ($this->Recipe->save($this->request->data)) {
@@ -60,7 +60,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Recipe->exists($id)) {
 			throw new NotFoundException(__('Invalid recipe'));
 		}
@@ -85,7 +85,7 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		
 		$this->Recipe->id = $id;
 		if (!$this->Recipe->exists()) {
 			throw new NotFoundException(__('Invalid recipe'));

@@ -13,7 +13,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->Quote->recursive = 0;
 		$this->set('quotes', $this->paginate());
 	}
@@ -26,7 +26,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Quote->exists($id)) {
 			throw new NotFoundException(__('Invalid quote'));
 		}
@@ -40,7 +40,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'ajax';
+		
 		if ($this->request->is('post')) {
 			$this->Quote->create();
 			if ($this->Quote->save($this->request->data)) {
@@ -62,7 +62,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Quote->exists($id)) {
 			throw new NotFoundException(__('Invalid quote'));
 		}
@@ -89,7 +89,7 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		
 		$this->Quote->id = $id;
 		if (!$this->Quote->exists()) {
 			throw new NotFoundException(__('Invalid quote'));
@@ -135,7 +135,7 @@ class QuotesController extends AppController {
 	   					$id =  $this->request->data['Quote']['id'];
 						$img = $this->request->data['Quote']['img'];
 						$name = $this->request->data['Quote']['name']; 
-						$cantidad = $this->request->data['Quote']['cantidad'];
+						$cantidad = $this->request->data['Quote']['numero'];
 						$detalle = $this->request->data['Quote']['detalle'];
 
 					if(is_numeric($cantidad) and $cantidad > 0){
@@ -145,7 +145,7 @@ class QuotesController extends AppController {
 					
 					unset($va['pp'][$id1]);
      				$this->Session->write($va);	
-			    	$items = array('pp' => array_merge((array)$this->Session->read('pp') , array($id => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => $detalle))));
+			    	$items = array('pp' => array_merge(array($id => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => $detalle)),(array)$this->Session->read('pp')));
 					$this->Session->write($items);
 				 	
 					
@@ -195,7 +195,7 @@ class QuotesController extends AppController {
 				        if(!$bool){
 						        $items =null;
 						        if($this->Session->check('pp')){
-						        		$items = array('pp' => array_merge((array)$this->Session->read('pp') , array($id => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => ''))));
+						        		$items = array('pp' => array_merge(array($id => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => '')),(array)$this->Session->read('pp')));
 						        }else{
 						        	
 						        		$items = array('pp' => array(0  => array('id'=> $id, 'img' => $img, 'name' => $name, 'cantidad' => $cantidad , 'detalle' => '')));

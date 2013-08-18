@@ -13,7 +13,7 @@ class ConsultationsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->Consultation->recursive = 0;
 		$this->set('consultations', $this->paginate());
 	}
@@ -26,7 +26,7 @@ class ConsultationsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Consultation->exists($id)) {
 			throw new NotFoundException(__('Invalid consultation'));
 		}
@@ -48,7 +48,7 @@ class ConsultationsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Consultation->exists($id)) {
 			throw new NotFoundException(__('Invalid consultation'));
 		}
@@ -73,7 +73,7 @@ class ConsultationsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		
 		$this->Consultation->id = $id;
 		if (!$this->Consultation->exists()) {
 			throw new NotFoundException(__('Invalid consultation'));

@@ -13,7 +13,7 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->Company->recursive = 0;
 		$this->set('companies', $this->paginate());
 	}
@@ -26,7 +26,7 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Company->exists($id)) {
 			throw new NotFoundException(__('Invalid company'));
 		}
@@ -40,7 +40,7 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'ajax';
+		
 		if ($this->request->is('post')) {
 			$this->Company->create();
 			if ($this->Company->save($this->request->data)) {
@@ -60,7 +60,7 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Company->exists($id)) {
 			throw new NotFoundException(__('Invalid company'));
 		}
@@ -85,7 +85,7 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		
 		$this->Company->id = $id;
 		if (!$this->Company->exists()) {
 			throw new NotFoundException(__('Invalid company'));

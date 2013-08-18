@@ -14,7 +14,7 @@ class SupermarketsController extends AppController {
 		parent::beforeFilter();
 		//Cambio de Presentación de peticiones Ajax 
 		if($this->request->is('ajax')){
-			$this->layout = 'ajax';
+			carrusel1
 		}
 	}*/
 /**
@@ -23,7 +23,7 @@ class SupermarketsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->Supermarket->recursive = 0;
 		$this->set('supermarkets', $this->paginate());
 	}
@@ -36,7 +36,7 @@ class SupermarketsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Supermarket->exists($id)) {
 			throw new NotFoundException(__('Invalid supermarket'));
 		}
@@ -54,7 +54,7 @@ class SupermarketsController extends AppController {
 
 
 	public function add() {
-		$this->layout = 'ajax';
+		
 		//$this->layout = 'modal';
 		if ($this->request->is('post')) {
 			$this->Supermarket->create();
@@ -64,7 +64,7 @@ class SupermarketsController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The supermarket could not be saved. Please, try again.'));
 			}
-			$this->layout = 'ajax';
+			
 		}
 		
 	}
@@ -77,7 +77,7 @@ class SupermarketsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Supermarket->exists($id)) {
 			throw new NotFoundException(__('Invalid supermarket'));
 		}
@@ -102,7 +102,7 @@ class SupermarketsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		
 		$this->Supermarket->id = $id;
 		if (!$this->Supermarket->exists()) {
 			throw new NotFoundException(__('Invalid supermarket'));

@@ -7,6 +7,16 @@ App::uses('AppController', 'Controller');
  */
 class AdsController extends AppController {
 
+
+public function beforeFilter() {
+		parent::beforeFilter();
+
+		// Cambio de Presentación de peticiones Ajax 
+		if ($this->request->is('ajax')) {
+			$this->layout = 'ajax';
+		}
+	}
+	
 /**
  * index method
  *
@@ -17,7 +27,7 @@ class AdsController extends AppController {
 	public $helpers = array('FormEnum');
 
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->Ad->recursive = 0;
 		$this->set('ads', $this->paginate());
 	}
@@ -30,7 +40,7 @@ class AdsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Ad->exists($id)) {
 			throw new NotFoundException(__('Invalid ad'));
 		}
@@ -44,7 +54,7 @@ class AdsController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'ajax';
+		
 		if ($this->request->is('post')) {
 			$this->Ad->create();
 			if ($this->Ad->save($this->request->data)) {
@@ -64,7 +74,7 @@ class AdsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Ad->exists($id)) {
 			throw new NotFoundException(__('Invalid ad'));
 		}
@@ -89,7 +99,7 @@ class AdsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		
 		$this->Ad->id = $id;
 		if (!$this->Ad->exists()) {
 			throw new NotFoundException(__('Invalid ad'));

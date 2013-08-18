@@ -13,7 +13,7 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->QuoteService->recursive = 0;
 		$this->set('quoteServices', $this->paginate());
 	}
@@ -26,7 +26,7 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->QuoteService->exists($id)) {
 			throw new NotFoundException(__('Invalid quote service'));
 		}
@@ -40,7 +40,7 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'ajax';
+		
 		if ($this->request->is('post')) {
 			$this->QuoteService->create();
 			if ($this->QuoteService->save($this->request->data)) {
@@ -62,7 +62,7 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		carrusel1
 		if (!$this->QuoteService->exists($id)) {
 			throw new NotFoundException(__('Invalid quote service'));
 		}
@@ -89,7 +89,7 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		carrusel1
 		$this->QuoteService->id = $id;
 		if (!$this->QuoteService->exists()) {
 			throw new NotFoundException(__('Invalid quote service'));

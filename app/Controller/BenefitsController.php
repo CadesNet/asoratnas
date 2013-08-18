@@ -8,7 +8,7 @@ App::uses('AppController', 'Controller');
 class BenefitsController extends AppController {
 
 
-
+public $helpers = array('Js');
 
 /**
  * index method
@@ -16,7 +16,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->layout = 'ajax';
+		
 		$this->Benefit->recursive = 0;
 		$this->set('benefits', $this->paginate());
 
@@ -30,7 +30,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Benefit->exists($id)) {
 			throw new NotFoundException(__('Invalid benefit'));
 		}
@@ -44,12 +44,12 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function add() {
-		$this->layout = 'ajax';
+		
 		if ($this->request->is('post')) {
 			$this->Benefit->create();
 			if ($this->Benefit->save($this->request->data)) {
-				$this->Session->setFlash(__('The benefit has been saved'));
-			    $this->redirect(array('action' => 'index'));
+				//$this->Session->setFlash(__('The benefit has been saved'));
+			   // $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The benefit could not be saved. Please, try again.'));
 			}
@@ -64,7 +64,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->layout = 'ajax';
+		
 		if (!$this->Benefit->exists($id)) {
 			throw new NotFoundException(__('Invalid benefit'));
 		}
@@ -89,7 +89,7 @@ class BenefitsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->layout = 'ajax';
+		
 		$this->Benefit->id = $id;
 		if (!$this->Benefit->exists()) {
 			throw new NotFoundException(__('Invalid benefit'));
@@ -104,9 +104,10 @@ class BenefitsController extends AppController {
 	}
 	//conulta propias
 	public function select(){
+
 		$this->loadModel('Ad');
-       $this->loadModel('Supermarket');
-       $this->loadModel('Recipe');
+        $this->loadModel('Supermarket');
+        $this->loadModel('Recipe');
        //$this->loadModel('Category');
 		//$options = array('conditions' => array('limit' => 2));
        	//$Category = $this->Category->find('all');
