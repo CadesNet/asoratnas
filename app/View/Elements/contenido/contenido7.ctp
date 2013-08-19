@@ -1,8 +1,5 @@
 
-	<div class="row-fluid">
-		<div class="span12">
-			
-					<div class="row-fluid">
+			<div class="row-fluid">
 						<div class="span12">
 							<div class="row-fluid">
 								<div class="span12">
@@ -68,18 +65,13 @@
 								</div>
 							</div>
 							<div class="row-fluid">
+								<ul class = "thumbnails2">
 								<?php foreach ($branch as $branches) { ?>
-								<div class="span3 cuadrodireccion">
-									<div class="row-fluid">
-										<div class="span12">
+								<li class="span4 cuadrodireccion">
 										<div class = "dirciudad">	<?php echo $branches['Branch']['name'] ?> </div>
-										</div>
-									</div>
-									<div class="row-fluid">
-										<div class="span12">
-											<?php echo $branches['Branch']['type'] ?>
-										</div>
-									</div>
+									
+											<div><?php echo $branches['Branch']['type'] ?></div>
+										
 									<div class="row-fluid">
 										<div class="span3">
 											<div class = "tipodedireccion">Direccion: </div>
@@ -124,33 +116,34 @@
 											<?php echo $branches['Branch']['contact'] ?>
 										</div>
 									</div>
-								</div>
+								
+							</li>
 								<?php } ?>
+							</ul>
 							</div>
 
-							<br>
 						</div>
 					</div>
-		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span12">
-			<div class="consultations form">
-<?php echo $this->Form->create('Consultation'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Consultation'); ?></legend>
-	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('address');
-		echo $this->Form->input('phone');
-		echo $this->Form->input('email');
-		echo $this->Form->input('message');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-		</div>
-	</div>
+		
+
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="consultations form">
+					<?php echo $this->Form->create('Consultation'); ?>
+						<fieldset>
+							<legend><?php echo __('Add Consultation'); ?></legend>
+						<?php
+							echo $this->Form->input('name');
+							echo $this->Form->input('address');
+							echo $this->Form->input('phone');
+							echo $this->Form->input('email');
+							echo $this->Form->input('message');
+						?>
+						</fieldset>
+					<?php echo $this->Form->end(__('Submit')); ?>
+					</div>
+							</div>
+						</div>
 	<div class="row-fluid">
 		<div class="span12">
 		
@@ -250,5 +243,7 @@ function C_Rstrt(){C_Stppd=false}
 </div>
 	
 
-		</div>
-	</div>
+	
+
+</div>	
+</div>

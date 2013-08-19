@@ -1,25 +1,25 @@
 <div class="benefits index">
-	<h2><?php echo __('Benefits'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<h2><?php echo __('Beneficios'); ?></h2>
+	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
-			<th><?php echo $this->Paginator->sort('filename'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			
+			<th><?php echo $this->Paginator->sort('title', 'Titulo'); ?></th>
+			<th><?php echo $this->Paginator->sort('description', 'Descripción'); ?></th>
+			<th><?php echo $this->Paginator->sort('filename','Nombre de archivo'); ?></th>
+			<th><?php echo $this->Paginator->sort('dir','Directorio'); ?></th>
+			<th class="Acciones"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($benefits as $benefit): ?>
 	<tr>
-		<td><?php echo h($benefit['Benefit']['id']); ?>&nbsp;</td>
+		
 		<td><?php echo h($benefit['Benefit']['title']); ?>&nbsp;</td>
 		<td><?php echo h($benefit['Benefit']['description']); ?>&nbsp;</td>
 		<td><?php echo h($benefit['Benefit']['filename']); ?>&nbsp;</td>
 		<td><?php echo h($benefit['Benefit']['dir']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $benefit['Benefit']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $benefit['Benefit']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

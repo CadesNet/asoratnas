@@ -22,7 +22,7 @@
 				<?php foreach ($category['Item'] as $item) { ?>
 				<li class="span6 cuadroproducto">
 					<div class="row-fluid">
-						<div class="span12">
+						<div class="span6 offset3">
 							<?php foreach ($item['ImagesItem'] as $image): ?>
 							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
 							<?php 

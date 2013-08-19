@@ -17,10 +17,10 @@
 .dirbarbottom{
 	background-image: url('../img/dir_bar_bottom.png');
 	height: 71px;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 10%;
+	margin-right: 10%;
 	position: relative;
+	top:-71px;
 	z-index: 50;
 	bottom: 1px;
 
@@ -203,4 +203,18 @@ background-image: url('../img/bg_footer.jpg');
 
 .thumbnails li:nth-child(odd) {
 		margin-left: 0;
+	}
+
+.thumbnails2 li:nth-child(4n) {
+		margin-left: 0;
+	}
+
+	.footer{
+
+	position: relative;
+	top:-71px;
+	}
+
+	.container{
+		padding-bottom: 30px;
 	}

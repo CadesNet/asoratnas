@@ -2,22 +2,21 @@
 	<h2><?php echo __('Branches'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('company_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('filename'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir'); ?></th>
-			<th><?php echo $this->Paginator->sort('type'); ?></th>
-			<th><?php echo $this->Paginator->sort('address'); ?></th>
-			<th><?php echo $this->Paginator->sort('phone'); ?></th>
-			<th><?php echo $this->Paginator->sort('movil'); ?></th>
+			<th><?php echo $this->Paginator->sort('company_id', 'Empresa'); ?></th>
+			<th><?php echo $this->Paginator->sort('name','Nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('filename','Nombre de Archivo'); ?></th>
+			<th><?php echo $this->Paginator->sort('dir','Directorio'); ?></th>
+			<th><?php echo $this->Paginator->sort('type','Tipo'); ?></th>
+			<th><?php echo $this->Paginator->sort('address','Dirección'); ?></th>
+			<th><?php echo $this->Paginator->sort('phone','Telefono'); ?></th>
+			<th><?php echo $this->Paginator->sort('movil','Movil'); ?></th>
 			<th><?php echo $this->Paginator->sort('fax'); ?></th>
-			<th><?php echo $this->Paginator->sort('contact'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('contact','Contacto'); ?></th>
+			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	<?php foreach ($branches as $branch): ?>
 	<tr>
-		<td><?php echo h($branch['Branch']['id']); ?>&nbsp;</td>
+		
 		<td>
 			<?php echo $this->Html->link($branch['Company']['id'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
 		</td>
@@ -31,9 +30,9 @@
 		<td><?php echo h($branch['Branch']['fax']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['contact']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $branch['Branch']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $branch['Branch']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
