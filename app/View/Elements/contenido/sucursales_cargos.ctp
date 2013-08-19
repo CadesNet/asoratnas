@@ -1,6 +1,6 @@
-<div class="container">
+
 	<div class="row-fluid">
-		<div class="span9">
+		<div class="span12">
 
 		<?php foreach ($branches as $branch) { ?>
 			
@@ -22,29 +22,48 @@
 					
 				</div>
 			</div>
-	<div class="row-fluid">
-		<div class="span6">
-			<div class="row-fluid">
+	
+		<div class="row-fluid">
+			<ul class = "thumbnails">
 			<?php  foreach ($branch['Charge'] as $charge) { ?>
-		
-		
-			 <div class="span2">
+			
+		<li class="span6 ">
+		<div class="row-fluid cuadrovacantes">
+			<div class = "infovacantes">
+			 <div class="span4">
 			 	<?php echo $this->Html->image("cargo.png")?>
 			 </div>
-			 <div class="span4">
-			 	<p><?php echo $charge['title']  ?></p>
+			 <div class="span8">
+			 	<h4 class = "titlevacantes"><?php echo $charge['title']  ?></h4>
+
+			 	<p class = "descriptionvacantes"><?php echo $charge['description']  ?></p>
+
+			 	<p class = "modificacionvacantes"><?php echo $charge['modified']  ?></p>
 			 	<br>
-			<?php    echo $this->Form->create('Requirement', array('action' => 'select1'));
+			
+	         
+			 </div>
+			</div>
+			
+			 </div>
+
+
+		 	<div class  = "botonvacantes">
+			 <?php    echo $this->Form->create('Requirement', array('action' => 'select1'));
 	             	 echo $this->Form->input('id',array('type' => 'hidden','default'=> $charge['id']));
 	         		 echo $this->Form->end('Solicitar'); 
-	         ?>
-			 </div>
+	         		 ?>
+	         		</div>
+
+			 </li>
+	
 			 <?php	}?>
-			</div>
+			<ul class = "thumbnails">
 			
 		</div>
 	</div>
+
 		<?php }  ?>
-</div>
-</div>
-</div>
+
+	</div>
+

@@ -111,8 +111,7 @@ background-image: url('../img/bg_footer.jpg');
 	box-shadow: 0 0 10px 0px #888;
  	padding: 15px;
  	margin-bottom: 40px;
- 	margin-right: 20px;
- 	max-height: 500px;
+ 	max-height: 800px;
 	border-radius: 20px;
  }
  .detalleproducto{
@@ -179,4 +178,29 @@ background-image: url('../img/bg_footer.jpg');
 	padding-bottom: 20px;
 }
 
+.cuadrovacantes{
 
+	background-color: white;
+	border:1px solid #ccc;
+}
+
+.infovacantes{
+	padding: 15px;
+}
+
+.titlevacantes{
+	color: #bbb;
+}
+
+.botonvacantes{
+	float: right;
+	padding: 20px;
+}
+.modificacionvacantes{
+	color:red;
+	font-weight: bold;
+}
+
+.thumbnails li:nth-child(odd) {
+		margin-left: 0;
+	}

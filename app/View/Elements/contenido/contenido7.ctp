@@ -1,4 +1,4 @@
-<div class="container">
+
 	<div class="row-fluid">
 		<div class="span12">
 			
@@ -134,7 +134,7 @@
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="sapn12">
+		<div class="span12">
 			<div class="consultations form">
 <?php echo $this->Form->create('Consultation'); ?>
 	<fieldset>
@@ -152,7 +152,7 @@
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="sapn12">
+		<div class="span12">
 		
 <?php
 $datos="";
@@ -248,14 +248,7 @@ function C_Rstrt(){C_Stppd=false}
 
 <!--photo4.jpg los  de las fotos en el js van seguidos de un link -->
 </div>
-
-<br>	
-<br>
-<br>
-<br>
-<br>
-<br>
+	
 
 		</div>
 	</div>
-</div>
