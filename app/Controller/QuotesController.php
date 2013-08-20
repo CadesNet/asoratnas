@@ -203,6 +203,8 @@ class QuotesController extends AppController {
 								$this->Session->write($items);
 					 	}
 				 	}
+			}else{
+					$this->redirect(array('controller' => 'Categories', 'action' => 'select'));	
 			}
 		}
 		}else{

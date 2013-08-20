@@ -37,11 +37,6 @@ public function beforeFilter() {
 	//	carrusel1
 	    $this->redirect($this->Auth->logout());
 	}
-	public function bienvenido()
-	{
-		$this->redirect(array('controller' => 'Benefits' , 'action' => 'select'));
-	}
-
 
 
 
