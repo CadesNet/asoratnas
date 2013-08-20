@@ -1,10 +1,10 @@
 <div class="categories index">
-	<h2><?php echo __('Categorias'); ?></h2>
+	<h2><?php echo __('Categoria de productos'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			
 			<th><?php echo $this->Paginator->sort('name','Nombre'); ?></th>
-			<th><?php echo $this->Paginator->sort('filename','Nombre de archivo'); ?></th>
+			<th><?php echo $this->Paginator->sort('filename','Imagen'); ?></th>
 			<th><?php echo $this->Paginator->sort('dir','Directorio'); ?></th>
 			<th><?php echo $this->Paginator->sort('description','Descripción'); ?></th>
 			<th class="actions"><?php echo __('Acciones'); ?></th>
@@ -13,7 +13,7 @@
 	<tr>
 		
 		<td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
-		<td><?php echo $this->Html->image('category/filename/'.h($category['Category']['filename'])); ?>&nbsp;</td>
+		<td> <div style = "max-width:200px;"> <?php echo $this->Html->image('category/filename/'.h($category['Category']['filename'])); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
 		<td class="actions">

@@ -3,11 +3,11 @@
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			
-			<th><?php echo $this->Paginator->sort('branch_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('deadline'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
-			<th><?php echo $this->Paginator->sort('formation'); ?></th>
+			<th><?php echo $this->Paginator->sort('branch_id','Sucursal'); ?></th>
+			<th><?php echo $this->Paginator->sort('title','Titulo'); ?></th>
+			<th><?php echo $this->Paginator->sort('deadline','Fecha de expiración'); ?></th>
+			<th><?php echo $this->Paginator->sort('description','Descripción'); ?></th>
+			<th><?php echo $this->Paginator->sort('formation','Formación'); ?></th>
 			
 			<th><?php echo $this->Paginator->sort('modified' ,'Ultima modificación'); ?></th>
 			<th class="actions"><?php echo __('Acciones'); ?></th>

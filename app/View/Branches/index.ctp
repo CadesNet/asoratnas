@@ -1,5 +1,5 @@
 <div class="branches index">
-	<h2><?php echo __('Branches'); ?></h2>
+	<h2><?php echo __('Sucursales'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('company_id', 'Empresa'); ?></th>
