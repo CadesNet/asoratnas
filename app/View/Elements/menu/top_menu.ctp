@@ -98,7 +98,7 @@
           <li class="dropdown">
          
 				<?php 
-				echo $this->Html->link(("Productos"), array('controller' => 'Categories', 'action' => 'select'), array('class'=> 'dropdown-toggle btn  tracker','data-toggle' => 'dropdown')); 
+				echo $this->Html->link(("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Productos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"), array('controller' => 'Categories', 'action' => 'select'), array('escape' => false ,'class'=> 'dropdown-toggle btn  tracker','data-toggle' => 'dropdown')); 
 				?>
               <ul class="dropdown-menu" >
                 
@@ -116,16 +116,16 @@
           <li>
 
 			
-				<?php echo $this->Html->link(("Recetas"), array('controller' => 'Recipes', 'action' => 'select'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
+				<?php echo $this->Html->link(("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recetas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"), array('controller' => 'Recipes', 'action' => 'select'),array('escape' => false ,'class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
 				?>
 
           </li>
           <li> 
-			<?php echo $this->Html->link(("Beneficios del pavo"), array('controller' => 'Benefits', 'action' => 'select1'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
+			<?php echo $this->Html->link(("&nbsp;&nbsp;&nbsp;Beneficios del pavo&nbsp;&nbsp;&nbsp;"), array('controller' => 'Benefits', 'action' => 'select1'),array('escape' => false ,'class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
 				?>
           </li>
           <li>
-          <?php echo $this->Html->link(("Cuida tu Salud"), array('controller' => 'Tips', 'action' => 'select1'),array('class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
+          <?php echo $this->Html->link(("&nbsp;&nbsp;&nbsp;&nbsp;Cuida tu Salud&nbsp;&nbsp;&nbsp;&nbsp;"), array('controller' => 'Tips', 'action' => 'select1'),array('escape' => false ,'class'=>'btn  tracker' ,'data-tracker-action'=>'Click')); 
 				?>
           </li>
         </ul>
