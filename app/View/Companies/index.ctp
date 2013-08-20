@@ -1,24 +1,24 @@
 <div class="companies index">
-	<h2><?php echo __('Companies'); ?></h2>
+	<h2><?php echo __('Compañias'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
+			
 
-			<th><?php echo $this->Paginator->sort('content'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('content','Contenido'); ?></th>
+			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	<?php foreach ($companies as $company): ?>
 	<tr>
-		<td><?php echo h($company['Company']['id']); ?>&nbsp;</td>
+		
 		<td><?php
 		 $body =  h($company['Company']['content']);
         $bodyNew = html_entity_decode($body);
         	echo $bodyNew;
          ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $company['Company']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $company['Company']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $company['Company']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $company['Company']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $company['Company']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $company['Company']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $company['Company']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $company['Company']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

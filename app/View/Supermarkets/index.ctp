@@ -1,27 +1,28 @@
 <div class="supermarkets index">
-	<h2><?php echo __('Supermarkets'); ?></h2>
+	<h2><?php echo __('Supermercados'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('filename'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir'); ?></th>
+			
+			<th><?php echo $this->Paginator->sort('name','Nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('filename','Imagen'); ?></th>
+			<th><?php echo $this->Paginator->sort('dir','Dirección'); ?></th>
 			<th><?php echo $this->Paginator->sort('link'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('description','Descripción'); ?></th>
+			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	<?php foreach ($supermarkets as $supermarket): ?>
 	<tr>
-		<td><?php echo h($supermarket['Supermarket']['id']); ?>&nbsp;</td>
 		<td><?php echo h($supermarket['Supermarket']['name']); ?>&nbsp;</td>
-		<td><?php echo h($supermarket['Supermarket']['filename']); ?>&nbsp;</td>
+		
+		<td> <div style = "max-width:200px;"> <?php echo $this->Html->image('supermarket/filename/'.h($supermarket['Supermarket']['filename'])); ?>&nbsp;</td>
+		
 		<td><?php echo h($supermarket['Supermarket']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($supermarket['Supermarket']['link']); ?>&nbsp;</td>
 		<td><?php echo h($supermarket['Supermarket']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $supermarket['Supermarket']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $supermarket['Supermarket']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -34,15 +35,14 @@
 	?>	</p>
 	<div class="paging">
 	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->prev('< ' . __('anterior'), array(), null, array('class' => 'prev disabled'));
 		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+		echo $this->Paginator->next(__('siguiente') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Supermarket'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
-	</ul>
+	<h3><?php echo __('Acciones'); ?></h3>
+	
+		<?php echo $this->Html->link(__('Nuevo Supermercado'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
 </div>
