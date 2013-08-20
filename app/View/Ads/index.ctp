@@ -1,5 +1,5 @@
 <div class="ads index">
-	<h2><?php echo __('Ver notificacion'); ?></h2>
+	<h2><?php echo __('Ver notificación'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('type','Tipo'); ?></th>
@@ -34,15 +34,13 @@
 	?>	</p>
 	<div class="paging">
 	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->prev('< ' . __('anteriores'), array(), null, array('class' => 'prev disabled'));
 		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+		echo $this->Paginator->next(__('siguiente') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Ad'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
-	</ul>
+	<?php echo $this->Html->link(__('Nueva Notificacion'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
 </div>

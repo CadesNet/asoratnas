@@ -53,11 +53,10 @@
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Branch'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
-		<li><?php echo $this->Html->link(__('List Companies'), array('controller' => 'companies', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-	</ul>
+	<?php echo $this->Html->link(__('Nueva Sucursal'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
+		<?php echo $this->Html->link(__('Listar Empresas'), array('controller' => 'companies', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> 
+		<?php echo $this->Html->link(__('Nueva Empresa'), array('controller' => 'companies', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> 
+		<?php echo $this->Html->link(__('Listar Cargos'), array('controller' => 'charges', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> 
+		<?php echo $this->Html->link(__('Nuevo Cargo'), array('controller' => 'charges', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> 
+	
 </div>
