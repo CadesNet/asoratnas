@@ -18,9 +18,9 @@
 		<td> <div style = "max-width:200px;"> <?php echo $this->Html->image('tip/filename/'.h($tip['Tip']['filename'])); ?>&nbsp;</td>
 		<td><?php echo h($tip['Tip']['dir']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $tip['Tip']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $tip['Tip']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $tip['Tip']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $tip['Tip']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $tip['Tip']['id']),array('class' => 'ok btn btn-info  ')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -42,5 +42,5 @@
 <div class="actions">
 	<h3><?php echo __('Acciones'); ?></h3>
 
-		<?php echo $this->Html->link(__('Nuevo Tip'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
+		<?php echo $this->Html->link(__('Nuevo Tip'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
 </div>

@@ -30,9 +30,9 @@
 		<td><?php echo h($branch['Branch']['fax']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['contact']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $branch['Branch']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $branch['Branch']['id'])); ?>
+			<!-- <?php echo $this->Html->link(__('Ver'), array('action' => 'view', $branch['Branch']['id']),array('class' => 'ok btn btn-info  ')); ?> -->
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $branch['Branch']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $branch['Branch']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $branch['Branch']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -53,10 +53,10 @@
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
-	<?php echo $this->Html->link(__('Nueva Sucursal'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
-		<?php echo $this->Html->link(__('Listar Empresas'), array('controller' => 'companies', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> 
-		<?php echo $this->Html->link(__('Nueva Empresa'), array('controller' => 'companies', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> 
-		<?php echo $this->Html->link(__('Listar Cargos'), array('controller' => 'charges', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> 
-		<?php echo $this->Html->link(__('Nuevo Cargo'), array('controller' => 'charges', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> 
+	<?php echo $this->Html->link(__('Nueva Sucursal'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
+		<?php echo $this->Html->link(__('Listar Empresas'), array('controller' => 'companies', 'action' => 'index'),array('class' => 'ok btn btn-info  ')); ?> 
+		<?php echo $this->Html->link(__('Nueva Empresa'), array('controller' => 'companies', 'action' => 'add'),array('class' => 'ok btn btn-info  ')); ?> 
+		<?php echo $this->Html->link(__('Listar Cargos'), array('controller' => 'charges', 'action' => 'index'),array('class' => 'ok btn btn-info  ')); ?> 
+		<?php echo $this->Html->link(__('Nuevo Cargo'), array('controller' => 'charges', 'action' => 'add'),array('class' => 'ok btn btn-info  ')); ?> 
 	
 </div>

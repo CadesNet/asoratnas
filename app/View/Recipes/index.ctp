@@ -20,9 +20,9 @@
 		<td><?php echo h($recipe['Recipe']['created']); ?>&nbsp;</td>
 		<td><?php echo h($recipe['Recipe']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $recipe['Recipe']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $recipe['Recipe']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $recipe['Recipe']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $recipe['Recipe']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $recipe['Recipe']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $recipe['Recipe']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $recipe['Recipe']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $recipe['Recipe']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -44,10 +44,10 @@
 <div class="actions">
 	<h3><?php echo __('Acciones'); ?></h3>
 	
-		<?php echo $this->Html->link(__('Nueva Receta'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
-		<?php echo $this->Html->link(__('Listar Ingredientes'), array('controller' => 'ingredients', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> 
-		<?php echo $this->Html->link(__('Nuevo Ingrediente'), array('controller' => 'ingredients', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> 
-		<?php echo $this->Html->link(__('Mostrar Lista de imagenes de las recetas'), array('controller' => 'images_recipes', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> 
-		<?php echo $this->Html->link(__('Nueva imagen de receta'), array('controller' => 'images_recipes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> 
+		<?php echo $this->Html->link(__('Nueva Receta'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
+		<?php echo $this->Html->link(__('Listar Ingredientes'), array('controller' => 'ingredients', 'action' => 'index'),array('class' => 'ok btn btn-info  ')); ?> 
+		<?php echo $this->Html->link(__('Nuevo Ingrediente'), array('controller' => 'ingredients', 'action' => 'add'),array('class' => 'ok btn btn-info  ')); ?> 
+		<?php echo $this->Html->link(__('Mostrar Lista de imagenes de las recetas'), array('controller' => 'images_recipes', 'action' => 'index'),array('class' => 'ok btn btn-info  ')); ?> 
+		<?php echo $this->Html->link(__('Nueva imagen de receta'), array('controller' => 'images_recipes', 'action' => 'add'),array('class' => 'ok btn btn-info  ')); ?> 
 	
 </div>
