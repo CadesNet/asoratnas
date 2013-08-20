@@ -124,7 +124,7 @@ class RequirementsController extends AppController {
 				$ext = $path_parts['extension'];
 				
 				
-				if ($ext != 'docx' /* && $ext != 'doc' && $ext != 'gif' && $ext != 'png'*/) {
+				if ($ext != 'docx'  || $ext != 'doc'/* && $ext != 'gif' && $ext != 'png'*/) {
 					$this->Session->setFlash('Solo puedes subir docx.');
 					$this->render();
 				} else {
@@ -139,7 +139,7 @@ class RequirementsController extends AppController {
 			}
 			//Fin subir archivos
 			
-			$this->request->data['Requirement']['curriculum'] = $filename;
+			$this->request->data['Requirement']['curriculum'] = $filename."holamundo";
 
 
 			$this->Requirement->create();

@@ -1,20 +1,20 @@
 <div class="charges index">
-	<h2><?php echo __('Charges'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<h2><?php echo __('Cargos'); ?></h2>
+	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
+			
 			<th><?php echo $this->Paginator->sort('branch_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('title'); ?></th>
 			<th><?php echo $this->Paginator->sort('deadline'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
 			<th><?php echo $this->Paginator->sort('formation'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			
+			<th><?php echo $this->Paginator->sort('modified' ,'Ultima modificación'); ?></th>
+			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	<?php foreach ($charges as $charge): ?>
 	<tr>
-		<td><?php echo h($charge['Charge']['id']); ?>&nbsp;</td>
+		
 		<td>
 			<?php echo $this->Html->link($charge['Branch']['name'], array('controller' => 'branches', 'action' => 'view', $charge['Branch']['id'])); ?>
 		</td>
@@ -22,7 +22,7 @@
 		<td><?php echo h($charge['Charge']['deadline']); ?>&nbsp;</td>
 		<td><?php echo h($charge['Charge']['description']); ?>&nbsp;</td>
 		<td><?php echo h($charge['Charge']['formation']); ?>&nbsp;</td>
-		<td><?php echo h($charge['Charge']['created']); ?>&nbsp;</td>
+		
 		<td><?php echo h($charge['Charge']['modified']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $charge['Charge']['id']),array('class' => 'ok btn btn-info btn-large')); ?>

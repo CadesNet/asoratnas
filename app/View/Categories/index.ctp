@@ -1,25 +1,25 @@
 <div class="categories index">
-	<h2><?php echo __('Categories'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<h2><?php echo __('Categorias'); ?></h2>
+	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('filename'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			
+			<th><?php echo $this->Paginator->sort('name','Nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('filename','Nombre de archivo'); ?></th>
+			<th><?php echo $this->Paginator->sort('dir','Directorio'); ?></th>
+			<th><?php echo $this->Paginator->sort('description','Descripción'); ?></th>
+			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	<?php foreach ($categories as $category): ?>
 	<tr>
-		<td><?php echo h($category['Category']['id']); ?>&nbsp;</td>
+		
 		<td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['filename']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

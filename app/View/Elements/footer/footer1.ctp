@@ -1,6 +1,6 @@
-<div>
+
 				<div class= "dirbarbottom"></div>
-				</div>
+				
 
 
 <div class = "footer" >
