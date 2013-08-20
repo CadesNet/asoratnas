@@ -13,7 +13,7 @@
 	<tr>
 		
 		<td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
-		<td><?php echo h($category['Category']['filename']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->image('category/filename/'.h($category['Category']['filename'])); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
 		<td class="actions">

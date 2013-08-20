@@ -57,7 +57,7 @@
 <div class="related">
 	<h3><?php echo __('Related Items Quotes'); ?></h3>
 	<?php if (!empty($quote['ItemsQuote'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class = "table" cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Item Id'); ?></th>

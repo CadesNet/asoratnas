@@ -1,6 +1,6 @@
 <div class="itemsQuotes index">
 	<h2><?php echo __('Items Quotes'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('item_id'); ?></th>

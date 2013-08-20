@@ -28,7 +28,7 @@
 		</dd>
 		<dt><?php echo __('Filename'); ?></dt>
 		<dd>
-			<?php echo h($ad['Ad']['filename']); ?>
+			<?php echo $this->Html->image('ad/filename/'.h($ad['Ad']['filename'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Dir'); ?></dt>
@@ -41,9 +41,9 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Ad'), array('action' => 'edit', $ad['Ad']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Ad'), array('action' => 'delete', $ad['Ad']['id']), null, __('Are you sure you want to delete # %s?', $ad['Ad']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ads'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Ad'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit Ad'), array('action' => 'edit', $ad['Ad']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Ad'), array('action' => 'delete', $ad['Ad']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $ad['Ad']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('List Ads'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Ad'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>

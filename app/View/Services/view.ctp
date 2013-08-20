@@ -8,7 +8,10 @@
 		</dd>
 		<dt><?php echo __('Content'); ?></dt>
 		<dd>
-			<?php echo h($service['Service']['content']); ?>
+			<?php 
+			 $body =  h($service['Service']['content']);
+      	     $bodyNew = html_entity_decode($body);
+        	 echo $bodyNew;  ?>
 			&nbsp;
 		</dd>
 	</dl>

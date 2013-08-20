@@ -112,13 +112,13 @@ echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 
 		</div>
 		<div class="span3">
 		
-			<?php foreach ($ads as $value) { ?> 
+				<?php foreach ($ads as $value) { ?> 
 			<div class="span12 " >
 
 				 <?php if($value['Ad']['type'] !='video'){ 
 					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
 				} else{ ?>
-					<iframe width="560" height="315" src= <?=$value['Ad']['filename'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="100%" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
 				
 				<br>
@@ -127,7 +127,7 @@ echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 
 				
 
 			</div>		
-		<?php } ?>
+		<?php } ?>	
 	</div>
 </div>
 </div>

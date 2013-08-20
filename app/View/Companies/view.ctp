@@ -1,14 +1,21 @@
 <div class="companies view">
 <h2><?php  echo __('Company'); ?></h2>
 	<dl>
-		<dt><?php echo __('Id'); ?></dt>
+		<dt><?php //echo __('Id'); ?></dt>
 		<dd>
-			<?php echo h($company['Company']['id']); ?>
+			<?php //echo h($company['Company']['id']); ?>
 			&nbsp;
 		</dd>
+		
+
 		<dt><?php echo __('Content'); ?></dt>
 		<dd>
-			<?php echo h($company['Company']['content']); ?>
+			<?php
+			 $body =  h($company['Company']['content']);
+        $bodyNew = html_entity_decode($body);  
+        //  echo strip_tags(htmlspecialchars_decode( $body));
+        echo $bodyNew;
+         ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -27,7 +34,7 @@
 <div class="related">
 	<h3><?php echo __('Related Branches'); ?></h3>
 	<?php if (!empty($company['Branch'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class = "table" cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Company Id'); ?></th>
@@ -49,7 +56,7 @@
 			<td><?php echo $branch['id']; ?></td>
 			<td><?php echo $branch['company_id']; ?></td>
 			<td><?php echo $branch['name']; ?></td>
-			<td><?php echo $branch['filename']; ?></td>
+			<td><?php echo $this->Html->image('branch/filename/'.$branch['filename']); ?></td>
 			<td><?php echo $branch['dir']; ?></td>
 			<td><?php echo $branch['type']; ?></td>
 			<td><?php echo $branch['address']; ?></td>

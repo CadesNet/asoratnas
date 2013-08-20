@@ -43,7 +43,8 @@
 		</dd>
 		<dt><?php echo __('Curriculum'); ?></dt>
 		<dd>
-			<?php echo h($requirement['Requirement']['curriculum']); ?>
+			<?php $archivo = "http://new.avicola-santarosa.com/img/requirement/curriculum/".h($requirement['Requirement']['curriculum'])."";
+echo '<iframe src="http://docs.google.com/viewer?url='.$archivo.'&embedded=true" width="600" height="780" style="border: none;"></iframe>'; ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Message'); ?></dt>

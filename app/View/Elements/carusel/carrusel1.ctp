@@ -6,24 +6,32 @@
          <div class="flexslider">
       <ul class="slides">
         <li>
-               <?php echo $this->Html->image('carrusel1/img.png') ;?> 
+               <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));  ?> 
                <p class="flex-caption">bextlam.com | mmmmmmm</p>
               </li>
               <li>
-               <?php echo $this->Html->image('carrusel1/img.png') ;?>     
+               <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));   ?>   
+
                 <p class="flex-caption">curso html5</p>
               </li>          
               <li>
-                <?php echo $this->Html->image('carrusel1/img.png') ;?>
+                <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));  ?>
                              
               </li>
               <li>
-              <?php echo $this->Html->image('carrusel1/img.png') ;?>
+              <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));   ;?>
                <p class="flex-caption"> mmmmmmmmm
                </p>                                      
              </li>
              <li>
-               <?php echo $this->Html->image('carrusel1/img.png') ;?>       
+               		<?php 
+					echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));  
+			    	    ?>    
+             </li>
+             <li>
+               <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));  ?> 
+               
+
              </li>
           </ul>
          </div>

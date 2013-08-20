@@ -1,6 +1,6 @@
 <div class="services index">
 	<h2><?php echo __('Services'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('content'); ?></th>
@@ -9,7 +9,12 @@
 	<?php foreach ($services as $service): ?>
 	<tr>
 		<td><?php echo h($service['Service']['id']); ?>&nbsp;</td>
-		<td><?php echo h($service['Service']['content']); ?>&nbsp;</td>
+		<td><?php
+
+			 $body =  h($service['Service']['content']);
+      	     $bodyNew = html_entity_decode($body);
+        	 echo $bodyNew; 
+        	 ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $service['Service']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $service['Service']['id']),array('class' => 'ok btn btn-info btn-large')); ?>

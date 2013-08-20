@@ -13,7 +13,7 @@
 		</dd>
 		<dt><?php echo __('Filename'); ?></dt>
 		<dd>
-			<?php echo h($category['Category']['filename']); ?>
+			<?php echo $this->Html->image('category/filename/'.h($category['Category']['filename'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Dir'); ?></dt>
@@ -42,7 +42,7 @@
 <div class="related">
 	<h3><?php echo __('Related Items'); ?></h3>
 	<?php if (!empty($category['Item'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class = "table" cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Name'); ?></th>

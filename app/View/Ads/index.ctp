@@ -1,5 +1,5 @@
 <div class="ads index">
-	<h2><?php echo __('Ads'); ?></h2>
+	<h2><?php echo __('Ver notificacion'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('type','Tipo'); ?></th>
@@ -16,12 +16,12 @@
 		<td><?php echo h($ad['Ad']['link']); ?>&nbsp;</td>
 		<td><?php echo h($ad['Ad']['created']); ?>&nbsp;</td>
 		<td><?php echo h($ad['Ad']['modified']); ?>&nbsp;</td>
-		<td><?php echo h($ad['Ad']['filename']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->image('ad/filename/'.h($ad['Ad']['filename'])); ?>&nbsp;</td>
 		<td><?php echo h($ad['Ad']['dir']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $ad['Ad']['id'])); ?>
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $ad['Ad']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $ad['Ad']['id']), null, __('Are you sure you want to delete # %s?', $ad['Ad']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $ad['Ad']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $ad['Ad']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $ad['Ad']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $ad['Ad']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -43,6 +43,6 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Ad'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Ad'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 	</ul>
 </div>

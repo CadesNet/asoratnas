@@ -8,7 +8,8 @@
 		</dd>
 		<dt><?php echo __('Company'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($branch['Company']['id'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
+
+			<?php echo $this->Html->link("Santa Rosa", array('controller' => 'companies', 'action' => 'view', $branch['Company']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Name'); ?></dt>
@@ -18,7 +19,7 @@
 		</dd>
 		<dt><?php echo __('Filename'); ?></dt>
 		<dd>
-			<?php echo h($branch['Branch']['filename']); ?>
+			<?php echo $this->Html->image('branch/filename/'.h($branch['Branch']['filename'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Dir'); ?></dt>
@@ -74,7 +75,7 @@
 <div class="related">
 	<h3><?php echo __('Related Charges'); ?></h3>
 	<?php if (!empty($branch['Charge'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class = "table" cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Branch Id'); ?></th>

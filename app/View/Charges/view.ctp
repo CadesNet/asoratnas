@@ -59,7 +59,7 @@
 <div class="related">
 	<h3><?php echo __('Related Requirements'); ?></h3>
 	<?php if (!empty($charge['Requirement'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class = "table" cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Charge Id'); ?></th>

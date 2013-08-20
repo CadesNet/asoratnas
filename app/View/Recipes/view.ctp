@@ -54,7 +54,7 @@
 <div class="related">
 	<h3><?php echo __('Related Ingredients'); ?></h3>
 	<?php if (!empty($recipe['Ingredient'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class = "table" cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Amount'); ?></th>

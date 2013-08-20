@@ -1,6 +1,6 @@
 <div class="branches index">
 	<h2><?php echo __('Branches'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('company_id', 'Empresa'); ?></th>
 			<th><?php echo $this->Paginator->sort('name','Nombre'); ?></th>
@@ -21,7 +21,7 @@
 			<?php echo $this->Html->link($branch['Company']['id'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
 		</td>
 		<td><?php echo h($branch['Branch']['name']); ?>&nbsp;</td>
-		<td><?php echo h($branch['Branch']['filename']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->image('branch/filename/'.h($branch['Branch']['filename'])); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['type']); ?>&nbsp;</td>
 		<td><?php echo h($branch['Branch']['address']); ?>&nbsp;</td>

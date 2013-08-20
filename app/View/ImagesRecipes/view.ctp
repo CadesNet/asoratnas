@@ -8,7 +8,7 @@
 		</dd>
 		<dt><?php echo __('Filename'); ?></dt>
 		<dd>
-			<?php echo h($imagesRecipe['ImagesRecipe']['filename']); ?>
+			<?php echo $this->Html->image('images_recipe/filename/'.h($imagesRecipe['ImagesRecipe']['filename'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Dir'); ?></dt>

@@ -1,15 +1,20 @@
 <div class="companies index">
 	<h2><?php echo __('Companies'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
+
 			<th><?php echo $this->Paginator->sort('content'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($companies as $company): ?>
 	<tr>
 		<td><?php echo h($company['Company']['id']); ?>&nbsp;</td>
-		<td><?php echo h($company['Company']['content']); ?>&nbsp;</td>
+		<td><?php
+		 $body =  h($company['Company']['content']);
+        $bodyNew = html_entity_decode($body);
+        	echo $bodyNew;
+         ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $company['Company']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $company['Company']['id']),array('class' => 'ok btn btn-info btn-large')); ?>

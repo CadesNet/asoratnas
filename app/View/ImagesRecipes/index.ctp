@@ -1,6 +1,6 @@
 <div class="imagesRecipes index">
 	<h2><?php echo __('Images Recipes'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('filename'); ?></th>
@@ -12,7 +12,7 @@
 	<?php foreach ($imagesRecipes as $imagesRecipe): ?>
 	<tr>
 		<td><?php echo h($imagesRecipe['ImagesRecipe']['id']); ?>&nbsp;</td>
-		<td><?php echo h($imagesRecipe['ImagesRecipe']['filename']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->image('images_recipe/filename/'.h($imagesRecipe['ImagesRecipe']['filename'])); ?>&nbsp;</td>
 		<td><?php echo h($imagesRecipe['ImagesRecipe']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($imagesRecipe['ImagesRecipe']['description']); ?>&nbsp;</td>
 		<td>
