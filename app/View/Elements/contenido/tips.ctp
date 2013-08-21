@@ -41,7 +41,7 @@
 								<div class = "recipetitledescription"> Desccipcion </div>
 							</div>
 							<div class="span9">
-								<p><?php echo substr($tip['Tip']['description'], 0, 1000) ?> min</p>
+								<p><?php echo substr($tip['Tip']['description'], 0, 1000) ?> </p>
 							</div>
 					</div>
 					

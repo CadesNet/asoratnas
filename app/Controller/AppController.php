@@ -36,8 +36,8 @@ class AppController extends Controller {
 public $components = array(
         'Session',
         'Auth' => array(
-            'loginRedirect' => array('controller'=> 'Benefits','action' => 'select'),//una ves q se login se redicsionara a index
-            'logoutRedirect' => array('controller' => 'Benefits', 'action' => 'select')//si no se logueo se autoredirecsionaa a login
+            'loginRedirect' => null, //array('controller'=> 'Benefits','action' => 'select'),//una ves q se login se redicsionara a index
+            'logoutRedirect' => null //array('controller' => 'Benefits', 'action' => 'select')//si no se logueo se autoredirecsionaa a login
         )
     );
 

@@ -21,7 +21,9 @@
 								<h4 class = "benefitssubtitle"><? echo $benefit['Benefit']['title'] ?></h4>
 							</div>
 							<div class="row-fluid" style="">
-								<p class ="benefitsdescription"><? echo $benefit['Benefit']['description'] ?></p>
+								<p class ="benefitsdescription">
+								<?php echo substr($benefit['Benefit']['description'], 0, 150) ?> 
+								</p>
 							</div>
 							<div class="row-fluid" style="">
 
@@ -42,7 +44,7 @@
 							 ?>
 				</div>
 				<div class="row-fluid" style="">
-					<p>encuentranos en..</p>
+					<p>Encuentranos en..</p>
 					
 				</div>
 				

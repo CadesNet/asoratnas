@@ -8,14 +8,14 @@ App::uses('AppController', 'Controller');
 class AdsController extends AppController {
 
 
-public function beforeFilter() {
+/*public function beforeFilter() {
 		parent::beforeFilter();
 
 		// Cambio de Presentación de peticiones Ajax 
 		if ($this->request->is('ajax')) {
 			$this->layout = 'ajax';
 		}
-	}
+	}*/
 	
 /**
  * index method
