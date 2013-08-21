@@ -13,7 +13,7 @@
 		</dd>
 		<dt><?php echo __('Filename'); ?></dt>
 		<dd>
-			<?php echo h($supermarket['Supermarket']['filename']); ?>
+			<?php echo $this->Html->image('supermarket/filename/'.h($supermarket['Supermarket']['filename'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Dir'); ?></dt>

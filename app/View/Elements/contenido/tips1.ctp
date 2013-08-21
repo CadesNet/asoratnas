@@ -1,4 +1,24 @@
-<?php echo $this->element('carusel/carrusel2'); ?>
+<div class="container">
+  <div class="row-fluid">
+    <section id="contenido">
+   <section id="principal">
+<article id="galeria-inicio">
+         <div class="flexslider">
+      <ul class="slides">
+      <?php foreach ($carousel as $carousels) { ?>
+    
+        <li>
+               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  ?> 
+               <p class="flex-caption">bextlam.com | mmmmmmm</p>
+        </li>
+       <?php } ?>
+      </ul>
+         </div>
+      </article>
+   </section>
+</section>
+  </div>
+</div>
 <div class="container">
 	<div class="row-fluid">
 		<div class="span9">
@@ -6,7 +26,7 @@
 				
 			
 						<div class="span1">
-							<?php echo $this->Html->image("sugerencia.png")?>
+							<?php echo $this->Html->image("sugerencia.PNG")?>
 						</div>
 						<div class="span11">
 							<div class="row-fluid">
@@ -17,7 +37,7 @@
 							
 							<br>
 					
-				</div>
+						</div>
 			</div>
 
 			<div class="row-fluid">

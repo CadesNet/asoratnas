@@ -18,7 +18,7 @@
 	<tr>
 		
 		<td>
-			<?php echo $this->Html->link($branch['Company']['id'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id'])); ?>
+			<?php echo $this->Html->link($branch['Company']['id'], array('controller' => 'companies', 'action' => 'view', $branch['Company']['id']), array('class' => 'ok btn btn-info  ')); ?>
 		</td>
 		<td><?php echo h($branch['Branch']['name']); ?>&nbsp;</td>
 		<td><?php echo $this->Html->image('branch/filename/'.h($branch['Branch']['filename'])); ?>&nbsp;</td>

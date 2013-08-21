@@ -2716,7 +2716,7 @@
 		'scroll'		: {
 			'easing'		: 'swing',
 			'duration'		: 500,
-			'pauseOnHover'	: false,
+			'pauseOnHover'	: true,
 			'event'			: 'click',
 			'queue'			: false
 		}

@@ -104,10 +104,12 @@ class QuotesController extends AppController {
 	}
 	//conulta propias
 	public function select($id = null,$id2 = null){
-		$this->loadModel('Category');
+	   $this->loadModel('Category');
        $this->loadModel('Recipe');
        $this->loadModel('Item');
        $this->loadModel('Ad');
+       $this->loadModel('Carousel');
+		
 
 		if(!$this->Category->exists($id) and !$this->Item->exists($id2)){
 			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
@@ -120,8 +122,8 @@ class QuotesController extends AppController {
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$Recipes1 = $this->Recipe->find('all');
 		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
-
-		$this->set(compact('Category','Item','Recipe','Recipes1','Ad'));
+		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
+		$this->set(compact('Category','Item','Recipe','Recipes1','Ad','Carousel'));
 
 		}
 	}
@@ -168,7 +170,7 @@ class QuotesController extends AppController {
 		$this->redirect(array('controller' => 'Quotes', 'action' => 'select1')); 
 		}
 		public function select1(){
-		
+
 		if ($this->request->is('post')) {
 	   		if (!empty($this->data)) {		
 			$id =  $this->request->data['Quote']['id'];
@@ -212,6 +214,7 @@ class QuotesController extends AppController {
 				$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			}
 		}
+
 	}
 
 	public function cotizar(){

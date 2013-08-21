@@ -18,7 +18,7 @@
 		</dd>
 		<dt><?php echo __('Filename'); ?></dt>
 		<dd>
-			<?php echo h($tip['Tip']['filename']); ?>
+			<?php echo $this->Html->image('tip/filename/'.h($tip['Tip']['filename'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Dir'); ?></dt>

@@ -1,4 +1,25 @@
-<?php echo $this->element('carusel/carrusel1'); ?>
+<div class="container">
+  <div class="row-fluid">
+    <section id="contenido">
+   <section id="principal">
+<article id="galeria-inicio">
+         <div class="flexslider">
+      <ul class="slides">
+      <?php foreach ($carousel as $carousels) { ?>
+    
+        <li>
+               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  ?> 
+               <p class="flex-caption">bextlam.com | mmmmmmm</p>
+        </li>
+       <?php } ?>
+      </ul>
+         </div>
+      </article>
+   </section>
+</section>
+  </div>
+</div>
+
 <div class="container">
     <div class="row-fluid">
 		<div class="span7" >
@@ -48,39 +69,29 @@
 					
 				</div>
 				
-			<div class="list_carousel">
-				<ul id="foo1">
+			<div class="list_carousel responsive">
+				<ul id="foo5">
 					<?php foreach($supermarkets as $supermarket) { ?>
 						<li>
 						<?php 
 					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
 			    	    ?>
 						</li>
-						<?php }  
-						 ?>
-					?>
+						<?php }	 ?>
 
 				</ul>
-				<div class="clearfix"></div>
-				<div id="timer1" class="timer"></div>
 			</div>
 
-
-
-
-<script language="JavaScript">
-$(function() {
-				//	Basic carousel + timer, using CSS-transitions
-				$('#foo1').carouFredSel({
-					auto: {
-						pauseOnHover: 'resume',
-						progress: '#timer1'
-					}
-				}, {
-					transition: true
+		<script type="text/javascript" language="javascript">
+			$(function() {
+				//	Fuild layout, centering the items
+				$('#foo5').carouFredSel({
+					width: '100%',
+					scroll: 1
 				});
+
 			});
-</script>
+		</script>
 
 
 

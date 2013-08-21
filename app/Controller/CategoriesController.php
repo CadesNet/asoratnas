@@ -103,12 +103,14 @@ class CategoriesController extends AppController {
        $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
        $this->loadModel('Ad');
+       $this->loadModel('Carousel');
 		//$options = array('conditions' => array('limit' => 2));
        	$Supermarket = $this->Supermarket->find('all');
 		$Category = $this->Category->find('all');
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
-		$this->set(compact('Supermarket','Category','Benefit','Recipe','Ad'));
+		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
+		$this->set(compact('Supermarket','Category','Benefit','Recipe','Ad','Carousel'));
 	}
 
 }

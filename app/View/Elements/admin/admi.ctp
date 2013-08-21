@@ -16,6 +16,7 @@
 	 	<li><?php echo $this->Html->link(__('Personal Requerimiento'), array('controller' => 'Requirements', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
 	 	<li><?php echo $this->Html->link(__('Supermercados'), array('controller' => 'Supermarkets', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
 	 	<li><?php echo $this->Html->link(__('Cuida tu salud'), array('controller' => 'Tips', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
+	 	<li><?php echo $this->Html->link(__('Carruseles '), array('controller' => 'Carousels', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
 	 	<li><?php echo $this->Html->link(__('cerrar sesion '), array('controller' => 'Users', 'action' => 'logout'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
 
 	</ul>

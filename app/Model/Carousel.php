@@ -1,10 +1,12 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Ad Model
+ * Carousel Model
  *
  */
-class Ad extends AppModel {
+class Carousel extends AppModel {
+
+
 /**
  * img field
  *
@@ -19,7 +21,7 @@ var $actsAs = array(
  * @var array
  */
 	public $validate = array(
-		'type' => array(
+		'number' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',

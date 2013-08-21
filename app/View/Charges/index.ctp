@@ -16,7 +16,7 @@
 	<tr>
 		
 		<td>
-			<?php echo $this->Html->link($charge['Branch']['name'], array('controller' => 'branches', 'action' => 'view', $charge['Branch']['id'])); ?>
+			<?php echo $this->Html->link($charge['Branch']['name'], array('controller' => 'branches', 'action' => 'view', $charge['Branch']['id']),array('class' => 'ok btn btn-info ')); ?>
 		</td>
 		<td><?php echo h($charge['Charge']['title']); ?>&nbsp;</td>
 		<td><?php echo h($charge['Charge']['deadline']); ?>&nbsp;</td>
@@ -25,9 +25,9 @@
 		
 		<td><?php echo h($charge['Charge']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $charge['Charge']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $charge['Charge']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $charge['Charge']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $charge['Charge']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $charge['Charge']['id']),array('class' => 'ok btn btn-info ')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $charge['Charge']['id']),array('class' => 'ok btn btn-info ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $charge['Charge']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $charge['Charge']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

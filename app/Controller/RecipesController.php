@@ -103,6 +103,7 @@ class RecipesController extends AppController {
 //conulta propias
 	public function select(){
 		$this->loadModel('Ad');
+		$this->loadModel('Carousel');
 	//$conditions = "id = 6";
 //$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
 		$this->paginate = array(
@@ -115,9 +116,9 @@ class RecipesController extends AppController {
          
         
         $Recipe = $this->paginate("Recipe");
-
+        $Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
         $Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
-        $this->set(compact("Recipe","Ad"));
+        $this->set(compact("Recipe","Ad","Carousel"));
 	}
 
 
@@ -125,6 +126,7 @@ class RecipesController extends AppController {
 
 	public function select1($id=null,$pagina){
 	  $this->loadModel('Ad');
+	  $this->loadModel('Carousel');
 	  if(!$this->Recipe->exists($id)){
 
 
@@ -141,8 +143,9 @@ class RecipesController extends AppController {
                                 );
 
 		$Recipe = $this->paginate("Recipe");
+		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
-		$this->set(compact('Recipe','Ad'));
+		$this->set(compact('Recipe','Ad','Carousel'));
 		}
 	}
 }

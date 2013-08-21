@@ -102,6 +102,7 @@ class ItemsController extends AppController {
        $this->loadModel('Category');
        $this->loadModel('Recipe');
        $this->loadModel('Ad');
+       $this->loadModel('Carousel');
 		if(!$this->Category->exists($id)){
 			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			//throw new NotFoundException(__('Invalid Category'));
@@ -110,7 +111,8 @@ class ItemsController extends AppController {
 		//$this->set('item', $this->Item->find('all', $options));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
-		$this->set(compact('Category','Recipe','Ad'));
+		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
+		$this->set(compact('Category','Recipe','Ad','Carousel'));
 		}
 		
 		

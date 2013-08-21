@@ -68,9 +68,9 @@
                                           </li>
                                         </ul>
                 </div>
-                <br class="visible-desktop" >
-                <br class="visible-desktop" >
-                <br class="visible-desktop" >
+                <br>
+                <br>
+                <br>
                
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -87,9 +87,9 @@
                                           ?>
                           
                     </div>
-             <br class="visible-desktop" >
-             <br class="visible-desktop" >
-             <br class="visible-desktop" >
+             <br>
+             <br>
+             <br>
 
 
 

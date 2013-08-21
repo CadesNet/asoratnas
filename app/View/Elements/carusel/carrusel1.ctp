@@ -8,32 +8,8 @@
         <li>
                <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));  ?> 
                <p class="flex-caption">bextlam.com | mmmmmmm</p>
-              </li>
-              <li>
-               <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));   ?>   
-
-                <p class="flex-caption">curso html5</p>
-              </li>          
-              <li>
-                <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));  ?>
-                             
-              </li>
-              <li>
-              <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));   ;?>
-               <p class="flex-caption"> mmmmmmmmm
-               </p>                                      
-             </li>
-             <li>
-               		<?php 
-					echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));  
-			    	    ?>    
-             </li>
-             <li>
-               <?php echo $this->Html->link($this->Html->image("img.png"),"",array('escape' => false));  ?> 
-               
-
-             </li>
-          </ul>
+        </li>
+      </ul>
          </div>
       </article>
    </section>

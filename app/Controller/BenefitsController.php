@@ -108,15 +108,18 @@ public $helpers = array('Js');
 		$this->loadModel('Ad');
         $this->loadModel('Supermarket');
         $this->loadModel('Recipe');
+        $this->loadModel('Carousel');
        //$this->loadModel('Category');
 		//$options = array('conditions' => array('limit' => 2));
        	//$Category = $this->Category->find('all');
        	$Supermarket = $this->Supermarket->find('all');	
 		$Benefit = $this->Benefit->find('all',array('order' => 'Benefit.id DESC', 'limit' => 2));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
-		$this->set(compact('Supermarket','Benefit','Recipe'));
+		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Uno'"));
+		$this->set(compact('Supermarket','Benefit','Recipe','Carousel'));
 	}
 	public function select1(){
+		$this->loadModel('Carousel');
 		$this->loadModel('Ad');
 	//$conditions = "id = 6";
 //$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
@@ -129,10 +132,12 @@ public $helpers = array('Js');
                                 );
          
         $Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
+        $Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
         $Benefit = $this->paginate("Benefit");
-        $this->set(compact("Benefit",'Ad'));
+        $this->set(compact("Benefit",'Ad','Carousel'));
 	}
 	public function select2($id=null,$pagina){
+		$this->loadModel('Carousel');
 		$this->loadModel('Ad');
 		if(!$this->Benefit->exists($id)){
 
@@ -149,9 +154,10 @@ public $helpers = array('Js');
                                 //'conditions' => $conditions
                                 );
 		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
+		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$Benefit = $this->paginate("Benefit");
 		//$Recipe = $this->Recipe->find('all',array('conditions' => array('Recipe.' . $this->Recipe->primaryKey => $id),'recursive'  => 1));
-		$this->set(compact('Benefit','Ad'));
+		$this->set(compact('Benefit','Ad','Carousel'));
 		}
 
 	}

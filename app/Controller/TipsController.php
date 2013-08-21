@@ -99,6 +99,7 @@ class TipsController extends AppController {
 
 
 	public function select1(){
+		$this->loadModel('Carousel');
 		 $this->loadModel('Ad');
 	//$conditions = "id = 6";
 //$this->paginate = array('limit' => 20, 'page' => 1,'conditions' => $conditions);
@@ -113,9 +114,11 @@ class TipsController extends AppController {
         
         $Tip = $this->paginate("Tip");
         $Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
-        $this->set(compact("Tip",'Ad'));
+        $Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
+        $this->set(compact("Tip",'Ad','Carousel'));
 	}
 	public function select2($id=null,$pagina){
+		$this->loadModel('Carousel');
 		 $this->loadModel('Ad');
 		if(!$this->Tip->exists($id)){
 
@@ -134,7 +137,8 @@ class TipsController extends AppController {
 
 		$Tip = $this->paginate("Tip");
 		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
-		$this->set(compact('Tip','Ad'));
+		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
+		$this->set(compact("Tip",'Ad','Carousel'));
 		}
 
 	}
