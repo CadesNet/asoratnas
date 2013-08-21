@@ -23,9 +23,9 @@
 		<td><?php echo h($consultation['Consultation']['created']); ?>&nbsp;</td>
 		<td><?php echo h($consultation['Consultation']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<!-- <?php echo $this->Html->link(__('Ver'), array('action' => 'view', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info  ')); ?> -->
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $consultation['Consultation']['id']),array('class' => 'ok btn btn-info  ')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -46,6 +46,6 @@
 </div>
 <div class="actions">
 	<h3><?php echo __('Acciones'); ?></h3>
-	<?php echo $this->Html->link(__('Nueva Consulta'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
+	<?php echo $this->Html->link(__('Nueva Consulta'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
 	
 </div>

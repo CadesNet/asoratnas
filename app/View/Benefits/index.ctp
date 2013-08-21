@@ -17,9 +17,9 @@
 		<td><?php echo $this->Html->image('benefit/filename/'.h($benefit['Benefit']['filename'])); ?>&nbsp;</td>
 		<td><?php echo h($benefit['Benefit']['dir']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info btn-large') ,array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $benefit['Benefit']['id'])); ?>
+			<!-- <?php echo $this->Html->link(__('Ver'), array('action' => 'view', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info  ')); ?> -->
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info  ') ,array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $benefit['Benefit']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -40,5 +40,5 @@
 </div>
 <div class="actions">
 	<h3><?php echo __('Acciones'); ?></h3>
-	<?php echo $this->Html->link(__('Nuevo beneficio'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
+	<?php echo $this->Html->link(__('Nuevo beneficio'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
 </div>

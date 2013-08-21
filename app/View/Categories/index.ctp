@@ -17,9 +17,9 @@
 		<td><?php echo h($category['Category']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
+			<!-- <?php echo $this->Html->link(__('Ver'), array('action' => 'view', $category['Category']['id']),array('class' => 'ok btn btn-info  ')); ?> -->
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -39,10 +39,8 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Category'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
-		<li><?php echo $this->Html->link(__('List Items'), array('controller' => 'items', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item'), array('controller' => 'items', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-	</ul>
+	<h3><?php echo __('Acciones'); ?></h3>
+	<?php echo $this->Html->link(__('Nueva Categoria'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
+	<?php echo $this->Html->link(__('Listar Productos'), array('controller' => 'items', 'action' => 'index'),array('class' => 'ok btn btn-info  ')); ?>
+	<?php echo $this->Html->link(__('Nuevo Producto'), array('controller' => 'items', 'action' => 'add'),array('class' => 'ok btn btn-info  ')); ?> 
 </div>

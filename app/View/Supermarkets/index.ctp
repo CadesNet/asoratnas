@@ -20,9 +20,9 @@
 		<td><?php echo h($supermarket['Supermarket']['link']); ?>&nbsp;</td>
 		<td><?php echo h($supermarket['Supermarket']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $supermarket['Supermarket']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info  ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $supermarket['Supermarket']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $supermarket['Supermarket']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -44,5 +44,5 @@
 <div class="actions">
 	<h3><?php echo __('Acciones'); ?></h3>
 	
-		<?php echo $this->Html->link(__('Nuevo Supermercado'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?>
+		<?php echo $this->Html->link(__('Nuevo Supermercado'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
 </div>
