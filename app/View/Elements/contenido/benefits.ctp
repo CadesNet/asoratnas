@@ -61,7 +61,7 @@
 								<div class = "recipetitledescription"> Desccipcion </div>
 							</div>
 							<div class="span9">
-								<p><?php echo $benefit['Benefit']['description'] ?> min</p>
+								<p><?php echo substr($benefit['Benefit']['description'], 0, 140) ?> min</p>
 							</div>
 					</div>
 					

@@ -43,7 +43,7 @@
 							</div>
 							<div class="row-fluid" style="">
 								<p class ="benefitsdescription">
-								<?php echo substr($benefit['Benefit']['description'], 0, 150) ?> 
+								<?php echo substr($benefit['Benefit']['description'], 0, 140) ?> 
 								</p>
 							</div>
 							<div class="row-fluid" style="">

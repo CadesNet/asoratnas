@@ -93,7 +93,6 @@ background-color: black;">
 						foreach ($category['ImagesCategory'] as $ImagesCategory) {
 							if($ImagesCategory['type']=='Dos'){		
 						?>
-
 						<li>
 						<?php 											
 							echo $this->Html->image("images_category/filename/".$ImagesCategory['filename']."");
