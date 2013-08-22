@@ -13,8 +13,7 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function index() {
-		
-		$this->Category->recursive = 2;
+		$this->Category->recursive = 0;
 		$this->set('categories', $this->paginate());
 	}
 
@@ -26,7 +25,6 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		
 		if (!$this->Category->exists($id)) {
 			throw new NotFoundException(__('Invalid category'));
 		}
@@ -40,7 +38,6 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function add() {
-		
 		if ($this->request->is('post')) {
 			$this->Category->create();
 			if ($this->Category->save($this->request->data)) {
@@ -60,7 +57,6 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		
 		if (!$this->Category->exists($id)) {
 			throw new NotFoundException(__('Invalid category'));
 		}
@@ -85,7 +81,6 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		
 		$this->Category->id = $id;
 		if (!$this->Category->exists()) {
 			throw new NotFoundException(__('Invalid category'));
@@ -106,11 +101,11 @@ class CategoriesController extends AppController {
        $this->loadModel('Carousel');
 		//$options = array('conditions' => array('limit' => 2));
        	$Supermarket = $this->Supermarket->find('all');
+
 		$Category = $this->Category->find('all');
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$this->set(compact('Supermarket','Category','Benefit','Recipe','Ad','Carousel'));
 	}
-
 }

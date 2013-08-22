@@ -69,10 +69,11 @@
 					
 				</div>
 				
-			<div class="list_carousel responsive">
-				<ul id="foo5">
+<div class="list_carousel responsive" style="height:90px">
+			
+				<ul id="foo5" style="height:100%">
 					<?php foreach($supermarkets as $supermarket) { ?>
-						<li>
+						<li style="width:90px">
 						<?php 
 					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
 			    	    ?>

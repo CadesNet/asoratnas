@@ -105,15 +105,19 @@ class BranchesController extends AppController {
 	public function select(){
 
 		$Branch = $this->Branch->find('all');
-		$this->set(compact('Branch'));
+		$this->loadModel('Supermarket');
+		$Supermarket = $this->Supermarket->find('all');	
+		$this->set(compact('Branch','Supermarket'));
 	}
 	public function select1($id=null){
 		if (!$this->Branch->exists($id)) {
 			$this->redirect(array('action' => 'select'));
 			//throw new NotFoundException(__('Invalid branch'));
 		}else{
+		$this->loadModel('Supermarket');
+		$Supermarket = $this->Supermarket->find('all');		
 		$Branch = $this->Branch->find('all',array('conditions' => array('Branch.' . $this->Branch->primaryKey => $id),'recursive'  => 1));
-		$this->set(compact('Branch'));
+		$this->set(compact('Branch','Supermarket'));
 		}
 	}
 }

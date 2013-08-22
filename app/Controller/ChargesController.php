@@ -14,7 +14,7 @@ class ChargesController extends AppController {
  */
 	public function index() {
 		
-		$this->Charge->recursive = 0;
+		$this->Charge->recursive = 1;
 		$this->set('charges', $this->paginate());
 	}
 

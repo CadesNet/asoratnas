@@ -1,4 +1,4 @@
-
+<div class="container">
 	<div class="row-fluid">
 		<div class="span12">
 
@@ -25,8 +25,11 @@
 	
 		<div class="row-fluid">
 			<ul class = "thumbnails">
-			<?php  foreach ($branch['Charge'] as $charge) { ?>
-			
+			<?php  foreach ($branch['Charge'] as $charge) {
+					if( $charge['deadline'] >= date('Y-m-d')){
+
+			 ?>
+				
 		<li class="span6 ">
 		<div class="row-fluid cuadrovacantes">
 			<div class = "infovacantes">
@@ -57,7 +60,7 @@
 
 			 </li>
 	
-			 <?php	}?>
+			 <?php }	}?>
 			<ul class = "thumbnails">
 			
 		</div>
@@ -66,4 +69,36 @@
 		<?php }  ?>
 
 	</div>
+<div class="row-fluid">
+		<div class="span12">
 
+<div class="list_carousel responsive" style="height:90px">
+
+				<ul id="foo5" style="height:100%">
+					<?php foreach($supermarkets as $supermarket) { ?>
+						<li style="width:80px">
+						<?php 
+					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
+			    	    ?>
+						</li>
+						<?php }	 ?>
+
+				</ul>
+			</div>
+
+		<script type="text/javascript" language="javascript">
+			$(function() {
+				//	Fuild layout, centering the items
+				$('#foo5').carouFredSel({
+					width: '100%',
+					scroll: 1
+				});
+
+			});
+		</script>
+
+	
+
+</div>	
+</div>
+</div>

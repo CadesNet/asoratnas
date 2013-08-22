@@ -1,3 +1,3 @@
 <?php
- echo $this->element('contenido/sucursales_cargos', array('branches' => $Branch)); 
+ echo $this->element('contenido/sucursales_cargos', array('branches' => $Branch,'supermarkets'=>$Supermarket)); 
 ?>

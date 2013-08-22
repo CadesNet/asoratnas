@@ -214,6 +214,10 @@ class QuotesController extends AppController {
 				$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			}
 		}
+		$this->loadModel('Supermarket');
+		$Supermarket = $this->Supermarket->find('all');	
+		$this->set(compact('Supermarket'));
+
 
 	}
 
@@ -248,6 +252,9 @@ class QuotesController extends AppController {
 		}else{
 			$this->redirect(array('action' => 'select1'));
 		}
+		$this->loadModel('Supermarket');
+		$Supermarket = $this->Supermarket->find('all');	
+		$this->set(compact('Supermarket'));
 		
 	}
 }

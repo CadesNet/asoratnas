@@ -34,4 +34,35 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Enviar datos')); ?>
 </div>
+<div class="row-fluid">
+		<div class="span12">
 
+<div class="list_carousel responsive" style="height:90px">
+
+				<ul id="foo5" style="height:100%">
+					<?php foreach($supermarkets as $supermarket) { ?>
+						<li style="width:80px">
+						<?php 
+					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
+			    	    ?>
+						</li>
+						<?php }	 ?>
+
+				</ul>
+			</div>
+
+		<script type="text/javascript" language="javascript">
+			$(function() {
+				//	Fuild layout, centering the items
+				$('#foo5').carouFredSel({
+					width: '100%',
+					scroll: 1
+				});
+
+			});
+		</script>
+
+	
+
+</div>	
+</div>

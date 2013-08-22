@@ -27,7 +27,16 @@
 					<div class="row-fluid">
 						<div class="span1">
 							<?php foreach ($categories as $category): ?>
-							<?php echo $this->Html->image("category/filename/".$category['Category']['filename']."")?>
+							<?php
+
+							foreach ($category['ImagesCategory'] as $ImagesCategory) {
+							if($ImagesCategory['type']=='Tres'){						
+							echo $this->Html->image("images_category/filename/".$ImagesCategory['filename']."");
+							}
+							}
+
+							?>
+
 						</div>
 						<div class="span11">
 							<div class="row-fluid">

@@ -33,7 +33,12 @@
 					<div class="row">
 						<div class="span1">
 							<?php 
-							echo $this->Html->image("category/filename/".$category['Category']['filename']."")?>
+							foreach ($category['ImagesCategory'] as $ImagesCategory) {
+							if($ImagesCategory['type']=='Uno'){						
+							echo $this->Html->image("images_category/filename/".$ImagesCategory['filename']."");
+							}
+							}
+							?>
 						</div>
 						<div class="span3">
 							<div class="row">
@@ -81,16 +86,22 @@ background-color: black;">
 			</div>
 			<div class="row">
 				<div class="span9">
+<div class="list_carousel responsive" style="height:270px">
 
-<div class="list_carousel responsive">
-				<ul id="foo5">
-					<?php foreach($categories as $category) { ?>
+				<ul id="foo5" style="height:100%">
+					<?php foreach($categories as $category) { 
+						foreach ($category['ImagesCategory'] as $ImagesCategory) {
+							if($ImagesCategory['type']=='Dos'){		
+						?>
+
 						<li>
-						<?php 
-					echo $this->Html->image("category/filename/".$category['Category']['filename']);  
+						<?php 											
+							echo $this->Html->image("images_category/filename/".$ImagesCategory['filename']."");
 			    	    ?>
 						</li>
-						<?php }	 ?>
+					<?php }
+					  		}
+					  		}	 ?>
 
 				</ul>
 			</div>
@@ -105,16 +116,6 @@ background-color: black;">
 
 			});
 		</script>
-
-
-
-
-
-
-
-
-
-
 
 				</div>
 			</div>

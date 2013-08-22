@@ -1,25 +1,21 @@
 <div class="categories index">
-	<h2><?php echo __('Categoria de productos'); ?></h2>
-	<table class = "table" cellpadding="0" cellspacing="0">
+	<h2><?php echo __('Categories'); ?></h2>
+	<table cellpadding="0" cellspacing="0">
 	<tr>
-			
-			<th><?php echo $this->Paginator->sort('name','Nombre'); ?></th>
-			<th><?php echo $this->Paginator->sort('filename','Imagen'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir','Directorio'); ?></th>
-			<th><?php echo $this->Paginator->sort('description','Descripción'); ?></th>
-			<th class="actions"><?php echo __('Acciones'); ?></th>
+			<th><?php echo $this->Paginator->sort('id'); ?></th>
+			<th><?php echo $this->Paginator->sort('name'); ?></th>
+			<th><?php echo $this->Paginator->sort('description'); ?></th>
+			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($categories as $category): ?>
 	<tr>
-		
+		<td><?php echo h($category['Category']['id']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
-		<td> <div style = "max-width:200px;"> <?php echo $this->Html->image('category/filename/'.h($category['Category']['filename'])); ?>&nbsp;</td>
-		<td><?php echo h($category['Category']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<!-- <?php echo $this->Html->link(__('Ver'), array('action' => 'view', $category['Category']['id']),array('class' => 'ok btn btn-info  ')); ?> -->
-			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info  ')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $category['Category']['id']),array('class' => 'ok btn btn-info ')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info ')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -39,8 +35,12 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
-	<?php echo $this->Html->link(__('Nueva Categoria'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
-	<?php echo $this->Html->link(__('Listar Productos'), array('controller' => 'items', 'action' => 'index'),array('class' => 'ok btn btn-info  ')); ?>
-	<?php echo $this->Html->link(__('Nuevo Producto'), array('controller' => 'items', 'action' => 'add'),array('class' => 'ok btn btn-info  ')); ?> 
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('New Category'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
+		<li><?php echo $this->Html->link(__('List Items'), array('controller' => 'items', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Item'), array('controller' => 'items', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Images Categories'), array('controller' => 'images_categories', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Images Category'), array('controller' => 'images_categories', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+	</ul>
 </div>
