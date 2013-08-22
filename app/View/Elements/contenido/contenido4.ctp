@@ -276,16 +276,7 @@ foreach($recipes1 as $recipe1){
 				</ul>
 			</div>
 
-		<script type="text/javascript" language="javascript">
-			$(function() {
-				//	Fuild layout, centering the items
-				$('#foo5').carouFredSel({
-					width: '100%',
-					scroll: 1
-				});
 
-			});
-		</script>
 
 
 		</div>

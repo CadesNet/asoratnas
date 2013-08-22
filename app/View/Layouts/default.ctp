@@ -108,6 +108,16 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 		</div><!-- #main-container -->
 		</div><!-- #header .container -->
 <?php //echo $this->Js->writeBuffer(); // Write cached scripts ?>
+		<script type="text/javascript" language="javascript">
+			$(function() {
+				//	Fuild layout, centering the items
+				$('#foo5').carouFredSel({
+					width: '100%',
+					scroll: 1
+				});
+
+			});
+		</script>
 	</body>
 
 
