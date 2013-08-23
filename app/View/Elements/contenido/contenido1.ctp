@@ -8,8 +8,14 @@
       <?php foreach ($carousel as $carousels) { ?>
     
         <li>
-               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  ?> 
-               <p class="flex-caption">bextlam.com | mmmmmmm</p>
+               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
+
+               if($carousels['Carousel']['description']!=""){
+               ?> 
+               <p class="flex-caption">
+                <?php echo $carousels['Carousel']['description'] ?>
+               </p>
+               <?php } ?>
         </li>
        <?php } ?>
       </ul>

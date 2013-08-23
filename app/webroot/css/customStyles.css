@@ -15,14 +15,16 @@
 }
 
 .dirbarbottom{
-	background-image: url('../img/dir_bar_bottom.png');
-	height: 71px;
-	margin-left: 10%;
-	margin-right: 10%;
-	position: relative;
-	top:-71px;
-	z-index: 50;
-	bottom: 1px;
+
+margin-left: auto;
+margin-right: auto;
+position: relative;
+margin: 0 auto;
+top: -80px;
+z-index: 50;
+bottom: 1px;
+width: 1670px;
+max-width: 100%;
 
 }
 
@@ -213,9 +215,21 @@ background-image: url('../img/bg_footer.jpg');
 	.footer{
 
 	position: relative;
-	top:-71px;
+	top: -81px;
 	}
 
 	.container{
 		padding-bottom: 30px;
 	}
+	@media (max-width: 1778px) {
+  .dirbarbottom {
+
+margin-left: auto;
+margin-right: auto;
+position: relative;
+margin: 0 auto;
+top: -80px;
+z-index: 50;
+bottom: 1px;
+width: 1670px;
+  }

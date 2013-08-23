@@ -3,11 +3,8 @@
 		<div class="span12">
 
 		<?php foreach ($branches as $branch) { ?>
-			
-	
+
 			<div class="row-fluid">
-				
-		
 						<div class="span1">
 							<?php echo $this->Html->image("branch/filename/".$branch['Branch']['filename'])?>
 						</div>

@@ -17,7 +17,7 @@
                  <?php
                 echo $this->Html->link(
 			    $this->Html->image("logosantarosa.png", array("alt" => "Home")),
-			    array('controller' => 'Quotes', 'action' => 'select'),
+			    array('controller' => 'Benefits', 'action' => 'select'),
 			    array('escape' => false , 'class' => 'brand'));
 
                 ?>

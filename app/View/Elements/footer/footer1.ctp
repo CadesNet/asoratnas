@@ -1,5 +1,7 @@
 
-				<div class= "dirbarbottom"></div>
+				<div class= "dirbarbottom" style="">
+					 <?php echo $this->Html->image("dir_bar_bottom.png"); ?>
+				</div>
 				
 
 
