@@ -36,7 +36,7 @@
 
 							foreach ($category['ImagesCategory'] as $ImagesCategory) {
 							if($ImagesCategory['type']=='Tres'){						
-							echo $this->Html->image("images_category/filename/".$ImagesCategory['filename']."");
+							echo '<h3>'.$this->Html->image("images_category/filename/".$ImagesCategory['filename']."").'</h3>';
 							}
 							}
 
@@ -46,28 +46,35 @@
 						<div class="span11">
 							<div class="row-fluid">
 								<div class="span12">
-									<h2 class = "producttitle"><?php echo $category['Category']['name'] ?></h2>
+									<h3>
+									<?php echo $this->Html->link($category['Category']['name']."&nbsp;&nbsp;&nbsp;&nbsp;", array( 'controller' => 'Items', 'action' => "select",$category['Category']['id']),array('escape' => false,'class' => 'brand producttitle','style' => "color:".$category['Category']['description']."; text-decoration: none;border-bottom: 8px solid ".$category['Category']['description'].";"));  
+										?>
+									</h3>
 								</div>
 							</div>
 						</div>
 					</div>
 			
 			<div class = "row-fluid">
-				<ul class = "thumbnails">
-				<?php foreach ($category['Item'] as $item) { ?>
-				<li class="span6 cuadroproducto">
-					<div class="row-fluid">
-						<div class="span6 offset3">
+				<ul class = "thumbnails" style="margin-top: 30px;">
+				<?php $a=1;
+
+				 foreach ($category['Item'] as $item) { 
+					$a++;
+						if ($a%2==0) {	?>
+
+				<li class="span5 offset1 cuadroproducto" style="margin-right: 20px;">
+					<div class="row-fluid" style="text-align: center">
+						<div class="span12">
 							<?php foreach ($item['ImagesItem'] as $image): ?>
 							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
 							<?php 
 								break;
 							endforeach ?>
 						</div>
-				
-					
 						<div class="span12 ">
-							<h3 class = "itemname"><?php echo $item['name'] ?> </h3>
+							<!--<h3 class = "itemname"><?php //echo $item['name'] ?> </h3> -->
+							<h5><?php echo $item['name'] ?> </h5>
 						</div>
 						<div class="span12 ">
 							<p class = "itemdescription"><?php echo $item['description'] ?> </p>
@@ -77,9 +84,37 @@
 						</div>
 					</div>
 
-					</li>
+				</li>
+						<?php }
+						else{
+						 ?>
+
+				<li class="span5 cuadroproducto">
+					<div class="row-fluid" style="text-align: center">
+						<div class="span12">
+							<?php foreach ($item['ImagesItem'] as $image): ?>
+							<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
+							<?php 
+								break;
+							endforeach ?>
+						</div>
+						<div class="span12 ">
+							<h5><?php echo $item['name'] ?> </h5>
+						</div>
+						<div class="span12 ">
+							<p class = "itemdescription"><?php echo $item['presentacion'] ?> </p>
+						</div>
+						<div class="span12">
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger')); ?>
+						</div>
+					</div>
+
+				</li>
 			
-			<?php } ?>
+			<?php
+			 } 
+
+			 } ?>
 
 
 			<?php endforeach; ?>
@@ -105,10 +140,10 @@
 
 
 
-			<div class="span12">
-				<div class="row-fluid" >
-					<div class="span12">
-						<h2>La receta del dia</h2>
+			<div class="span12 cuadrorecetad" style="text-align:center;">
+				<div class="row-fluid" style="text-align:left;" >
+					<div class="span12" >
+						<h1 style="color: #2FA4B8">&nbsp;&nbsp;La receta del dia</h1>
 					</div>
 					
 				</div>
@@ -116,7 +151,7 @@
 					<div class="span12">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
-						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						echo $this->Html->image(("images_recipe/filename/".$ImagesRecipe['filename'].""),array('style' => 'width: 100%;' ));
 						break;
 						}
 						?>
@@ -125,20 +160,21 @@
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h3><?php echo $recipes['Recipe']['title'] ?></h3>
+						<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title'] ?></h3>
 					</div>
 				</div>
-				
+				<div class="row-fluid" >
 					<div class="span12">
-						<h5><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
+						<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
-			
+				</div>				
+				<div class="row-fluid">
 					<div class="span12">
 						<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],1), array('class' => 'btn btn-info btn-large'));
 							 ?>
 					</div>
 					
-				
+				</div>
 			</div>		
 		</div>
 	</div>

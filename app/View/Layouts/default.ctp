@@ -83,7 +83,7 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 				<?php echo $this->element('menu/top_menu'); ?>
 				<div id="contenido" class="container">
 			<div class = "row">
-				<div  class="container colorcontainer">	
+				<div  class="container-fluid colorcontainer">	
 
 				<?php echo $this->element('admin/admi'); ?>	
 	           

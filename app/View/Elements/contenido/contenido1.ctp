@@ -89,10 +89,10 @@
 				</ul>
 			</div>
 			</div>
-			<div class="span5">
-				<div class="row-fluid" >
-					<div class="span12">
-						<h2>La receta del dia</h2>
+			<div class="span5 cuadrorecetad" style="text-align:center;">
+				<div class="row-fluid" style="text-align:left;" >
+					<div class="span12" >
+						<h1 style="color: #2FA4B8">&nbsp;&nbsp;La receta del dia</h1>
 					</div>
 					
 				</div>
@@ -100,7 +100,7 @@
 					<div class="span12">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
-						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						echo $this->Html->image(("images_recipe/filename/".$ImagesRecipe['filename'].""),array('style' => 'width: 100%;' ));
 						break;
 						}
 						?>
@@ -109,12 +109,12 @@
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h3><?php echo $recipes['Recipe']['title'] ?></h3>
+						<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title'] ?></h3>
 					</div>
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h5><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
+						<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
 				</div>				
 				<div class="row-fluid">

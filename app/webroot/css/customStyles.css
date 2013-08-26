@@ -1,8 +1,14 @@
 .topdesign{
-
+	height: 148px;
 	background-image: url('../img/bg_top.jpg');
 	border-bottom: 15px solid #028b71;
 }
+@media (max-width: 979px) {
+  .topdesign {
+    height: initial;
+  }
+}
+
 
 .bggeneral{
 	background-image: url('../img/bg_generalbig.jpg');
@@ -60,7 +66,15 @@ background-image: url('../img/bg_footer.jpg');
  }
  .producttitle{
  	color: #911a21;
- 	border-bottom:  8px solid #911a21;
+ 	text-decoration: none;
+ 	border-bottom: 8px solid #911a21;
+ 	padding-bottom: 12px;
+ }
+ .producttitle1{
+ 	color: #98DBDF;
+ 	text-decoration: none;
+ 	border-bottom: 6px solid #98DBDF;
+ 	padding-bottom: 12px;
  }
  .recipetitle{
  	color: #1db8d2;
@@ -117,6 +131,14 @@ background-image: url('../img/bg_footer.jpg');
  	max-height: 800px;
 	border-radius: 20px;
  }
+ .cuadrorecetad{
+ 	background-color: #f8f6ea;
+ 	-moz-box-shadow: 0 0 3px 3px #888;
+	-webkit-box-shadow: 0 0 3px 3px#888;
+	box-shadow: 0 0 10px 0px #888;
+ 	padding: 0px 0px 15px;
+ 
+ }
  .detalleproducto{
  	border:1px solid red;
  	height: 30px;
@@ -132,6 +154,21 @@ background-image: url('../img/bg_footer.jpg');
  }
 
  .itemdescription{
+ 	color:#aaa;
+ 	text-align: center;
+ 	font-size: 1.2em;
+
+ }
+ .itemnameCotiza{
+ 	float: left;
+ 	color:#911a21;
+ 	text-align: center;
+ 	font-size: 2em;
+ 	font-weight: bold;
+ }
+
+ .itemdescriptionCotiza{
+ 	float: left;
  	color:#aaa;
  	text-align: center;
  	font-size: 1.2em;
@@ -163,13 +200,14 @@ background-image: url('../img/bg_footer.jpg');
  	font-size: 1.3em;
  	font-weight: bold;
  	color: #06816a;
- 	text-align: center;
+ 	text-align: left;
 
 
  }
 
  .cuadrodireccion{
  	padding: 20px;
+ 	text-align: left;
  }
 
  .tipodedireccion{
@@ -204,9 +242,9 @@ background-image: url('../img/bg_footer.jpg');
 	font-weight: bold;
 }
 
-.thumbnails li:nth-child(odd) {
+/*.thumbnails li:nth-child(odd) {
 		margin-left: 0;
-	}
+	}*/
 
 .thumbnails2 li:nth-child(4n) {
 		margin-left: 0;
@@ -233,3 +271,21 @@ z-index: 50;
 bottom: 1px;
 width: 1670px;
   }
+}
+.cotizartext{
+	text-align: right;
+}
+.cotizarfrm{
+	width: 100%;
+}
+@media (max-width: 768px) {
+  .cotizarfrm{
+	width: 85%;
+}
+.cotizartext{
+	text-align: left;
+}
+}
+
+
+

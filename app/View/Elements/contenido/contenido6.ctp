@@ -28,20 +28,12 @@
 	<div class="row-fluid">
 		<div class="span9">
 			<div class="row-fluid">
-				
-			
-						<div class="span1">
-							<?php echo $this->Html->image("sugerencia.PNG")?>
-						</div>
-						<div class="span11">
-							<div class="row-fluid">
-								<div class="span12">
-									<h3 class = "recipetitle">nam e</h3>
-								</div>
-							</div>
-							
-							<br>
-					
+				<div class="span1">
+					<h3><?php echo $this->Html->image("sugerencia.PNG")?></h3>
+				</div>
+				<div class="span11">
+							<h3 class = "recipetitle">nam e</h3>
+					<br>					
 				</div>
 			</div>
 
@@ -66,21 +58,21 @@
 						</div>
 					</div>
 					<div class="row-fluid">
-							<div class="span3">
-								<div class = "recipetitledescription"> Tiempo </div>
+							<div class="span2">
+								<div class = "recipetitledescription"> Tiempo: </div>
 							</div>
-							<div class="span9">
+							<div class="span10">
 								<p><?php echo $recipes['Recipe']['time'] ?> min</p>
 							</div>
 					</div>
 					
 
 					<div class="row-fluid">
-							<div class="span3">
-								<div class = "recipetitledescription"> Tiempo </div>
+							<div class="span2">
+								<div class = "recipetitledescription"> Personas: </div>
 							</div>
-							<div class="span9">
-								<p><?php echo $recipes['Recipe']['portion'] ?>personas</p>
+							<div class="span10">
+								<p><?php echo $recipes['Recipe']['portion'] ?>Personas</p>
 							</div>
 					</div>
 					<div class="row-fluid">
@@ -111,7 +103,7 @@
 				</div>
 			</div>
 			<?} ?>
-<div class="paginator">
+<div class="paginator" style="float: right;">
 <?php 
 
 

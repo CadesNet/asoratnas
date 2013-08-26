@@ -49,13 +49,13 @@
 							<div class="row">
 								<div class="span3">
 									<h3 style="line-height: 20px;">
-										<?php echo $this->Html->link(($category['Category']['name']), array('controller' => 'Items', 'action' => 'select',$category['Category']['id'])) ?>
+										<?php echo $this->Html->link(($category['Category']['name']), array('controller' => 'Items', 'action' => 'select',$category['Category']['id']), array('style' => "color:".$category['Category']['description']."; text-decoration: none;")) ?>
 									</h3>
 								</div>
 							</div>
 							<div class="row" >
-								<div class="span3" style="height: 6px;
-background-color: black;">
+								<div class="span3" <?php echo "style='height: 6px;
+background-color:".$category['Category']['description']."'"?> >
 								</div>
 							</div>
 							<br>
@@ -65,12 +65,12 @@ background-color: black;">
 								<?php foreach ($category['Item'] as $value) { ?>
 								<div class="row">
 									<div class="span3">
-									<?php echo $this->Html->link(($value['name']), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$value['id'])) ?>
+									<?php echo $this->Html->link(($value['name']), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$value['id']),array('style' => "color:".$category['Category']['description']."; text-decoration: none;")) ?>
 									</div>
 								</div>
 								<div class="row">
 										<div class="span3">
-									 	<?php echo $value['presentacion'] ?>
+									 	<h5 style="color:#807F7C"><?php echo $value['presentacion'] ?></h5>
 										</div>
 									</div>
 								<?php } ?>
@@ -93,14 +93,14 @@ background-color: black;">
 				<div class="span9">
 <div class="list_carousel responsive" style="height:270px">
 
-				<ul id="foo5" style="height:100%">
+				<ul id="foo5" style="height:100%;">
 					<?php foreach($categories as $category) { 
 						foreach ($category['ImagesCategory'] as $ImagesCategory) {
 							if($ImagesCategory['type']=='Dos'){		
 						?>
 						<li>
 						<?php 											
-							echo $this->Html->image("images_category/filename/".$ImagesCategory['filename']."");
+							echo $this->Html->image("images_category/filename/".$ImagesCategory['filename']."",array('style' => 'width:240px' ));
 			    	    ?>
 						</li>
 					<?php }
@@ -136,10 +136,10 @@ background-color: black;">
 
 
 
-			<div class="span12" style="text-align:center;">
-				<div class="row-fluid" >
-					<div class="span12">
-						<h2>La receta del dia</h2>
+						<div class="span12 cuadrorecetad" style="text-align:center;">
+				<div class="row-fluid" style="text-align:left;" >
+					<div class="span12" >
+						<h3 style="color: #2FA4B8">&nbsp;&nbsp;La receta del dia</h3>
 					</div>
 					
 				</div>
@@ -147,7 +147,7 @@ background-color: black;">
 					<div class="span12">
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
-						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						echo $this->Html->image(("images_recipe/filename/".$ImagesRecipe['filename'].""),array('style' => 'width: 100%;' ));
 						break;
 						}
 						?>
@@ -156,12 +156,12 @@ background-color: black;">
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h3><?php echo $recipes['Recipe']['title'] ?></h3>
+						<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title'] ?></h3>
 					</div>
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h5><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
+						<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
 				</div>				
 				<div class="row-fluid">
@@ -171,7 +171,7 @@ background-color: black;">
 					</div>
 					
 				</div>
-			</div>		
+			</div>	
 		</div>
 		</div>
 		</div>

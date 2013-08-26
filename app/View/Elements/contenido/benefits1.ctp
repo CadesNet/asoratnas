@@ -29,18 +29,12 @@
 		<div class="span9">
 			<div class="row-fluid">
 				
-			
-						<div class="span1">
-							<?php echo $this->Html->image("sugerencia.PNG")?>
-						</div>
-						<div class="span11">
-							<div class="row-fluid">
-								<div class="span12">
-									<h3 class = "recipetitle">nam e</h3>
-								</div>
-							</div>
-							
-							<br>
+				<div class="span1">
+						<h3><?php echo $this->Html->image("sugerencia.PNG")?></h3>
+				</div>
+				<div class="span11">
+						<h3 class = "recipetitle">nam e</h3>
+						<br>
 					
 				</div>
 			</div>
@@ -81,15 +75,15 @@
 			
 			</div>
 			<?} ?>
-<div class="paginator">
+<div class="paginator" style="float: right;">
 <?php 
 
 
 // Shows the next and previous links
-echo $this->Paginator->prev('« Anterior Receta', null, null, array('class' => 'disabled'));
+echo $this->Paginator->prev('« Anterior Beneficio', null, null, array('class' => 'disabled'));
   //Shows the page numbers
 echo $this->Paginator->numbers();
-echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 'disabled'));
+echo $this->Paginator->next('Siguiente Beneficio »', null, null, array('class' => 'disabled'));
 
 // prints X of Y, where X is current page and Y is number of pages
 //echo $this->Paginator->counter();
@@ -105,15 +99,15 @@ echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 
 			
 
 		</div>
-		<div class="span3">
-		
-<?php foreach ($ads as $value) { ?> 
+			<div class="span3">
+		<div class="row-fluid">
+		<?php foreach ($ads as $value) { ?> 
 			<div class="span12 " >
 
 				 <?php if($value['Ad']['type'] !='video'){ 
 					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
 				} else{ ?>
-					<iframe  src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="100%" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
 				
 				<br>
@@ -123,8 +117,8 @@ echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 
 
 			</div>		
 		<?php } ?>		
-		
-	</div>
+		</div>
+		</div>
 </div>
 </div>
 </div>

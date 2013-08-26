@@ -240,6 +240,7 @@
  * any date & time related errors.
  */
 	//date_default_timezone_set('UTC');
+	date_default_timezone_set('America/La_Paz');
 
 /**
  *

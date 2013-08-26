@@ -12,26 +12,22 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </a>
-                <div> 
-                
+                <div>                 
                  <?php
-                echo $this->Html->link(
-			    $this->Html->image("logosantarosa.png", array("alt" => "Home")),
-			    array('controller' => 'Benefits', 'action' => 'select'),
-			    array('escape' => false , 'class' => 'brand'));
-
+	                echo $this->Html->link(
+				    $this->Html->image("logosantarosa.png", array("alt" => "Home")),
+				    array('controller' => 'Benefits', 'action' => 'select'),
+				    array('escape' => false , 'class' => 'brand', 'style' => 'padding: 0px 20px 10px;'));
                 ?>
-              </div>
-                <div class="nav-collapse collapse">
-               <ul class="nav pull-right">
+              	</div>
+              	<div class="nav-collapse collapse">
+               	<ul class="nav pull-right">
                 <li>
-
-
-            <?php echo $this->Html->link("<i class='icon-home'></i>",
-			    array('controller' => 'benefits', 'action' => 'select'),
-			    array('escape' => false ));
-            
-			     ?>
+	            	<?php echo $this->Html->link("<i class='icon-home'></i>",
+				    array('controller' => 'benefits', 'action' => 'select'),
+				    array('escape' => false));
+	            
+				     ?>
                 <li class="visible-desktop" ></li>
                                          
                                            <li class="dropdown">
