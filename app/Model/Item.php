@@ -4,7 +4,7 @@ App::uses('AppModel', 'Model');
  * Item Model
  *
  * @property Category $Category
- * @property Quote $Quote
+ * @property ItemsQuote $ItemsQuote
  */
 class Item extends AppModel {
 
@@ -29,27 +29,29 @@ class Item extends AppModel {
  */
 	public $validate = array(
 		'name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Campo requerido',
+			'maxlength' => array(
+				'rule' => array('maxlength',50),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		'maxlength' => array(
-				'rule' => array('maxlength',50),
-				'message' => 'Maximo 50 caracteres',
+		),
+		'presentacion' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength',150),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),			
+			),
 		),
 		'description' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1500),
-				'message' => 'Maximo 1500 caracteres',
+				'rule' => array('maxlength',15000),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -90,7 +92,7 @@ class Item extends AppModel {
  *
  * @var array
  */
-	public $hasMany = array(
+		public $hasMany = array(
 'ImagesItem' => array(
 			'className' => 'ImagesItem',
 			'foreignKey' => 'item_id',

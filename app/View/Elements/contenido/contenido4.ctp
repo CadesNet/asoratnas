@@ -27,8 +27,9 @@
 <div class="container">
 
 	<div class="row-fluid">
-	<?php foreach ($categories as $category){ ?>
+	
 		<div class="span9">
+		<?php foreach ($categories as $category){ ?>
 					<div class="row-fluid">
 							<div class="span1">	
 								<?php
@@ -56,96 +57,96 @@
 					
 					<div class="row-fluid" style="margin-top: 30px;">
 
-					<?php
-						$img = null;
-					 foreach ($items as $item) { ?>
-					<div class="span11 offset1 cuadrodetalle" >
-						<div class="row-fluid" >
-							<div class="span6">
-								<div class = "imagendetalle"> 
-								<?php foreach ($item['ImagesItem'] as $image): ?>
-								<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
+						<?php
+							$img = null;
+						 foreach ($items as $item) { ?>
+						<div class="span11 offset1 cuadrodetalle" >
+							<div class="row-fluid" >
+								<div class="span6">
+									<div class = "imagendetalle"> 
+									<?php foreach ($item['ImagesItem'] as $image): ?>
+									<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
+									</div>
+									<?php 
+									$img = $image['filename'];
+										break;
+									endforeach ?>
 								</div>
-								<?php 
-								$img = $image['filename'];
-									break;
-								endforeach ?>
+								<div class="span6" >
+									<?php echo $this->Form->create(null, array('action' => 'select1')); ?>
+										<div class="row-fluid">
+											<div class="span12">
+												<h3 class = "itemnameCotiza"><?php echo $item['Item']['name'] ?></h3>
+											</div>
+										</div>
+										<div class="row-fluid">
+											<div class="span12">
+														<p class = "itemdescriptionCotiza"><?php echo $item['Item']['presentacion'] ?></p>
+											</div>
+										</div>
+										<div class="row-fluid">
+											
+											<div class="span3">
+												<h5>Cantidad</h5>
+											</div>
+											<div class="span9">	  									
+				    										<?php 
+															echo $this->Form->input('id',array('type' => 'hidden','default'=>  $item['Item']['id']));
+															echo $this->Form->input('img',array('type' => 'hidden','default'=>  $img));
+															echo $this->Form->input('name',array('type' => 'hidden','default'=>  $item['Item']['name']));
+
+
+															echo $this->Form->input('cantidad',array('label' => '','type' => 'text','placeholder' => 'cantidad'));
+															?>
+											</div>
+											
+										</div>
+										<div class="row-fluid">
+											<div class="span12">
+												<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Cotizar&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
+											</div>
+										</div>
+
+								</div>
 							</div>
-							<div class="span6" >
-							<?php echo $this->Form->create(null, array('action' => 'select1')); ?>
-								<div class="row-fluid">
-									<div class="span12">
-										<h3 class = "itemnameCotiza"><?php echo $item['Item']['name'] ?></h3>
-									</div>
-								</div>
-								<div class="row-fluid">
-									<div class="span12">
-												<p class = "itemdescriptionCotiza"><?php echo $item['Item']['presentacion'] ?></p>
-									</div>
-								</div>
-								<div class="row-fluid">
-									
-									<div class="span3">
-										<h5>Cantidad</h5>
-									</div>
-									<div class="span9">	  									
-		    										<?php 
-													echo $this->Form->input('id',array('type' => 'hidden','default'=>  $item['Item']['id']));
-													echo $this->Form->input('img',array('type' => 'hidden','default'=>  $img));
-													echo $this->Form->input('name',array('type' => 'hidden','default'=>  $item['Item']['name']));
-
-
-													echo $this->Form->input('cantidad',array('label' => '','type' => 'text','placeholder' => 'cantidad'));
-													?>
-									</div>
-									
-								</div>
-								<div class="row-fluid">
-									<div class="span12">
-										<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Cotizar&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
-									</div>
-								</div>
-
-							</div>
-						</div>
 					
 
-						<br>
-						<br>
-						<div class="row-fluid">
-							<div class="span3 offset9" >
-								<p>Facebook</p>
+							<br>
+							<br>
+							<div class="row-fluid">
+								<div class="span3 offset9" >
+									<p>Facebook</p>
+								</div>
 							</div>
+							<br>
+							<br>
+							<div class="row-fluid">
+								<div class="span12 itemtext">
+								  <?php echo $item['Item']['description']; ?>
+								</div>
+							</div>
+							<br>
+							<br>
+							<br>
+							<br>
+							<div class="row-fluid">
+								<div class="span2" >
+								<h4>
+									<?php 
+								echo $this->Html->link("Volver", array( 'controller' => 'Items', 'action' => "select",$category['Category']['id']),array('escape' => false , 'class' => 'brand','style'=>'color: #911a21;	 	text-decoration: none'));  
+						    	    ?>
+						    	 </h4>
+								</div>
+							</div>	
 						</div>
-						<br>
-						<br>
-						<div class="row-fluid">
-							<div class="span12 itemtext">
-							  <?php echo $item['Item']['description']; ?>
-							</div>
-						</div>
-						<br>
-						<br>
-						<br>
-						<br>
-						<div class="row-fluid">
-							<div class="span2" >
-							<h4>
-								<?php 
-							echo $this->Html->link("Volver", array( 'controller' => 'Items', 'action' => "select",$category['Category']['id']),array('escape' => false , 'class' => 'brand','style'=>'color: #911a21;
- 	text-decoration: none'));  
-					    	    ?>
-					    	 </h4>
-							</div>
-						</div>	
-					</div>
-					<?php } ?>
+						<?php } ?>
 					</div>
 				
 			
-
+			<? } ?>
 		</div>
-		<? } ?>
+		</div>
+		
 			
 						
 		<div class="span3">
@@ -205,7 +206,7 @@
 	<div class="row-fluid">
 						<div class="span1" style="text-align: right;">
 							<h3>
-							<?php echo $this->Html->image("sugerencia.PNG")?>
+							<?php echo $this->Html->image("algunas-sugerencias-icon-products.jpg")?>
 							</h3>
 						</div>
 						<div class="span11">
@@ -241,7 +242,7 @@
 								<div class="row-fluid">
 									<div class="span11 offset1" style="font:icon;">
 										<?php 		
-											echo $this->Html->image("imgrec.PNG");echo $recipe1['Recipe']['title'];
+											echo "<p style='color:#1DB8D3'>".$this->Html->image("algunas-sugerencias-cuchillo-tenedor.jpg").$recipe1['Recipe']['title']."</p>";
 				    	    			?>				    	    				
 									</div>
 								</div>

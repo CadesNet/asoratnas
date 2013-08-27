@@ -23,7 +23,7 @@ class Category extends AppModel {
 	public $validate = array(
 		'name' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
+				'rule' => array('maxlength',100),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -33,7 +33,7 @@ class Category extends AppModel {
 		),
 		'description' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
+				'rule' => array('maxlength',100),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

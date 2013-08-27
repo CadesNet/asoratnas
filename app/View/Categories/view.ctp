@@ -86,7 +86,7 @@
 		<tr>
 			<td><?php echo $imagesCategory['id']; ?></td>
 			<td><?php echo $imagesCategory['category_id']; ?></td>
-			<td><?php echo $imagesCategory['filename']; ?></td>
+			<td><?php echo $this->html->image("images_category/filename/".$imagesCategory['filename']); ?></td>
 			<td><?php echo $imagesCategory['dir']; ?></td>
 			<td><?php echo $imagesCategory['type']; ?></td>
 			<td class="actions">

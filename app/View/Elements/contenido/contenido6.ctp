@@ -29,10 +29,10 @@
 		<div class="span9">
 			<div class="row-fluid">
 				<div class="span1">
-					<h3><?php echo $this->Html->image("sugerencia.PNG")?></h3>
+					<h3><?php echo $this->Html->image("icon-recetas.jpg")?></h3>
 				</div>
 				<div class="span11">
-							<h3 class = "recipetitle">nam e</h3>
+							<h3 class = "recipetitle">Recetas</h3>
 					<br>					
 				</div>
 			</div>
