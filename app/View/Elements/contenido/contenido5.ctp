@@ -117,7 +117,7 @@ echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 
 		<div class="span3">
 		<div class="row-fluid">
 		<?php foreach ($ads as $value) { ?> 
-			<div class="span12 " >
+			<div class="span12 " style="margin: 0;"  >
 
 				 <?php if($value['Ad']['type'] !='video'){ 
 					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);

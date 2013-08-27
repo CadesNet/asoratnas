@@ -41,11 +41,11 @@
 						<div class="span6" style="text-align: left;"><?php echo $this->Form->input('email',array('label'=>'','class' => 'cotizarfrm'));?></div>
 					</div>
 					<div class="row-fluid">
-						<div class="span3">Asunto</div>
+						<div class="span3"><h5>Asunto<h5></div>
 						<div class="span7" style="text-align: left;"><?php echo $this->Form->input('issue',array('label'=>'','class' => 'cotizarfrm'));?></div>
 					</div>
 					<div class="row-fluid">
-						<div class="span3">Mensaje</div>
+						<div class="span3"><h5>Mensaje</h5></div>
 						<div class="span7" style="text-align: left;"><?php echo $this->Form->input('message',array('label'=>'','class' => 'cotizarfrm'));?></div>
 					</div>
 				</fieldset>

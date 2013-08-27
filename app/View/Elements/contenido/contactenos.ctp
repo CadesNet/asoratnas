@@ -5,10 +5,10 @@
 </div>
 <br>
 <br>
-<div class="container" style="min-height: 800px;">
+
 			<div class="row-fluid" style="color:#25A781;border-bottom: 2px solid #25A781;">
 						<div class="span12 cuadrodireccion">
-							<div class = "dirciudad">
+							<div class = "dirciudad" style="text-align: center;">
 								<?php echo $branch1['Branch']['name'] ?>
 							</div>
 							<br> 
@@ -41,13 +41,20 @@
 					
 						</div>
 					</div>
+<div class="container">
 			<div class="row-fluid">
 				<ul class = "thumbnails2">
+				
 				<?php foreach ($branch as $branches) { ?>
 				<li class="span4 cuadrodireccion">
-						<div class = "dirciudad">	<?php echo $branches['Branch']['name'] ?> </div>
+					<div class="row-fluid">
+						<div class="span12">
+							<div class = "dirciudad">	<?php echo $branches['Branch']['name'] ?> </div>
 					
 							<div><?php echo $branches['Branch']['type'] ?></div>
+						</div>
+					</div>
+						
 						
 					<div class="row-fluid">
 						<div class="span3">
@@ -81,7 +88,7 @@
 							<div class = "tipodedireccion">Telf Movil: </div>
 						</div>
 						<div class="span9">
-					<?php echo $branches['Branch']['movil'] ?>
+							<?php echo $branches['Branch']['movil'] ?>
 						</div>
 					</div>	
 
@@ -94,11 +101,11 @@
 						</div>
 					</div>
 				
-			</li>
+				</li>
 				<?php } ?>
 			</ul>
 			</div>
-
+		</div>
 			<div class="row-fluid">
 				<div class="span12">
 				<div class="consultations form cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
@@ -123,7 +130,7 @@
 			<div class="span6" style="text-align: left;"><?php echo $this->Form->input('email',array('label'=>'','class' => 'cotizarfrm'));?></div>
 		</div>
 		<div class="row-fluid">
-			<div class="span3">Mensaje</div>
+			<div class="span3"><h5>Mensaje</h5></div>
 			<div class="span7" style="text-align: left;"><?php echo $this->Form->input('message',array('label'=>'','class' => 'cotizarfrm'));?></div>
 		</div>
 			</fieldset>
@@ -133,7 +140,7 @@
 	</div>
 	</div>
 
-</div>
+<br>
 
 <div class="row-fluid">
 	<div class="span12">

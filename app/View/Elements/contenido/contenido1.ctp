@@ -79,7 +79,7 @@
 			
 				<ul id="foo5" style="height:100%">
 					<?php foreach($supermarkets as $supermarket) { ?>
-						<li style="width:90px">
+						<li style="width:90px;border: 5px solid #FFF;">
 						<?php 
 					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
 			    	    ?>

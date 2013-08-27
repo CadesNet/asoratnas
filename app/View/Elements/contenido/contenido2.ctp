@@ -85,7 +85,7 @@ background-color:".$category['Category']['description']."'"?> >
 			<br>
 			<div class="row">
 				<div class="span9" style="background-color: aqua;">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quaerat beatae nesciunt iure nemo odio voluptatum</p>
+					<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disfruta de toda la variedad de la carne mas saludable, nutritiva y dietetica</h5>
 				</div>
 				
 			</div>
@@ -98,7 +98,7 @@ background-color:".$category['Category']['description']."'"?> >
 						foreach ($category['ImagesCategory'] as $ImagesCategory) {
 							if($ImagesCategory['type']=='Dos'){		
 						?>
-						<li>
+						<li style="border-right: #D4D5D5 1px solid;">
 						<?php 											
 							echo $this->Html->image("images_category/filename/".$ImagesCategory['filename']."",array('style' => 'width:240px' ));
 			    	    ?>
@@ -118,7 +118,7 @@ background-color:".$category['Category']['description']."'"?> >
 		<div class="span3 offset1">
 		<div class="row-fluid" >
 			
-			<div class="span12 " >
+			<div class="span12 " style="margin: 0;"  >
 
 				  <?php if($ads['Ad']['type'] !='video'){ 
 					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
@@ -136,7 +136,7 @@ background-color:".$category['Category']['description']."'"?> >
 
 
 
-						<div class="span12 cuadrorecetad" style="text-align:center;">
+						<div class="span12 cuadrorecetad" style="text-align:center;margin: 0;">
 				<div class="row-fluid" style="text-align:left;" >
 					<div class="span12" >
 						<h3 style="color: #2FA4B8">&nbsp;&nbsp;La receta del dia</h3>

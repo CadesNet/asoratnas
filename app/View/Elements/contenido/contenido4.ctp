@@ -151,7 +151,7 @@
 		<div class="span3">
 		<div class="row-fluid" >
 			
-			<div class="span12 " >
+			<div class="span12 " style="margin: 0;"  >
  				
  				<?php if($ads['Ad']['type'] !='video'){ 
 					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
@@ -163,7 +163,7 @@
 				<br>
 				<br>
 			</div>				
-			<div class="span12 cuadrorecetad" style="text-align:center;">
+			<div class="span12 cuadrorecetad" style="text-align:center;margin: 0;">
 				<div class="row-fluid" style="text-align:left;" >
 					<div class="span12" >
 						<h3 style="color: #2FA4B8">&nbsp;&nbsp;La receta del dia</h3>

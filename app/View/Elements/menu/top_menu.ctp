@@ -28,7 +28,7 @@
 				    array('escape' => false));
 	            
 				     ?>
-                <li class="visible-desktop" ></li>
+                <li class="visible-desktop margen"></li>
                                          
                                            <li class="dropdown">
                                            <?php echo $this->Html->link(("Empresa"), array('controller' => '', 'action' => ''),array('class'=>'dropdown-toggle', 'data-toggle'=>'dropdown')); ?>
@@ -44,7 +44,7 @@
                                           </li>
 
 
-                                          <li class="visible-desktop" ></li>
+                                          <li class="visible-desktop margen" ></li>
                               
                                           <li>
                                           <?php echo $this->Html->link(("Servicios"), array('controller' => 'Services', 'action' => 'select')); 
@@ -52,12 +52,12 @@
                                          <!--  <a style="padding: 6px 12px;" href="#"><font><font style="color: #157858"><b>Servicios</b></font></font></a> -->
 
                                           </li>
-                                          <li class="visible-desktop" ></li>
+                                          <li class="visible-desktop margen" ></li>
                                           <li>
                                           <?php echo $this->Html->link(("Contactos"), array('controller' => 'consultations', 'action' => 'select')); 
                                           ?>
                                           </li>
-                                          <li class="visible-desktop" ></li>
+                                          <li class="visible-desktop margen" ></li>
                                           <li>
                                           	<?php $a = 'ppp'; echo $this->Html->link(("Cotizar: ".count($this->Session->read('pp'))." Items"), array('controller' => 'Quotes', 'action' => 'cotizar')); 
                                           ?>
