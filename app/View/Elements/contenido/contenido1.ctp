@@ -30,7 +30,7 @@
     <div class="row-fluid">
 		<div class="span7" >
 			<div class="row-fluid" >
-					<h3 class = "benefitstitle">Beneficios para  salud</h4>
+					<h3 class = "benefitstitle">Beneficios para  salud</h3>
 			</div>
 
 			<?php 
@@ -54,7 +54,7 @@
 							</div>
 							<div class="row-fluid" style="">
 
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn btn-info btn-large'));
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn btn-warning btn-large'));
 							 ?>
 								
 							</div>
@@ -74,12 +74,15 @@
 					<p>Encuentranos en..</p>
 					
 				</div>
-				
-<div class="list_carousel responsive" style="height:90px">
-			
+
+			<div class="row-fluid">
+				<div class="span12">
+
+					<div class="list_carousel responsive" style="height:90px">
+
 				<ul id="foo5" style="height:100%">
 					<?php foreach($supermarkets as $supermarket) { ?>
-						<li style="width:90px;border: 5px solid #FFF;">
+						<li style="width:80px">
 						<?php 
 					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
 			    	    ?>
@@ -88,6 +91,9 @@
 
 				</ul>
 			</div>
+				</div>	
+			</div>
+			
 			</div>
 			<div class="span5 cuadrorecetad" style="text-align:center;">
 				<div class="row-fluid" style="text-align:left;" >

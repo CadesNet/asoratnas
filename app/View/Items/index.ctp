@@ -16,7 +16,7 @@
 		<td><?php echo h($item['Item']['presentacion']); ?>&nbsp;</td>
 		<td><?php echo h($item['Item']['description']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($item['Category']['name'], array('controller' => 'categories', 'action' => 'view', $item['Category']['id']),array('class' => 'ok btn btn-info')); ?>
+			<?php echo $this->Html->link($item['Category']['name'], array('controller' => 'categories', 'action' => 'view', $item['Category']['id']),array('class' => 'ok btn btn-info ')); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $item['Item']['id']),array('class' => 'ok btn btn-info ')); ?>
@@ -46,6 +46,8 @@
 		<li><?php echo $this->Html->link(__('New Item'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Images Items'), array('controller' => 'images_items', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Images Item'), array('controller' => 'images_items', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Items Quotes'), array('controller' => 'items_quotes', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Items Quote'), array('controller' => 'items_quotes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>

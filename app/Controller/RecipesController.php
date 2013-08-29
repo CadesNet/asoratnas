@@ -102,6 +102,14 @@ class RecipesController extends AppController {
 
 //conulta propias
 	public function select(){
+		//menu
+		$menu = array('menu' => array(
+    'id' => 'recetas','inferior'=>'#1A8DA2','superior'=>'#28C3DE','color'=>'#FFF'));
+		//menu
+		$this->Session->write($menu);
+		////////
+
+
 		$this->loadModel('Ad');
 		$this->loadModel('Carousel');
 	//$conditions = "id = 6";
@@ -125,6 +133,12 @@ class RecipesController extends AppController {
 
 
 	public function select1($id=null,$pagina){
+				//menu
+		$menu = array('menu' => array(
+    'id' => 'recetas','inferior'=>'#1A8DA2','superior'=>'#28C3DE','color'=>'#FFF'));
+		//menu
+		$this->Session->write($menu);
+		////////
 	  $this->loadModel('Ad');
 	  $this->loadModel('Carousel');
 	  if(!$this->Recipe->exists($id)){

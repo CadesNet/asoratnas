@@ -1,3 +1,3 @@
 <?php
- echo $this->element('contenido/requerimientos', array('charges' => $Charge)); 
+ echo $this->element('contenido/requerimientos', array('charges' => $Charge,'supermarkets'=>$Supermarket)); 
 ?>

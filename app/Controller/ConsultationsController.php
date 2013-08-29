@@ -89,6 +89,13 @@ class ConsultationsController extends AppController {
 
 	///consultas propias
 		public function select() {
+				$menu = array('menu' => array(
+    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
+));
+		//menu
+		$this->Session->write($menu);
+		//////////////
+
 		if ($this->request->is('post')) {
 			$this->Consultation->create();
 			if ($this->Consultation->save($this->request->data)) {

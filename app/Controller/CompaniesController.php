@@ -99,6 +99,13 @@ class CompaniesController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	public function select(){
+			$menu = array('menu' => array(
+    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
+));
+		//menu
+		$this->Session->write($menu);
+		//////////////
+
 		$Company = $this->Company->find('all');
 		$this->set(compact('Company'));
 	}

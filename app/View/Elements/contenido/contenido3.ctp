@@ -82,7 +82,7 @@
 							<p class = "itemdescription"><?php echo $item['description'] ?> </p>
 						</div>
 						<div class="span12">
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger')); ?>
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-large btn-danger')); ?>
 						</div>
 					</div>
 
@@ -107,7 +107,7 @@
 							<p class = "itemdescription"><?php echo $item['presentacion'] ?> </p>
 						</div>
 						<div class="span12">
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-danger')); ?>
+							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$category['Category']['id'],$item['id']), array('class' => 'btn btn-large btn-danger')); ?>
 						</div>
 					</div>
 
@@ -132,11 +132,15 @@
 			
 			<div class="span12" style="margin: 0;"  >
 
-				 <?php if($ads['Ad']['type'] !='video'){ 
-					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
+					  <?php if($ads['Ad']['type'] !='video'){ 
+					 echo $this->Html->image(('ad/filename/'.$ads['Ad']['filename']),array('style'=>'height:380px'));
 				} else{ ?>
-					<iframe src= <?php echo $ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="180px" src= <?=$ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
+				
+				<br>
+				<br>
+				<br>
 			</div>		
 			
 
@@ -145,7 +149,7 @@
 			<div class="span12 cuadrorecetad" style="text-align:center;margin: 0;">
 				<div class="row-fluid" style="text-align:left;" >
 					<div class="span12" >
-						<h1 style="color: #2FA4B8">&nbsp;&nbsp;La receta del dia</h1>
+						<h3 style="color: #2FA4B8">&nbsp;&nbsp;La receta del dia</h3>
 					</div>
 					
 				</div>

@@ -95,6 +95,11 @@ class CategoriesController extends AppController {
 	}
 		//conulta propias
 	public function select(){
+			$menu = array('menu' => array(
+    'id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
+		//menu
+		$this->Session->write($menu);
+
        $this->loadModel('Supermarket');
        $this->loadModel('Recipe');
        $this->loadModel('Ad');

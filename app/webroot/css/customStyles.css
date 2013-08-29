@@ -1,7 +1,7 @@
+
 .topdesign{
 	height: 148px;
 	background-image: url('../img/bg_top.jpg');
-	border-bottom: 15px solid #028b71;
 }
 @media (max-width: 979px) {
   .topdesign {
@@ -9,6 +9,11 @@
   }
 }
 
+.pie_menu{
+	height: 28px;
+	background-image: url('../img/borde.png');
+	
+}
 
 .bggeneral{
 	background-image: url('../img/bg_generalbig.jpg');
@@ -80,7 +85,10 @@ background-image: url('../img/bg_footer.jpg');
  	color: #1db8d2;
  	border-bottom: 8px solid #1db8d2;
  }
-
+ .otrostitle{
+ 	color: #108B6E;
+ 	border-bottom: 8px solid #25A781;
+ }
 
  .benefitstitle{
  	color: #25a781;
@@ -206,7 +214,7 @@ background-image: url('../img/bg_footer.jpg');
  }
 
  .cuadrodireccion{
- 	padding: 17px;
+ 	/*padding: 17px;*/
  	text-align: left;
  }
 
@@ -285,6 +293,11 @@ width: 1670px;
 .cotizartext{
 	text-align: left;
 }
+.contentbottom{
+ text-align: center;
+}
+
+
 }
 .margen{
 border-right: black 1px solid;
@@ -293,5 +306,18 @@ top: 10px;
 position: relative;
 }
 
-
+.stylo_form{
+	font-size: 95%;
+	color: #50615C;
+	margin: 10px 0;
+}
+select{
+	background: url('../img/select.png') no-repeat right #FFF;
+}
+.legend_form{
+	text-align:
+	center;padding: 20px 0px 0px;
+	font-size: 75%;
+	color: #338F7B;
+}
 

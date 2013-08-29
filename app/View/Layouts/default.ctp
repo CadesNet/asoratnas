@@ -68,9 +68,15 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
                         echo $this->Html->css('carusel/flexslider1');
                         echo $this->Html->script('carusel/jquery.flexslider1');    
 		?>
-             <script type="text/javascript">
+ <script type="text/javascript">
+ 	$(document).ready(function(){
+   $("a#<?php echo $this->Session->read('menu.id')?>").css({"color":"<?php echo $this->session->read('menu.color')?>","background-image":"-webkit-gradient(linear, 0 0, 0 100%, from(<?php echo $this->Session->read('menu.superior') ?>), to(<?php echo $this->session->read('menu.inferior') ?>))"});
+    });   
+
  $(window).load(function() {
  $('.flexslider').flexslider();
+isset
+
  });
  </script> 
  <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>

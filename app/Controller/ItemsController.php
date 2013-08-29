@@ -97,7 +97,7 @@ class ItemsController extends AppController {
 		$this->Session->setFlash(__('Item was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
-			//conulta propias
+				//conulta propias
 	public function select($id = null){
        $this->loadModel('Category');
        $this->loadModel('Recipe');

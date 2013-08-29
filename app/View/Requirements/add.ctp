@@ -1,5 +1,5 @@
 <div class="requirements form">
-<?php echo $this->Form->create('Requirement'); ?>
+<?php echo $this->Form->create('Requirement',array('type' => 'file')); ?>
 	<fieldset>
 		<legend><?php echo __('Add Requirement'); ?></legend>
 	<?php
@@ -10,7 +10,7 @@
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
 		echo $this->Form->input('email');
-		echo $this->Form->input('curriculum');
+		echo $this->Form->input('curriculum',array('type' => 'file'));
 		echo $this->Form->input('message');
 	?>
 	</fieldset>

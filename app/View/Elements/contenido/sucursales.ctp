@@ -1,7 +1,7 @@
 <div class="container" style="min-height: 800px;">
 <div class="row-fluid">
 	<div class="span12">
-		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Lizta de cotizacion</h3>
+		<h3 class="otrostitle">Sucursales:</h3>
 	</div>
 </div>
 <br>
@@ -20,7 +20,7 @@
 
 	
 			<li class="span5">
-			<div class="row-fluid cuadrovacantes">
+			<div class="row-fluid cuadrovacantes" style="min-height: 150px;">
 			<div class = "infovacantes">
 			 <div class="span4">
 
@@ -42,9 +42,10 @@
 				 </div>
 				</div>	
 			</div> 
+			<br/>
 			<div class="row-fluid" >	
 			 		<div class="span12" style="text-align: right;">
-			 			<?php echo $this->Html->link('Ver Cargos', array('controller' => 'Branches', 'action' => 'select1',$branch['Branch']['id']), array('class' => 'btn btn-info ')) ?>
+			 			<?php echo $this->Html->link('Ver Cargos', array('controller' => 'Branches', 'action' => 'select1',$branch['Branch']['id']), array('class' => 'btn btn-warning')) ?>
 			 		</div>
 				</div>
 

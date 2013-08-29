@@ -33,7 +33,7 @@
 						<h3><?php echo $this->Html->image("sugerencia.PNG")?></h3>
 				</div>
 				<div class="span11">
-						<h3 class = "recipetitle">nam e</h3>
+						<h3 class = "recipetitle">Cuida Tu Salud</h3>
 						<br>
 					
 				</div>
@@ -63,10 +63,10 @@
 								<p><?php echo substr($tip['Tip']['description'], 0, 140) ?> </p>
 							</div>
 					</div>
-					
+					<br/>
 					<div class="row-fluid">
 						<div class="span5">
-							<?php echo $this->Html->link(__('Ver beneficios para la salud'), array('controller' => 'Tips', 'action' => 'select2',$tip['Tip']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
+							<?php echo $this->Html->link(__('Ver beneficios'), array('controller' => 'Tips', 'action' => 'select2',$tip['Tip']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
 						</div>
 					</div>
 				</div>
@@ -103,9 +103,9 @@ echo $this->Paginator->next('Siguiente Consejo »', null, null, array('class' =>
 			<div class="span12 " style="margin: 0;"  >
 
 				 <?php if($value['Ad']['type'] !='video'){ 
-					 echo $this->Html->image('ad/filename/'.$value['Ad']['filename']);
+					 echo $this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('style'=>'height:380px'));
 				} else{ ?>
-					<iframe width="100%" height="100%" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="180px" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
 				
 				<br>

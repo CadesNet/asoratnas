@@ -1,3 +1,10 @@
+<div class="row-fluid">
+	<div class="span12">
+		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Historia</h3>
+	</div>
+</div>
+<br>
+<br>
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span12">

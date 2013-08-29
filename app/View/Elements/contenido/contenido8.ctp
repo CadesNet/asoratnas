@@ -8,6 +8,7 @@
 <div class="container" style="min-height: 800px;">
 	<div class="row-fluid" style="color:#25A781;border-bottom: 2px solid #25A781;">
 		<div class="span12">
+
 			<table class="table table-striped ">
 			              <thead style="color: cornsilk;background-image: linear-gradient(to bottom, #A39B9B, #0C6B5E);">
 			                <tr >
@@ -15,7 +16,8 @@
 			                  <th style="vertical-align: middle;text-align: center;">Cantidad</th>
 			                  <th style="vertical-align: middle;text-align: center;">Detalle</th>
 			                  <th style="vertical-align: middle;text-align: center;">Quitar</th>
-			                  <th style="vertical-align: middle;text-align: center;">Modificar</th>
+			                  <th style="vertical-align: middle;text-align: center;">Actualizar</th>
+
 			                </tr>
 			              </thead>
 			              <tbody>
@@ -69,8 +71,8 @@
 	<br>
 	<div class="row-fluid">
 		<div class="span12" style="text-align: right;">
-			<?php echo $this->Html->link(__('Agrear mas productos'), array('controller' => 'Categories', 'action' => 'select'), array('class' => 'btn btn-info btn-large')); ?>
-			<?php echo $this->Html->link(__('Confirmar cotizacion'), array('controller' => 'Quotes', 'action' => 'cotizar'), array('class' => 'btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link(__('Agrear mas productos'), array('controller' => 'Categories', 'action' => 'select'), array('class' => 'btn btn-warning btn-large')); ?>
+			<?php echo $this->Html->link(__('Confirmar cotizacion'), array('controller' => 'Quotes', 'action' => 'cotizar'), array('class' => 'btn btn-warning btn-large')); ?>
 		</div>
 	</div>
 

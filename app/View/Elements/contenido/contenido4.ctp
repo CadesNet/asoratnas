@@ -65,7 +65,7 @@
 								<div class="span6">
 									<div class = "imagendetalle"> 
 									<?php foreach ($item['ImagesItem'] as $image): ?>
-									<?php echo $this->Html->image("images_item/filename/".$image['filename']."") ?>
+									<?php echo $this->Html->image(("images_item/filename/".$image['filename'].""),array('style'=>'width: 100%;')) ?>
 									</div>
 									<?php 
 									$img = $image['filename'];
@@ -87,7 +87,7 @@
 										<div class="row-fluid">
 											
 											<div class="span3">
-												<h5>Cantidad</h5>
+												<p class="stylo_form">Cantidad</p>
 											</div>
 											<div class="span9">	  									
 				    										<?php 
@@ -113,11 +113,11 @@
 
 							<br>
 							<br>
-							<div class="row-fluid">
+							<!--<div class="row-fluid">
 								<div class="span3 offset9" >
 									<p>Facebook</p>
 								</div>
-							</div>
+							</div>-->
 							<br>
 							<br>
 							<div class="row-fluid">
@@ -144,9 +144,7 @@
 				
 			
 			<? } ?>
-		</div>
-		</div>
-		
+		</div>		
 			
 						
 		<div class="span3">
@@ -154,10 +152,10 @@
 			
 			<div class="span12 " style="margin: 0;"  >
  				
- 				<?php if($ads['Ad']['type'] !='video'){ 
-					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
+ 				  <?php if($ads['Ad']['type'] !='video'){ 
+					 echo $this->Html->image(('ad/filename/'.$ads['Ad']['filename']),array('style'=>'height:380px'));
 				} else{ ?>
-					<iframe src= <?php echo $ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="180px" src= <?=$ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
 				
 				<br>

@@ -1198,7 +1198,7 @@ input[type="file"] {
 }
 
 select {
-  width: 220px;
+  /*width: 220px;*/
   background-color: #ffffff;
   border: 1px solid #cccccc;
 }
@@ -3258,11 +3258,11 @@ button.close {
 .btn:focus {
   color: #333333;
   text-decoration: none;
-  background-position: 0 -15px;
+  /*background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
      -moz-transition: background-position 0.1s linear;
        -o-transition: background-position 0.1s linear;
-          transition: background-position 0.1s linear;
+          transition: background-position 0.1s linear;*/
 }
 
 .btn:focus {
@@ -3393,19 +3393,19 @@ input[type="button"].btn-block {
 }
 
 .btn-warning {
-  color: #ffffff;
+   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #faa732;
-  *background-color: #f89406;
-  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
-  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
-  background-image: -o-linear-gradient(top, #fbb450, #f89406);
-  background-image: linear-gradient(to bottom, #fbb450, #f89406);
+  background-color: #49afcd;
+  *background-color: rgb(9, 99, 87);
+  background-image: -moz-linear-gradient(top, rgb(34, 161, 140), rgb(9, 99, 87));
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(34, 161, 140)), to(rgb(9, 99, 87)));
+  background-image: -webkit-linear-gradient(top, rgb(34, 161, 140), rgb(9, 99, 87));
+  background-image: -o-linear-gradient(top, rgb(34, 161, 140), rgb(9, 99, 87));
+  background-image: linear-gradient(to bottom, rgb(34, 161, 140), rgb(9, 99, 87));
   background-repeat: repeat-x;
-  border-color: #f89406 #f89406 #ad6704;
+  border-color: #2f96b4 #2f96b4 #1f6377;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 

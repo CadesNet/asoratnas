@@ -222,6 +222,11 @@ class QuotesController extends AppController {
 	}
 
 	public function cotizar(){
+		$menu = array('menu' => array(
+    'id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
+		//menu
+		$this->Session->write($menu);
+		
 		$this->loadModel('ItemsQuote');
 		if(count($this->Session->read('pp'))>0){
 

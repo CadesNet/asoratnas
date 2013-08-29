@@ -99,6 +99,13 @@ class ServicesController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 		public function select(){
+				$menu = array('menu' => array(
+    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
+));
+		//menu
+		$this->Session->write($menu);
+		//////////////
+
 		$Service = $this->Service->find('all');
 		$this->set(compact('Service'));
 	}

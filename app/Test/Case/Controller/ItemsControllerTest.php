@@ -16,6 +16,7 @@ class ItemsControllerTest extends ControllerTestCase {
 		'app.item',
 		'app.category',
 		'app.images_category',
+		'app.images_item',
 		'app.items_quote',
 		'app.quote'
 	);

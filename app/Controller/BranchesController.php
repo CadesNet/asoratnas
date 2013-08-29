@@ -103,13 +103,24 @@ class BranchesController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	public function select(){
-
+		$menu = array('menu' => array(
+    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''));
+		//menu
+		$this->Session->write($menu);
+		////////
 		$Branch = $this->Branch->find('all');
 		$this->loadModel('Supermarket');
 		$Supermarket = $this->Supermarket->find('all');	
 		$this->set(compact('Branch','Supermarket'));
 	}
 	public function select1($id=null){
+			$menu = array('menu' => array(
+    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
+));
+		//menu
+		$this->Session->write($menu);
+		//////////////
+
 		if (!$this->Branch->exists($id)) {
 			$this->redirect(array('action' => 'select'));
 			//throw new NotFoundException(__('Invalid branch'));

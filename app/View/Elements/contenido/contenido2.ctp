@@ -121,9 +121,9 @@ background-color:".$category['Category']['description']."'"?> >
 			<div class="span12 " style="margin: 0;"  >
 
 				  <?php if($ads['Ad']['type'] !='video'){ 
-					 echo $this->Html->image('ad/filename/'.$ads['Ad']['filename']);
+					 echo $this->Html->image(('ad/filename/'.$ads['Ad']['filename']),array('style'=>'height:380px'));
 				} else{ ?>
-					<iframe src= <?php echo $ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="180px" src= <?=$ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				 <?php } ?>
 				
 				<br>
@@ -133,6 +133,7 @@ background-color:".$category['Category']['description']."'"?> >
 
 			</div>		
 			
+
 
 
 

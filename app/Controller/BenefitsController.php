@@ -104,6 +104,12 @@ public $helpers = array('Js');
 	}
 	//conulta propias
 	public function select(){
+		$menu = array('menu' => array(
+    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
+));
+		//menu
+		$this->Session->write($menu);
+		//////////////
 
 		$this->loadModel('Ad');
         $this->loadModel('Supermarket');
@@ -119,6 +125,12 @@ public $helpers = array('Js');
 		$this->set(compact('Supermarket','Benefit','Recipe','Carousel'));
 	}
 	public function select1(){
+				//menu
+		$menu = array('menu' => array(
+    'id' => 'beneficios','inferior'=>'#74255F','superior'=>'#C34CA4','color'=>'#FFF'));
+		//menu
+		$this->Session->write($menu);
+		////////
 		$this->loadModel('Carousel');
 		$this->loadModel('Ad');
 	//$conditions = "id = 6";
@@ -137,6 +149,12 @@ public $helpers = array('Js');
         $this->set(compact("Benefit",'Ad','Carousel'));
 	}
 	public function select2($id=null,$pagina){
+				//menu
+		$menu = array('menu' => array(
+    'id' => 'beneficios','inferior'=>'#74255F','superior'=>'#C34CA4','color'=>'#FFF'));
+		//menu
+		$this->Session->write($menu);
+		////////
 		$this->loadModel('Carousel');
 		$this->loadModel('Ad');
 		if(!$this->Benefit->exists($id)){

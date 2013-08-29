@@ -8,7 +8,7 @@
 						<div class="span12">
 							<div class="row-fluid">
 								<div class="span12">
-									<h3 class = "recipetitle">Cargos en:  <?php echo $branch['Branch']['name'] ?></h3>
+									<h3 class="otrostitle">Cargos en:  <?php echo $branch['Branch']['name'] ?></h3>
 								</div>
 							</div>
 							
@@ -54,7 +54,7 @@
 			 		<div class="span12" style="text-align: right;">
 			 <?php    echo $this->Form->create('Requirement', array('action' => 'select1'));
 	             	 echo $this->Form->input('id',array('type' => 'hidden','default'=> $charge['id']));
-	         		 echo $this->Form->end(array('label' => __('Click para Aplicar', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
+	         		 echo $this->Form->end(array('label' => __('Click para Aplicar', true), 'escape' => false ,'class' => 'ok btn btn-warning btn-large')); ?>
 	         		</div>
 				</div>
 			 </li>

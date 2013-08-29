@@ -99,6 +99,12 @@ class TipsController extends AppController {
 
 
 	public function select1(){
+				//menu
+		$menu = array('menu' => array(
+    'id' => 'tips','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));
+		//menu
+		$this->Session->write($menu);
+		////////
 		$this->loadModel('Carousel');
 		 $this->loadModel('Ad');
 	//$conditions = "id = 6";
@@ -118,6 +124,12 @@ class TipsController extends AppController {
         $this->set(compact("Tip",'Ad','Carousel'));
 	}
 	public function select2($id=null,$pagina){
+				//menu
+		$menu = array('menu' => array(
+    'id' => 'recetas','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));
+		//menu
+		$this->Session->write($menu);
+		////////
 		$this->loadModel('Carousel');
 		 $this->loadModel('Ad');
 		if(!$this->Tip->exists($id)){
