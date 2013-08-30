@@ -1,3 +1,3 @@
 <?php
- echo $this->element('contenido/contenido5', array('recipes' => $Recipe ,'ads'=>$Ad,'carousel' => $Carousel)); 
+ echo $this->element('contenido/recipes', array('recipes' => $Recipe ,'ads'=>$Ad,'carousel' => $Carousel)); 
 ?>

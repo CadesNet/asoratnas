@@ -41,12 +41,13 @@
 					
 						</div>
 					</div>
+					<br>
 <div class="container">
 			<div class="row-fluid">
 				<ul class = "thumbnails2">
 				
 				<?php foreach ($branch as $branches) { ?>
-				<li class="span4 cuadrodireccion">
+				<li class="span4 cuadrodireccion" >
 					<div class="row-fluid">
 						<div class="span12">
 							<div class = "dirciudad">	<?php echo $branches['Branch']['name'] ?> </div>
@@ -102,11 +103,12 @@
 					</div>
 				
 				</li>
+
 				<?php } ?>
 			</ul>
 			</div>
 		</div>
-		
+
 			<div class="row-fluid">
 				<div class="span12">
 				<div class="consultations form cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
@@ -143,10 +145,8 @@
 
 <br>
 
-<div class="row-fluid">
-	<div class="span12">
-		<h4 style="color:#979E9D">Encuentranos en</h4> 
-	</div>
+<div class="row-fluid" style="">
+	<p style="color: #889091;">Encuentranos en:</p>
 </div>
 <div class="row-fluid">
 		<div class="span12">

@@ -31,10 +31,10 @@
 				
 			
 						<div class="span1">
-							<h3><?php echo $this->Html->image("sugerencia.PNG")?></h3>
+							<h3><?php echo $this->Html->image("beneficos-del-pavo.png")?></h3>
 						</div>
 						<div class="span11">
-							<h3 class = "recipetitle">Beneficios del pavo</h3>
+							<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 8px solid <?php echo $this->session->read('menu.inferior') ?>">Beneficios del pavo</h3>
 							<br>
 					
 				</div>
@@ -57,17 +57,15 @@
 						</div>
 					</div>
 					<div class="row-fluid">
-							<div class="span3">
-								<div class = "recipetitledescription"> Desccipcion </div>
-							</div>
-							<div class="span9">
+							
+							<div class="span12">
 								<p><?php echo substr($benefit['Benefit']['description'], 0, 140) ?> min</p>
 							</div>
 					</div>
 					
 					<div class="row-fluid">
 						<div class="span5">
-							<?php echo $this->Html->link(__('Ver Beneficio'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
+							<?php echo $this->Html->link(__('Ver Beneficio'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn  btn-primary btn-large')); ?>
 						</div>
 					</div>
 				</div>

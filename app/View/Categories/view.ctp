@@ -11,7 +11,7 @@
 			<?php echo h($category['Category']['name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Description'); ?></dt>
+		<dt><?php echo __('Color'); ?></dt>
 		<dd>
 			<?php echo h($category['Category']['description']); ?>
 			&nbsp;
@@ -21,8 +21,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Category'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info ')); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Category'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit Category'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Category'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Categories'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Category'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Items'), array('controller' => 'items', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>

@@ -24,7 +24,7 @@ class Category extends AppModel {
 		'name' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',100),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 100 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -33,8 +33,8 @@ class Category extends AppModel {
 		),
 		'description' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',100),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',3000),
+				'message' => 'Maximo 3000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

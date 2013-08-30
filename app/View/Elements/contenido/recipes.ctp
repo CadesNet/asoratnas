@@ -9,7 +9,7 @@
     
         <li>
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
-                if($carousels['Carousel']['description']!=""){
+               if($carousels['Carousel']['description']!=""){
                ?> 
                <p class="flex-caption">
                 <?php echo $carousels['Carousel']['description'] ?>
@@ -29,12 +29,14 @@
 		<div class="span9">
 			<div class="row-fluid">
 				
-			<div class="span1">
-						<h3><?php echo $this->Html->image("diseno-interfaz-avicola-CUIDA-TU-SALUD.png")?></h3>
-				</div>
-				<div class="span11">
-						<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 8px solid <?php echo $this->session->read('menu.inferior') ?>">Cuida Tu Salud</h3>
-						<br>
+			
+						<div class="span1">
+
+							<h3><?php echo $this->Html->image("icon-recetas.jpg"); ?></h3>
+						</div>
+						<div class="span11">
+									<h3 class = "recipetitle">Recetas</h3>
+							<br>
 					
 				</div>
 			</div>
@@ -43,47 +45,64 @@
 				<div class="span11 offset1">
 					<?php
 						$coun = 1;
-					 foreach ($tips as $tip) { ?>
+					 foreach ($recipes as $recipes) { ?>
 			<div class= "itemreceta">
 				<div  class="row-fluid">
 				<div class="span5">
-					<?php echo $this->Html->image("tip/filename/".$tip['Tip']['filename'].""); ?>
+						<?php 
+						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
+						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."");
+						break;
+						} ?>
 				</div>
 				<div class="span7">
 					<div class="row-fluid">
 						<div class="span12">
-							<h3 class = "recipeitemtitle"><?php echo $tip['Tip']['title'] ?></h3>
+							<h3 class = "recipeitemtitle"><?php echo $recipes['Recipe']['title'] ?></h3>
 						</div>
 					</div>
 					<div class="row-fluid">
-							
-							<div class="span12">
-								<p><?php echo substr($tip['Tip']['description'], 0, 140) ?> </p>
+							<div class="span2">
+								<div class = "recipetitledescription"> Tiempo: </div>
+							</div>
+							<div class="span10">
+								<p><?php echo $recipes['Recipe']['time'] ?> min</p>
 							</div>
 					</div>
-					<br/>
+					
+
 					<div class="row-fluid">
-						<div class="span5">
-							<?php echo $this->Html->link(__('Ver beneficios'), array('controller' => 'Tips', 'action' => 'select2',$tip['Tip']['id'],$coun++), array('class' => 'btn btn-inverse btn-large')); ?>
+							<div class="span2">
+								<div class = "recipetitledescription"> Personas: </div>
+							</div>
+							<div class="span10">
+								<p><?php echo $recipes['Recipe']['portion'] ?>Personas</p>
+							</div>
+					</div>
+					
+					<div class="row-fluid">
+						<br>
+						<br>
+						<br>
+						<br>
+						<div class="span12">
+							<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
 						</div>
 					</div>
-				</div>
-				<div class="span2">
-					
 				</div>
 			</div>
 		</div>
-			<? } ?>
-
-<div class="paginator" style="float: right;">
+			<?} ?>
+				
+			<div class="paginator" style="float: right;">
 <?php 
 
 
 // Shows the next and previous links
-echo $this->Paginator->prev('« Anterior Consejo', null, null, array('class' => 'disabled'));
+echo $this->Paginator->prev('« Anterior Receta', null, null, array('class' => 'disabled'));
   //Shows the page numbers
 echo $this->Paginator->numbers();
-echo $this->Paginator->next('Siguiente Consejo »', null, null, array('class' => 'disabled'));
+echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 'disabled'));
 
 // prints X of Y, where X is current page and Y is number of pages
 //echo $this->Paginator->counter();
@@ -98,7 +117,7 @@ echo $this->Paginator->next('Siguiente Consejo »', null, null, array('class' =>
 		<div class="span3">
 		<div class="row-fluid">
 		<?php foreach ($ads as $value) { ?> 
-			<div class="span12 " style="margin: 0;"  >
+				<div class="span12 " style="margin: 0;"  >
 
 				 <?php if($value['Ad']['type'] !='video'){ 
 					 echo $this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('style'=>'height:380px'));
@@ -111,9 +130,11 @@ echo $this->Paginator->next('Siguiente Consejo »', null, null, array('class' =>
 				<br>
 				
 
-			</div>		
+			</div>
 		<?php } ?>		
 		</div>
 		</div>
 	</div>
-</div>
+</div><script type="text/javascript" >
+            $('#demo1').videoUI();
+        </script>

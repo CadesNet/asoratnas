@@ -70,7 +70,8 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 		?>
  <script type="text/javascript">
  	$(document).ready(function(){
-   $("a#<?php echo $this->Session->read('menu.id')?>").css({"color":"<?php echo $this->session->read('menu.color')?>","background-image":"-webkit-gradient(linear, 0 0, 0 100%, from(<?php echo $this->Session->read('menu.superior') ?>), to(<?php echo $this->session->read('menu.inferior') ?>))"});
+   $("a#<?php echo $this->Session->read('menu.id')?>").css({"color": "<?php echo $this->session->read('menu.color')?>","text-shadow": "0 -1px 0 rgba(0, 0, 0, 0.25)","background":"<?php echo $this->session->read('menu.inferior') ?>","background-color": "<?php echo $this->Session->read('menu.inferior') ?>","*background-color": "<?php echo $this->session->read('menu.inferior') ?>","background-image": "-moz-linear-gradient(top, <?php echo $this->Session->read('menu.superior') ?>, <?php echo $this->session->read('menu.inferior') ?>)","background-image": "-webkit-gradient(linear, 0 0, 0 100%, from(<?php echo $this->Session->read('menu.superior') ?>), to(<?php echo $this->session->read('menu.inferior') ?>))","background-image": "-webkit-linear-gradient(top, <?php echo $this->Session->read('menu.superior') ?>, <?php echo $this->session->read('menu.inferior') ?>)","background-image": "-o-linear-gradient(top, <?php echo $this->Session->read('menu.superior') ?>, <?php echo $this->session->read('menu.inferior') ?>)","background-image": "linear-gradient(to bottom, <?php echo $this->Session->read('menu.superior') ?>, <?php echo $this->session->read('menu.inferior') ?>)","background-repeat": "repeat-x","border-color": "<?php echo $this->session->read('menu.inferior') ?> <?php echo $this->session->read('menu.inferior') ?> #1f6377","border-color": "rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)","filter": "progid:DXImageTransform.Microsoft.gradient(startColorstr='<?php echo $this->session->read('menu.inferior') ?>', endColorstr='<?php echo $this->Session->read('menu.inferior') ?>', GradientType=0)","filter": "progid:DXImageTransform.Microsoft.gradient(enabled=false)"});
+   
     });   
 
  $(window).load(function() {
@@ -104,11 +105,11 @@ isset
 			</div>
 			
 		</div>
-			<div id="footer" >
+			<div id="footer" style="height: 100px;">
 				<?php //Silence is golden ?>
 				
 				<?php echo $this->element('footer/footer1'); ?>
-				<?php echo $this->element('sql_dump'); ?>
+				<?php //echo $this->element('sql_dump'); ?>
 			</div><!-- #footer .container -->
 			
 		</div><!-- #main-container -->

@@ -7,6 +7,7 @@ App::uses('AppController', 'Controller');
  */
 class TipsController extends AppController {
 
+public $helpers = array('Js','Session');
 /**
  * index method
  *
@@ -126,7 +127,7 @@ class TipsController extends AppController {
 	public function select2($id=null,$pagina){
 				//menu
 		$menu = array('menu' => array(
-    'id' => 'recetas','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));
+    'id' => 'tips','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		////////

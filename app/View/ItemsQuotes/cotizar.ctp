@@ -1,3 +1,3 @@
 <?php 	
-echo $this->element('contenido/contenido9', array('items' => $this->Session->read('pp')));
+echo $this->element('contenido/itemsquotes', array('items' => $this->Session->read('pp')));
 ?>

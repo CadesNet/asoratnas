@@ -36,8 +36,8 @@ class ItemsQuote extends AppModel {
 		),
 		'detail' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',2000),
-				'message' => 'Your custom message here',
+				'rule' => array('maxlength',3000),
+				'message' => 'Maximo 3000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

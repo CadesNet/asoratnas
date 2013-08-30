@@ -46,8 +46,8 @@ var $actsAs = array(
 		),
 		'description' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',2000),
-				'message' => 'Maximo 2000 caracteres',
+				'rule' => array('maxlength',3000),
+				'message' => 'Maximo 3000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

@@ -30,10 +30,10 @@
 			<div class="row-fluid">
 				
 			<div class="span1">
-						<h3><?php echo $this->Html->image("sugerencia.PNG")?></h3>
+						<h3><?php echo $this->Html->image("diseno-interfaz-avicola-CUIDA-TU-SALUD.png")?></h3>
 				</div>
 				<div class="span11">
-						<h3 class = "recipetitle">Cuida Tu Salud</h3>
+						<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 8px solid <?php echo $this->session->read('menu.inferior') ?>">Cuida Tu Salud</h3>
 						<br>
 					
 				</div>
@@ -58,7 +58,7 @@
 					
 					<div class="row-fluid">
 						<div class="span5">
-							<?php echo $this->Html->link(__('Volver a los Beneficios para la salud'), array('controller' => 'Tips', 'action' => 'select1'), array('class' => 'btn btn-info ')); ?>
+							<?php echo $this->Html->link(__('Volver a Cuida tu salud'), array('controller' => 'Tips', 'action' => 'select1'), array('class' => 'btn btn-inverse btn-large')); ?>
 						</div>
 					</div>
 				</div>

@@ -1,5 +1,5 @@
 <?php 	
-echo $this->element('contenido/contenido8', array('items' => $this->Session->read('pp'))); 
+echo $this->element('contenido/quotes1', array('items' => $this->Session->read('pp'))); 
 
 		/*foreach ($this->Session->read('pp') as $val) {
 			//echo  $i++;

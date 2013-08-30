@@ -31,8 +31,8 @@ class Consultation extends AppModel {
 		),
 		'address' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1000),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',3000),
+				'message' => 'Maximo 3000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -42,7 +42,7 @@ class Consultation extends AppModel {
 		'phone' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',20),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 20 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -61,8 +61,8 @@ class Consultation extends AppModel {
 		),
 		'message' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1000),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength',3000),
+				'message' => 'Maximo 3000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

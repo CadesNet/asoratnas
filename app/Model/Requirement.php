@@ -50,8 +50,8 @@ class Requirement extends AppModel {
 		),
 		'address' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',1000),
-				'message' => 'Maximo 1000 caracteres',
+				'rule' => array('maxlength',3000),
+				'message' => 'Maximo 3000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -70,8 +70,8 @@ class Requirement extends AppModel {
 		),
 		'message' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength',2000),
-				'message' => 'Maximo 2000 caracteres',
+				'rule' => array('maxlength',3000),
+				'message' => 'Maximo 3000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

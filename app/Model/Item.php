@@ -31,7 +31,7 @@ class Item extends AppModel {
 		'name' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',50),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 50 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -41,7 +41,7 @@ class Item extends AppModel {
 		'presentacion' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',150),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 150 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -51,7 +51,7 @@ class Item extends AppModel {
 		'description' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength',15000),
-				//'message' => 'Your custom message here',
+				'message' => 'Maximo 15000 caracteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

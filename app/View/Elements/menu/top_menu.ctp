@@ -35,10 +35,10 @@
                                             <ul class="dropdown-menu" style="left:inherit; padding:0;">
                                               <li>
 
-										<?php echo $this->Html->link(("Historia"), array('controller' => 'Companies', 'action' => 'select')); ?>
+										<?php echo $this->Html->link(("Historia"), array('controller' => 'Companies', 'action' => 'select'),array('class'=>'sub_menu_empresa')); ?>
                                               </li>
                                               <li>
-												<?php echo $this->Html->link(("Requerimientos de personal"), array('controller' => 'Branches', 'action' => 'select')); ?>
+												<?php echo $this->Html->link(("Requerimientos de personal"), array('controller' => 'Branches', 'action' => 'select'),array('class'=>'sub_menu_empresa')); ?>
                                              </li>
                                             </ul>
                                           </li>
@@ -94,17 +94,17 @@
           <li class="dropdown">
          
 				<?php 
-				echo $this->Html->link(("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Productos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"), array('controller' => 'Categories', 'action' => 'select'), array('id'=> 'productos','escape' => false ,'class'=> 'dropdown-toggle btn  tracker')); 
+				echo $this->Html->link(("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Productos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"), array('controller' => 'Categories', 'action' => 'select'), array('id'=> 'productos','escape' => false ,'class'=> 'dropdown-toggle btn menu_  tracker')); 
 				?>
               <ul class="dropdown-menu" style="padding:0;margin: 0;left: 0;" >
                 
-                <li> <?php echo $this->Html->link(__("Pechua de Pavo"), array('controller' => 'Items', 'action' => 'select',1),array('style' => 'color:#FFF;background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1AABC4), to(#197E91));padding: 10px 30px 15px;border-radius: 3px')); ?>
+                <li> <?php echo $this->Html->link(__("Pechua de Pavo"), array('controller' => 'Items', 'action' => 'select',1),array('class' => 'sub_menu_productos1')); ?>
                 </li>
-<li> <?php echo $this->Html->link(__("Jamon de Pavo"), array('controller' => 'Items', 'action' => 'select',2),array('style' => 'color:#FFF;background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2BB589), to(#0D6E5E));padding: 10px 30px 15px;border-radius: 3px;')); ?>
+<li> <?php echo $this->Html->link(__("Jamon de Pavo"), array('controller' => 'Items', 'action' => 'select',2),array('class'=>'sub_menu_productos2')); ?>
                 </li>                
-<li> <?php echo $this->Html->link(__("Pete de Pavo"), array('controller' => 'Items', 'action' => 'select',3),array('style' => 'color:#FFF;background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#C64EA7), to(#72245E));padding: 10px 30px 15px;border-radius: 3px;')); ?>
+<li> <?php echo $this->Html->link(__("Pete de Pavo"), array('controller' => 'Items', 'action' => 'select',3),array('class'=>'sub_menu_productos3')); ?>
                 </li>                
-<li> <?php echo $this->Html->link(__("Pavo Santa Rosa"), array('controller' => 'Items', 'action' => 'select',4),array('style' => 'color:#FFF;background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#B20E15), to(#6F0A0F));padding: 10px 30px 15px;border-radius: 3px;')); ?>
+<li> <?php echo $this->Html->link(__("Pavo Santa Rosa"), array('controller' => 'Items', 'action' => 'select',4),array( 'class'=>'sub_menu_productos4')); ?>
                 </li>                
 
               </ul>
@@ -112,7 +112,7 @@
           <li>
 
 			
-				<?php echo $this->Html->link(("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recetas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"), array('controller' => 'Recipes', 'action' => 'select'),array('id'=> 'recetas','escape' => false ,'class'=>'btn  tracker' )); 
+				<?php echo $this->Html->link(("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recetas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"), array('controller' => 'Recipes', 'action' => 'select'),array('id'=> 'recetas','escape' => false ,'class'=>'btn  tracker' )); 
 				?>
 
           </li>

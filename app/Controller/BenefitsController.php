@@ -8,7 +8,7 @@ App::uses('AppController', 'Controller');
 class BenefitsController extends AppController {
 
 
-public $helpers = array('Js');
+public $helpers = array('Js','Session');
 
 /**
  * index method
@@ -107,6 +107,7 @@ public $helpers = array('Js');
 		$menu = array('menu' => array(
     'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
 ));
+
 		//menu
 		$this->Session->write($menu);
 		//////////////
