@@ -13,6 +13,10 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function index() {
+<<<<<<< HEAD
+=======
+		
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		$this->Quote->recursive = 0;
 		$this->set('quotes', $this->paginate());
 	}
@@ -25,6 +29,10 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+<<<<<<< HEAD
+=======
+		
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		if (!$this->Quote->exists($id)) {
 			throw new NotFoundException(__('Invalid quote'));
 		}
@@ -38,6 +46,10 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function add() {
+<<<<<<< HEAD
+=======
+		
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		if ($this->request->is('post')) {
 			$this->Quote->create();
 			if ($this->Quote->save($this->request->data)) {
@@ -47,6 +59,11 @@ class QuotesController extends AppController {
 				$this->Session->setFlash(__('The quote could not be saved. Please, try again.'));
 			}
 		}
+<<<<<<< HEAD
+=======
+		$items = $this->Quote->Item->find('list');
+		$this->set(compact('items'));
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	}
 
 /**
@@ -57,6 +74,10 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+<<<<<<< HEAD
+=======
+		
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		if (!$this->Quote->exists($id)) {
 			throw new NotFoundException(__('Invalid quote'));
 		}
@@ -71,6 +92,11 @@ class QuotesController extends AppController {
 			$options = array('conditions' => array('Quote.' . $this->Quote->primaryKey => $id));
 			$this->request->data = $this->Quote->find('first', $options);
 		}
+<<<<<<< HEAD
+=======
+		$items = $this->Quote->Item->find('list');
+		$this->set(compact('items'));
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	}
 
 /**
@@ -81,6 +107,10 @@ class QuotesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+<<<<<<< HEAD
+=======
+		
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		$this->Quote->id = $id;
 		if (!$this->Quote->exists()) {
 			throw new NotFoundException(__('Invalid quote'));
@@ -92,6 +122,7 @@ class QuotesController extends AppController {
 		}
 		$this->Session->setFlash(__('Quote was not deleted'));
 		$this->redirect(array('action' => 'index'));
+<<<<<<< HEAD
 	}//conulta propias
 	public function select($id = null,$id2 = null,$id3=null){
 		$menu = array('menu' => array('id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
@@ -102,10 +133,19 @@ class QuotesController extends AppController {
        $this->loadModel('Recipe');
        $this->loadModel('Item');
        $this->loadModel('Presentation');
+=======
+	}
+	//conulta propias
+	public function select($id = null,$id2 = null){
+	   $this->loadModel('Category');
+       $this->loadModel('Recipe');
+       $this->loadModel('Item');
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
        $this->loadModel('Ad');
        $this->loadModel('Carousel');
 		
 
+<<<<<<< HEAD
 		if(!$this->Category->exists($id) and !$this->Item->exists($id2) and !$this->presentation->exists($id3)){
 			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			//throw new NotFoundException(__('Invalid Category'));
@@ -116,6 +156,18 @@ class QuotesController extends AppController {
 		//$this->set('item', $this->Item->find('all', $options));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$Recipes1 = $this->Recipe->find('all',array('order'=>'Recipe.id DESC'));
+=======
+		if(!$this->Category->exists($id) and !$this->Item->exists($id2)){
+			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
+			//throw new NotFoundException(__('Invalid Category'));
+		}else{
+
+		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id)));
+		$Item = $this->Item->find('all',array('conditions' => array('Item.' . $this->Item->primaryKey => $id2)));
+		//$this->set('item', $this->Item->find('all', $options));
+		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
+		$Recipes1 = $this->Recipe->find('all');
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$this->set(compact('Category','Item','Recipe','Recipes1','Ad','Carousel'));
@@ -165,9 +217,12 @@ class QuotesController extends AppController {
 		$this->redirect(array('controller' => 'Quotes', 'action' => 'select1')); 
 		}
 		public function select1(){
+<<<<<<< HEAD
 			$menu = array('menu' => array('id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 		if ($this->request->is('post')) {
 	   		if (!empty($this->data)) {		
@@ -177,8 +232,13 @@ class QuotesController extends AppController {
 			$cantidad = $this->request->data['Quote']['cantidad'];
 			if(is_numeric($cantidad) and $cantidad > 0){
 
+<<<<<<< HEAD
 	        $this->loadModel('Presentation');
 					if(!$this->Presentation->exists($id)){
+=======
+	        $this->loadModel('Item');
+					if(!$this->Item->exists($id)){
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 						$this->redirect(array('controller' => 'Cateories', 'action' => 'select'));
 						//throw new NotFoundException(__('Invalid Category'));
 					}else{
@@ -212,7 +272,10 @@ class QuotesController extends AppController {
 				$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
 			}
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		$this->loadModel('Supermarket');
 		$Supermarket = $this->Supermarket->find('all');	
 		$this->set(compact('Supermarket'));
@@ -221,13 +284,20 @@ class QuotesController extends AppController {
 	}
 
 	public function cotizar(){
+<<<<<<< HEAD
 
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		$menu = array('menu' => array(
     'id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		
+<<<<<<< HEAD
 		$this->loadModel('PresentationsQuote');
+=======
+		$this->loadModel('ItemsQuote');
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		if(count($this->Session->read('pp'))>0){
 
 
@@ -239,6 +309,7 @@ class QuotesController extends AppController {
 					$quote = $this->Quote->find('first',array('order' => 'Quote.created DESC'));
 
 						foreach ($this->Session->read('pp') as $value) {
+<<<<<<< HEAD
 							$data['PresentationsQuote']['id'] =  null; 
 							$data['PresentationsQuote']['presentation_id'] = $value['id'];
 							$data['PresentationsQuote']['quote_id'] = $quote['Quote']['id'];
@@ -250,12 +321,29 @@ class QuotesController extends AppController {
 						$this->Session->delete('pp');
 
 					$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
+=======
+							$data['ItemsQuote']['id'] =  null; 
+							$data['ItemsQuote']['item_id'] = $value['id'];
+							$data['ItemsQuote']['quote_id'] = $quote['Quote']['id'];
+							$data['ItemsQuote']['detail'] = $value['detalle'];
+							$data['ItemsQuote']['amount'] = $value['cantidad'];
+
+							$this->ItemsQuote->save($data);
+						}
+						$this->Session->delete('pp');
+
+					$this->redirect(array('action' => 'select'));
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 				} else {
 					$this->Session->setFlash(__('The quote could not be saved. Please, try again.'));
 				}		
 			}
 		}else{
+<<<<<<< HEAD
 			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
+=======
+			$this->redirect(array('action' => 'select1'));
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		}
 		$this->loadModel('Supermarket');
 		$Supermarket = $this->Supermarket->find('all');	

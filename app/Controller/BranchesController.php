@@ -104,7 +104,11 @@ class BranchesController extends AppController {
 	}
 	public function select(){
 		$menu = array('menu' => array(
+<<<<<<< HEAD
     'id' => '','inferior'=>'','superior'=>'','color'=>''));
+=======
+    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''));
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		//menu
 		$this->Session->write($menu);
 		////////
@@ -114,7 +118,10 @@ class BranchesController extends AppController {
 		$this->set(compact('Branch','Supermarket'));
 	}
 	public function select1($id=null){
+<<<<<<< HEAD
 		$this->loadModel('NewRequirement');
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			$menu = array('menu' => array(
     'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
 ));

@@ -12,7 +12,11 @@ class Quote extends AppModel {
  * @var array
  */
 	public $validate = array(
+<<<<<<< HEAD
 		'name' => array(
+=======
+		'fullname' => array(
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			'maxlength' => array(
 				'rule' => array('maxlength',50),
 				'message' => 'Maximo 50 caracteres',
@@ -64,9 +68,15 @@ class Quote extends AppModel {
 		),
 	);
 public $hasMany = array(
+<<<<<<< HEAD
 		'PresentationsQuote' => array(
 			'className' => 'PresentationsQuote',
 			'foreignKey' => 'Presentation_id',
+=======
+'ItemsQuote' => array(
+			'className' => 'ItemsQuote',
+			'foreignKey' => 'quote_id',
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

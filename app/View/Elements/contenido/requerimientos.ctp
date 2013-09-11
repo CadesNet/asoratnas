@@ -56,10 +56,16 @@
 	<br/>
 		<div class="row-fluid">
 			<div class="span12">
+<<<<<<< HEAD
 			<div class="requirements form cotizartext" style="width: 85%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
 					<?php echo $this->FormEnum->create('Requirement',array('type' => 'file','controller'=>'Requirements','action' => 'select',1)); ?>
 					<fieldset class="offset1" >
 						<legend> <p class="legend_form"><?php echo __('Le pedimos estar atendo(a) a su correo electronico que será el medio de comunicacion con usted:'); ?></p></legend>
+=======
+			<div class="requirements form cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
+					<?php echo $this->FormEnum->create('Requirement',array('type' => 'file','controller'=>'Requirements','action' => 'select',1)); ?>
+						<legend> <p class="legend_form"><?php echo __('Le pedimos estar atendo(a) a su correo electronico que será el medio de comunicacion con usted'); ?></p></legend>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 						<?php
 					
 				           echo $this->FormEnum->input('charge_id',array('type' => 'hidden','default'=>  $charge['Charge']['id']));?>
@@ -116,7 +122,11 @@
 		</div>
 
 						</fieldset>
+<<<<<<< HEAD
 					<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Enviar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-warning btn-large','style'=>'margin-right: 15%;')); ?>
+=======
+					<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Enviar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-large','style'=>'margin-right: 15%;color: rgb(255, 255, 255);background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(34, 161, 140)), to(rgb(9, 99, 87)));')); ?>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 						<br>
 				</div>
 			</div>
@@ -129,7 +139,11 @@
 <div class="row-fluid">
 		<div class="span12">
 
+<<<<<<< HEAD
 <div class="list_carousel responsive" style="height:70px">
+=======
+<div class="list_carousel responsive" style="height:90px">
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 				<ul id="foo5" style="height:100%">
 					<?php foreach($supermarkets as $supermarket) { ?>
@@ -139,6 +153,7 @@
 			    	    ?>
 						</li>
 						<?php }	 ?>
+<<<<<<< HEAD
 					<?php foreach($supermarkets as $supermarket) { ?>
 						<li style="width:80px">
 						<?php 
@@ -153,6 +168,8 @@
 			    	    ?>
 						</li>
 						<?php }	 ?>
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 				</ul>
 			</div>

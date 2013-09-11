@@ -116,6 +116,7 @@ var $actsAs = array(
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+<<<<<<< HEAD
 		),
 		'NewRequirement' => array(
 			'className' => 'NewRequirement',
@@ -129,6 +130,8 @@ var $actsAs = array(
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		)
 	);
 

@@ -1,6 +1,10 @@
 <div class="carousels index">
 	<h2><?php echo __('Carousels'); ?></h2>
+<<<<<<< HEAD
 	<table class = "table" cellpadding="0" cellspacing="0">
+=======
+	<table cellpadding="0" cellspacing="0">
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('filename'); ?></th>

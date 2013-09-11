@@ -11,7 +11,11 @@
 			<?php echo h($category['Category']['name']); ?>
 			&nbsp;
 		</dd>
+<<<<<<< HEAD
 		<dt><?php echo __('Description'); ?></dt>
+=======
+		<dt><?php echo __('Color'); ?></dt>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		<dd>
 			<?php echo h($category['Category']['description']); ?>
 			&nbsp;
@@ -38,6 +42,11 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Name'); ?></th>
+<<<<<<< HEAD
+=======
+		<th><?php echo __('Presentacion'); ?></th>
+		<th><?php echo __('Description'); ?></th>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		<th><?php echo __('Category Id'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
@@ -47,6 +56,11 @@
 		<tr>
 			<td><?php echo $item['id']; ?></td>
 			<td><?php echo $item['name']; ?></td>
+<<<<<<< HEAD
+=======
+			<td><?php echo $item['presentacion']; ?></td>
+			<td><?php echo $item['description']; ?></td>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			<td><?php echo $item['category_id']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'items', 'action' => 'view', $item['id']),array('class' => 'ok btn btn-info ')); ?>
@@ -82,7 +96,11 @@
 		<tr>
 			<td><?php echo $imagesCategory['id']; ?></td>
 			<td><?php echo $imagesCategory['category_id']; ?></td>
+<<<<<<< HEAD
 			<td><?php echo $imagesCategory['filename']; ?></td>
+=======
+			<td><?php echo $this->html->image("images_category/filename/".$imagesCategory['filename']); ?></td>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			<td><?php echo $imagesCategory['dir']; ?></td>
 			<td><?php echo $imagesCategory['type']; ?></td>
 			<td class="actions">

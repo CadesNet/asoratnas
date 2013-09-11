@@ -21,17 +21,30 @@
 			                </tr>
 			              </thead>
 			              <tbody>
+<<<<<<< HEAD
 			              <?php 
 			              $i=0;
 			              $j=0;
 			             
+=======
+			              <?php  
+			              $i=0;
+			              $j=0;
+			             // print_r($items);
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			              foreach ($items as $value) { ?>
 			                 <tr class="row-fluid">
 							<?php 	
 				              echo $this->Form->create(null, array('action' => 'modificar')); ?>
 			 				
+<<<<<<< HEAD
 			 				<td class="span12" style="vertical-align: middle;text-align: center;"><?php echo $this->Html->image(("images_presentation/filename/".$value['img'].""),array('style' => 'width: 100px;height: 135px;' ))?>  
 			 				<p style="font-size: 80%;"><?php echo $value['name'] ?></p> 
+=======
+			 				<td class="span12" style="vertical-align: middle;text-align: center;"><?php echo $this->Html->image(("images_item/filename/".$value['img'].""),array('style' => 'width: 100px;height: 135px;' ))?>  
+			 				<?php 
+			 					echo $value['name'] ?>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 							</td>
 			 				 										
 				             <td class="span12" style="vertical-align: middle;text-align: center;"><?php //echo $value['cantidad'];  
@@ -82,7 +95,11 @@
 <div class="row-fluid">
 		<div class="span12">
 
+<<<<<<< HEAD
 <div class="list_carousel responsive" style="height:70px">
+=======
+<div class="list_carousel responsive" style="height:90px">
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 				<ul id="foo5" style="height:100%">
 					<?php foreach($supermarkets as $supermarket) { ?>
@@ -92,6 +109,7 @@
 			    	    ?>
 						</li>
 						<?php }	 ?>
+<<<<<<< HEAD
 						<?php foreach($supermarkets as $supermarket) { ?>
 						<li style="width:80px">
 						<?php 
@@ -106,6 +124,8 @@
 			    	    ?>
 						</li>
 						<?php }	 ?>
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 				</ul>
 			</div>
@@ -116,4 +136,7 @@
 
 </div>	
 </div>
+<<<<<<< HEAD
  <p>&nbsp; </p>
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886

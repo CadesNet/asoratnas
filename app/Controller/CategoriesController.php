@@ -7,8 +7,11 @@ App::uses('AppController', 'Controller');
  */
 class CategoriesController extends AppController {
 
+<<<<<<< HEAD
 
 public $helpers = array('Js','Session');
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 /**
  * index method
  *
@@ -97,8 +100,13 @@ public $helpers = array('Js','Session');
 	}
 		//conulta propias
 	public function select(){
+<<<<<<< HEAD
 		$this->Category->recursive = 2;
 			$menu = array('menu' => array('id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
+=======
+			$menu = array('menu' => array(
+    'id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		//menu
 		$this->Session->write($menu);
 
@@ -115,6 +123,7 @@ public $helpers = array('Js','Session');
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$this->set(compact('Supermarket','Category','Benefit','Recipe','Ad','Carousel'));
 	}
+<<<<<<< HEAD
 	public function select1($id = null){
 		//$this->Category->recursive = 2;
 		$menu = array('menu' => array('id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
@@ -140,4 +149,6 @@ public $helpers = array('Js','Session');
 
 		}
 	}
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 }

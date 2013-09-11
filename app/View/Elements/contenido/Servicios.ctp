@@ -52,8 +52,12 @@
 						<div class="span7" style="text-align: left;"><?php echo $this->Form->input('message',array('label'=>'','class' => 'cotizarfrm'));?></div>
 					</div>
 				</fieldset>
+<<<<<<< HEAD
 			<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Enviar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false  ,'class' => 'ok btn btn-warning btn-large','style'=>'margin-right: 13%;')); ?>
 		
+=======
+			<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Enviar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-large','style'=>'margin-right: 13%;color: rgb(255, 255, 255);background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(34, 161, 140)), to(rgb(9, 99, 87)));')); ?>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	<br>
 
 			</div>
@@ -61,7 +65,11 @@
 	</div>
 <?php	} ?>
 
+<<<<<<< HEAD
 </div>
  <p>&nbsp; </p>
   <p>&nbsp; </p>
    <p>&nbsp; </p>
+=======
+</div>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886

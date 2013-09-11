@@ -1000,7 +1000,11 @@
   .nav-collapse .dropdown-menu a {
     padding: 9px 15px;
     font-weight: bold;
+<<<<<<< HEAD
     /*color: #777777;*/
+=======
+    color: #777777;
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
     -webkit-border-radius: 3px;
        -moz-border-radius: 3px;
             border-radius: 3px;

@@ -19,27 +19,42 @@
 $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistemas');
 ?>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html style="background: #044B40;">
 
 	<head>
 		 
 		<?php echo $this->Html->charset(); ?>
 
+=======
+<html>
+
+	<head>
+	
+		<?php echo $this->Html->charset(); ?>
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		<title>
 			
 			<?php echo 'Avicola Santa Rosa - '. $title_for_layout; ?>
 		</title>
 		<?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		  //minicarrusel css
 			echo $this->Html->css('mini-carrusel/estilo.css');
 		
   //////////
 			echo $this->Html->css('estilos');
 			echo $this->Html->css('customStyles');
+<<<<<<< HEAD
 
 			echo $this->Html->meta('favicon.ico',$this->webroot.'img/favicon.ico',array('type' => 'icon')); 
 
+=======
+			echo $this->Html->meta('icon');
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			
 			echo $this->fetch('meta');
 
@@ -87,12 +102,17 @@ isset
  <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
 	</head>
 
+<<<<<<< HEAD
 	<body style="padding-right: 0px; padding-left: 0px;">
+=======
+	<body onload="Carousel();" style="padding-right: 0px; padding-left: 0px;">
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		<div id="main-container">
 		
 			<div class = "bggeneral">
 				<?php echo $this->element('menu/top_menu'); ?>
 				<div id="contenido" class="container">
+<<<<<<< HEAD
 					<div class = "row">
 						<div  class="container-fluid colorcontainer">	
 
@@ -115,6 +135,30 @@ isset
 					<?php echo $this->element('footer/footer1'); ?>
 					
 				</div><!-- #footer .container -->
+=======
+			<div class = "row">
+				<div  class="container-fluid colorcontainer">	
+
+				<?php echo $this->element('admin/admi'); ?>	
+	           
+	            <?php  echo $this->fetch('content');  ?>
+
+				</div>
+
+				<?php echo $this->Session->flash(); ?>
+
+
+				
+			</div>
+			
+		</div>
+			<div id="footer" style="height: 100px;">
+				<?php //Silence is golden ?>
+				
+				<?php echo $this->element('footer/footer1'); ?>
+				<?php //echo $this->element('sql_dump'); ?>
+			</div><!-- #footer .container -->
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			
 		</div><!-- #main-container -->
 		</div><!-- #header .container -->

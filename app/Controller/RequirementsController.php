@@ -112,7 +112,11 @@ $this->redirect(array('action' => 'select'));
 
 public function select(){
 		$menu = array('menu' => array(
+<<<<<<< HEAD
     'id' => '','inferior'=>'','superior'=>'','color'=>''
+=======
+    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 ));
 		//menu
 		$this->Session->write($menu);
@@ -138,7 +142,11 @@ $date = $this->request->data['Requirement']['curriculum']['name'];
 $filename = $this->request->data['Requirement']['charge_id'].$this->request->data['Requirement']['email'].$date;
 
 $data = $file->read();	
+<<<<<<< HEAD
 $file = new File(WWW_ROOT.'img/Newrequirement/curriculum/'.$filename,true);
+=======
+$file = new File(WWW_ROOT.'img/requirement/curriculum/'.$filename,true);
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 $file->write($data);
 $file->close();
 }
@@ -154,7 +162,10 @@ $this->Session->setFlash(__('The requirement has been saved'));
 $this->redirect(array('controller' => 'Branches','action' => 'select'));
 } else {
 $this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
+<<<<<<< HEAD
 
+=======
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 }
 }
 else{

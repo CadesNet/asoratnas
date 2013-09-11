@@ -16,11 +16,17 @@ class ItemsControllerTest extends ControllerTestCase {
 		'app.item',
 		'app.category',
 		'app.images_category',
+<<<<<<< HEAD
 		'app.presentation',
 		'app.images_presentation',
 		'app.presentations_quote',
 		'app.quote',
 		'app.items_quote'
+=======
+		'app.images_item',
+		'app.items_quote',
+		'app.quote'
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	);
 
 /**

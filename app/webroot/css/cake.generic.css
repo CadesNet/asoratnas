@@ -82,7 +82,11 @@ p {
 }
 #header h1 {
 	line-height:20px;
+<<<<<<< HEAD
 	background: #003d4c url('../img/santarosa.icon.png') no-repeat left;
+=======
+	background: #003d4c url('../img/cake.icon.png') no-repeat left;
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	color: #fff;
 	padding: 0px 30px;
 }

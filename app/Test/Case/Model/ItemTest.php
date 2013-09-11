@@ -16,7 +16,12 @@ class ItemTest extends CakeTestCase {
 		'app.item',
 		'app.category',
 		'app.images_category',
+<<<<<<< HEAD
 		'app.presentation'
+=======
+		'app.items_quote',
+		'app.quote'
+>>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	);
 
 /**
