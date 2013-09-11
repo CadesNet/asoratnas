@@ -97,7 +97,6 @@ class ItemsController extends AppController {
 		$this->Session->setFlash(__('Item was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
-<<<<<<< HEAD
 	public function select($category_id = null,$item_id){
 		//$this->Category->recursive = 2;
 		$menu = array('menu' => array('id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
@@ -125,26 +124,5 @@ class ItemsController extends AppController {
 		$this->set(compact('Category','Recipe','Recipes1','Ad','Carousel'));
 
 		}
-=======
-				//conulta propias
-	public function select($id = null){
-       $this->loadModel('Category');
-       $this->loadModel('Recipe');
-       $this->loadModel('Ad');
-       $this->loadModel('Carousel');
-		if(!$this->Category->exists($id)){
-			$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
-			//throw new NotFoundException(__('Invalid Category'));
-		}else{
-		$Category = $this->Category->find('all',array('conditions' => array('Category.' . $this->Category->primaryKey => $id),'recursive'  => 2));
-		//$this->set('item', $this->Item->find('all', $options));
-		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
-		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
-		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
-		$this->set(compact('Category','Recipe','Ad','Carousel'));
-		}
-		
-		
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	}
 }

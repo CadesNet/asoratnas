@@ -13,11 +13,7 @@ class ImagesItemsController extends AppController {
  * @return void
  */
 	public function index() {
-<<<<<<< HEAD
 		$this->ImagesItem->recursive = 1;
-=======
-		$this->ImagesItem->recursive = 0;
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		$this->set('imagesItems', $this->paginate());
 	}
 
@@ -33,10 +29,7 @@ class ImagesItemsController extends AppController {
 			throw new NotFoundException(__('Invalid images item'));
 		}
 		$options = array('conditions' => array('ImagesItem.' . $this->ImagesItem->primaryKey => $id));
-<<<<<<< HEAD
 		
-=======
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		$this->set('imagesItem', $this->ImagesItem->find('first', $options));
 	}
 

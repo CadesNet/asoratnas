@@ -19,11 +19,7 @@
 			              <tbody row-fluid>
 			              <?php  foreach ($items as $value) { ?>
 			                <tr class="row-fluid">
-<<<<<<< HEAD
 			                 <td  class="span12" style="vertical-align: middle;text-align: center;"><?php echo $this->Html->image(("images_presentation/filename/".$value['img'].""),array('style' => 'width: 100px;height: 135px;' ))?> <p style="font-size: 80%;"><?php echo $value['name'] ?></p> 
-=======
-			                 <td  class="span12" style="vertical-align: middle;text-align: center;"><?php echo $this->Html->image(("images_item/filename/".$value['img'].""),array('style' => 'width: 100px;height: 135px;' ))?> <?php echo $value['name'] ?>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			                 </td>
 			 							
 			                  <td  class="span12" style="vertical-align: middle;text-align: center;"><?php echo $value['cantidad'] ?></td>
@@ -47,11 +43,7 @@
 		<legend> <p class="legend_form"><?php echo __('Complete sus datos correctos para enviarle la cotizacion, gracias...'); ?></p></legend>
 		<div class="row-fluid">
 			<div class="span3"><p class="stylo_form">Nombre Completo:</p></div>
-<<<<<<< HEAD
 			<div class="span6" style="text-align: left;"><?php echo $this->Form->input('name',array('label'=>'','class' => 'cotizarfrm')); ?></div>
-=======
-			<div class="span6" style="text-align: left;"><?php echo $this->Form->input('fullname',array('label'=>'','class' => 'cotizarfrm')); ?></div>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		</div>
 		<div class="row-fluid">
 			<div class="span3"><p class="stylo_form">Direccion:</p></div>
@@ -86,11 +78,7 @@
 <div class="row-fluid">
 		<div class="span12">
 
-<<<<<<< HEAD
 <div class="list_carousel responsive" style="height:70px">
-=======
-<div class="list_carousel responsive" style="height:90px">
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 				<ul id="foo5" style="height:100%">
 					<?php foreach($supermarkets as $supermarket) { ?>
@@ -100,7 +88,6 @@
 			    	    ?>
 						</li>
 						<?php }	 ?>
-<<<<<<< HEAD
 						<?php foreach($supermarkets as $supermarket) { ?>
 						<li style="width:80px">
 						<?php 
@@ -115,8 +102,6 @@
 			    	    ?>
 						</li>
 						<?php }	 ?>
-=======
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 				</ul>
 			</div>
@@ -127,9 +112,6 @@
 
 </div>	
 </div>
-<<<<<<< HEAD
 
  <p>&nbsp; </p>
 
-=======
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886

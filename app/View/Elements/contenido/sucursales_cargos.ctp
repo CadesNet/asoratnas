@@ -1,16 +1,9 @@
 <div class="container">
-<<<<<<< HEAD
 
 	<?php foreach ($branches as $branch) { ?>
 	<div class="row-fluid">
 		<div class="span12">
 
-=======
-	<div class="row-fluid">
-		<div class="span12">
-
-		<?php foreach ($branches as $branch) { ?>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 			<div class="row-fluid">
 						<div class="span12">
@@ -73,7 +66,6 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
 		
 
 	</div>
@@ -158,15 +150,6 @@
 		<div class="span12">
 
 <div class="list_carousel responsive" style="height:70px">
-=======
-		<?php }  ?>
-
-	</div>
-<div class="row-fluid">
-		<div class="span12">
-
-<div class="list_carousel responsive" style="height:90px">
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 				<ul id="foo5" style="height:100%">
 					<?php foreach($supermarkets as $supermarket) { ?>
@@ -176,7 +159,6 @@
 			    	    ?>
 						</li>
 						<?php }	 ?>
-<<<<<<< HEAD
 					<?php foreach($supermarkets as $supermarket) { ?>
 						<li style="width:80px">
 						<?php 
@@ -191,8 +173,6 @@
 			    	    ?>
 						</li>
 						<?php }	 ?>
-=======
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 				</ul>
 			</div>

@@ -2913,15 +2913,9 @@ table th[class*="span"],
   float: left;
   min-width: 160px;
   padding: 5px 0;
-<<<<<<< HEAD
   margin:0;
   list-style: none;
   
-=======
-  margin: 2px 0 0;
-  list-style: none;
-  background-color: #ffffff;
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   *border-right-width: 2px;
@@ -2968,7 +2962,6 @@ table th[class*="span"],
 .dropdown-submenu:focus > a {
   color: #ffffff;
   text-decoration: none;
-<<<<<<< HEAD
   background-color: #588977;
   background-image: -moz-linear-gradient(top, #3E8272, #C5BDA5);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3E8272), to(#C5BDA5));
@@ -2977,16 +2970,6 @@ table th[class*="span"],
   background-image: linear-gradient(to bottom, #3E8272, #C5BDA5);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#558C7B', endColorstr='#B4B69F', GradientType=0);
-=======
-  background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
-  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 }
 
 .dropdown-menu > .active > a,
@@ -2994,7 +2977,6 @@ table th[class*="span"],
 .dropdown-menu > .active > a:focus {
   color: #ffffff;
   text-decoration: none;
-<<<<<<< HEAD
   background-color: #6A9582;
   background-image: -moz-linear-gradient(top, #6A9582, #BBB8A1);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6A9582), to(#BBB8A1));
@@ -3004,17 +2986,6 @@ table th[class*="span"],
   background-repeat: repeat-x;
   outline: 0;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6A9582', endColorstr='#BBB8A1', GradientType=0);
-=======
-  background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
-  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
-  background-repeat: repeat-x;
-  outline: 0;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 }
 
 .dropdown-menu > .disabled > a,
@@ -3239,7 +3210,6 @@ button.close {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
   cursor: pointer;
-<<<<<<< HEAD
   background-color: #F5EFDB;
   *background-color: #F5EFDB;
   background-image: -moz-linear-gradient(top, #FFFFFF, #D2CAB2);
@@ -3251,19 +3221,6 @@ button.close {
   border: 1px solid #cccccc;
   *border: 0;
   border-color: #D2CAB2 #D2CAB2 #bfbfbf;
-=======
-  background-color: #f5f5f5;
-  *background-color: #e6e6e6;
-  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
-  background-repeat: repeat-x;
-  border: 1px solid #cccccc;
-  *border: 0;
-  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-bottom-color: #b3b3b3;
   -webkit-border-radius: 4px;
@@ -4752,11 +4709,7 @@ input[type="submit"].btn.btn-mini {
   border-bottom: 7px solid #ccc;
   border-left: 7px solid transparent;
   border-bottom-color: rgba(0, 0, 0, 0.2);
-<<<<<<< HEAD
   /*content: '';*/
-=======
-  content: '';
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 }
 
 .navbar .nav > li > .dropdown-menu:after {
@@ -4824,12 +4777,8 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .pull-right > li > .dropdown-menu:after,
 .navbar .nav > li > .dropdown-menu.pull-right:after {
-<<<<<<< HEAD
   /*right: 13px;*/
   right: inherit;
-=======
-  right: 13px;
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
   left: auto;
 }
 

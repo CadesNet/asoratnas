@@ -6,11 +6,7 @@ App::uses('AppController', 'Controller');
  * @property User $User
  */
 class UsersController extends AppController {
-<<<<<<< HEAD
 public $helpers = array('Js','Session');
-=======
-
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 /**
  * index method
  *
@@ -26,7 +22,6 @@ public function beforeFilter() {
 	}
 
 	public function login() {
-<<<<<<< HEAD
 		$menu = array('menu' => array(
     'id' => '','inferior'=>'','superior'=>'','color'=>''
 ));
@@ -34,8 +29,6 @@ public function beforeFilter() {
 		//menu
 		$this->Session->write($menu);
 		//////////////
-=======
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		//carrusel1
 	//lo q hace cuando se loguea o cuando quiere loguearce 
 	    if ($this->request->is('post')) {
@@ -48,7 +41,6 @@ public function beforeFilter() {
 	}
 
 	public function logout() { //sierra sesion 
-<<<<<<< HEAD
 		$menu = array('menu' => array(
     'id' => '','inferior'=>'','superior'=>'','color'=>''
 ));
@@ -56,8 +48,6 @@ public function beforeFilter() {
 		//menu
 		$this->Session->write($menu);
 		//////////////
-=======
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	//	carrusel1
 	    $this->redirect($this->Auth->logout());
 	}

@@ -105,11 +105,7 @@ public $helpers = array('Js','Session');
 	//conulta propias
 	public function select(){
 		$menu = array('menu' => array(
-<<<<<<< HEAD
     'id' => 'b','inferior'=>'','superior'=>'','color'=>''
-=======
-    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 ));
 
 		//menu

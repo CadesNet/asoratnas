@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 
   <div class="row-fluid">
   	<div class="span12">
-=======
-<div class="container">
-  <div class="row-fluid">
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
     <section id="contenido">
    <section id="principal">
 <article id="galeria-inicio">
@@ -29,14 +24,9 @@
       </article>
    </section>
 </section>
-<<<<<<< HEAD
 </div>
   </div>
 
-=======
-  </div>
-</div>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 
 <div class="container">
     <div class="row-fluid">
@@ -52,11 +42,7 @@
 			<div class="row-fluid" >		
 			<div class= "benefitsbody">		
 						<div class="span3" style="">
-<<<<<<< HEAD
 							<a href=""><?php echo $this->Html->image("benefit/filename/".$benefit['Benefit']['filename']."",array('class'=>'recipeadsbeneficeimg'))?></a>
-=======
-							<a href=""><?php echo $this->Html->image("benefit/filename/".$benefit['Benefit']['filename']."")?></a>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 							<br><br>
 						</div>
 						<div class="span9" >
@@ -91,7 +77,6 @@
 					<p style="color: #889091;">Encuentranos en:</p>
 				</div>
 
-<<<<<<< HEAD
 				<div class="row-fluid">
 					<div class="span12">
 
@@ -167,65 +152,6 @@
 					</div>
 				</div>
 			</div>	
-=======
-			<div class="row-fluid">
-				<div class="span12">
-
-					<div class="list_carousel responsive" style="height:90px">
-
-				<ul id="foo5" style="height:100%">
-					<?php foreach($supermarkets as $supermarket) { ?>
-						<li style="width:80px">
-						<?php 
-					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
-			    	    ?>
-						</li>
-						<?php }	 ?>
-
-				</ul>
-			</div>
-				</div>	
-			</div>
-			
-			</div>
-			<div class="span5 cuadrorecetad" style="text-align:center;">
-				<div class="row-fluid" style="text-align:left;" >
-					<div class="span12" >
-						<h1 style="color: #2FA4B8">&nbsp;&nbsp;La receta del dia</h1>
-					</div>
-					
-				</div>
-				<div class="row-fluid" >
-					<div class="span12">
-						<?php 
-						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
-						echo $this->Html->image(("images_recipe/filename/".$ImagesRecipe['filename'].""),array('style' => 'width: 100%;' ));
-						break;
-						}
-						?>
-					</div>
-					
-				</div>
-				<div class="row-fluid" >
-					<div class="span12">
-						<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title'] ?></h3>
-					</div>
-				</div>
-				<div class="row-fluid" >
-					<div class="span12">
-						<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
-					</div>
-				</div>				
-				<div class="row-fluid">
-					<div class="span12">
-						<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],1), array('class' => 'btn btn-info btn-large'));
-							 ?>
-					</div>
-					
-				</div>
-			</div>
-			
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	</div>
 </div>
 

@@ -4,11 +4,7 @@
 		<legend><?php echo __('Add Category'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
-<<<<<<< HEAD
 		echo $this->Form->input('description');
-=======
-		echo $this->Form->input('description','label'=>'Color');
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

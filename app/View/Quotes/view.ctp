@@ -6,15 +6,9 @@
 			<?php echo h($quote['Quote']['id']); ?>
 			&nbsp;
 		</dd>
-<<<<<<< HEAD
 		<dt><?php echo __('Name'); ?></dt>
 		<dd>
 			<?php echo h($quote['Quote']['name']); ?>
-=======
-		<dt><?php echo __('Fullname'); ?></dt>
-		<dd>
-			<?php echo h($quote['Quote']['fullname']); ?>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Address'); ?></dt>
@@ -56,7 +50,6 @@
 		<li><?php echo $this->Form->postLink(__('Delete Quote'), array('action' => 'delete', $quote['Quote']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $quote['Quote']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Quotes'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Quote'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-<<<<<<< HEAD
 		<li><?php echo $this->Html->link(__('List Presentations Quotes'), array('controller' => 'presentations_quotes', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Presentations Quote'), array('controller' => 'presentations_quotes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
@@ -68,19 +61,6 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Presentation Id'); ?></th>
-=======
-		<li><?php echo $this->Html->link(__('List Items Quotes'), array('controller' => 'items_quotes', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Items Quote'), array('controller' => 'items_quotes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-	</ul>
-</div>
-<div class="related">
-	<h3><?php echo __('Related Items Quotes'); ?></h3>
-	<?php if (!empty($quote['ItemsQuote'])): ?>
-	<table class = "table" cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Item Id'); ?></th>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		<th><?php echo __('Quote Id'); ?></th>
 		<th><?php echo __('Detail'); ?></th>
 		<th><?php echo __('Amount'); ?></th>
@@ -88,7 +68,6 @@
 	</tr>
 	<?php
 		$i = 0;
-<<<<<<< HEAD
 		foreach ($quote['PresentationsQuote'] as $presentationsQuote): ?>
 		<tr>
 			<td><?php echo $presentationsQuote['id']; ?></td>
@@ -100,19 +79,6 @@
 				<?php echo $this->Html->link(__('View'), array('controller' => 'presentations_quotes', 'action' => 'view', $presentationsQuote['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'presentations_quotes', 'action' => 'edit', $presentationsQuote['id']),array('class' => 'ok btn btn-info btn-large')); ?>
 				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'presentations_quotes', 'action' => 'delete', $presentationsQuote['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $presentationsQuote['id'])); ?>
-=======
-		foreach ($quote['ItemsQuote'] as $itemsQuote): ?>
-		<tr>
-			<td><?php echo $itemsQuote['id']; ?></td>
-			<td><?php echo $itemsQuote['item_id']; ?></td>
-			<td><?php echo $itemsQuote['quote_id']; ?></td>
-			<td><?php echo $itemsQuote['detail']; ?></td>
-			<td><?php echo $itemsQuote['amount']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'items_quotes', 'action' => 'view', $itemsQuote['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'items_quotes', 'action' => 'edit', $itemsQuote['id']),array('class' => 'ok btn btn-info btn-large')); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'items_quotes', 'action' => 'delete', $itemsQuote['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $itemsQuote['id'])); ?>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -121,11 +87,7 @@
 
 	<div class="actions">
 		<ul>
-<<<<<<< HEAD
 			<li><?php echo $this->Html->link(__('New Presentations Quote'), array('controller' => 'presentations_quotes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-=======
-			<li><?php echo $this->Html->link(__('New Items Quote'), array('controller' => 'items_quotes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
->>>>>>> b6abcb8f17127e7992c4b9391ac8f4dc08532886
 		</ul>
 	</div>
 </div>
