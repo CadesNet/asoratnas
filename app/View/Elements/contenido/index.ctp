@@ -3,12 +3,22 @@
   	<div class="span12">
     <section id="contenido">
    <section id="principal">
+   	<?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Categories', 'action' => 'add'),array('class'=>'btn btn-primary'));
+
+					}?>
 <article id="galeria-inicio">
          <div class="flexslider">
       <ul class="slides">
       <?php foreach ($carousel as $carousels) { ?>
     
         <li>
+        	<?php if($this->Session->read('Auth.User.id')){ ?>
+											
+				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id']),array('class' => 'ok btn btn-info ','escape' => false)); ?>
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+			}?>
+
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
 
                if($carousels['Carousel']['description']!=""){
@@ -32,9 +42,10 @@
     <div class="row-fluid">
 		<div class="span7" >
 			<div class="row-fluid" >
-					<h3 class = "benefitstitle">Beneficios para  salud</h3>
+					<h3 class = "benefitstitle">Beneficios para la salud<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Agregar Beneficio', array('controller' => 'Benefits', 'action' => 'add','index'),array('class'=>'btn btn-primary'));
+								}?></h3>
 			</div>
-
 			<?php 
 			
 			$coun=0;
@@ -47,7 +58,10 @@
 						</div>
 						<div class="span9" >
 							<div class="row-fluid" >
-								<h4 class = "benefitssubtitle"><? echo $benefit['Benefit']['title'] ?></h4>
+								<h4 class = "benefitssubtitle"><? echo $benefit['Benefit']['title']." ";
+							 if($this->Session->read('Auth.User.id')){ 
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h4>
 							</div>
 							<div class="row-fluid" style="">
 								<p class ="benefitsdescription">
@@ -115,6 +129,10 @@
 						</div>
 						<div class="row-fluid" >
 							<div class="span12">
+								<?php
+	                	 		if($this->Session->read('Auth.User.id')){ 
+								 echo $this->Html->link('Ver imagenes', array('controller' => 'ImagesRecipes', 'action' => 'index',$recipes['Recipe']['id']),array('class'=>'btn btn-primary')); 
+							}?>
 								<?php 
 								foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 								echo $this->Html->image(("images_recipe/filename/".$ImagesRecipe['filename'].""),array('style' => 'width: 100%;' ));
@@ -126,7 +144,10 @@
 						</div>
 						<div class="row-fluid" >
 							<div class="span12">
-								<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title'] ?></h3>
+								<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
+								if($this->Session->read('Auth.User.id')){ 
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
 							</div>
 						</div>
 						<div class="row-fluid" >

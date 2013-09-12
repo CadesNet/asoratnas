@@ -43,7 +43,7 @@ public $helpers = array('Js','Session');
 			$this->Tip->create();
 			if ($this->Tip->save($this->request->data)) {
 				$this->Session->setFlash(__('The tip has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'select1'));
 			} else {
 				$this->Session->setFlash(__('The tip could not be saved. Please, try again.'));
 			}
@@ -64,7 +64,7 @@ public $helpers = array('Js','Session');
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Tip->save($this->request->data)) {
 				$this->Session->setFlash(__('The tip has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'select1'));
 			} else {
 				$this->Session->setFlash(__('The tip could not be saved. Please, try again.'));
 			}
@@ -89,7 +89,7 @@ public $helpers = array('Js','Session');
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Tip->delete()) {
 			$this->Session->setFlash(__('Tip deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'select1'));
 		}
 		$this->Session->setFlash(__('Tip was not deleted'));
 		$this->redirect(array('action' => 'index'));

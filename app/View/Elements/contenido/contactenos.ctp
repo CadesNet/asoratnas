@@ -1,6 +1,8 @@
 <div class="row-fluid">
 	<div class="span12">
-		<h3 class="otrostitle">Contactenos</h3>
+		<h3 class="otrostitle">Contactenos<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Agregar sucursal', array('controller' => 'Branches', 'action' => 'add'),array('class'=>'btn btn-primary'));
+								}?></h3>
 	</div>
 </div>
 <br>
@@ -42,9 +44,7 @@
 					<br>
 		<div class="row">
 			<div class="span12">
-				<?php if($this->Session->read('Auth.User.id')){ 
-								 echo " ".$this->Html->link('Agregar sucursal', array('controller' => 'sucursales', 'action' => 'add'),array('class'=>'btn btn-primary'));
-								}?>
+				
 		<div style="padding: 0px 130px 0px;">
 		<?php foreach ($branch as $branches) { ?>
 		

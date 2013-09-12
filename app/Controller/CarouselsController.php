@@ -44,7 +44,7 @@ class CarouselsController extends AppController {
 			$this->Carousel->create();
 			if ($this->Carousel->save($this->request->data)) {
 				$this->Session->setFlash(__('The carousel has been saved'));
-				$this->redirect(array('action' => 'index'));
+				
 			} else {
 				$this->Session->setFlash(__('The carousel could not be saved. Please, try again.'));
 			}
@@ -65,7 +65,7 @@ class CarouselsController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Carousel->save($this->request->data)) {
 				$this->Session->setFlash(__('The carousel has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'Benefits','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The carousel could not be saved. Please, try again.'));
 			}
@@ -90,9 +90,9 @@ class CarouselsController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Carousel->delete()) {
 			$this->Session->setFlash(__('Carousel deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller'=>'Benefits','action' => 'select'));
 		}
 		$this->Session->setFlash(__('Carousel was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		
 	}
 }

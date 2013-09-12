@@ -16,7 +16,6 @@ public $helpers = array('Js','Session');
  * @return void
  */
 	public function index() {
-		
 		$this->Benefit->recursive = 0;
 		$this->set('benefits', $this->paginate());
 
@@ -43,13 +42,13 @@ public $helpers = array('Js','Session');
  *
  * @return void
  */
-	public function add() {
+	public function add($vista) {
 		
 		if ($this->request->is('post')) {
 			$this->Benefit->create();
 			if ($this->Benefit->save($this->request->data)) {
 				$this->Session->setFlash(__('The benefit has been saved'));
-			    $this->redirect(array('action' => 'index'));
+			    $this->redirect(array('action' => 'select1'));
 			} else {
 				$this->Session->setFlash(__('The benefit could not be saved. Please, try again.'));
 			}
@@ -63,7 +62,7 @@ public $helpers = array('Js','Session');
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null,$vista) {
 		
 		if (!$this->Benefit->exists($id)) {
 			throw new NotFoundException(__('Invalid benefit'));
@@ -71,7 +70,12 @@ public $helpers = array('Js','Session');
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Benefit->save($this->request->data)) {
 				$this->Session->setFlash(__('The benefit has been saved'));
-				$this->redirect(array('action' => 'index'));
+				if($vista=="index"){
+					$this->redirect(array('action' => 'select'));
+				}else{
+					$this->redirect(array('action' => 'select1'));
+				}
+				
 			} else {
 				$this->Session->setFlash(__('The benefit could not be saved. Please, try again.'));
 			}
@@ -88,7 +92,7 @@ public $helpers = array('Js','Session');
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$vista) {
 		
 		$this->Benefit->id = $id;
 		if (!$this->Benefit->exists()) {
@@ -97,10 +101,14 @@ public $helpers = array('Js','Session');
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Benefit->delete()) {
 			$this->Session->setFlash(__('Benefit deleted'));
-			$this->redirect(array('action' => 'index'));
+			if($vista=="index"){
+					$this->redirect(array('action' => 'select'));
+				}else{
+					$this->redirect(array('action' => 'select1'));
+				}
 		}
 		$this->Session->setFlash(__('Benefit was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		
 	}
 	//conulta propias
 	public function select(){

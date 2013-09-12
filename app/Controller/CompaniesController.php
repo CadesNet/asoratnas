@@ -67,7 +67,7 @@ class CompaniesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Company->save($this->request->data)) {
 				$this->Session->setFlash(__('The company has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The company could not be saved. Please, try again.'));
 			}

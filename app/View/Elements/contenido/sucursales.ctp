@@ -1,7 +1,9 @@
 <div class="container" style="min-height: 800px;">
 <div class="row-fluid">
 	<div class="span12">
-		<h3 class="otrostitle">Sucursales:</h3>
+		<h3 class="otrostitle">Sucursales:<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Agregar sucursal', array('controller' => 'Branches', 'action' => 'add'),array('class'=>'btn btn-primary'));
+								}?></h3>
 	</div>
 </div>
 <br>
@@ -17,8 +19,7 @@
 				
 			</li>
 			<?php  foreach ($branches as $branch) { ?>
-
-	
+			
 			<li class="span5">
 			<div class="row-fluid">
 				<?php if($this->Session->read('Auth.User.id')){ 
