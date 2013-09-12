@@ -12,9 +12,11 @@ class ImagesRecipesController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->ImagesRecipe->recursive = 0;
-		$this->set('imagesRecipes', $this->paginate());
+	public function index($id = null) {
+		$options = array('conditions' => array('ImagesRecipe.' . 'recipe_id' => $id));
+		$imagesRecipes = $this->ImagesRecipe->find('all', $options);
+		$id_receta = $id;
+		$this->set(compact("imagesRecipes","id_receta"));
 	}
 
 /**
@@ -37,17 +39,17 @@ class ImagesRecipesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id=null) {
 		if ($this->request->is('post')) {
 			$this->ImagesRecipe->create();
 			if ($this->ImagesRecipe->save($this->request->data)) {
 				$this->Session->setFlash(__('The images recipe has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index',$id));
 			} else {
 				$this->Session->setFlash(__('The images recipe could not be saved. Please, try again.'));
 			}
 		}
-		$recipes = $this->ImagesRecipe->Recipe->find('list');
+		$recipes = $id;
 		$this->set(compact('recipes'));
 	}
 
@@ -58,14 +60,14 @@ class ImagesRecipesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null,$id_receta=null) {
 		if (!$this->ImagesRecipe->exists($id)) {
 			throw new NotFoundException(__('Invalid images recipe'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ImagesRecipe->save($this->request->data)) {
 				$this->Session->setFlash(__('The images recipe has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index',$id_receta));
 			} else {
 				$this->Session->setFlash(__('The images recipe could not be saved. Please, try again.'));
 			}
@@ -84,7 +86,7 @@ class ImagesRecipesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$id_receta=null) {
 		$this->ImagesRecipe->id = $id;
 		if (!$this->ImagesRecipe->exists()) {
 			throw new NotFoundException(__('Invalid images recipe'));
@@ -92,9 +94,9 @@ class ImagesRecipesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ImagesRecipe->delete()) {
 			$this->Session->setFlash(__('Images recipe deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'index',$id_receta));
 		}
 		$this->Session->setFlash(__('Images recipe was not deleted'));
-		$this->redirect(array('action' => 'index'));
+	
 	}
 }

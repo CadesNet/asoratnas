@@ -34,7 +34,11 @@
 							<h3  style="float: right;"><?php echo $this->Html->image("beneficos-del-pavo.png")?></h3>
 						</div>
 						<div class="span11">
-							<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php echo $this->session->read('menu.inferior') ?>">Beneficios del pavo</h3>
+							<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php echo $this->session->read('menu.inferior') ?>">Beneficios del pavo<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Agregar Beneficio', array('controller' => 'Benefits', 'action' => 'add'),array('class'=>'btn btn-primary'));
+
+
+								}?></h3>
 							<br>
 					
 				</div>
@@ -53,7 +57,10 @@
 				<div class="span8">
 					<div class="row-fluid">
 						<div class="span12">
-							<h3 class = "titlebeneficios"><?php echo $benefit['Benefit']['title'] ?></h3>
+							<h3 class = "titlebeneficios"><?php echo $benefit['Benefit']['title']." ";
+							 if($this->Session->read('Auth.User.id')){ 
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h3>
 						</div>
 					</div>
 					<div class="row-fluid">

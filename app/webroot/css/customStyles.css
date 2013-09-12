@@ -24,8 +24,11 @@
 }
 .container{
 
-		
 
+
+}
+.borderimg{
+  background: #fff;border: 4px solid #fff;
 }
 
 .dirbarbottom{
@@ -517,6 +520,7 @@ position: relative;
 	}
 .recipeadsbeneficeimg{
 	width: 100%;
+  height: 100%;
 
 }
 .visi{

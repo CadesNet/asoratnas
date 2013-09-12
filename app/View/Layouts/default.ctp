@@ -113,7 +113,7 @@ isset
 					<?php //Silence is golden ?>
 					
 					<?php echo $this->element('footer/footer1'); ?>
-					
+					<?php echo $this->element('sql_dump'); ?>
 				</div><!-- #footer .container -->
 			
 		</div><!-- #main-container -->

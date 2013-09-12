@@ -8,7 +8,7 @@
 		</dd>
 		<dt><?php echo __('Filename'); ?></dt>
 		<dd>
-			<?php echo $this->Html->image('images_recipe/filename/'.h($imagesRecipe['ImagesRecipe']['filename'])); ?>
+			<?php echo h($imagesRecipe['ImagesRecipe']['filename']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Dir'); ?></dt>
@@ -23,7 +23,7 @@
 		</dd>
 		<dt><?php echo __('Recipe'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($imagesRecipe['Recipe']['title'], array('controller' => 'recipes', 'action' => 'view', $imagesRecipe['Recipe']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Html->link($imagesRecipe['Recipe']['title'], array('controller' => 'recipes', 'action' => 'view', $imagesRecipe['Recipe']['id'])); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -31,11 +31,11 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Images Recipe'), array('action' => 'edit', $imagesRecipe['ImagesRecipe']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Images Recipe'), array('action' => 'delete', $imagesRecipe['ImagesRecipe']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $imagesRecipe['ImagesRecipe']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Images Recipes'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Images Recipe'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Recipes'), array('controller' => 'recipes', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Recipe'), array('controller' => 'recipes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit Images Recipe'), array('action' => 'edit', $imagesRecipe['ImagesRecipe']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Images Recipe'), array('action' => 'delete', $imagesRecipe['ImagesRecipe']['id']), null, __('Are you sure you want to delete # %s?', $imagesRecipe['ImagesRecipe']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('List Images Recipes'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Images Recipe'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Recipes'), array('controller' => 'recipes', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Recipe'), array('controller' => 'recipes', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

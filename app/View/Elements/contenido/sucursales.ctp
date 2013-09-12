@@ -20,6 +20,12 @@
 
 	
 			<li class="span5">
+			<div class="row-fluid">
+				<?php if($this->Session->read('Auth.User.id')){ 
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Branches','action' => 'edit',$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Branches','action' => 'delete', $branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$branch['Branch']['id'])); }
+				?> 
+			</div>
 			<div class="row-fluid cuadrovacantes" style="min-height: 150px;">
 			<div class = "infovacantes">
 			 <div class="span4">

@@ -38,7 +38,10 @@
 			 	<?php echo $this->Html->image("cargo.png")?>
 			 </div>
 			 <div class="span8">
-			 	<h4 class = "titlevacantes"><?php echo $charge['title']  ?></h4>
+			 	<h4 class = "titlevacantes"><?php echo $charge['title']." ";
+							if($this->Session->read('Auth.User.id')){ 
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Charges','action' => 'edit',$charge['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Charges','action' => 'delete', $charge['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$charge['id'])); }?> </h4>
 
 			 	<p class = "descriptionvacantes">Fecha Limite de Admision de Curriculum Vitae</p>
 

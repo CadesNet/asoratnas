@@ -12,13 +12,4 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('ImagesPresentation.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('ImagesPresentation.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Images Presentations'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Presentations'), array('controller' => 'presentations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Presentation'), array('controller' => 'presentations', 'action' => 'add')); ?> </li>
-	</ul>
-</div>

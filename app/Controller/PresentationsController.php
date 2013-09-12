@@ -37,17 +37,17 @@ class PresentationsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id=null) {
 		if ($this->request->is('post')) {
 			$this->Presentation->create();
 			if ($this->Presentation->save($this->request->data)) {
-				$this->Session->setFlash(__('The presentation has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('La presentacion a sido guardada'));
+				//$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The presentation could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La presentacion no a sido guardada'));
 			}
 		}
-		$items = $this->Presentation->Item->find('list');
+		$items = $id;
 		$this->set(compact('items'));
 	}
 
@@ -65,7 +65,7 @@ class PresentationsController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Presentation->save($this->request->data)) {
 				$this->Session->setFlash(__('The presentation has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The presentation could not be saved. Please, try again.'));
 			}
@@ -85,16 +85,30 @@ class PresentationsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->loadModel('ImagesPresentation');
+		$this->loadModel('PresentationsQuote');
 		$this->Presentation->id = $id;
 		if (!$this->Presentation->exists()) {
 			throw new NotFoundException(__('Invalid presentation'));
+		}else{
+			$this->request->onlyAllow('post', 'delete');
+			$ImagesPresen = $this->ImagesPresentation->find('all',array('conditions' => array('ImagesPresentation.' . 'presentation_id' => $id)));
+					foreach ($ImagesPresen as $imgpr) {
+						$this->ImagesPresentation->id = $imgpr['ImagesPresentation']['id'];
+						$this->ImagesPresentation->delete();
+					}
+			$presentationsQuote = $this->PresentationsQuote->find('all',array('conditions' => array('PresentationsQuote.' . 'presentation_id' => $id)));
+			foreach ($presentationsQuote as $prequote) {
+				$this->PresentationsQuote->id = $prequote['PresentationsQuote']['id'];
+				$this->PresentationsQuote->delete();
+			}
+			if ($this->Presentation->delete()) {
+				$this->Session->setFlash(__('Presentation deleted'));
+				$this->redirect(array('controller'=>'Categories','action' => 'select'));
+			}
 		}
-		$this->request->onlyAllow('post', 'delete');
-		if ($this->Presentation->delete()) {
-			$this->Session->setFlash(__('Presentation deleted'));
-			$this->redirect(array('action' => 'index'));
-		}
+		
 		$this->Session->setFlash(__('Presentation was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		
 	}
 }

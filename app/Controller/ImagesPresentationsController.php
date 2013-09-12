@@ -12,9 +12,12 @@ class ImagesPresentationsController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->ImagesPresentation->recursive = 0;
-		$this->set('imagesPresentations', $this->paginate());
+	public function index($id=null) {
+		
+		$options = array('conditions' => array('ImagesPresentation.' . 'presentation_id' => $id));
+		$imagesPresentation = $this->ImagesPresentation->find('all', $options);
+		$id_presentacion = $id;
+		$this->set(compact("imagesPresentation","id_presentacion"));
 	}
 
 /**
@@ -37,17 +40,17 @@ class ImagesPresentationsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id = null) {
 		if ($this->request->is('post')) {
 			$this->ImagesPresentation->create();
 			if ($this->ImagesPresentation->save($this->request->data)) {
-				$this->Session->setFlash(__('The images presentation has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('La imagen de lapresenttacion se a guardado'));
+				$this->redirect(array('action' => 'index',$id));
 			} else {
-				$this->Session->setFlash(__('The images presentation could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen de lapresenttacion no se a guardado'));
 			}
 		}
-		$presentations = $this->ImagesPresentation->Presentation->find('list');
+		$presentations = $id;
 		$this->set(compact('presentations'));
 	}
 
@@ -58,14 +61,14 @@ class ImagesPresentationsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null,$idpresentacion=null) {
 		if (!$this->ImagesPresentation->exists($id)) {
 			throw new NotFoundException(__('Invalid images presentation'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ImagesPresentation->save($this->request->data)) {
 				$this->Session->setFlash(__('The images presentation has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index',$idpresentacion));
 			} else {
 				$this->Session->setFlash(__('The images presentation could not be saved. Please, try again.'));
 			}
@@ -84,7 +87,7 @@ class ImagesPresentationsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$idpresentacion=null) {
 		$this->ImagesPresentation->id = $id;
 		if (!$this->ImagesPresentation->exists()) {
 			throw new NotFoundException(__('Invalid images presentation'));
@@ -92,9 +95,9 @@ class ImagesPresentationsController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ImagesPresentation->delete()) {
 			$this->Session->setFlash(__('Images presentation deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'index',$idpresentacion));
 		}
 		$this->Session->setFlash(__('Images presentation was not deleted'));
-		$this->redirect(array('action' => 'index'));
+	
 	}
 }

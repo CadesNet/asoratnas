@@ -35,7 +35,12 @@
 							<h3 style="float: right;"><?php echo $this->Html->image("icon-recetas.jpg"); ?></h3>
 						</div>
 						<div class="span11">
-									<h3 class = "recipetitle">Recetas</h3>
+									<h3 class = "recipetitle">Recetas<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Agregar Receta', array('controller' => 'Recipes', 'action' => 'add'),array('class'=>'btn btn-primary'));
+
+
+								}?></h3>
+									
 							<br>
 					
 				</div>
@@ -48,7 +53,11 @@
 					 foreach ($recipes as $recipes) { ?>
 			<div class= "itemreceta">
 				<div  class="row-fluid">
-				<div class="span4">
+				<div class="span4 borderimg">
+					<?php
+	                	 		if($this->Session->read('Auth.User.id')){ 
+								 echo $this->Html->link('Ver imagenes', array('controller' => 'ImagesRecipes', 'action' => 'index',$recipes['Recipe']['id']),array('class'=>'btn btn-primary')); 
+							}?>
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image("images_recipe/filename/".$ImagesRecipe['filename']."",array('class'=>'recipeadsbeneficeimg'));
@@ -58,7 +67,10 @@
 				<div class="span8">
 					<div class="row-fluid">
 						<div class="span12">
-							<h3 class = "recipeitemtitle"><?php echo $recipes['Recipe']['title'] ?></h3>
+							<h3 class = "recipeitemtitle"><?php echo $recipes['Recipe']['title']." ";
+							if($this->Session->read('Auth.User.id')){ 
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
 						</div>
 					</div>
 					<div class="row-fluid">
@@ -78,7 +90,6 @@
 					
 					<div class="row-fluid">
 					<p class="visible-desktop visi1">&nbsp; </p>
-                	 
 						<div class="span12">
 							<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
 						</div>

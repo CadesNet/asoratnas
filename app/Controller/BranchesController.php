@@ -104,7 +104,7 @@ class BranchesController extends AppController {
 	}
 	public function select(){
 		$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''));
+    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''));
 		//menu
 		$this->Session->write($menu);
 		////////

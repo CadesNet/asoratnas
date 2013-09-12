@@ -43,10 +43,9 @@ public $helpers = array('Js','Session');
 		if ($this->request->is('post')) {
 			$this->Category->create();
 			if ($this->Category->save($this->request->data)) {
-				$this->Session->setFlash(__('The category has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('La Categoria se a guardado'));
 			} else {
-				$this->Session->setFlash(__('The category could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La Categoria no se a guardado'));
 			}
 		}
 	}
@@ -65,7 +64,7 @@ public $helpers = array('Js','Session');
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Category->save($this->request->data)) {
 				$this->Session->setFlash(__('The category has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The category could not be saved. Please, try again.'));
 			}
@@ -83,17 +82,50 @@ public $helpers = array('Js','Session');
  * @return void
  */
 	public function delete($id = null) {
+		$this->loadModel('Item');
+		$this->loadModel('Presentation');
+		$this->loadModel('ImagesPresentation');
+		$this->loadModel('ImagesCategory');
+		$this->loadModel('PresentationsQuote');
+
 		$this->Category->id = $id;
 		if (!$this->Category->exists()) {
 			throw new NotFoundException(__('Invalid category'));
-		}
+		}else{
 		$this->request->onlyAllow('post', 'delete');
-		if ($this->Category->delete()) {
+		
+			$items = $this->Item->find('all',array('conditions' => array('Item.' . 'category_id' => $id)));
+			$imgcateory = $this->ImagesCategory->find('all',array('conditions' => array('ImagesCategory.' . 'category_id' => $id)));
+			foreach ($items as $it) {
+				$presentacion = $this->Presentation->find('all',array('conditions' => array('Presentation.' . 'item_id' => $it['Item']['id'])));
+				foreach ($presentacion as $pres) { 
+					$ImagesPresen = $this->ImagesPresentation->find('all',array('conditions' => array('ImagesPresentation.' . 'presentation_id' => $pres['Presentation']['id'])));
+					foreach ($ImagesPresen as $imgpr) {
+						$this->ImagesPresentation->id = $imgpr['ImagesPresentation']['id'];
+						$this->ImagesPresentation->delete();
+					}
+					$presentationsQuote = $this->PresentationsQuote->find('all',array('conditions' => array('PresentationsQuote.' . 'presentation_id' => $pres['Presentation']['id'])));
+					foreach ($presentationsQuote as $prequote) {
+						$this->PresentationsQuote->id = $prequote['PresentationsQuote']['id'];
+						$this->PresentationsQuote->delete();
+					}
+				 $this->Presentation->id = $pres['Presentation']['id'];
+				$this->Presentation->delete();
+				}
+				$this->Item->id = $it['Item']['id'];
+				$this->Item->delete();
+			}
+			foreach ($imgcateory as $imgca) {
+				$this->ImagesCategory->id = $imgca['ImagesCategory']['id'];
+				$this->ImagesCategory->delete();
+			}
+			if ($this->Category->delete()){
 			$this->Session->setFlash(__('Category deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'select'));
+			}
 		}
+	
 		$this->Session->setFlash(__('Category was not deleted'));
-		$this->redirect(array('action' => 'index'));
 	}
 		//conulta propias
 	public function select(){

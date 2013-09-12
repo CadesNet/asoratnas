@@ -37,17 +37,17 @@ class ItemsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id=null) {
 		if ($this->request->is('post')) {
 			$this->Item->create();
 			if ($this->Item->save($this->request->data)) {
-				$this->Session->setFlash(__('The item has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El producto a sido guardado'));
+				//$this->redirect(array('controller'=>'Categories','action' => 'select1',$id));
 			} else {
-				$this->Session->setFlash(__('The item could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El producto no a sido guardado'));
 			}
 		}
-		$categories = $this->Item->Category->find('list');
+		$categories = $id;
 		$this->set(compact('categories'));
 	}
 
@@ -65,7 +65,7 @@ class ItemsController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Item->save($this->request->data)) {
 				$this->Session->setFlash(__('The item has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The item could not be saved. Please, try again.'));
 			}
@@ -85,17 +85,39 @@ class ItemsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->loadModel('Presentation');
+		$this->loadModel('ImagesPresentation');
+		$this->loadModel('PresentationsQuote');
 		$this->Item->id = $id;
 		if (!$this->Item->exists()) {
 			throw new NotFoundException(__('Invalid item'));
-		}
+		}else{
 		$this->request->onlyAllow('post', 'delete');
+		$presentacion = $this->Presentation->find('all',array('conditions' => array('Presentation.' . 'item_id' => $id)));
+		foreach ($presentacion as $pres) { 
+					$ImagesPresen = $this->ImagesPresentation->find('all',array('conditions' => array('ImagesPresentation.' . 'presentation_id' => $pres['Presentation']['id'])));
+					foreach ($ImagesPresen as $imgpr) {
+						$this->ImagesPresentation->id = $imgpr['ImagesPresentation']['id'];
+						$this->ImagesPresentation->delete();
+					}
+					$presentationsQuote = $this->PresentationsQuote->find('all',array('conditions' => array('PresentationsQuote.' . 'presentation_id' => $pres['Presentation']['id'])));
+					foreach ($presentationsQuote as $prequote) {
+						$this->PresentationsQuote->id = $prequote['PresentationsQuote']['id'];
+						$this->PresentationsQuote->delete();
+					}
+		$this->Presentation->id = $pres['Presentation']['id'];
+		$this->Presentation->delete();
+		}
 		if ($this->Item->delete()) {
 			$this->Session->setFlash(__('Item deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller'=>'Categories','action' => 'select'));
+			
 		}
+
+		}
+		
 		$this->Session->setFlash(__('Item was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		
 	}
 	public function select($category_id = null,$item_id){
 		//$this->Category->recursive = 2;

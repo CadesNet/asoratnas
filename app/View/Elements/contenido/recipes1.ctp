@@ -88,17 +88,14 @@
 				<div class="row-fluid">
 					<div class="span7">
 						<h3 class = "recipeitemsubtitle">Ingredientes</h3>
-						<?php foreach ($recipes['Ingredient'] as $ingredients) {?>
-						<p class="textoinfo"> <?php echo $ingredients['amount']; ?> : <?php echo $ingredients['name']; ?> </p>
-							
-						<?php } ?>
+						<p class="textoinfo"><?php echo html_entity_decode($recipes['Recipe']['ingredients']) ?> </p>
 					</div>
 					
 				</div>
 				<div class="row-fluid">
 					<div class="span7">
 						<h3 class = "recipeitemsubtitle">Preparacion</h3>
-						<p class="textoinfo"><?php echo $recipes['Recipe']['preparation'] ?>personas</p>
+						<p class="textoinfo"><?php echo html_entity_decode($recipes['Recipe']['preparation']); ?>personas</p>
 					</div>
 				</div>
 			</div>

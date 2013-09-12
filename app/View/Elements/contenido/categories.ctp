@@ -29,6 +29,15 @@
 	<div class="row">
 		<div class="span8">
 			<div class="row">
+				<div class="span8">
+					<?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar Categoria', array('controller' => 'Categories', 'action' => 'add'),array('class'=>'btn btn-primary'));
+
+					}?>
+				</div>
+				
+			</div>
+			<div class="row">
 
 				<?php 
 				foreach ($categories as $category){
@@ -50,6 +59,13 @@
 									<div class="span3">
 										<h4 style="line-height: 20px;">
 											<?php echo $this->Html->link(($category['Category']['name']), array('controller' => 'Categories', 'action' => 'select1',$category['Category']['id']), array('style' => "color:".$category['Category']['description']."; text-decoration: none;")) ?>
+											<?php if($this->Session->read('Auth.User.id')){ ?>
+											
+							     				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info ','escape' => false)); ?>
+												<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
+												<?php echo $this->Html->link('Ver imagenes', array('controller' => 'imagesCategories', 'action' => 'index',$category['Category']['id']),array('class'=>'btn btn-primary')); ?>
+											
+											<?php } ?>
 										</h4>
 									</div>
 								</div>
@@ -65,6 +81,10 @@
 										<div class="row">
 											<div class="span3">
 											<?php echo $this->Html->link(($item['name']), array('controller' => 'Items', 'action' => 'select',$category['Category']['id'],$item['id']),array('style' => "color:".$category['Category']['description']."; text-decoration: none;")) ?>
+												<?php if($this->Session->read('Auth.User.id')){ 
+												 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller'=>'Items','action' => 'edit',$item['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+												 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Items','action' => 'delete', $item['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$item['id']));
+												 }?>
 											</div>
 										</div>
 										<div class="row">
@@ -123,7 +143,7 @@
 								?>
 									<li style="border-right: #D4D5D5 1px solid;width:235px">
 									<?php 
-										echo $this->Html->link($this->Html->image("images_category/filename/".$ImagesCategory['filename']."",array('style'=>'width:100%' )),array('controller' => 'Items', 'action' => 'select',$category['Category']['id']),array('escape' => false , 'class' => 'brand'));  
+										echo $this->Html->link($this->Html->image("images_category/filename/".$ImagesCategory['filename']."",array('style'=>'width:100%;height: 100%;' )),array('controller' => 'Items', 'action' => 'select',$category['Category']['id']),array('escape' => false , 'class' => 'brand'));  
 						    	    ?>
 									</li>
 								<?php }

@@ -14,9 +14,12 @@ class ImagesCategoriesController extends AppController {
  */
 	public $helpers = array('FormEnum');
 	
-	public function index() {
-		$this->ImagesCategory->recursive = 0;
-		$this->set('imagesCategories', $this->paginate());
+	public function index($id = null) {
+
+		$options = array('conditions' => array('ImagesCategory.' . 'category_id' => $id));
+		$imagesCategores = $this->ImagesCategory->find('all', $options);
+		$id_category = $id;
+		$this->set(compact("imagesCategores","id_category"));
 	}
 
 /**
@@ -39,17 +42,17 @@ class ImagesCategoriesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id = null) {
 		if ($this->request->is('post')) {
 			$this->ImagesCategory->create();
 			if ($this->ImagesCategory->save($this->request->data)) {
 				$this->Session->setFlash(__('The images category has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index',$id));
 			} else {
 				$this->Session->setFlash(__('The images category could not be saved. Please, try again.'));
 			}
 		}
-		$categories = $this->ImagesCategory->Category->find('list');
+		$categories = $id;
 		$this->set(compact('categories'));
 	}
 
@@ -60,14 +63,14 @@ class ImagesCategoriesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null,$id_category=null) {
 		if (!$this->ImagesCategory->exists($id)) {
 			throw new NotFoundException(__('Invalid images category'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ImagesCategory->save($this->request->data)) {
 				$this->Session->setFlash(__('The images category has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index',$id_category));
 			} else {
 				$this->Session->setFlash(__('The images category could not be saved. Please, try again.'));
 			}
@@ -86,7 +89,7 @@ class ImagesCategoriesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$id_category=null) {
 		$this->ImagesCategory->id = $id;
 		if (!$this->ImagesCategory->exists()) {
 			throw new NotFoundException(__('Invalid images category'));
@@ -94,9 +97,8 @@ class ImagesCategoriesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->ImagesCategory->delete()) {
 			$this->Session->setFlash(__('Images category deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'index',$id_category));
 		}
 		$this->Session->setFlash(__('Images category was not deleted'));
-		$this->redirect(array('action' => 'index'));
 	}
 }

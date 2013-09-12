@@ -13,7 +13,6 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function index() {
-		
 		$this->Recipe->recursive = 0;
 		$this->set('recipes', $this->paginate());
 	}
@@ -26,7 +25,6 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		
 		if (!$this->Recipe->exists($id)) {
 			throw new NotFoundException(__('Invalid recipe'));
 		}
@@ -40,7 +38,6 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function add() {
-		
 		if ($this->request->is('post')) {
 			$this->Recipe->create();
 			if ($this->Recipe->save($this->request->data)) {
@@ -60,14 +57,13 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		
 		if (!$this->Recipe->exists($id)) {
 			throw new NotFoundException(__('Invalid recipe'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Recipe->save($this->request->data)) {
 				$this->Session->setFlash(__('The recipe has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The recipe could not be saved. Please, try again.'));
 			}
@@ -85,19 +81,27 @@ class RecipesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		
+		$this->loadModel('ImagesRecipe');
 		$this->Recipe->id = $id;
 		if (!$this->Recipe->exists()) {
 			throw new NotFoundException(__('Invalid recipe'));
-		}
-		$this->request->onlyAllow('post', 'delete');
-		if ($this->Recipe->delete()) {
+		}else{
+			$this->request->onlyAllow('post', 'delete');
+			$imgrecipe = $this->ImagesRecipe->find('all',array('conditions' => array('ImagesRecipe.' . 'recipe_id' => $id)));
+			foreach ($imgrecipe as $img) {
+				$this->ImagesRecipe->id = $img['ImagesRecipe']['id'];
+				$this->ImagesRecipe->delete();
+			}
+			if ($this->Recipe->delete()) {
 			$this->Session->setFlash(__('Recipe deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'select'));
+			}
 		}
+		
+		
 		$this->Session->setFlash(__('Recipe was not deleted'));
-		$this->redirect(array('action' => 'index'));
 	}
+
 
 
 //conulta propias

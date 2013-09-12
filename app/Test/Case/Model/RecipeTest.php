@@ -14,7 +14,8 @@ class RecipeTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.recipe',
-		'app.ingredient'
+		'app.ingredient',
+		'app.images_recipe'
 	);
 
 /**
