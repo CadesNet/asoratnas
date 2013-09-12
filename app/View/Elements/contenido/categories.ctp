@@ -2,12 +2,21 @@
   <div class="row-fluid">
     <section id="contenido">
    <section id="principal">
+   	<?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Carousels', 'action' => 'add','2'),array('class'=>'btn btn-primary'));
+
+	}?>
 <article id="galeria-inicio">
          <div class="flexslider">
 		      <ul class="slides">
 		      <?php foreach ($carousel as $carousels) { ?>
 		    
 		        <li>
+		        	<?php if($this->Session->read('Auth.User.id')){ ?>
+											
+				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],'2'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'2'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+			}?>
 		               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
 		                    if($carousels['Carousel']['description']!=""){
 		               ?> 

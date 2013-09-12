@@ -67,7 +67,7 @@ class ServicesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Service->save($this->request->data)) {
 				$this->Session->setFlash(__('The service has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The service could not be saved. Please, try again.'));
 			}

@@ -2,7 +2,7 @@
 <div class="row-fluid">
 	<div class="span12">
 		<h3 class="otrostitle">Sucursales:<?php if($this->Session->read('Auth.User.id')){ 
-								 echo " ".$this->Html->link('Agregar sucursal', array('controller' => 'Branches', 'action' => 'add'),array('class'=>'btn btn-primary'));
+								 echo " ".$this->Html->link('Agregar sucursal', array('controller' => 'Branches', 'action' => 'add','personal'),array('class'=>'btn btn-primary'));
 								}?></h3>
 	</div>
 </div>
@@ -23,8 +23,8 @@
 			<li class="span5">
 			<div class="row-fluid">
 				<?php if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Branches','action' => 'edit',$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Branches','action' => 'delete', $branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$branch['Branch']['id'])); }
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Branches','action' => 'edit',$branch['Branch']['id'],'personal'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Branches','action' => 'delete', $branch['Branch']['id'],'personal'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$branch['Branch']['id'])); }
 				?> 
 			</div>
 			<div class="row-fluid cuadrovacantes" style="min-height: 150px;">
@@ -72,7 +72,9 @@
 </div>
 <div class="row-fluid">
 		<div class="span12">
-
+<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Ver supermercados', array('controller' => 'Supermarkets', 'action' => 'index'),array('class'=>'btn btn-primary'));
+								}?>
 <div class="list_carousel responsive" style="height:70px">
 
 				<ul id="foo5" style="height:100%">

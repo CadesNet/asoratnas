@@ -1,7 +1,7 @@
 <div class="row-fluid">
 	<div class="span12">
 		<h3 class="otrostitle">Contactenos<?php if($this->Session->read('Auth.User.id')){ 
-								 echo " ".$this->Html->link('Agregar sucursal', array('controller' => 'Branches', 'action' => 'add'),array('class'=>'btn btn-primary'));
+								 echo " ".$this->Html->link('Agregar sucursal', array('controller' => 'Branches', 'action' => 'add','contactenos'),array('class'=>'btn btn-primary'));
 								}?></h3>
 	</div>
 </div>
@@ -54,8 +54,8 @@
 						<div class="span11">
 							<div class = "dirciudad">	<?php echo $branches['Branch']['name']." ";
 							if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Branches','action' => 'edit',$branches['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Branches','action' => 'delete', $branches['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$branches['Branch']['id'])); }?> 
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Branches','action' => 'edit',$branches['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Branches','action' => 'delete', $branches['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$branches['Branch']['id'])); }?> 
 							</div>
 					
 							<div style = "color:#06816a"><?php echo $branches['Branch']['type'] ?></div>
@@ -147,9 +147,11 @@
 </div>
 <div class="row-fluid">
 		<div class="span12">
-
+			<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Ver supermercados', array('controller' => 'Supermarkets', 'action' => 'index'),array('class'=>'btn btn-primary'));
+								}?>
 			<div class="list_carousel responsive" style="height:70px">
-
+	
 				<ul id="foo5" style="height:100%">
 					<?php foreach($supermarkets as $supermarket) { ?>
 						<li style="width:80px">

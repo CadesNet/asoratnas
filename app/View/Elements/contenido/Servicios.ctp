@@ -1,14 +1,15 @@
+<?php foreach ($services as $value) { ?>
 <div class="row-fluid">
 	<div class="span12">
-		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Servicios</h3>
+		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Servicios<?php if($this->Session->read('Auth.User.id')){ 
+							 echo " ".$this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Services','action' => 'edit',$value['Service']['id']),array('class' => 'ok btn btn-info ','escape' => false)); }?></h3>
 	</div>
 </div>
 <br>
 <br>
 <div class="container-fluid">
 	
-	 <?php 
-		 	foreach ($services as $value) { ?>
+
 	<div class="row-fluid">
 		<div class="span12">
 		
@@ -59,9 +60,10 @@
 			</div>
 		</div>
 	</div>
-<?php	} ?>
+
 
 </div>
+<?php	} ?>
  <p>&nbsp; </p>
   <p>&nbsp; </p>
    <p>&nbsp; </p>

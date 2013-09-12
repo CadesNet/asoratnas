@@ -4,7 +4,7 @@
     <section id="contenido">
    <section id="principal">
    	<?php if($this->Session->read('Auth.User.id')){ 
-						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Categories', 'action' => 'add'),array('class'=>'btn btn-primary'));
+						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Carousels', 'action' => 'add','1'),array('class'=>'btn btn-primary'));
 
 					}?>
 <article id="galeria-inicio">
@@ -15,8 +15,8 @@
         <li>
         	<?php if($this->Session->read('Auth.User.id')){ ?>
 											
-				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id']),array('class' => 'ok btn btn-info ','escape' => false)); ?>
-				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],'1'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
 			}?>
 
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
@@ -93,7 +93,9 @@
 
 				<div class="row-fluid">
 					<div class="span12">
-
+						<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Ver supermercados', array('controller' => 'Supermarkets', 'action' => 'index'),array('class'=>'btn btn-primary'));
+								}?>
 						<div class="list_carousel responsive" style="height:70px">
 
 							<ul id="foo5" style="height:100%">
@@ -119,8 +121,15 @@
 			
 			</div>
 			<div class="span5">
+
 				<div class="row-fluid">
+
 					<div class="span12 cuadrorecetad" style="text-align:center;">
+						<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Agregar Receta', array('controller' => 'Recipes', 'action' => 'add','index'),array('class'=>'btn btn-primary'));
+
+
+								}?>
 						<div class="row-fluid" style="text-align:left;" >
 							<div class="span12" >
 								<h2 class="recipedia">&nbsp;&nbsp;La receta del dia</h2>
@@ -131,7 +140,7 @@
 							<div class="span12">
 								<?php
 	                	 		if($this->Session->read('Auth.User.id')){ 
-								 echo $this->Html->link('Ver imagenes', array('controller' => 'ImagesRecipes', 'action' => 'index',$recipes['Recipe']['id']),array('class'=>'btn btn-primary')); 
+								 echo $this->Html->link('Ver imagenes', array('controller' => 'ImagesRecipes', 'action' => 'index',$recipes['Recipe']['id'],'index'),array('class'=>'btn btn-primary')); 
 							}?>
 								<?php 
 								foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
@@ -146,8 +155,8 @@
 							<div class="span12">
 								<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
 								if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
 							</div>
 						</div>
 						<div class="row-fluid" >

@@ -37,12 +37,23 @@ class RecipesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($vista=null) {
 		if ($this->request->is('post')) {
 			$this->Recipe->create();
 			if ($this->Recipe->save($this->request->data)) {
 				$this->Session->setFlash(__('The recipe has been saved'));
-				$this->redirect(array('action' => 'index'));
+				switch ($vista) {
+					case 'index':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+						break;
+					case 'index':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
+				
 			} else {
 				$this->Session->setFlash(__('The recipe could not be saved. Please, try again.'));
 			}
@@ -56,14 +67,24 @@ class RecipesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null,$vista=null) {
 		if (!$this->Recipe->exists($id)) {
 			throw new NotFoundException(__('Invalid recipe'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Recipe->save($this->request->data)) {
 				$this->Session->setFlash(__('The recipe has been saved'));
-				$this->redirect(array('action' => 'select'));
+				switch ($vista) {
+					case 'index':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+						break;
+					case 'index':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
 			} else {
 				$this->Session->setFlash(__('The recipe could not be saved. Please, try again.'));
 			}
@@ -80,7 +101,7 @@ class RecipesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$vista) {
 		$this->loadModel('ImagesRecipe');
 		$this->Recipe->id = $id;
 		if (!$this->Recipe->exists()) {
@@ -94,7 +115,17 @@ class RecipesController extends AppController {
 			}
 			if ($this->Recipe->delete()) {
 			$this->Session->setFlash(__('Recipe deleted'));
-			$this->redirect(array('action' => 'select'));
+			switch ($vista) {
+					case 'index':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+						break;
+					case 'recipes':
+						$this->redirect(array('action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
 			}
 		}
 		

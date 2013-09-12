@@ -39,12 +39,22 @@ class CarouselsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($vista) {
 		if ($this->request->is('post')) {
 			$this->Carousel->create();
 			if ($this->Carousel->save($this->request->data)) {
 				$this->Session->setFlash(__('The carousel has been saved'));
-				
+					switch ($vista) {
+					case '1':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+						break;
+					case '2':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
 			} else {
 				$this->Session->setFlash(__('The carousel could not be saved. Please, try again.'));
 			}
@@ -58,14 +68,24 @@ class CarouselsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null,$vista=null) {
 		if (!$this->Carousel->exists($id)) {
 			throw new NotFoundException(__('Invalid carousel'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Carousel->save($this->request->data)) {
 				$this->Session->setFlash(__('The carousel has been saved'));
-				$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+				switch ($vista) {
+					case '1':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+						break;
+					case '2':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
 			} else {
 				$this->Session->setFlash(__('The carousel could not be saved. Please, try again.'));
 			}
@@ -82,7 +102,7 @@ class CarouselsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$vista=null) {
 		$this->Carousel->id = $id;
 		if (!$this->Carousel->exists()) {
 			throw new NotFoundException(__('Invalid carousel'));
@@ -90,7 +110,17 @@ class CarouselsController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Carousel->delete()) {
 			$this->Session->setFlash(__('Carousel deleted'));
-			$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+			switch ($vista) {
+					case '1':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+						break;
+					case '2':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
 		}
 		$this->Session->setFlash(__('Carousel was not deleted'));
 		

@@ -2,7 +2,7 @@
 <div class="row-fluid">
 	<div class="span12">
 		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Historia<?php if($this->Session->read('Auth.User.id')){ 
-							 echo " ".$this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Companies','action' => 'edit',$value['Company']['id']),array('class' => 'ok btn btn-info ','escape' => false)); }?></h3>
+							 echo " ".$this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Companies','action' => 'edit',$value['Company']['id']),array('class' => 'ok btn btn-info ','escape' => false)); }?></h3>
 	</div>
 </div>
 <br>

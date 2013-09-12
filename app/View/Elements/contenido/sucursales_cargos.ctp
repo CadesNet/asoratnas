@@ -9,7 +9,12 @@
 						<div class="span12">
 							<div class="row-fluid">
 								<div class="span12">
-									<h3 class="otrostitle">Cargos en:  <?php echo $branch['Branch']['name'] ?></h3>
+									<h3 class="otrostitle">Cargos en:  <?php echo $branch['Branch']['name']; 
+									if($this->Session->read('Auth.User.id')){ 
+								 	echo " ".$this->Html->link('Agregar Cargo', array('controller' => 'Charges', 'action' => 'add',$branch['Branch']['id']),array('class'=>'btn btn-primary'));
+
+
+								}?></h3>
 								</div>
 							</div>
 							
@@ -40,8 +45,8 @@
 			 <div class="span8">
 			 	<h4 class = "titlevacantes"><?php echo $charge['title']." ";
 							if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Charges','action' => 'edit',$charge['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Charges','action' => 'delete', $charge['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$charge['id'])); }?> </h4>
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Charges','action' => 'edit',$charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Charges','action' => 'delete', $charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$charge['id'])); }?> </h4>
 
 			 	<p class = "descriptionvacantes">Fecha Limite de Admision de Curriculum Vitae</p>
 
@@ -151,7 +156,9 @@
 
 <div class="row-fluid">
 		<div class="span12">
-
+<?php if($this->Session->read('Auth.User.id')){ 
+								 echo " ".$this->Html->link('Ver supermercados', array('controller' => 'Supermarkets', 'action' => 'index'),array('class'=>'btn btn-primary'));
+								}?>
 <div class="list_carousel responsive" style="height:70px">
 
 				<ul id="foo5" style="height:100%">

@@ -36,7 +36,7 @@
 						</div>
 						<div class="span11">
 									<h3 class = "recipetitle">Recetas<?php if($this->Session->read('Auth.User.id')){ 
-								 echo " ".$this->Html->link('Agregar Receta', array('controller' => 'Recipes', 'action' => 'add'),array('class'=>'btn btn-primary'));
+								 echo " ".$this->Html->link('Agregar Receta', array('controller' => 'Recipes', 'action' => 'add','recipes'),array('class'=>'btn btn-primary'));
 
 
 								}?></h3>
@@ -69,8 +69,8 @@
 						<div class="span12">
 							<h3 class = "recipeitemtitle"><?php echo $recipes['Recipe']['title']." ";
 							if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
+							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'recipes'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'recipes'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
 						</div>
 					</div>
 					<div class="row-fluid">

@@ -39,13 +39,24 @@ class BranchesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($vista) {
 		
 		if ($this->request->is('post')) {
 			$this->Branch->create();
 			if ($this->Branch->save($this->request->data)) {
 				$this->Session->setFlash(__('The branch has been saved'));
-				$this->redirect(array('action' => 'index'));
+				switch ($vista) {
+					case 'contactenos':
+						$this->redirect(array('controller'=>'Consultations','action' => 'select'));
+						break;
+					case 'personal':
+						$this->redirect(array('action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
+				
 			} else {
 				$this->Session->setFlash(__('The branch could not be saved. Please, try again.'));
 			}
@@ -61,7 +72,7 @@ class BranchesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null,$vista) {
 		
 		if (!$this->Branch->exists($id)) {
 			throw new NotFoundException(__('Invalid branch'));
@@ -69,7 +80,17 @@ class BranchesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Branch->save($this->request->data)) {
 				$this->Session->setFlash(__('The branch has been saved'));
-				$this->redirect(array('action' => 'index'));
+				switch ($vista) {
+					case 'contactenos':
+						$this->redirect(array('controller'=>'Consultations','action' => 'select'));
+						break;
+					case 'personal':
+						$this->redirect(array('action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
 			} else {
 				$this->Session->setFlash(__('The branch could not be saved. Please, try again.'));
 			}
@@ -88,7 +109,7 @@ class BranchesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$vista) {
 		
 		$this->Branch->id = $id;
 		if (!$this->Branch->exists()) {
@@ -97,7 +118,17 @@ class BranchesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Branch->delete()) {
 			$this->Session->setFlash(__('Branch deleted'));
-			$this->redirect(array('action' => 'index'));
+			switch ($vista) {
+					case 'contactenos':
+						$this->redirect(array('controller'=>'Consultations','action' => 'select'));
+						break;
+					case 'personal':
+						$this->redirect(array('action' => 'select'));
+						break;
+					default:
+						$this->redirect(array('action' => 'select'));
+						break;
+				}
 		}
 		$this->Session->setFlash(__('Branch was not deleted'));
 		$this->redirect(array('action' => 'index'));

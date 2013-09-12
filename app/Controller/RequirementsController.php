@@ -112,7 +112,7 @@ $this->redirect(array('action' => 'select'));
 
 public function select(){
 		$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''
+    'id' => 'ss','inferior'=>'','superior'=>'','color'=>''
 ));
 		//menu
 		$this->Session->write($menu);

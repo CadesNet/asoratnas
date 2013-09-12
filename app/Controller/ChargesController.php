@@ -39,18 +39,18 @@ class ChargesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($idsucursal=null) {
 		
 		if ($this->request->is('post')) {
 			$this->Charge->create();
 			if ($this->Charge->save($this->request->data)) {
 				$this->Session->setFlash(__('The charge has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'Branches','action' => 'select1',$idsucursal));
 			} else {
 				$this->Session->setFlash(__('The charge could not be saved. Please, try again.'));
 			}
 		}
-		$branches = $this->Charge->Branch->find('list');
+		$branches = $idsucursal;
 		$this->set(compact('branches'));
 	}
 
@@ -61,7 +61,7 @@ class ChargesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null,$idsucursal) {
 		
 		if (!$this->Charge->exists($id)) {
 			throw new NotFoundException(__('Invalid charge'));
@@ -69,7 +69,7 @@ class ChargesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Charge->save($this->request->data)) {
 				$this->Session->setFlash(__('The charge has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'Branches','action' => 'select1',$idsucursal));
 			} else {
 				$this->Session->setFlash(__('The charge could not be saved. Please, try again.'));
 			}
@@ -88,7 +88,7 @@ class ChargesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$idsucursal) {
 		
 		$this->Charge->id = $id;
 		if (!$this->Charge->exists()) {
@@ -97,7 +97,7 @@ class ChargesController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Charge->delete()) {
 			$this->Session->setFlash(__('Charge deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller'=>'Branches','action' => 'select1',$idsucursal));
 		}
 		$this->Session->setFlash(__('Charge was not deleted'));
 		$this->redirect(array('action' => 'index'));

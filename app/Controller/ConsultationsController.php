@@ -90,7 +90,7 @@ class ConsultationsController extends AppController {
 	///consultas propias
 		public function select() {
 				$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''
+    'id' => 'vv','inferior'=>'','superior'=>'','color'=>''
 ));
 		//menu
 		$this->Session->write($menu);
