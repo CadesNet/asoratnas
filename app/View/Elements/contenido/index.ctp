@@ -4,7 +4,7 @@
     <section id="contenido">
    <section id="principal">
    	<?php if($this->Session->read('Auth.User.id')){ 
-						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Carousels', 'action' => 'add','1'),array('class'=>'btn btn-primary'));
+						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Carousels', 'action' => 'add','1','1','1','index'),array('class'=>'btn btn-primary'));
 
 					}?>
 <article id="galeria-inicio">
@@ -15,9 +15,9 @@
         <li>
         	<?php if($this->Session->read('Auth.User.id')){ ?>
 											
-				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],'1'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
-				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
-			}?>
+				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+				}?>
 
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
 
@@ -60,8 +60,8 @@
 							<div class="row-fluid" >
 								<h4 class = "benefitssubtitle"><? echo $benefit['Benefit']['title']." ";
 							 if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h4>
+							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h4>
 							</div>
 							<div class="row-fluid" style="">
 								<p class ="benefitsdescription">
@@ -102,14 +102,14 @@
 								<?php foreach($supermarkets as $supermarket) { ?>
 									<li style="width:80px">
 									<?php 
-								echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
+								echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
 						    	    ?>
 									</li>
 									<?php }	 ?>
 								<?php foreach($supermarkets as $supermarket) { ?>
 									<li style="width:80px">
 									<?php 
-								echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
+								echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
 						    	    ?>
 									</li>
 									<?php }	 ?>
@@ -126,7 +126,7 @@
 
 					<div class="span12 cuadrorecetad" style="text-align:center;">
 						<?php if($this->Session->read('Auth.User.id')){ 
-								 echo " ".$this->Html->link('Agregar Receta', array('controller' => 'Recipes', 'action' => 'add','index'),array('class'=>'btn btn-primary'));
+								 echo " ".$this->Html->link('Agregar Receta', array('controller' => 'Recipes', 'action' => 'add','1','1','1','index'),array('class'=>'btn btn-primary'));
 
 
 								}?>
@@ -155,8 +155,8 @@
 							<div class="span12">
 								<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
 								if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
+							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
 							</div>
 						</div>
 						<div class="row-fluid" >

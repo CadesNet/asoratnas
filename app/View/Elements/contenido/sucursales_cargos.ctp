@@ -45,8 +45,8 @@
 			 <div class="span8">
 			 	<h4 class = "titlevacantes"><?php echo $charge['title']." ";
 							if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('controller' => 'Charges','action' => 'edit',$charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Charges','action' => 'delete', $charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$charge['id'])); }?> </h4>
+							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Charges','action' => 'edit',$charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Charges','action' => 'delete', $charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$charge['id'])); }?> </h4>
 
 			 	<p class = "descriptionvacantes">Fecha Limite de Admision de Curriculum Vitae</p>
 
@@ -165,21 +165,21 @@
 					<?php foreach($supermarkets as $supermarket) { ?>
 						<li style="width:80px">
 						<?php 
-					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
+					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
 			    	    ?>
 						</li>
 						<?php }	 ?>
 					<?php foreach($supermarkets as $supermarket) { ?>
 						<li style="width:80px">
 						<?php 
-					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
+					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
 			    	    ?>
 						</li>
 						<?php }	 ?>
 					<?php foreach($supermarkets as $supermarket) { ?>
 						<li style="width:80px">
 						<?php 
-					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand'));  
+					echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
 			    	    ?>
 						</li>
 						<?php }	 ?>

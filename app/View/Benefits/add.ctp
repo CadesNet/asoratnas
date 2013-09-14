@@ -1,20 +1,17 @@
 <div class="benefits form">
 <?php echo $this->Form->create('Benefit',array('type' => 'file')); ?>
 	<fieldset>
-		<legend><?php echo __('Add Benefit'); ?></legend>
+		<legend><?php echo __('Agregar Beneficio'); ?></legend>
 	<?php
-		echo $this->Form->input('title');
-		echo $this->Form->input('description');
-		echo $this->Form->input('filename',array('type' => 'file'));
-		echo $this->Form->input('dir', array('type' => 'hidden'));
+		echo $this->Form->input('title',array('label' => 'Titulo'));
+		echo ('Descipcion');
+		echo $this->Form->textarea('description',array('class'=>'ckeditor','label'=>'Descripcion'));
+		echo $this->Form->input('filename',array('type' => 'file','label'=>'Nombre archivo'));
+		echo $this->Form->input('dir', array('type' => 'hidden','label'=>'Direccion'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Guardar')); ?>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Html->link(__('List Benefits'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?></li>
-	</ul>
-</div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

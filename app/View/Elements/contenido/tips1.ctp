@@ -1,15 +1,24 @@
-
+<?php $id_tip= null; ?>
   <div class="row-fluid">
     <section id="contenido">
    <section id="principal">
+   	   	<?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Carousels', 'action' => 'add',$id_tip,$count,'1','tips1'),array('class'=>'btn btn-primary'));
+
+	}?>
 <article id="galeria-inicio">
          <div class="flexslider">
       <ul class="slides">
       <?php foreach ($carousel as $carousels) { ?>
     
         <li>
-               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename'].""); 
-                if($carousels['Carousel']['description']!=""){
+        	<?php if($this->Session->read('Auth.User.id')){ ?>
+											
+				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+			}?>
+               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
+                    if($carousels['Carousel']['description']!=""){
                ?> 
                <p class="flex-caption">
                 <?php echo $carousels['Carousel']['description'] ?>
@@ -43,7 +52,9 @@
 				<div class="span11 offset1">
 					<?php
 						$coun = 1;
-					 foreach ($tips as $tip) { ?>
+					 foreach ($tips as $tip) { 
+					 		$id_tip = $tip['Tip']['id'];
+					 	?>
 			<div class= "tipssalud">
 				<div  class="row-fluid">
 				<div class="span5">
@@ -75,8 +86,8 @@
 					<p class="visible-desktop">&nbsp; </p>
                 	<p class="visible-desktop">&nbsp; </p>
 				<div class="row-fluid">
-					<div class="span7">
-						<p class = "textoinfo"><?php echo $tip['Tip']['description'] ?></p>
+					<div class="span12">
+						<p class = "textoinfo"><?php echo html_entity_decode($tip['Tip']['description']) ?></p>
 					</div>
 					
 				</div>
@@ -108,10 +119,21 @@ echo $this->Paginator->next('Siguiente Consejo »', null, null, array('class' =>
 
 		</div>
 			<div class="span3">
+				<?php if($this->Session->read('Auth.User.id')){ 
+				
+			 echo $this->Html->link('ver todas', array('controller' => 'Ads', 'action' => 'index'),array('class'=>'btn btn-primary')); 
+		} ?><?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar noticias', array('controller' => 'Ads', 'action' => 'add',$id_tip,$count,'1','tips1'),array('class'=>'btn btn-primary'));
+						
+					}?>
 		<div class="row-fluid">
 		<?php foreach ($ads as $value) { ?>
+		
 				<div class="span12 " style="margin: 0;" >
-
+					<?php if($this->Session->read('Auth.User.id')){ 
+				 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$value['Ad']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false)); 
+				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$value['Ad']['id']));
+				 }?>
 				<?php if($value['Ad']['type'] !='video'){
 				echo $this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('class'=>'noticias'));
 				} else{ ?>

@@ -3,14 +3,14 @@
 	<fieldset>
 		<legend><?php echo __('Add Quote'); ?></legend>
 	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('address');
-		echo $this->Form->input('phone');
-		echo $this->Form->input('email');
-		echo $this->Form->input('message');
+		echo $this->Form->input('name',array('label'=>'Nombre'));
+		echo $this->Form->input('address',array('label'=>'apellidos'));
+		echo $this->Form->input('phone',array('label'=>'Telefono'));
+		echo $this->Form->input('email',array('label'=>'Email'));
+		echo $this->Form->input('message',array('label'=>'message'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Guardar')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
@@ -21,3 +21,5 @@
 		<li><?php echo $this->Html->link(__('New Presentations Quote'), array('controller' => 'presentations_quotes', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

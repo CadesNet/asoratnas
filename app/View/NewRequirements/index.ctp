@@ -1,5 +1,5 @@
 <div class="newRequirements index">
-	<h2><?php echo __('New Requirements'); ?></h2>
+	<h2><?php echo __('Nuevos Rquerimientos'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -36,7 +36,7 @@
 		<td><?php echo h($newRequirement['NewRequirement']['modified']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $newRequirement['NewRequirement']['id']),array('class' => 'ok btn btn-info ')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $newRequirement['NewRequirement']['id']),array('class' => 'ok btn btn-info ')); ?>
+			
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $newRequirement['NewRequirement']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $newRequirement['NewRequirement']['id'])); ?>
 		</td>
 	</tr>
@@ -56,11 +56,4 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New New Requirement'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
-		<li><?php echo $this->Html->link(__('List Branches'), array('controller' => 'branches', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Branch'), array('controller' => 'branches', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-	</ul>
-</div>
+

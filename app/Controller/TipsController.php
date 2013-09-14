@@ -151,7 +151,7 @@ public $helpers = array('Js','Session');
 		$Tip = $this->paginate("Tip");
 		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
-		$this->set(compact("Tip",'Ad','Carousel'));
+		$this->set(compact("Tip",'Ad','Carousel','pagina'));
 		}
 
 	}

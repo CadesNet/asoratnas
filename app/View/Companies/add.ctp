@@ -1,12 +1,12 @@
 <div class="companies form">
 <?php echo $this->Form->create('Company'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Company'); ?></legend>
+		<legend><?php echo __('Agregar Empresa'); ?></legend>
 	<?php
 		echo $this->Form->textarea('content',array('class'=>'ckeditor'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Guardar')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
@@ -17,3 +17,5 @@
 		<li><?php echo $this->Html->link(__('New Branch'), array('controller' => 'branches', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

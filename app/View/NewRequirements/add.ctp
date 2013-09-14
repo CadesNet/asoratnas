@@ -26,3 +26,5 @@
 		<li><?php echo $this->Html->link(__('New Branch'), array('controller' => 'branches', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

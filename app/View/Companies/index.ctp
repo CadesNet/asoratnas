@@ -37,8 +37,3 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
-	<?php echo $this->Html->link(__('Nueva Empresa'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
-			<?php echo $this->Html->link(__('Mostrar Sucursales'), array('controller' => 'branches', 'action' => 'index'),array('class' => 'ok btn btn-info  ')); ?> <?php echo $this->Html->link(__('Nueva empresa'), array('controller' => 'branches', 'action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
-</div>

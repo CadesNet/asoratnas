@@ -1,7 +1,7 @@
 <div class="supermarkets form">
 <?php echo $this->Form->create('Supermarket',array('type' => 'file')); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Supermarket'); ?></legend>
+		<legend><?php echo __('Editar Supermercado'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
@@ -14,3 +14,5 @@
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
 
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

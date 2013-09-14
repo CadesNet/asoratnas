@@ -184,7 +184,7 @@ public $helpers = array('Js','Session');
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$Benefit = $this->paginate("Benefit");
 		//$Recipe = $this->Recipe->find('all',array('conditions' => array('Recipe.' . $this->Recipe->primaryKey => $id),'recursive'  => 1));
-		$this->set(compact('Benefit','Ad','Carousel'));
+		$this->set(compact('Benefit','Ad','Carousel','pagina'));
 		}
 
 	}

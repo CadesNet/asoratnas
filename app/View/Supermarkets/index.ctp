@@ -46,3 +46,5 @@
 	
 		<?php echo $this->Html->link(__('Nuevo Supermercado'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

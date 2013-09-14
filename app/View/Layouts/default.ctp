@@ -118,7 +118,7 @@ isset
 			
 		</div><!-- #main-container -->
 		</div><!-- #header .container -->
-<?php //echo $this->Js->writeBuffer(); // Write cached scripts ?>
+<?php echo $this->Js->writeBuffer(); // Write cached scripts ?>
 		<script type="text/javascript" language="javascript">
 			$(function() {
 				//	Fuild layout, centering the items

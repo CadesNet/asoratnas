@@ -2,9 +2,9 @@
 	<h2><?php echo __('Images Categories'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo ('filename'); ?></th>
-			<th><?php echo ('dir'); ?></th>
-			<th><?php echo ('type'); ?></th>
+			<th><?php echo ('filename',array('label'=>'Nombre archivo')); ?></th>
+			<th><?php echo ('dir',array('label'=>'Direccion')); ?></th>
+			<th><?php echo ('type',array('label'=>'archivo')); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($imagesCategores as $imagesCategory): ?>
@@ -23,3 +23,5 @@
 		<?php echo $this->Html->link(__('New Images Category'), array('action' => 'add',$id_category),array('class' => 'ok btn btn-info btn-large')); ?>
 	</div>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

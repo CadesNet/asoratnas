@@ -19,8 +19,8 @@
 		<td><?php echo $this->Html->image('ad/filename/'.h($ad['Ad']['filename'])); ?>&nbsp;</td>
 		<td><?php echo h($ad['Ad']['dir']); ?>&nbsp;</td>
 		<td class="actions">
-			<!-- <?php echo $this->Html->link(__('Ver'), array('action' => 'view', $ad['Ad']['id']),array('class' => 'ok btn btn-info  ')); ?> -->
-			<!-- <?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $ad['Ad']['id']),array('class' => 'ok btn btn-info  ')); ?> -->
+			
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $ad['Ad']['id']),array('class' => 'ok btn btn-info  ')); ?> 
 			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $ad['Ad']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $ad['Ad']['id'])); ?>
 		</td>
 	</tr>

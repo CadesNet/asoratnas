@@ -12,12 +12,12 @@ class RequirementsController extends AppController {
 *
 * @return void
 */
-public $helpers = array('FormEnum');
 
-public function index() {
+public $helpers = array('FormEnum','Js');
+public function index($id=null,$sucursal=null) {
+		 $requirements =  $this->Requirement->find('all', array('conditions' => array('Requirement.' . 'charge_id' => $id)));
+		$this->set(compact('requirements','sucursal'));
 
-$this->Requirement->recursive = 0;
-$this->set('requirements', $this->paginate());
 }
 
 /**
@@ -27,15 +27,10 @@ $this->set('requirements', $this->paginate());
 * @param string $id
 * @return void
 */
-public function view($id = null) {
-
-if (!$this->Requirement->exists($id)) {
-throw new NotFoundException(__('Invalid requirement'));
+public function view($id = null,$sucursal = null) {
+$requirement = $this->Requirement->find('first', array('conditions' => array('Requirement.' . $this->Requirement->primaryKey => $id)));
+$this->set(compact('requirement', 'sucursal'));
 }
-$options = array('conditions' => array('Requirement.' . $this->Requirement->primaryKey => $id));
-$this->set('requirement', $this->Requirement->find('first', $options));
-}
-
 /**
 * add method
 *

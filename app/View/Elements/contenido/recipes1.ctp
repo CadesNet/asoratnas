@@ -1,15 +1,24 @@
-
+  <?php $id_receta= null; ?>
   <div class="row-fluid">
     <section id="contenido">
    <section id="principal">
+   	   	<?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Carousels', 'action' => 'add',$id_receta,$count,'1','recetas1'),array('class'=>'btn btn-primary'));
+
+	}?>
 <article id="galeria-inicio">
          <div class="flexslider">
       <ul class="slides">
       <?php foreach ($carousel as $carousels) { ?>
     
         <li>
+        	<?php if($this->Session->read('Auth.User.id')){ ?>
+											
+				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],$id_receta,$count,'1','recetas1'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],$id_receta,$count,'1','recetas1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+			}?>
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
-               if($carousels['Carousel']['description']!=""){
+                    if($carousels['Carousel']['description']!=""){
                ?> 
                <p class="flex-caption">
                 <?php echo $carousels['Carousel']['description'] ?>
@@ -23,6 +32,7 @@
    </section>
 </section>
   </div>
+
 
 <div class="container">
 	<div class="row-fluid">
@@ -46,6 +56,7 @@
 				<div  class="row-fluid">
 				<div class="span5">
 						<?php 
+						$id_receta = $recipes['Recipe']['id'];
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
 						echo $this->Html->image(("images_recipe/filename/".$ImagesRecipe['filename'].""),array('class'=>'recipeadsbeneficeimg'));
 						break;
@@ -86,14 +97,14 @@
 					<p class="visible-desktop">&nbsp; </p>
                 	 <p class="visible-desktop">&nbsp; </p>
 				<div class="row-fluid">
-					<div class="span7">
+					<div class="span12">
 						<h3 class = "recipeitemsubtitle">Ingredientes</h3>
 						<p class="textoinfo"><?php echo html_entity_decode($recipes['Recipe']['ingredients']) ?> </p>
 					</div>
 					
 				</div>
-				<div class="row-fluid">
-					<div class="span7">
+					<div class="row-fluid">
+					<div class="span12">
 						<h3 class = "recipeitemsubtitle">Preparacion</h3>
 						<p class="textoinfo"><?php echo html_entity_decode($recipes['Recipe']['preparation']); ?>personas</p>
 					</div>
@@ -125,11 +136,21 @@ echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 
 
 		</div>
 		<div class="span3">
-		
+		<?php if($this->Session->read('Auth.User.id')){ 
+				
+			 echo $this->Html->link('ver todas', array('controller' => 'Ads', 'action' => 'index'),array('class'=>'btn btn-primary')); 
+		} ?><?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar noticias', array('controller' => 'Ads', 'action' => 'add',$id_receta,$count,'1','recetas1'),array('class'=>'btn btn-primary'));
+						
+					}?>
 				<div class="row-fluid">
 		<?php foreach ($ads as $value) { ?>
+			
 				<div class="span12 " style="margin: 0;" >
-
+					<?php if($this->Session->read('Auth.User.id')){ 
+				 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$value['Ad']['id'],$id_receta,$count,'1','recetas1'),array('class' => 'ok btn btn-info ','escape' => false)); 
+				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],$id_receta,$count,'1','recetas1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$value['Ad']['id']));
+				 }?>
 				<?php if($value['Ad']['type'] !='video'){
 				echo $this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('class'=>'noticias'));
 				} else{ ?>

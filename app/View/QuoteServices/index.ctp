@@ -1,5 +1,5 @@
 <div class="quoteServices index">
-	<h2><?php echo __('Quote Services'); ?></h2>
+	<h2><?php echo __('Consulta Servicios'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -58,3 +58,5 @@
 		<li><?php echo $this->Html->link(__('New Service'), array('controller' => 'services', 'action' => 'add'),array('class' => 'ok btn btn-info  ')); ?> </li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

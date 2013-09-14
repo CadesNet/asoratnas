@@ -3,20 +3,20 @@
 	<fieldset>
 		<legend><?php echo __('Editar notificacion'); ?></legend>
 	<?php
-		echo $this->FormEnum->input('id');
-		echo $this->FormEnum->input('type');
-		echo $this->FormEnum->input('link');
-		echo $this->FormEnum->input('filename',array('type' => 'file'));
-		echo $this->FormEnum->input('dir', array('type' => 'hidden'));
+		echo $this->FormEnum->input('id',array('label' => 'id'));
+		echo $this->FormEnum->input('type',array('label' => 'archivo'));
+		echo $this->FormEnum->input('link',array('label' => 'Url'));
+		echo $this->FormEnum->input('filename',array('type' => 'file','label'=>'Nombre archivo'));
+		echo $this->FormEnum->input('dir', array('type' => 'hidden','label'=>'direccion'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Modificar')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Ad.id')),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $this->Form->value('Ad.id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List Ads'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

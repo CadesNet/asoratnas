@@ -12,9 +12,33 @@ class PresentationsQuotesController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->PresentationsQuote->recursive = 0;
-		$this->set('presentationsQuotes', $this->paginate());
+	public function index($idquote=null) {
+		$this->loadModel('Item');
+		$this->loadModel('Category');
+		$this->loadModel('Presentation');
+		$this->loadModel('ImagesPresentation');
+		$this->Category->recursive = 2;
+		//$presentationsQuotes = $this->Category->Item->Presentation->find('all', array('conditions' => array('Category.' . 'id' => 'Item .' . 'category_id','Item.' . 'id' => 'Presentation.' . 'item_id','Presentation.' . 'id' => 'PresentationsQuote.' . 'presentation_id','PresentationsQuote.' . 'quote_id' => $idquote)));
+		
+		$presentacionquote = $this->PresentationsQuote->find('first', array('conditions' => array('PresentationsQuote.' . 'quote_id' => $idquote)));
+		if($presentacionquote['PresentationsQuote']['id'] == ''){
+			$this->redirect(array('controller' => 'Quotes','action' => 'index'));
+		}else{
+		$presentacion = $this->Presentation->find('first', array('conditions' => array('Presentation.' . $this->Presentation->primaryKey => $presentacionquote['PresentationsQuote']['presentation_id'])));
+		$imagesPresentation = $this->ImagesPresentation->find('first', array('conditions' => array('ImagesPresentation.' . 'presentation_id' => $presentacionquote['PresentationsQuote']['presentation_id'])));
+		
+		$item = $this->Item->find('first', array('conditions' => array('Item.' . $this->Item->primaryKey => $presentacion['Presentation']['item_id'])));
+
+		$cateory = $this->Category->find('first', array('conditions' => array('Category.' . $this->Category->primaryKey => $item['Item']['category_id'])));
+
+			$val = array('id' => $presentacionquote['PresentationsQuote']['id'],
+						'name' => $cateory['Category']['name']." ".$item['Item']['name']." ".$presentacion['Presentation']['name'],
+						'img' => $imagesPresentation['ImagesPresentation']['filename'],
+						'cantidad' => $presentacionquote['PresentationsQuote']['amount'],
+						'detalle' => $presentacionquote['PresentationsQuote']['detail']);
+			
+		$this->set(compact('val'));
+	}
 	}
 
 /**

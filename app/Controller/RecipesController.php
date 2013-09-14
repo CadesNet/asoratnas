@@ -37,7 +37,7 @@ class RecipesController extends AppController {
  *
  * @return void
  */
-	public function add($vista=null) {
+	public function add($id1=null,$id2=null,$id3=null,$vista=null) {
 		if ($this->request->is('post')) {
 			$this->Recipe->create();
 			if ($this->Recipe->save($this->request->data)) {
@@ -46,11 +46,20 @@ class RecipesController extends AppController {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
 						break;
-					case 'index':
-						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+					case 'categorias':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
 						break;
-					default:
-						$this->redirect(array('action' => 'select'));
+					case 'categoria':
+						$this->redirect(array('controller'=>'Categories','action' => 'select1',$id1));
+						break;
+					case 'item':
+						$this->redirect(array('controller'=>'Items','action' => 'select',$id1,$id2));
+						break;
+					case 'presentacion':
+						$this->redirect(array('controller'=>'Quotes','action' => 'select',$id1,$id2,$id3));
+						break;
+					case 'recetas':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
 						break;
 				}
 				
@@ -67,7 +76,7 @@ class RecipesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null,$vista=null) {
+	public function edit($id = null,$id1=null,$id2=null,$id3=null,$vista=null) {
 		if (!$this->Recipe->exists($id)) {
 			throw new NotFoundException(__('Invalid recipe'));
 		}
@@ -78,11 +87,20 @@ class RecipesController extends AppController {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
 						break;
-					case 'index':
-						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+					case 'categorias':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
 						break;
-					default:
-						$this->redirect(array('action' => 'select'));
+					case 'categoria':
+						$this->redirect(array('controller'=>'Categories','action' => 'select1',$id1));
+						break;
+					case 'item':
+						$this->redirect(array('controller'=>'Items','action' => 'select',$id1,$id2));
+						break;
+					case 'presentacion':
+						$this->redirect(array('controller'=>'Quotes','action' => 'select',$id1,$id2,$id3));
+						break;
+					case 'recetas':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
 						break;
 				}
 			} else {
@@ -101,7 +119,7 @@ class RecipesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null,$vista) {
+	public function delete($id = null,$id1=null,$id2=null,$id3=null,$vista=null) {
 		$this->loadModel('ImagesRecipe');
 		$this->Recipe->id = $id;
 		if (!$this->Recipe->exists()) {
@@ -119,11 +137,20 @@ class RecipesController extends AppController {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
 						break;
-					case 'recipes':
-						$this->redirect(array('action' => 'select'));
+					case 'categorias':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
 						break;
-					default:
-						$this->redirect(array('action' => 'select'));
+					case 'categoria':
+						$this->redirect(array('controller'=>'Categories','action' => 'select1',$id1));
+						break;
+					case 'item':
+						$this->redirect(array('controller'=>'Items','action' => 'select',$id1,$id2));
+						break;
+					case 'presentacion':
+						$this->redirect(array('controller'=>'Quotes','action' => 'select',$id1,$id2,$id3));
+						break;
+					case 'recetas':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
 						break;
 				}
 			}
@@ -194,7 +221,8 @@ class RecipesController extends AppController {
 		$Recipe = $this->paginate("Recipe");
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
-		$this->set(compact('Recipe','Ad','Carousel'));
+
+		$this->set(compact('Recipe','Ad','Carousel','pagina'));
 		}
 	}
 }

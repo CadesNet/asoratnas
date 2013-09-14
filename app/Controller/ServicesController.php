@@ -26,7 +26,6 @@ class ServicesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		
 		if (!$this->Service->exists($id)) {
 			throw new NotFoundException(__('Invalid service'));
 		}
@@ -100,7 +99,7 @@ class ServicesController extends AppController {
 	}
 		public function select(){
 				$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''
+    'id' => 'nn','inferior'=>'','superior'=>'','color'=>''
 ));
 		//menu
 		$this->Session->write($menu);

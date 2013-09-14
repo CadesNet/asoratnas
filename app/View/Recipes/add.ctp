@@ -1,7 +1,7 @@
 <div class="recipes form">
 <?php echo $this->Form->create('Recipe'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Recipe'); ?></legend>
+		<legend><?php echo __('Agregar Receta'); ?></legend>
 	<?php
 		echo $this->Form->input('title');
 		echo $this->Form->input('time');
@@ -15,3 +15,5 @@
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
 
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

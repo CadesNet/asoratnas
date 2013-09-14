@@ -1,15 +1,23 @@
-
   <div class="row-fluid">
     <section id="contenido">
    <section id="principal">
+   	   	<?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar imagen Carousel', array('controller' => 'Carousels', 'action' => 'add','1','1','1','beneficios'),array('class'=>'btn btn-primary'));
+
+	}?>
 <article id="galeria-inicio">
          <div class="flexslider">
       <ul class="slides">
       <?php foreach ($carousel as $carousels) { ?>
     
         <li>
-               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename'].""); 
-                if($carousels['Carousel']['description']!=""){
+        	<?php if($this->Session->read('Auth.User.id')){ ?>
+											
+				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],'1','1','1','beneficios'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1','1','1','beneficios'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+			}?>
+               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
+                    if($carousels['Carousel']['description']!=""){
                ?> 
                <p class="flex-caption">
                 <?php echo $carousels['Carousel']['description'] ?>
@@ -59,14 +67,14 @@
 						<div class="span12">
 							<h3 class = "titlebeneficios"><?php echo $benefit['Benefit']['title']." ";
 							 if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-home'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h3>
+							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id'],'mm'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h3>
 						</div>
 					</div>
 					<div class="row-fluid">
 							
 							<div class="span12">
-								<p class = "textoinfo"><?php echo substr($benefit['Benefit']['description'], 0, 140) ?> min</p>
+								<p class = "textoinfo"><?php echo html_entity_decode(substr($benefit['Benefit']['description'], 0, 240)) ?> min</p>
 							</div>
 					</div>
 					<p class="visible-desktop visi1">&nbsp; </p>
@@ -105,10 +113,21 @@ echo $this->Paginator->next('Siguiente Beneficio »', null, null, array('class' 
 
 		</div>
 			<div class="span3">
+				<?php if($this->Session->read('Auth.User.id')){ 
+
+					 echo $this->Html->link('ver todas', array('controller' => 'Ads', 'action' => 'index'),array('class'=>'btn btn-primary')); 
+				} ?><?php if($this->Session->read('Auth.User.id')){ 
+						echo $this->Html->link('Agregar noticias', array('controller' => 'Ads', 'action' => 'add','1','1','1','beneficios'),array('class'=>'btn btn-primary'));
+						
+					}?>
 		<div class="row-fluid">
 			<?php foreach ($ads as $value) { ?>
+			
 				<div class="span12 " style="margin: 0;" >
-
+				<?php if($this->Session->read('Auth.User.id')){ 
+				 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$value['Ad']['id'],'1','1','1','beneficios'),array('class' => 'ok btn btn-info ','escape' => false)); 
+				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],'1','1','1','beneficios'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$value['Ad']['id']));
+				 }?>
 				<?php if($value['Ad']['type'] !='video'){
 				echo $this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('class'=>'noticias'));
 				} else{ ?>

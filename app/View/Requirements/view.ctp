@@ -1,5 +1,5 @@
 <div class="requirements view">
-<h2><?php  echo __('Requirement'); ?></h2>
+<h2><?php  echo __('Requerimiento'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
@@ -8,7 +8,7 @@
 		</dd>
 		<dt><?php echo __('Charge'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($requirement['Charge']['title'], array('controller' => 'charges', 'action' => 'view', $requirement['Charge']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo h($requirement['Charge']['title']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Fullname'); ?></dt>
@@ -67,11 +67,9 @@ echo '<iframe src="http://docs.google.com/viewer?url='.$archivo.'&embedded=true"
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Requirement'), array('action' => 'edit', $requirement['Requirement']['id']),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Requirement'), array('action' => 'delete', $requirement['Requirement']['id']),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $requirement['Requirement']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Requirements'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Requirement'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		
+		<li><?php echo $this->Html->link(__('List Requirements'), array('action' => 'index',$requirement['Charge']['id'],$sucursal),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

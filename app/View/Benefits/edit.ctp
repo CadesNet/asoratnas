@@ -1,22 +1,18 @@
 <div class="benefits form">
 <?php echo $this->Form->create('Benefit',array('type' => 'file')); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Benefit'); ?></legend>
+		<legend><?php echo __('Editar Beneficio'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('title');
-		echo $this->Form->input('description');
-		echo $this->Form->input('filename',array('type' => 'file'));
-		echo $this->Form->input('dir', array('type' => 'hidden'));
+		echo $this->Form->input('id',array('label' => 'id'));
+		echo $this->Form->input('title',array('label' => 'Titulo'));
+			echo ('Descipcion');
+		echo $this->Form->textarea('description',array('class'=>'ckeditor','label'=>'Descripcion'));
+		echo $this->Form->input('filename',array('type' => 'file','label'=>'Nombre archivo'));
+		echo $this->Form->input('dir', array('type' => 'hidden','label'=>'Direccion'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Modificar')); ?>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Benefit.id')),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $this->Form->value('Benefit.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Benefits'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?></li>
-	</ul>
-</div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

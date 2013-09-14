@@ -27,7 +27,6 @@ class AdsController extends AppController {
 	public $helpers = array('FormEnum');
 
 	public function index() {
-		
 		$this->Ad->recursive = 0;
 		$this->set('ads', $this->paginate());
 	}
@@ -53,13 +52,47 @@ class AdsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id1=null,$id2=null,$id3=null,$vista=null) {
 		
 		if ($this->request->is('post')) {
 			$this->Ad->create();
 			if ($this->Ad->save($this->request->data)) {
 				$this->Session->setFlash(__('The ad has been saved'));
-				$this->redirect(array('action' => 'index'));
+				switch ($vista) {
+					case 'categorias':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
+						break;
+					case 'categoria':
+						$this->redirect(array('controller'=>'Categories','action' => 'select1',$id1));
+						break;
+					case 'item':
+						$this->redirect(array('controller'=>'Items','action' => 'select',$id1,$id2));
+						break;
+					case 'presentacion':
+						$this->redirect(array('controller'=>'Quotes','action' => 'select',$id1,$id2,$id3));
+						break;
+					case 'recetas':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
+						break;
+					case 'recetas1':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select1',$id1,$id2));
+						break;
+					case 'beneficios':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select1'));
+						break;
+					case 'beneficios1':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select2',$id1,$id2));
+						break;
+					case 'tips':
+						$this->redirect(array('controller'=>'Tips','action' => 'select1'));
+						break;
+					case 'tips1':
+						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
+						break;
+					
+
+				}
+				
 			} else {
 				$this->Session->setFlash(__('The ad could not be saved. Please, try again.'));
 			}
@@ -73,7 +106,7 @@ class AdsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id=null,$id1=null,$id2=null,$id3=null,$vista=null) {
 		
 		if (!$this->Ad->exists($id)) {
 			throw new NotFoundException(__('Invalid ad'));
@@ -81,7 +114,40 @@ class AdsController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Ad->save($this->request->data)) {
 				$this->Session->setFlash(__('The ad has been saved'));
-				$this->redirect(array('action' => 'index'));
+				switch ($vista) {
+					case 'categorias':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
+						break;
+					case 'categoria':
+						$this->redirect(array('controller'=>'Categories','action' => 'select1',$id1));
+						break;
+					case 'item':
+						$this->redirect(array('controller'=>'Items','action' => 'select',$id1,$id2));
+						break;
+					case 'presentacion':
+						$this->redirect(array('controller'=>'Quotes','action' => 'select',$id1,$id2,$id3));
+						break;
+					case 'recetas':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
+						break;
+					case 'recetas1':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select1',$id1,$id2));
+						break;
+					case 'beneficios':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select1'));
+						break;
+					case 'beneficios1':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select2',$id1,$id2));
+						break;
+					case 'tips':
+						$this->redirect(array('controller'=>'Tips','action' => 'select1'));
+						break;
+					case 'tips1':
+						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
+						break;
+					
+
+				}
 			} else {
 				$this->Session->setFlash(__('The ad could not be saved. Please, try again.'));
 			}
@@ -98,7 +164,7 @@ class AdsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id=null,$id1=null,$id2=null,$id3=null,$vista=null) {
 		
 		$this->Ad->id = $id;
 		if (!$this->Ad->exists()) {
@@ -107,7 +173,40 @@ class AdsController extends AppController {
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Ad->delete()) {
 			$this->Session->setFlash(__('Ad deleted'));
-			$this->redirect(array('action' => 'index'));
+			switch ($vista) {
+					case 'categorias':
+						$this->redirect(array('controller'=>'Categories','action' => 'select'));
+						break;
+					case 'categoria':
+						$this->redirect(array('controller'=>'Categories','action' => 'select1',$id1));
+						break;
+					case 'item':
+						$this->redirect(array('controller'=>'Items','action' => 'select',$id1,$id2));
+						break;
+					case 'presentacion':
+						$this->redirect(array('controller'=>'Quotes','action' => 'select',$id1,$id2,$id3));
+						break;
+					case 'recetas':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
+						break;
+					case 'recetas1':
+						$this->redirect(array('controller'=>'Recipes','action' => 'select1',$id1,$id2));
+						break;
+					case 'beneficios':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select1'));
+						break;
+					case 'beneficios1':
+						$this->redirect(array('controller'=>'Benefits','action' => 'select2',$id1,$id2));
+						break;
+					case 'tips':
+						$this->redirect(array('controller'=>'Tips','action' => 'select1'));
+						break;
+					case 'tips1':
+						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
+						break;
+					
+
+				}
 		}
 		$this->Session->setFlash(__('Ad was not deleted'));
 		$this->redirect(array('action' => 'index'));

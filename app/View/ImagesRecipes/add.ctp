@@ -1,15 +1,15 @@
 <div class="imagesRecipes form">
 <?php echo $this->Form->create('ImagesRecipe',array('type' => 'file')); ?>
 	<fieldset>
-		<legend><?php echo __('Add Images Recipe'); ?></legend>
+		<legend><?php echo __('Agregar Imagenes Recetas'); ?></legend>
 	<?php
-		echo $this->Form->input('filename',array('type' => 'file'));
-		echo $this->Form->input('dir', array('type' => 'hidden'));
-		echo $this->Form->input('description');
+		echo $this->Form->input('filename',array('type' => 'file','label'=>'Nombre archivo'));
+		echo $this->Form->input('dir', array('type' => 'hidden','label'=>'Direccion'));
+		echo $this->Form->input('description',array('label'=>'Descripcion'));
 		echo $this->Form->input('recipe_id',array('label' => '','type' => 'hidden','default'=> $recipes));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Guardar')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
@@ -18,3 +18,5 @@
 		<li><?php echo $this->Html->link(__('List Images Recipes'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

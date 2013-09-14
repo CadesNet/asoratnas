@@ -1,7 +1,7 @@
 <div class="supermarkets form">
 <?php echo $this->Form->create('Supermarket',array('type' => 'file')); ?>
 	<fieldset>
-		<legend><?php echo __('Add Supermarket'); ?></legend>
+		<legend><?php echo __('Agregar Supermercado'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('filename',array('type' => 'file'));
@@ -18,3 +18,5 @@
 		<li><?php echo $this->Html->link(__('List Supermarkets'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

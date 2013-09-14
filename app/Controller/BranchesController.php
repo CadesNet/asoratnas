@@ -110,12 +110,31 @@ class BranchesController extends AppController {
  * @return void
  */
 	public function delete($id = null,$vista) {
-		
+		$this->loadModel('NewRequirement');
+		$this->loadModel('Charge');
+		$this->loadModel('Requirement');
 		$this->Branch->id = $id;
 		if (!$this->Branch->exists()) {
 			throw new NotFoundException(__('Invalid branch'));
-		}
-		$this->request->onlyAllow('post', 'delete');
+		}else{
+				$this->request->onlyAllow('post', 'delete');
+				$charge = $this->Charge->find('all',array('conditions' => array('Charge.' . 'branch_id' => $id)));
+				foreach ($charge as $char) {
+				$requerimiento = $this->Requirement->find('all',array('conditions' => array('Requirement.' . 'charge_id' => $char['Charge']['id'])));
+					foreach ($requerimiento as $req) { 
+					$this->Requirement->id = $req['Requirement']['id'];
+					$this->Requirement->delete();
+					}
+				$this->Charge->id = $char['Charge']['id'];
+				$this->Charge->delete();
+
+			}
+			$newreque = $this->NewRequirement->find('all',array('conditions' => array('NewRequirement.' . 'branch_id' => $id)));
+				foreach ($newreque as $newr) {
+					$this->NewRequirement->id = $newr['NewRequirement']['id'];
+					$this->NewRequirement->delete();
+					}
+				}
 		if ($this->Branch->delete()) {
 			$this->Session->setFlash(__('Branch deleted'));
 			switch ($vista) {
@@ -130,8 +149,9 @@ class BranchesController extends AppController {
 						break;
 				}
 		}
+	
 		$this->Session->setFlash(__('Branch was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		
 	}
 	public function select(){
 		$menu = array('menu' => array(
