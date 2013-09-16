@@ -1,12 +1,15 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
+
 /**
  * PresentationsQuotes Controller
  *
  * @property PresentationsQuote $PresentationsQuote
  */
 class PresentationsQuotesController extends AppController {
-
+var $components = array ('Email');
+public $helpers = array('PhpExcel'); 
 /**
  * index method
  *
@@ -123,4 +126,116 @@ class PresentationsQuotesController extends AppController {
 		$this->Session->setFlash(__('Presentations quote was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+	public function export_xls(){
+		//$excel = $this->render('export_xls','export_xls');
+
+/*
+
+		$this->Email = new CakeEmail();
+		$this->Email->from(array('oscar_7938074@hotmail.com' => 'My Site'));
+        $this->Email->to('oscar_7938074@hotmail.com');
+        $this->Email->subject('About');
+        $this->Email->attachments($excel);
+        $this->Email->template('');
+        $this->Email->emailFormat('html');
+        $this->Email->send();
+
+		//$this->redirect(array('action'=>'email'));
+		$dato = "<table border=1> 
+		<tr> 
+		<th>Nombre</th> 
+		<th>Email</th> 
+		</tr> 
+		<tr> 
+		<td><font color=green>Manuel Gomez</font></td>
+		<td>manuel@gomez.com</td> 
+		</tr> 
+		<tr> 
+		<td><font color=blue>Pago gomez</font></td> 
+		<td>paco@gomez.com</td> 
+		</tr> 
+		</table>";
+
+		header('Content-type: application/vnd.ms-excel;charset=utf-8');
+		header("Content-Disposition: attachment; filename=archivo.xls");
+		header("Pragma: no-cache");
+		header("Expires: 0");   
+		echo $dato;        
+		$this->layout = 'excel';
+
+		$file = new File($dato);
+
+		$path_parts = pathinfo("archivo.xls");
+		
+
+		$date = "archivo.xls";
+		$filename = $date;
+
+		$data = $file->read();	
+		$file = new File(WWW_ROOT.'img/'.$filename,true);
+		$file->write($data);
+		$file->close();
+	
+
+*/
+
+
+
+		/*bn
+		header('Content-type: application/vnd.ms-excel;charset=utf-8');
+		header("Content-Disposition: attachment; filename=archivo.xls");
+		header("Pragma: no-cache");
+		header("Expires: 0");
+		echo $dato;*/
+		
+	}
+	public function email(){
+
+		
+	
+		$this->Email = new CakeEmail();
+		$this->Email->from(array('oscar_7938074@hotmail.com' => 'My Site'));
+        $this->Email->to('oscar_7938074@hotmail.com');
+        $this->Email->subject('About');
+        $this->Email->attachments(array(WWW_ROOT.'img/cargo.PNG'));
+        $this->Email->template('');
+        $this->Email->emailFormat('html');
+        if($this->Email->send()){
+		  $val="Mensaje enviado";
+		  $this->set(compact('val'));
+		}
+  
+	$file = $this->render('export_xls');
+	header ("Content-Disposition: attachment; filename=\"Report.xls" ); 
+	header ("Content-type: application/vnd.ms-excel");
+	header("Content-Description: File Transfer");             
+	header("Content-Length: " . strlen($file));
+	flush(); // this doesn't really matter.
+
+	$fp = file_get_contents($file); 
+
+		$this->set(compact('email')); 
+
+		
+		$this->email = new CakeEmail();
+		$email->from(array('oscar_7938074@hotmail.com' => 'Titulo'));
+		$email->to('oscar_7938074@hotmail.com');
+		$email->subject('Asunto');
+		$email->emailFormat('html');
+		//$email->template('');
+		//$email->attachments(array(''));
+		if($email->send()){
+			$val='ok';
+		$this->set(compact('val'));
+	
+		} else {
+		$val='error';
+		$this->set(compact('val'));
+		}
+				
+	}
+
+
+
+
 }

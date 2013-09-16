@@ -42,13 +42,17 @@ public $helpers = array('Js','Session');
  *
  * @return void
  */
-	public function add($vista) {
+	public function add($vista=null) {
 		
 		if ($this->request->is('post')) {
-			$this->Benefit->create();
+			//$this->Benefit->create();
 			if ($this->Benefit->save($this->request->data)) {
-				$this->Session->setFlash(__('The benefit has been saved'));
-			    $this->redirect(array('action' => 'select1'));
+				//$this->Session->setFlash(__('The benefit has been saved'));
+			   if($vista=="index"){
+					$this->redirect(array('action' => 'select'));
+				}else{
+					$this->redirect(array('action' => 'select1'));
+				}
 			} else {
 				$this->Session->setFlash(__('The benefit could not be saved. Please, try again.'));
 			}
@@ -69,7 +73,7 @@ public $helpers = array('Js','Session');
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Benefit->save($this->request->data)) {
-				$this->Session->setFlash(__('The benefit has been saved'));
+				//$this->Session->setFlash(__('The benefit has been saved'));
 				if($vista=="index"){
 					$this->redirect(array('action' => 'select'));
 				}else{

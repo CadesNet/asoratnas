@@ -2,22 +2,19 @@
 	<h2><?php echo __('Carousels'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('filename'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
-			<th><?php echo $this->Paginator->sort('number'); ?></th>
+
+			<th><?php echo $this->Paginator->sort('filename','Imagen'); ?></th>
+			<th><?php echo $this->Paginator->sort('description','Descripcion'); ?></th>
+			<th><?php echo $this->Paginator->sort('number','Numero'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($carousels as $carousel): ?>
 	<tr>
-		<td><?php echo h($carousel['Carousel']['id']); ?>&nbsp;</td>
 		<td><?php echo $this->Html->image('carousel/filename/'.h($carousel['Carousel']['filename'])); ?>&nbsp;</td>
-		<td><?php echo h($carousel['Carousel']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($carousel['Carousel']['description']); ?>&nbsp;</td>
 		<td><?php echo h($carousel['Carousel']['number']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info ')); ?>
+			
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info ')); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info ')); ?>
 		</td>

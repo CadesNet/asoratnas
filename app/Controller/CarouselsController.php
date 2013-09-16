@@ -78,6 +78,10 @@ class CarouselsController extends AppController {
 					case 'tips1':
 						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
 						break;
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
+					
 					
 
 				}
@@ -100,7 +104,7 @@ class CarouselsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Carousel->save($this->request->data)) {
-				$this->Session->setFlash(__('The carousel has been saved'));
+				//$this->Session->setFlash(__('The carousel has been saved'));
 				switch ($vista) {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
@@ -135,6 +139,9 @@ class CarouselsController extends AppController {
 					case 'tips1':
 						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
 						break;
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
 					
 
 				}
@@ -196,6 +203,10 @@ class CarouselsController extends AppController {
 					case 'tips1':
 						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
 						break;
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
+					
 					
 
 				}

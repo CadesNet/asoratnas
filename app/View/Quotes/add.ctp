@@ -10,7 +10,7 @@
 		echo $this->Form->input('message',array('label'=>'message'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Guardar')); ?>
+<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Guardar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

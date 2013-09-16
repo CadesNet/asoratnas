@@ -109,7 +109,7 @@
 	
 <div class="row-fluid">
 	<div class="span12">
-		<div class="consultations form cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
+		<div class="consultations  cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
 			
 			<?php echo $this->Form->create('Consultation'); ?>
 				<fieldset class="offset1" >

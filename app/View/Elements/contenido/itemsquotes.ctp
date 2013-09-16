@@ -36,7 +36,7 @@
 	<br/>
 <div class="row-fluid">
 	<div class="span12">
-<div class="quotes form cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
+<div class="quotes cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
 
 <?php echo $this->Form->create('Quote'); ?>
 	<fieldset class="offset1" >

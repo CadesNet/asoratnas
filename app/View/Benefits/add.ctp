@@ -5,12 +5,12 @@
 	<?php
 		echo $this->Form->input('title',array('label' => 'Titulo'));
 		echo ('Descipcion');
-		echo $this->Form->textarea('description',array('class'=>'ckeditor','label'=>'Descripcion'));
-		echo $this->Form->input('filename',array('type' => 'file','label'=>'Nombre archivo'));
-		echo $this->Form->input('dir', array('type' => 'hidden','label'=>'Direccion'));
+		echo $this->Form->textarea('description',array('class'=>'ckeditor'));
+		echo $this->Form->input('filename',array('type' => 'file','label'=>'Seleccione una imagen'));
+		echo $this->Form->input('dir', array('type' => 'hidden'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Guardar')); ?>
+<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Guardar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
 </div>
 
  <p>&nbsp; </p>

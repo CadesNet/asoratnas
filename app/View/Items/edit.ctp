@@ -8,7 +8,7 @@
 		echo $this->Form->input('category_id');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Modificar')); ?>
+<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Modificar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
 </div>
  <p>&nbsp; </p>
  <p>&nbsp; </p>

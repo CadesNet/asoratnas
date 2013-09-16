@@ -23,7 +23,7 @@
 	
 	<div class="row-fluid">
 		<div class="span12">
-			<div class="quoteServices form cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
+			<div class="quoteServices cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
 			<?php echo $this->Form->create('QuoteService',array('action' => 'select' )); ?>
 				<fieldset class="offset1" >
 					<legend> <p class="legend_form"><?php echo __('Complete sus datos correctos gracias...'); ?></p></legend>

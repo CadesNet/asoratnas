@@ -11,7 +11,7 @@
 			<?php echo h($category['Category']['name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Description'); ?></dt>
+		<dt><?php echo __('Color'); ?></dt>
 		<dd>
 			<?php echo h($category['Category']['description']); ?>
 			&nbsp;
@@ -101,3 +101,5 @@
 		</ul>
 	</div>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

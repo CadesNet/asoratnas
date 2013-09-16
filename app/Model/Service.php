@@ -23,4 +23,19 @@ class Service extends AppModel {
 			),
 		),
 	);
+		public $hasMany = array(
+		'QuoteService' => array(
+			'className' => 'QuoteService',
+			'foreignKey' => 'service_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
 }

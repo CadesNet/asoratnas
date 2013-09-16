@@ -58,7 +58,7 @@
 							<?php echo $this->Html->link($categories['Category']['name']." ".$categories['Item']['name']."&nbsp;&nbsp;&nbsp;&nbsp;", array( 'controller' => 'Categories', 'action' => "select1",$categories['Category']['id']),array('escape' => false,'class' => 'brand producttitle','style' => "color:".$categories['Category']['description']."; text-decoration: none;border-bottom: 6px solid ".$categories['Category']['description'].";")); 
 								?>
 								<?php if($this->Session->read('Auth.User.id')){ 
-								 echo $this->Html->link('Agregar Presentacion', array('controller' => 'Presentations', 'action' => 'add',$categories['Item']['id']),array('class'=>'btn btn-primary'));
+								 echo $this->Html->link('Agregar Presentacion', array('controller' => 'Presentations', 'action' => 'add',$categories['Category']['id'],$categories['Item']['id'],''),array('class'=>'btn btn-primary'));
 
 
 								}?>
@@ -78,8 +78,8 @@
 				<li class="span5  cuadroproducto" style="margin-right: 25px;" >
 					<div class="row-fluid">
 							<?php if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Presentations','action' => 'edit',$presentation['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Presentations','action' => 'delete', $presentation['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$presentation['id']));  
+							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Presentations','action' => 'edit',$categories['Category']['id'],$categories['Item']['id'], $presentation['id'],'m'),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Presentations','action' => 'delete',$categories['Category']['id'],$categories['Item']['id'], $presentation['id'],'m'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$presentation['id']));  
 							 echo $this->Html->link('Ver imagenes', array('controller' => 'ImagesPresentations', 'action' => 'index',$presentation['id']),array('class'=>'btn btn-primary')); 
 						}?>
 					</div>

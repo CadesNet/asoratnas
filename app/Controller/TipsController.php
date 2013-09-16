@@ -42,7 +42,7 @@ public $helpers = array('Js','Session');
 		if ($this->request->is('post')) {
 			$this->Tip->create();
 			if ($this->Tip->save($this->request->data)) {
-				$this->Session->setFlash(__('The tip has been saved'));
+				//$this->Session->setFlash(__('The tip has been saved'));
 				$this->redirect(array('action' => 'select1'));
 			} else {
 				$this->Session->setFlash(__('The tip could not be saved. Please, try again.'));

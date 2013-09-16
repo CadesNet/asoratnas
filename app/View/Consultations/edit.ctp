@@ -8,10 +8,10 @@
 		echo $this->Form->input('address',array('label' => 'Apellidos'));
 		echo $this->Form->input('phone',array('label' => 'Telefono'));
 		echo $this->Form->input('email',array('label' => 'Correo Electronico'));
-		echo $this->Form->input('message',array('label' => 'message'));
+		echo $this->Form->input('message',array('label' => 'Mensaje'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Modificar')); ?>
+<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Modificar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

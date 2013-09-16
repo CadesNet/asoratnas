@@ -69,6 +69,7 @@
 	                <p class="visible-desktop "> &nbsp;</p>
 	           
 	               
+					<div id="fb-root"></div>
 					<script>(function(d, s, id) {
 					  var js, fjs = d.getElementsByTagName(s)[0];
 					  if (d.getElementById(id)) return;
@@ -81,7 +82,7 @@
 	                  		<div class="row-fluid">
 	                  			
 	                  				
-	                  					<div class="span6"> <div class="fb-like" data-href="http://developers.facebook.com/docs/reference/plugins/like" data-send="false" data-layout="button_count" data-width="500" data-show-faces="true"></div></div>
+	                  					<div class="span6"> <div class="fb-like" data-href="https://www.facebook.com/pages/Pavos-Santa-Rosa/294146160603097" data-width="550" data-layout="button_count" data-show-faces="true" data-send="false"></div></div>
 	                  					<div class="span6"> <?php echo $this->Html->link(("Twittear"), 'href="https://twitter.com/share',array('class'=>'twitter-share-button','data-via' => 'racso_XD' , 'data-lang' => 'es' , 'data-dnt'=> 'true' )); 
 	                                      ?></div>
 	                  			</div>
@@ -101,7 +102,7 @@
 			                </li>
 							<li> <?php echo $this->Html->link(__("Jamon de Pavo"), array('controller' => 'Categories', 'action' => 'select1',2),array('class'=>'sub_menu_productos2')); ?>
 			                </li>                
-							<li> <?php echo $this->Html->link(__("Pete de Pavo"), array('controller' => 'Categories', 'action' => 'select1',3),array('class'=>'sub_menu_productos3')); ?>
+							<li> <?php echo $this->Html->link(__("Pate de Pavo"), array('controller' => 'Categories', 'action' => 'select1',3),array('class'=>'sub_menu_productos3')); ?>
 			                </li>                
 							<li> <?php echo $this->Html->link(__("Pavo Santa Rosa"), array('controller' => 'Categories', 'action' => 'select1',4),array( 'class'=>'sub_menu_productos4')); ?>
 			                </li>                

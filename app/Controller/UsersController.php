@@ -71,22 +71,7 @@ public function beforeFilter() {
 
 
 	public function index() {
-		$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''
-));
-
-		//menu
-		$this->Session->write($menu);
-		//////////////
-		//carrusel1
-	//lo q hace cuando se loguea o cuando quiere loguearce 
-	    if ($this->request->is('post')) {
-	        if ($this->Auth->login()) {
-	            $this->redirect($this->Auth->redirect());
-	        } else {
-	            $this->Session->setFlash(__('Invalid username or password, try again'));
-	        }
-	    }
+ 	$this->redirect(array('controller'=>'Benefits','action' => 'select'));
 	}
 
 /**

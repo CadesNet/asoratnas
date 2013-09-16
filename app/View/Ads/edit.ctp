@@ -3,14 +3,16 @@
 	<fieldset>
 		<legend><?php echo __('Editar notificacion'); ?></legend>
 	<?php
-		echo $this->FormEnum->input('id',array('label' => 'id'));
-		echo $this->FormEnum->input('type',array('label' => 'archivo'));
+		echo $this->FormEnum->input('id');
+		echo $this->FormEnum->input('type',array('label' => 'Tipo'));
 		echo $this->FormEnum->input('link',array('label' => 'Url'));
-		echo $this->FormEnum->input('filename',array('type' => 'file','label'=>'Nombre archivo'));
-		echo $this->FormEnum->input('dir', array('type' => 'hidden','label'=>'direccion'));
+		echo $this->FormEnum->input('filename',array('type' => 'file','label'=>'Seleccione una  imagen'));
+		echo $this->FormEnum->input('dir', array('type' => 'hidden'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Modificar')); ?>
+<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Modificar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
+
+
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

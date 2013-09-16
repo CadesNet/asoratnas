@@ -37,12 +37,12 @@ class PresentationsController extends AppController {
  *
  * @return void
  */
-	public function add($id=null) {
+	public function add($idcategory=null,$id=null) {
 		if ($this->request->is('post')) {
 			$this->Presentation->create();
 			if ($this->Presentation->save($this->request->data)) {
-				$this->Session->setFlash(__('La presentacion a sido guardada'));
-				//$this->redirect(array('action' => 'index'));
+				//$this->Session->setFlash(__('La presentacion a sido guardada'));
+				$this->redirect(array('controller'=>'Items','action' => 'select',$idcategory,$id)); //redireccionar 
 			} else {
 				$this->Session->setFlash(__('La presentacion no a sido guardada'));
 			}
@@ -58,13 +58,20 @@ class PresentationsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($idcategory=null,$item=null,$id = null,$vista=null) {
 		if (!$this->Presentation->exists($id)) {
 			throw new NotFoundException(__('Invalid presentation'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Presentation->save($this->request->data)) {
-				$this->Session->setFlash(__('The presentation has been saved'));
+				//$this->Session->setFlash(__('The presentation has been saved'));
+				if($vista=='categories'){
+					$this->redirect(array('controller'=>'Categories','action' => 'select1',$idcategory));
+
+				}else{
+					$this->redirect(array('controller'=>'Categories','action' => 'select1',$idcategory,$item));
+
+				}
 				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The presentation could not be saved. Please, try again.'));
@@ -84,7 +91,7 @@ class PresentationsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($idcategory=null,$item=null,$id = null,$vista=null) {
 		$this->loadModel('ImagesPresentation');
 		$this->loadModel('PresentationsQuote');
 		$this->Presentation->id = $id;
@@ -103,8 +110,14 @@ class PresentationsController extends AppController {
 				$this->PresentationsQuote->delete();
 			}
 			if ($this->Presentation->delete()) {
-				$this->Session->setFlash(__('Presentation deleted'));
-				$this->redirect(array('controller'=>'Categories','action' => 'select'));
+				//$this->Session->setFlash(__('Presentation deleted'));
+				if($vista=='categories'){
+					$this->redirect(array('controller'=>'Categories','action' => 'select1',$idcategory));
+
+				}else{
+					$this->redirect(array('controller'=>'Categories','action' => 'select1',$idcategory,$item));
+
+				}
 			}
 		}
 		

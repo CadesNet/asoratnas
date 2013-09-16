@@ -4,7 +4,7 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
+			<th><?php echo $this->Paginator->sort('Color'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($categories as $category): ?>
@@ -13,7 +13,6 @@
 		<td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $category['Category']['id']),array('class' => 'ok btn btn-info ')); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $category['Category']['id']),array('class' => 'ok btn btn-info ')); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $category['Category']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $category['Category']['id'])); ?>
 		</td>
@@ -34,13 +33,6 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Category'), array('action' => 'add'),array('class' => 'ok btn btn-info ')); ?></li>
-		<li><?php echo $this->Html->link(__('List Items'), array('controller' => 'items', 'action' => 'index'),array('class' => 'ok btn btn-info ')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item'), array('controller' => 'items', 'action' => 'add'),array('class' => 'ok btn btn-info ')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Images Categories'), array('controller' => 'images_categories', 'action' => 'index'),array('class' => 'ok btn btn-info ')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Images Category'), array('controller' => 'images_categories', 'action' => 'add'),array('class' => 'ok btn btn-info ')); ?> </li>
-	</ul>
-</div>
+
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

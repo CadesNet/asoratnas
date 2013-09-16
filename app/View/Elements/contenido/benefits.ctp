@@ -43,7 +43,7 @@
 						</div>
 						<div class="span11">
 							<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php echo $this->session->read('menu.inferior') ?>">Beneficios del pavo<?php if($this->Session->read('Auth.User.id')){ 
-								 echo " ".$this->Html->link('Agregar Beneficio', array('controller' => 'Benefits', 'action' => 'add'),array('class'=>'btn btn-primary'));
+								 echo " ".$this->Html->link('Agregar Beneficio', array('controller' => 'Benefits', 'action' => 'add','MM'),array('class'=>'btn btn-primary'));
 
 
 								}?></h3>
@@ -68,13 +68,13 @@
 							<h3 class = "titlebeneficios"><?php echo $benefit['Benefit']['title']." ";
 							 if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id'],'mm'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h3>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id'],'mm'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h3>
 						</div>
 					</div>
 					<div class="row-fluid">
 							
 							<div class="span12">
-								<p class = "textoinfo"><?php echo html_entity_decode(substr($benefit['Benefit']['description'], 0, 240)) ?> min</p>
+								<p class = "textoinfo"><?php echo html_entity_decode(substr($benefit['Benefit']['description'], 0, 240)) ?> </p>
 							</div>
 					</div>
 					<p class="visible-desktop visi1">&nbsp; </p>

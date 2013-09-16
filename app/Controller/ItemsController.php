@@ -41,8 +41,8 @@ class ItemsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Item->create();
 			if ($this->Item->save($this->request->data)) {
-				$this->Session->setFlash(__('El producto a sido guardado'));
-				//$this->redirect(array('controller'=>'Categories','action' => 'select1',$id));
+				//$this->Session->setFlash(__('El producto a sido guardado'));
+				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('El producto no a sido guardado'));
 			}
@@ -64,7 +64,7 @@ class ItemsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Item->save($this->request->data)) {
-				$this->Session->setFlash(__('The item has been saved'));
+				//$this->Session->setFlash(__('The item has been saved'));
 				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The item could not be saved. Please, try again.'));

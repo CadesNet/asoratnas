@@ -49,3 +49,5 @@
 		<li><?php echo $this->Html->link(__('List Consultations'), array('action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

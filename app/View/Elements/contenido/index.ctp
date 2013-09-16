@@ -48,7 +48,7 @@
 			</div>
 			<?php 
 			
-			$coun=0;
+			$coun=1;
 			foreach($benefits as $benefit): ?>
 			<div class="row-fluid" >		
 			<div class= "benefitsbody">		

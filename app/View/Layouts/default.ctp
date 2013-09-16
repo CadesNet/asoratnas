@@ -80,7 +80,6 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 
  $(window).load(function() {
  $('.flexslider').flexslider();
-isset
 
  });
  </script> 
@@ -97,12 +96,14 @@ isset
 						<div  class="container-fluid colorcontainer">	
 
 						<?php echo $this->element('admin/admi'); ?>	
-			           
+
+			           	<?php echo $this->Session->flash(); ?>
+			            
 			            <?php  echo $this->fetch('content');  ?>
 
 						</div>
 
-						<?php echo $this->Session->flash(); ?>
+					
 
 
 						
@@ -113,7 +114,7 @@ isset
 					<?php //Silence is golden ?>
 					
 					<?php echo $this->element('footer/footer1'); ?>
-					<?php echo $this->element('sql_dump'); ?>
+					<?php  echo $this->element('sql_dump'); ?>
 				</div><!-- #footer .container -->
 			
 		</div><!-- #main-container -->

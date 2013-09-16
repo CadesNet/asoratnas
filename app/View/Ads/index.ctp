@@ -6,8 +6,8 @@
 			<th><?php echo $this->Paginator->sort('link','Enlace'); ?></th>
 			<th><?php echo $this->Paginator->sort('created','Creado'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified','Modificado'); ?></th>
-			<th><?php echo $this->Paginator->sort('filename','Nombre de archivo'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir','Directorio'); ?></th>
+			<th><?php echo $this->Paginator->sort('filename','Imagen'); ?></th>
+
 			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	<?php foreach ($ads as $ad): ?>
@@ -17,7 +17,6 @@
 		<td><?php echo h($ad['Ad']['created']); ?>&nbsp;</td>
 		<td><?php echo h($ad['Ad']['modified']); ?>&nbsp;</td>
 		<td><?php echo $this->Html->image('ad/filename/'.h($ad['Ad']['filename'])); ?>&nbsp;</td>
-		<td><?php echo h($ad['Ad']['dir']); ?>&nbsp;</td>
 		<td class="actions">
 			
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $ad['Ad']['id']),array('class' => 'ok btn btn-info  ')); ?> 
@@ -44,3 +43,5 @@
 	<h3><?php echo __('Acciones'); ?></h3>
 	<?php echo $this->Html->link(__('Nueva Notificacion'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

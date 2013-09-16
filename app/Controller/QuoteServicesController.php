@@ -13,7 +13,6 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function index() {
-		
 		$this->QuoteService->recursive = 0;
 		$this->set('quoteServices', $this->paginate());
 	}
@@ -26,7 +25,6 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		
 		if (!$this->QuoteService->exists($id)) {
 			throw new NotFoundException(__('Invalid quote service'));
 		}
@@ -40,7 +38,6 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function add() {
-		
 		if ($this->request->is('post')) {
 			$this->QuoteService->create();
 			if ($this->QuoteService->save($this->request->data)) {
@@ -62,7 +59,6 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		carrusel1
 		if (!$this->QuoteService->exists($id)) {
 			throw new NotFoundException(__('Invalid quote service'));
 		}
@@ -89,7 +85,6 @@ class QuoteServicesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		carrusel1
 		$this->QuoteService->id = $id;
 		if (!$this->QuoteService->exists()) {
 			throw new NotFoundException(__('Invalid quote service'));
@@ -101,21 +96,5 @@ class QuoteServicesController extends AppController {
 		}
 		$this->Session->setFlash(__('Quote service was not deleted'));
 		$this->redirect(array('action' => 'index'));
-	}
-
-//pro
-	public function select() {
-		if ($this->request->is('post')) {
-			$this->QuoteService->create();
-			if ($this->QuoteService->save($this->request->data)) {
-				$this->Session->setFlash(__('The quote service has been saved'));
-				//$this->request = false;
-				$this->redirect(array('controller' => 'Services', 'action' => 'select'));
-			} else {
-				$this->Session->setFlash(__('The quote service could not be saved. Please, try again.'));
-			}
-		}else{
-			$this->redirect(array('controller' => 'Services', 'action' => 'select'));
-		}
 	}
 }

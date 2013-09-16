@@ -3,16 +3,16 @@
 	<fieldset>
 		<legend><?php echo __('Agregar Receta'); ?></legend>
 	<?php
-		echo $this->Form->input('title');
-		echo $this->Form->input('time');
-		echo $this->Form->input('portion');
+		echo $this->Form->input('title',array('label'=>'Titulo'));
+		echo $this->Form->input('time',array('label'=>'Tiempo'));
+		echo $this->Form->input('portion',array('label'=>'Numero de porciones'));
 		echo ('Ingredientes');
 		echo $this->Form->textarea('ingredients',array('class'=>'ckeditor'));
 		echo ('Preparacion');
 		echo $this->Form->textarea('preparation',array('class'=>'ckeditor'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Guardar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
 </div>
 
  <p>&nbsp; </p>

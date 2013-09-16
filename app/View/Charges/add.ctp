@@ -5,12 +5,12 @@
 	<?php
 		echo $this->Form->input('branch_id',array('label' => '','type' => 'hidden','default'=> $branches));
 		echo $this->Form->input('title',array('label' => 'Titulo'));
-		echo $this->Form->input('deadline',array('label' => 'deadline'));
+		echo $this->Form->input('deadline',array('label' => 'Fecha limite'));
 		echo $this->Form->input('description',array('label' => 'Descripcion'));
 		echo $this->Form->input('formation',array('label' => 'Formation'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Guardar')); ?>
+<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Guardar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>
 </div>
 
  <p>&nbsp; </p>

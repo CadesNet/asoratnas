@@ -42,3 +42,5 @@
 	<h3><?php echo __('Acciones'); ?></h3>
 	<?php echo $this->Html->link(__('Nuevo beneficio'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

@@ -37,3 +37,5 @@
 		<li><?php echo $this->Html->link(__('New Benefit'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
+ <p>&nbsp; </p>
+ <p>&nbsp; </p>

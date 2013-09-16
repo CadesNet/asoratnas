@@ -82,7 +82,7 @@
 	<br>
 		<div class="row-fluid">
 			<div class="span12">
-				<div class="NewRequirement form cotizartext" style="width: 85%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
+				<div class="NewRequirement  cotizartext" style="width: 85%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
 					<?php echo $this->FormEnum->create('NewRequirement',array('type' => 'file','controller'=>'newRequirements','action' => 'select',1)); ?>
 					<fieldset class="offset1" >
 					<legend style="tex"> <p class="legend_form"><?php echo __('Si usted desea enviar su Curriculum y aplicar fuera de estas areas, llene el siguiente formulario:'); ?></p>

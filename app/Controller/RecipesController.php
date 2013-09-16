@@ -41,7 +41,7 @@ class RecipesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Recipe->create();
 			if ($this->Recipe->save($this->request->data)) {
-				$this->Session->setFlash(__('The recipe has been saved'));
+				//$this->Session->setFlash(__('The recipe has been saved'));
 				switch ($vista) {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
@@ -61,6 +61,9 @@ class RecipesController extends AppController {
 					case 'recetas':
 						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
 						break;
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
 				}
 				
 			} else {
@@ -102,6 +105,9 @@ class RecipesController extends AppController {
 					case 'recetas':
 						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
 						break;
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
 				}
 			} else {
 				$this->Session->setFlash(__('The recipe could not be saved. Please, try again.'));
@@ -152,6 +158,9 @@ class RecipesController extends AppController {
 					case 'recetas':
 						$this->redirect(array('controller'=>'Recipes','action' => 'select'));
 						break;
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
 				}
 			}
 		}

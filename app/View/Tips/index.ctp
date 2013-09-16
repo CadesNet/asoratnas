@@ -6,7 +6,7 @@
 			<th><?php echo $this->Paginator->sort('title','Titulo'); ?></th>
 			<th><?php echo $this->Paginator->sort('description','Descripción'); ?></th>
 			<th><?php echo $this->Paginator->sort('filename','Imagen'); ?></th>
-			<th><?php echo $this->Paginator->sort('dir','Dirección'); ?></th>
+			<th><?php echo $this->Paginator->sort('dir','Directorio'); ?></th>
 			<th class="actions"><?php echo __('Acciones'); ?></th>
 	</tr>
 	<?php foreach ($tips as $tip): ?>

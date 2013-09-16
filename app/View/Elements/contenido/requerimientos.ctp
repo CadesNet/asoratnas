@@ -56,7 +56,7 @@
 	<br/>
 		<div class="row-fluid">
 			<div class="span12">
-			<div class="requirements form cotizartext" style="width: 85%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
+			<div class="requirements  cotizartext" style="width: 85%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
 					<?php echo $this->FormEnum->create('Requirement',array('type' => 'file','controller'=>'Requirements','action' => 'select',1)); ?>
 					<fieldset class="offset1" >
 						<legend> <p class="legend_form"><?php echo __('Le pedimos estar atendo(a) a su correo electronico que será el medio de comunicacion con usted:'); ?></p></legend>

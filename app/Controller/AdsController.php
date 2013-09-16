@@ -57,7 +57,7 @@ class AdsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Ad->create();
 			if ($this->Ad->save($this->request->data)) {
-				$this->Session->setFlash(__('The ad has been saved'));
+				//$this->Session->setFlash(__('The ad has been saved'));
 				switch ($vista) {
 					case 'categorias':
 						$this->redirect(array('controller'=>'Categories','action' => 'select'));
@@ -89,6 +89,9 @@ class AdsController extends AppController {
 					case 'tips1':
 						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
 						break;
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
 					
 
 				}
@@ -113,7 +116,7 @@ class AdsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Ad->save($this->request->data)) {
-				$this->Session->setFlash(__('The ad has been saved'));
+				//$this->Session->setFlash(__('The ad has been saved'));
 				switch ($vista) {
 					case 'categorias':
 						$this->redirect(array('controller'=>'Categories','action' => 'select'));
@@ -145,7 +148,9 @@ class AdsController extends AppController {
 					case 'tips1':
 						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
 						break;
-					
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
 
 				}
 			} else {
@@ -204,6 +209,9 @@ class AdsController extends AppController {
 					case 'tips1':
 						$this->redirect(array('controller'=>'Tips','action' => 'select2',$id1,$id2));
 						break;
+					default:
+						$this->redirect(array('action' => 'index'));
+					break;
 					
 
 				}
