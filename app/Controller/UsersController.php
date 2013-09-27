@@ -23,7 +23,7 @@ public function beforeFilter() {
 
 	public function login() {
 		$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''
+    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
 ));
 
 		//menu
@@ -42,7 +42,7 @@ public function beforeFilter() {
 
 	public function logout() { //sierra sesion 
 		$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''
+    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
 ));
 
 		//menu
@@ -71,7 +71,11 @@ public function beforeFilter() {
 
 
 	public function index() {
- 	$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+		$menu = array('menu' => array(
+    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
+));
+	$this->redirect(array('controller'=>'Benefits','action' => 'select'));
+		
 	}
 
 /**

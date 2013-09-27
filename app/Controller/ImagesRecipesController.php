@@ -43,7 +43,7 @@ class ImagesRecipesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->ImagesRecipe->create();
 			if ($this->ImagesRecipe->save($this->request->data)) {
-				$this->Session->setFlash(__('The images recipe has been saved'));
+				//$this->Session->setFlash(__('The images recipe has been saved'));
 				$this->redirect(array('action' => 'index',$id));
 			} else {
 				$this->Session->setFlash(__('The images recipe could not be saved. Please, try again.'));
@@ -66,7 +66,7 @@ class ImagesRecipesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ImagesRecipe->save($this->request->data)) {
-				$this->Session->setFlash(__('The images recipe has been saved'));
+				//$this->Session->setFlash(__('The images recipe has been saved'));
 				$this->redirect(array('action' => 'index',$id_receta));
 			} else {
 				$this->Session->setFlash(__('The images recipe could not be saved. Please, try again.'));

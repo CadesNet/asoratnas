@@ -5,6 +5,7 @@
 	<?php
 		echo $this->Form->input('name',array('label'=>'Nombre'));
 		echo $this->Form->input('category_id',array('label' => '','type' => 'hidden','default'=> $categories));
+		echo $this->Form->input('removed',array('label' => '','type' => 'hidden','default'=> 'no'));
 		
 	?>
 	</fieldset>

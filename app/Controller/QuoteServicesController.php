@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
+
 /**
  * QuoteServices Controller
  *
@@ -41,7 +43,7 @@ class QuoteServicesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->QuoteService->create();
 			if ($this->QuoteService->save($this->request->data)) {
-				$this->Session->setFlash(__('The quote service has been saved'));
+				//$this->Session->setFlash(__('The quote service has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The quote service could not be saved. Please, try again.'));
@@ -64,7 +66,7 @@ class QuoteServicesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->QuoteService->save($this->request->data)) {
-				$this->Session->setFlash(__('The quote service has been saved'));
+				//$this->Session->setFlash(__('The quote service has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The quote service could not be saved. Please, try again.'));
@@ -97,4 +99,57 @@ class QuoteServicesController extends AppController {
 		$this->Session->setFlash(__('Quote service was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+	public function select(){
+ //guardar la info del servicio
+		$menu1 = array('menu1' => array('id' => 'menu1'));
+
+		//menu
+		$this->Session->write($menu1);
+
+				$menu = array('menu' => array(
+    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
+));
+		//menu
+		$this->Session->write($menu);
+		//////////////
+
+		if ($this->request->is('post')) {
+			$this->QuoteService->create();
+			if ($this->QuoteService->save($this->request->data)) {
+
+				//$this->Session->setFlash(__('The consultation has been saved'));
+				 $this->redirect(array('action'=>'email'));
+			} else {
+				$this->Session->setFlash(__('The consultation could not be saved. Please, try again.'));
+			}
+		}
+  
+
+
+	}
+
+	public function email(){
+		$quoteService = $this->QuoteService->find('first',array('order' => 'QuoteService.created DESC'));
+		
+
+		$datos = array('quoteService' => array('datos' => $quoteService));
+
+		//menu
+		$this->Session->write($datos); 
+
+		
+		$this->Email = new CakeEmail();
+		$this->Email->from(array('oscar_7938074@hotmail.com' => 'Avicola Santarosa'));
+        $this->Email->to('oscar_7938074@hotmail.com');
+        $this->Email->subject('SERVICIOS');
+        $this->Email->template('quoteServices');
+        $this->Email->emailFormat('html');
+        $val=null;
+        if($this->Email->send()){
+			$this->redirect(array('controller'=>'Benefits','action'=>'select'));
+		}else{
+		  $val="Mensaje no enviado";
+		}
+		 $this->set(compact('val'));
+		}
 }

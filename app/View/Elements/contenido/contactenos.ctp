@@ -1,3 +1,5 @@
+
+<div class="container-fluid" style="min-height: 800px;">
 <div class="row-fluid">
 	<div class="span12">
 		<h3 class="otrostitle">Contactenos<?php if($this->Session->read('Auth.User.id')){ 
@@ -5,9 +7,8 @@
 								}?></h3>
 	</div>
 </div>
-<br>
-<br>
-	
+
+			<?php  if(isset($branch1['Branch']['id'])){ ?>
 			<div class="row-fluid" style="color:#25A781;border-bottom: 2px solid #25A781;">
 						<div class="span12 cuadrodireccion">
 							<div class = "dirciudad" style="text-align: center;">
@@ -44,16 +45,19 @@
 					
 						</div>
 					</div>
+
+					<?php } ?>
 					<br>
-		<div class="row">
+		<div class="row" style="margin-left: 50px;">
 			<div class="span12">
 				
-		<div style="padding: 0px 130px 0px;">
+		<div >
+	<?php if(count($branch)>0){ ?>
 		<?php foreach ($branch as $branches) { ?>
 		
-				<div class="span3 cuadrodireccion" >
-					<div class="row-fluid">
-						<div class="span11">
+				<div class="span4 cuadrodireccion" style="margin-left: 0px;" >
+					<div class="row">
+						<div class="span3">
 							<div class = "dirciudad">	<?php echo $branches['Branch']['name']." ";
 							if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Branches','action' => 'edit',$branches['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false)); 
@@ -64,14 +68,14 @@
 						</div>
 					</div>
 
-					<div class="row-fluid">
-						<div class="span11">
+					<div class="row">
+						<div class="span3">
 							<div class = "tipodedireccion" style="float: left;">Direccion: <?php echo $branches['Branch']['address'] ?></div>
 							
 						</div>
 					</div>
-					<div class="row-fluid">
-						<div class="span11">
+					<div class="row">
+						<div class="span3">
 						<div class = "tipodedireccion" style="float: left;">Telefono: 
 						<?php echo $branches['Branch']['phone'] ?>
 						</div> 
@@ -79,22 +83,22 @@
 						
 					</div>
 
-					<div class="row-fluid">
-						<div class="span11">
+					<div class="row">
+						<div class="span3">
 						<div class = "tipodedireccion" style="float: left;">Telf(fax):
 							<?php echo $branches['Branch']['fax'] ?>
 						</div>
 						</div>
 					</div>
 
-					<div class="row-fluid">
-						<div class="span11">
+					<div class="row">
+						<div class="span3">
 							<div class = "tipodedireccion" style="float: left;">Telf Movil:	<?php echo $branches['Branch']['movil'] ?> </div>
 						</div>
 					</div>	
 
-					<div class="row-fluid">
-						<div class="span11">
+					<div class="row">
+						<div class="span3">
 							<div class = "tipodedireccion" style="float: left;">Contacto: <?php echo $branches['Branch']['contact'] ?></div>
 						</div>
 			
@@ -102,7 +106,7 @@
 				
 				</div>
 			
-		<?php  } ?>
+		<?php  } } ?>
 			</div>	
 			</div>
 		</div>
@@ -113,7 +117,7 @@
 			
 			<?php echo $this->Form->create('Consultation'); ?>
 				<fieldset class="offset1" >
-					<legend> <p class="legend_form"><?php echo __('Complete sus datos correctos para enviarle la cotizacion, gracias...'); ?></p></legend>
+					<legend> <p class="legend_form"><?php echo __('Complete sus datos correctos para enviarle la el formulario, gracias...'); ?></p></legend>
 					<div class="row-fluid">
 						<div class="span3"><p class="stylo_form">Nombre Completo:</p></div>
 						<div class="span6" style="text-align: left;"><?php echo $this->Form->input('name',array('label'=>'','class' => 'cotizarfrm')); ?></div>
@@ -182,4 +186,5 @@
 	
 
 		</div>	
+</div>
 </div>

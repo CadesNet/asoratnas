@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 /**
  * NewRequirements Controller
  *
@@ -41,7 +42,7 @@ class NewRequirementsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->NewRequirement->create();
 			if ($this->NewRequirement->save($this->request->data)) {
-				$this->Session->setFlash(__('The new requirement has been saved'));
+				//$this->Session->setFlash(__('The new requirement has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The new requirement could not be saved. Please, try again.'));
@@ -64,7 +65,7 @@ class NewRequirementsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->NewRequirement->save($this->request->data)) {
-				$this->Session->setFlash(__('The new requirement has been saved'));
+				//$this->Session->setFlash(__('The new requirement has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The new requirement could not be saved. Please, try again.'));
@@ -97,9 +98,13 @@ class NewRequirementsController extends AppController {
 		$this->Session->setFlash(__('New requirement was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+
+
+	
 	public function select(){
 		$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''));
+    'id' => 'vv','inferior'=>'','superior'=>'','color'=>''));
 		//menu
 		$this->Session->write($menu);
 		//////////////
@@ -116,8 +121,9 @@ class NewRequirementsController extends AppController {
 
 
 		if ($ext != 'docx' /* && $ext != 'doc' && $ext != 'gif' && $ext != 'png'*/) {
-		$this->Session->setFlash('Solo puedes subir docx.');
-		$this->render();
+		$this->Session->setFlash('Solo puedes subir archivos .docx');
+		//$this->render();
+		$this->redirect(array('controller'=>'Branches','action'=>'select1',$this->request->data['NewRequirement']['branch_id']));
 		} else {
 		$date = $this->request->data['NewRequirement']['curriculum']['name'];
 		$filename = $this->request->data['NewRequirement']['branch_id'].$this->request->data['NewRequirement']['email'].$date;
@@ -135,8 +141,10 @@ class NewRequirementsController extends AppController {
 
 		$this->NewRequirement->create();
 		if ($this->NewRequirement->save($this->request->data)) {
-		$this->Session->setFlash(__('The newrequirement has been saved'));
-		$this->redirect(array('controller' => 'Branches','action' => 'select'));
+			
+			
+		//$this->Session->setFlash(__('The newrequirement has been saved'));
+		$this->redirect(array('action' => 'email'));
 		} else {
 		$this->Session->setFlash(__('The newrequirement could not be saved. Please, try again.'));
 		$this->redirect(array('controller' => 'Branches','action' => 'select1',$data['NewRequirement']['branch_id']));
@@ -148,6 +156,31 @@ class NewRequirementsController extends AppController {
 
 		}
 
+		}
+
+
+		public function email(){
+
+		$newrequirement = $this->NewRequirement->find('first',array('order' => 'NewRequirement.created DESC'));
+			
+		$datos = array('newrequirement' => array('datos' => $newrequirement));
+
+		//menu
+		$this->Session->write($datos);
+		$this->Email = new CakeEmail();
+		$this->Email->from(array('oscar_7938074@hotmail.com' => 'Avicola Santarosa'));
+        $this->Email->to('oscar_7938074@hotmail.com');
+        $this->Email->subject('REQUERIMIENTO DE PERSONA');
+        $this->Email->attachments(array(WWW_ROOT."img/Newrequirement/curriculum/".$newrequirement['NewRequirement']['curriculum']));
+        $this->Email->template('newrequirements');
+        $this->Email->emailFormat('html');
+        $val=null;
+        if($this->Email->send()){
+		  $this->redirect(array('controller' => 'Branches','action' => 'select'));
+		}else{
+		  $val="Mensaje no enviado";
+		}
+		// $this->set(compact('val'));
 		}
 
 }

@@ -6,6 +6,7 @@
 		echo $this->Form->input('id',array('label' => 'id'));
 		echo $this->Form->input('company_id', array('type' => 'hidden','label'=>'Company id'));
 		echo $this->Form->input('name',array('label' => 'Nombre'));
+		echo(h("El tamaño de la imagen de Sucursal tiene que ser 130 x 143"));
 		echo $this->Form->input('filename',array('type' => 'file','label'=>'Seleccione una imagen'));
 		echo $this->Form->input('dir', array('type' => 'hidden','label'=>'Direccion'));
 		echo $this->Form->input('type',array('label' => 'Tipo'));

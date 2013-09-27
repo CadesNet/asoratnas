@@ -4,6 +4,7 @@
 		<legend><?php echo __('Editar Imagenes Recetas'); ?></legend>
 	<?php
 		echo $this->Form->input('id',array('label'=>'id'));
+		echo(h("El tamaño de la imagen de las recetas tiene que ser 253 x 205 "));
 		echo $this->Form->input('filename',array('type' => 'file','label'=>'Seleccione una imagen'));
 		echo $this->Form->input('dir', array('type' => 'hidden','label'=>'Direccion'));
 		echo $this->Form->input('description',array('label'=>'Descripcion'));

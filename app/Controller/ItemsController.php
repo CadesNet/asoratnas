@@ -85,7 +85,28 @@ class ItemsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->loadModel('Presentation');
+
+		if (!$this->Item->exists($id)) {
+			throw new NotFoundException(__('Invalid category'));
+		}else{
+	
+		$datos = $this->Item->find('first',array('conditions' => array('Item.' . $this->Item->primaryKey => $id)));
+		
+
+			$data['Item']['id'] =  $datos['Item']['id']; 
+			$data['Item']['name'] =  $datos['Item']['name']; 
+			$data['Item']['category_id'] = $datos['Item']['category_id']; 
+			$data['Item']['removed'] = 'si';
+
+			if ($this->Item->save($data)) {
+			//$this->Session->setFlash(__('The category has been saved'));
+				$this->redirect(array('controller'=>'Categories','action' => 'select'));
+			} else {
+				$this->Session->setFlash(__('El producto no se a podido eliminar'));
+			}
+		}
+
+		/*$this->loadModel('Presentation');
 		$this->loadModel('ImagesPresentation');
 		$this->loadModel('PresentationsQuote');
 		$this->Item->id = $id;
@@ -116,7 +137,7 @@ class ItemsController extends AppController {
 
 		}
 		
-		$this->Session->setFlash(__('Item was not deleted'));
+		$this->Session->setFlash(__('Item was not deleted'));*/
 		
 	}
 	public function select($category_id = null,$item_id){
@@ -137,7 +158,7 @@ class ItemsController extends AppController {
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
 
-		$Category = $this->Category->Item->find('first',array('conditions' => array('Category.' . $this->Category->primaryKey => $category_id,'Item.' . $this->Item->primaryKey => $item_id),'recursive'=>2));
+		$Category = $this->Category->Item->find('first',array('conditions' => array('Category.' . $this->Category->primaryKey => $category_id,'Item.' . $this->Item->primaryKey => $item_id,'Item.'. 'removed' <> 'si'),'recursive'=>2));
 		
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$Recipes1 = $this->Recipe->find('all',array('order'=>'Recipe.id DESC'));

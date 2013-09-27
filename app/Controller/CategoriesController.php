@@ -43,7 +43,8 @@ public $helpers = array('Js','Session');
 		if ($this->request->is('post')) {
 			$this->Category->create();
 			if ($this->Category->save($this->request->data)) {
-				$this->Session->setFlash(__('La Categoria se a guardado'));
+				//$this->Session->setFlash(__('La Categoria se a guardado'));
+				$this->redirect(array('action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('La Categoria no se a guardado'));
 			}
@@ -63,7 +64,7 @@ public $helpers = array('Js','Session');
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Category->save($this->request->data)) {
-				$this->Session->setFlash(__('The category has been saved'));
+				//$this->Session->setFlash(__('The category has been saved'));
 				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The category could not be saved. Please, try again.'));
@@ -82,16 +83,36 @@ public $helpers = array('Js','Session');
  * @return void
  */
 	public function delete($id = null) {
-		$this->loadModel('Item');
+		if (!$this->Category->exists($id)) {
+			throw new NotFoundException(__('Invalid category'));
+		}else{
+	
+		$datos = $this->Category->find('first',array('conditions' => array('Category.' . $this->Category->primaryKey => $id)));
+		
+
+			$data['Category']['id'] =  $datos['Category']['id']; 
+			$data['Category']['name'] =  $datos['Category']['name']; 
+			$data['Category']['description'] = $datos['Category']['description']; 
+			$data['Category']['removed'] = 'si';
+
+			if ($this->Category->save($data)) {
+			//$this->Session->setFlash(__('The category has been saved'));
+				$this->redirect(array('action' => 'select'));
+			} else {
+				$this->Session->setFlash(__('La catergoria no se a podido eliminar'));
+			}
+		}
+		/*$this->loadModel('Item');
 		$this->loadModel('Presentation');
 		$this->loadModel('ImagesPresentation');
 		$this->loadModel('ImagesCategory');
 		$this->loadModel('PresentationsQuote');
-
+	    //alterar la tabla removed no eliminar
 		$this->Category->id = $id;
 		if (!$this->Category->exists()) {
 			throw new NotFoundException(__('Invalid category'));
 		}else{
+
 		$this->request->onlyAllow('post', 'delete');
 		
 			$items = $this->Item->find('all',array('conditions' => array('Item.' . 'category_id' => $id)));
@@ -119,16 +140,20 @@ public $helpers = array('Js','Session');
 				$this->ImagesCategory->id = $imgca['ImagesCategory']['id'];
 				$this->ImagesCategory->delete();
 			}
-			if ($this->Category->delete()){
+			if ($this->Category->query()){
 			$this->Session->setFlash(__('Category deleted'));
 			$this->redirect(array('action' => 'select'));
 			}
-		}
+		}*/
 	
 		$this->Session->setFlash(__('Category was not deleted'));
 	}
 		//conulta propias
 	public function select(){
+		$menu1 = array('menu1' => array('id' => 'mm'));
+
+		//menu
+		$this->Session->write($menu1);
 		$this->Category->recursive = 2;
 			$menu = array('menu' => array('id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
@@ -141,13 +166,17 @@ public $helpers = array('Js','Session');
 		//$options = array('conditions' => array('limit' => 2));
        	$Supermarket = $this->Supermarket->find('all');
 
-		$Category = $this->Category->find('all');
+		$Category = $this->Category->find('all',array('conditions'=> "Category.removed <> 'si'"));
 		$Recipe = $this->Recipe->find('first',array('order' => 'Recipe.created DESC'));
 		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$this->set(compact('Supermarket','Category','Benefit','Recipe','Ad','Carousel'));
 	}
 	public function select1($id = null){
+		$menu1 = array('menu1' => array('id' => 'mm'));
+
+		//menu
+		$this->Session->write($menu1);
 		//$this->Category->recursive = 2;
 		$menu = array('menu' => array('id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu

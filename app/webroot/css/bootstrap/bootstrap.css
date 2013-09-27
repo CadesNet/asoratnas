@@ -3961,7 +3961,7 @@ input[type="submit"].btn.btn-mini {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  /*background-color: #eeeeee;*/
 }
 
 .nav > li > a > img {
@@ -4453,7 +4453,8 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .btn,
 .navbar .btn-group {
-  margin-top: 5px;
+  /*margin-top: 5px;*/
+
 }
 
 .navbar .btn-group .btn,
@@ -4626,9 +4627,9 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  color: #333333;
+  color: #ffffff;
   text-decoration: none;
-  /*background-color: transparent;*/
+  /*background-color: #508A79;*/
 }
 
 .navbar .nav > .active > a,
@@ -4747,8 +4748,8 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-  color: #555555;
-  background-color: #e5e5e5;
+  color: #ffffff;
+  background-color: #508A79;
 }
 
 .navbar .nav li.dropdown > .dropdown-toggle .caret {

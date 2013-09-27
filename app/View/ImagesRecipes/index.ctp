@@ -1,5 +1,5 @@
 <div class="imagesRecipes index">
-	<h2><?php echo __('Images Recipes'); ?></h2>
+	<h2><?php echo __('Imagenes Recetas'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo ('Seleccione una imagen'); ?></th>
@@ -22,9 +22,9 @@
 
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New imagen Recipe'), array('action' => 'add',$id_receta),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva imagen'), array('action' => 'add',$id_receta),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
  <p>&nbsp; </p>

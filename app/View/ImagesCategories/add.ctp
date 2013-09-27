@@ -3,7 +3,13 @@
 	<fieldset>
 		<legend><?php echo __('Agregar Imagenes Categoria'); ?></legend>
 	<?php
+
+
 		echo $this->Form->input('category_id',array('name'=>'data[ImagesCategory][category_id]','type' => 'hidden','default'=> $categories));
+		echo(h("opcion Uno para la imagen a aparecera alado del nombre. tamaño 75 x 53")."<br>");
+		echo(h("opcion Dos para la imagen a aparecera en el carousel, tamaño 222 x 223")."<br>");
+		echo(h("opcion Tres para la imagen del pavo que aparecera cuando se vean las presentarciones, tamaño 33 x 23"));
+
 		echo $this->FormEnum->input('filename',array('type' => 'file','label'=>'Seleccione una imagen'));
 		echo $this->FormEnum->input('dir', array('type' => 'hidden','label'=>'Direccion'));
 		echo $this->FormEnum->input('type',array('label' => 'Tipo'));

@@ -46,7 +46,7 @@ class ImagesCategoriesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->ImagesCategory->create();
 			if ($this->ImagesCategory->save($this->request->data)) {
-				$this->Session->setFlash(__('The images category has been saved'));
+				//$this->Session->setFlash(__('The images category has been saved'));
 				$this->redirect(array('action' => 'index',$id));
 			} else {
 				$this->Session->setFlash(__('The images category could not be saved. Please, try again.'));
@@ -69,7 +69,7 @@ class ImagesCategoriesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ImagesCategory->save($this->request->data)) {
-				$this->Session->setFlash(__('The images category has been saved'));
+				//$this->Session->setFlash(__('The images category has been saved'));
 				$this->redirect(array('action' => 'index',$id_category));
 			} else {
 				$this->Session->setFlash(__('The images category could not be saved. Please, try again.'));

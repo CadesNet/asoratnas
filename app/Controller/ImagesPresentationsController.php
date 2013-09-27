@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+//App::import('Vendor','watimage');
 /**
  * ImagesPresentations Controller
  *
@@ -42,9 +43,28 @@ class ImagesPresentationsController extends AppController {
  */
 	public function add($id = null) {
 		if ($this->request->is('post')) {
+
+			if ($this->request->data['ImagesPresentation']['filename']) {
+
+			/*
+			$wm = new Watimage();
+			$wm->setImage($this->request->data['ImagesPresentation']['filename']['tmp_name']); 
+			$path_parts = $this->request->data['ImagesPresentation']['filename']['name'];
+			$wm->resize(array('type' => 'resize', 'size' => 100));
+			$wm->generate(WWW_ROOT.'img/bmp/img.bmp'); */
+
+			$ruta = $this->request->data['ImagesPresentation']['filename']['tmp_name'];
+
+			// Obtener las dimensiones de la imagen
+			$imagen = getimagesize($ruta);
+
+			// Convertir la imagen
+			jpeg2wbmp($ruta, WWW_ROOT.'img/prueba.wbmp', $imagen[1], $imagen[0], 5);
+
+			}
 			$this->ImagesPresentation->create();
 			if ($this->ImagesPresentation->save($this->request->data)) {
-				$this->Session->setFlash(__('La imagen de lapresenttacion se a guardado'));
+				//$this->Session->setFlash(__('La imagen de lapresenttacion se a guardado'));
 				$this->redirect(array('action' => 'index',$id));
 			} else {
 				$this->Session->setFlash(__('La imagen de lapresenttacion no se a guardado'));
@@ -53,7 +73,6 @@ class ImagesPresentationsController extends AppController {
 		$presentations = $id;
 		$this->set(compact('presentations'));
 	}
-
 /**
  * edit method
  *
@@ -67,7 +86,7 @@ class ImagesPresentationsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ImagesPresentation->save($this->request->data)) {
-				$this->Session->setFlash(__('The images presentation has been saved'));
+				//$this->Session->setFlash(__('The images presentation has been saved'));
 				$this->redirect(array('action' => 'index',$idpresentacion));
 			} else {
 				$this->Session->setFlash(__('The images presentation could not be saved. Please, try again.'));

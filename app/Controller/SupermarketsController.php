@@ -59,7 +59,7 @@ class SupermarketsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Supermarket->create();
 			if ($this->Supermarket->save($this->request->data)) {
-				$this->Session->setFlash(__('The supermarket has been saved'));
+				//$this->Session->setFlash(__('The supermarket has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The supermarket could not be saved. Please, try again.'));
@@ -83,7 +83,7 @@ class SupermarketsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Supermarket->save($this->request->data)) {
-				$this->Session->setFlash(__('The supermarket has been saved'));
+				//$this->Session->setFlash(__('The supermarket has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The supermarket could not be saved. Please, try again.'));

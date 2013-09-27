@@ -1,5 +1,5 @@
 <div class="imagesCategories index">
-	<h2><?php echo __('Images Categories'); ?></h2>
+	<h2><?php echo __('Imagenes Categorias'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0" >
 	<tr>
 			<th><?php echo ('Imagenes'); ?></th>

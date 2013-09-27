@@ -4,6 +4,7 @@
 		<legend><?php echo __('Agregar Supermercado'); ?></legend>
 	<?php
 		echo $this->Form->input('name',array('label'=>'Nombre'));
+		echo(h("El tamaño de la imagen de los supermercados tiene que ser 107 x 78 "));
 		echo $this->Form->input('filename',array('type' => 'file','label'=>'seleccione una imagen'));
 		echo $this->Form->input('dir', array('type' => 'hidden'));
 		echo $this->Form->input('link',array('label'=>'URL'));

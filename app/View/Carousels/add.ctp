@@ -3,6 +3,8 @@
 	<fieldset>
 		<legend><?php echo __('Agregar Carousel'); ?></legend>
 	<?php
+		echo(h("El tamaño de la imagen del Carousel uno tiene que ser 1172 x 614 ")."<br>");
+		echo(h("El tamaño de la imagen del Carousel dos tiene que ser 1165 x 167 "));
 		echo $this->FormEnum->input('filename',array('type' => 'file','label' => 'Seleccione una imagen'));
 		echo $this->FormEnum->input('dir',array('type' => 'hidden','label'=>'Direccion'));
 		echo $this->FormEnum->input('description',array('label' => 'Descripcion'));

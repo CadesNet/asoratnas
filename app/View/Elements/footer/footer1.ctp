@@ -33,19 +33,19 @@
 				<?php echo $this->Html->link('Productos',array('controller' => 'Categories', 'action' => 'select'),array('escape' => false));
 				?>
 				<br>
-				<?php echo $this->Html->link('Pechuga de Pavo',array('controller' => 'Categories', 'action' => 'select1',1),array('escape' => false));
+				<?php echo $this->Html->link('Pechuga de Pavo',array('controller' => 'Categories', 'action' => 'select1',6),array('escape' => false));
 				?>
 				
 				<br>
-				<?php echo $this->Html->link('Jamón de Pavo',array('controller' => 'Categories', 'action' => 'select1',2),array('escape' => false));
+				<?php echo $this->Html->link('Jamón de Pavo',array('controller' => 'Categories', 'action' => 'select1',7),array('escape' => false));
 				?>
 				
 				<br>
-				<?php echo $this->Html->link('Paté de Pavo',array('controller' => 'Categories', 'action' => 'select1',3),array('escape' => false));
+				<?php echo $this->Html->link('Paté de Pavo',array('controller' => 'Categories', 'action' => 'select1',8),array('escape' => false));
 				?>
 				
 				<br>
-				<?php echo $this->Html->link('Pavo Entero',array('controller' => 'Categories', 'action' => 'select1',4),array('escape' => false));
+				<?php echo $this->Html->link('Pavo Entero',array('controller' => 'Categories', 'action' => 'select1',9),array('escape' => false));
 				?>
 				
 
@@ -77,11 +77,11 @@
 
 			</div>
 			<div class="span2" >
-			<?php echo $this->Html->link('Facebook','https://www.facebook.com/pages/Pavos-Santa-Rosa/294146160603097?fref=ts',array('escape' => false));
+			<?php echo $this->Html->link('Facebook','https://www.facebook.com/pages/Pavos-Santa-Rosa/294146160603097?fref=ts',array('escape' => false,'target'=>'_blank'));
 				?>
 				
 				<br>
-				<?php echo $this->Html->link('Twitter',array('controller' => 'Benefits', 'action' => 'select'),array('escape' => false));
+				<?php echo $this->Html->link('Twitter',array('controller' => 'Benefits', 'action' => 'select'),array('escape' => false,'target'=>'_blank'));
 				?>
 				
 				

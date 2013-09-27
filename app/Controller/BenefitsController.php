@@ -116,9 +116,13 @@ public $helpers = array('Js','Session');
 	}
 	//conulta propias
 	public function select(){
-		$menu = array('menu' => array(
-    'id' => 'b','inferior'=>'','superior'=>'','color'=>''
-));
+
+	$menu1 = array('menu1' => array('id' => 'menu1'));
+
+		//menu
+		$this->Session->write($menu1);
+
+		$menu = array('menu' => array('id' => 'b','inferior'=>'','superior'=>'','color'=>''));
 
 		//menu
 		$this->Session->write($menu);
@@ -138,6 +142,10 @@ public $helpers = array('Js','Session');
 		$this->set(compact('Supermarket','Benefit','Recipe','Carousel'));
 	}
 	public function select1(){
+		$menu1 = array('menu1' => array('id' => 'mm'));
+
+		//menu
+		$this->Session->write($menu1);
 				//menu
 		$menu = array('menu' => array(
     'id' => 'beneficios','inferior'=>'#74255F','superior'=>'#C34CA4','color'=>'#FFF'));

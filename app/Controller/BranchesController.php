@@ -44,7 +44,7 @@ class BranchesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Branch->create();
 			if ($this->Branch->save($this->request->data)) {
-				$this->Session->setFlash(__('The branch has been saved'));
+				//$this->Session->setFlash(__('The branch has been saved'));
 				switch ($vista) {
 					case 'contactenos':
 						$this->redirect(array('controller'=>'Consultations','action' => 'select'));
@@ -79,7 +79,7 @@ class BranchesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Branch->save($this->request->data)) {
-				$this->Session->setFlash(__('The branch has been saved'));
+				//$this->Session->setFlash(__('The branch has been saved'));
 				switch ($vista) {
 					case 'contactenos':
 						$this->redirect(array('controller'=>'Consultations','action' => 'select'));
@@ -154,6 +154,10 @@ class BranchesController extends AppController {
 		
 	}
 	public function select(){
+				$menu1 = array('menu1' => array('id' => 'menu2'));
+
+		//menu
+		$this->Session->write($menu1);
 		$menu = array('menu' => array(
     'id' => 'mm','inferior'=>'','superior'=>'','color'=>''));
 		//menu
@@ -165,14 +169,19 @@ class BranchesController extends AppController {
 		$this->set(compact('Branch','Supermarket'));
 	}
 	public function select1($id=null){
-		$this->loadModel('NewRequirement');
+		$menu1 = array('menu1' => array('id' => 'menu2'));
+
+		//menu
+		$this->Session->write($menu1);
+
+		
 			$menu = array('menu' => array(
     'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
 ));
 		//menu
 		$this->Session->write($menu);
 		//////////////
-
+		$this->loadModel('NewRequirement');
 		if (!$this->Branch->exists($id)) {
 			$this->redirect(array('action' => 'select'));
 			//throw new NotFoundException(__('Invalid branch'));

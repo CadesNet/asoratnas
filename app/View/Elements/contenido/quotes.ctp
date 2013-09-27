@@ -33,7 +33,7 @@
 </section>
   </div>
 
-<div class="container">
+
 
 	<div class="row-fluid">
 	  <div class="span12">
@@ -122,14 +122,14 @@
 												<p class="stylo_form" style =  <?="color:".$categories['Category']['description'].";"?> >Cantidad</p>
 											</div>
 
-											<div class="span9">	  									
+											<div class="span2">	  									
 				    										<?php 
 															echo $this->Form->input('id',array('type' => 'hidden','default'=>  $items['Presentation']['id']));
 															echo $this->Form->input('img',array('type' => 'hidden','default'=>  $img));
 															echo $this->Form->input('name',array('type' => 'hidden','default'=>  $categories['Category']['name']."<br>".$items['Item']['name']."<br>".$items['Presentation']['name']));
 
 
-															echo $this->Form->input('cantidad',array('label' => '','type' => 'text','placeholder' => 'cantidad','style'=>'width:50%'));
+															echo $this->Form->input('cantidad',array('label' => '','type' => 'text','default'=>1,'style'=>'width:60%'));
 															?>
 											</div>
 
@@ -144,26 +144,16 @@
 
 								</div>
 							</div>
-					
 
-							<br>
-							<br>
-							<!--<div class="row-fluid">
-								<div class="span3 offset9" >
-									<p>Facebook</p>
-								</div>
-							</div>-->
-							<br>
-							<br>
 							<div class="row-fluid">
 								<div class="span12 itemtext">
-								  <?php echo html_entity_decode($items['Presentation']['descripcion']); ?>
+								  <?php echo html_entity_decode(h($items['Presentation']['descripcion'])); ?>
 								</div>
 							</div>
 							<br>
 							<br>
-							<br>
-							<br>
+	
+						
 							<div class="row-fluid">
 								<div class="span2" >
 								<h4>
@@ -173,6 +163,8 @@
 						    	 </h4>
 								</div>
 							</div>	
+							<br>
+							<br>
 						</div>
 					
 					</div>
@@ -203,7 +195,7 @@
 								}?>
 						<div class="row-fluid" style="text-align:left;" >
 							<div class="span12" >
-								<h2 class="recipedia">&nbsp;&nbsp;La receta del dia</h3>
+								<h3 class="recipedia">&nbsp;&nbsp;La receta del dia</h3>
 							</div>
 							
 						</div>
@@ -224,15 +216,15 @@
 						</div>
 						<div class="row-fluid" >
 							<div class="span12">
-								<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
+								<h5 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
 							if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h5>
 							</div>
 						</div>
 						<div class="row-fluid" >
 							<div class="span12">
-								<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
+								<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minutos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 							</div>
 						</div>				
 						<div class="row-fluid">
@@ -266,7 +258,7 @@
 							<div class="row-fluid">
 								<div class="span12">
 									<h4>
-									<?php echo $this->Html->link("Algunas sugerencias para degustar en familia&nbsp;&nbsp;&nbsp;&nbsp;", array( 'controller' => 'recipes', 'action' => "select"),array('escape' => false,'class' => 'brand producttitle1','style' => 'text-decoration: none;'));  
+									<?php echo $this->Html->link("Algunas sugerencias para degustar en familia&nbsp;&nbsp;&nbsp;&nbsp;", array( 'controller' => 'recipes', 'action' => "select"),array('escape' => false,'class' => 'brand producttitle1','style' => 'color: #A4DBDF;text-decoration: none;'));  
 											?>
 									</h4>
 								</div>
@@ -308,7 +300,7 @@
 								<div class="row-fluid">
 									<div style="font:icon;">
 										<?php 		
-											echo "<p style='color:#1DB8D3;background:#F8F6EA'>".$this->Html->image("algunas-sugerencias-cuchillo-tenedor.jpg").$recipe1['Recipe']['title']."</p>";
+											echo "<p style='color:#1DB8D3;background:#F8F6EA'>".$this->Html->image("algunas-sugerencias-cuchillo-tenedor.jpg").substr($recipe1['Recipe']['title'], 0, 25)."...</p>";
 				    	    			?>				    	    				
 									</div>
 								</div>
@@ -331,5 +323,5 @@
 
 	   </div>
 	</div>
-</div>
+
 

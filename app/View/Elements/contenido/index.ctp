@@ -38,7 +38,7 @@
   </div>
 
 
-<div class="container">
+
     <div class="row-fluid">
 		<div class="span7" >
 			<div class="row-fluid" >
@@ -58,19 +58,19 @@
 						</div>
 						<div class="span9" >
 							<div class="row-fluid" >
-								<h4 class = "benefitssubtitle"><? echo $benefit['Benefit']['title']." ";
-							 if($this->Session->read('Auth.User.id')){ 
+								<h4 class = "benefitssubtitle"><?  echo  ((strlen(h($benefit['Benefit']['title']))>46) ? substr(h($benefit['Benefit']['title']), 0, 46)."..." : substr(h($benefit['Benefit']['title']), 0, 46));
+								  if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false)); 
 							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h4>
 							</div>
 							<div class="row-fluid" style="">
 								<p class ="benefitsdescription">
-								<?php echo substr($benefit['Benefit']['description'], 0, 140) ?> 
+								<?php echo substr(html_entity_decode(h($benefit['Benefit']['description'])), 0, 140)  ?> 
 								</p>
 							</div>
 							<div class="row-fluid" style="">
 
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn btn-warning btn-large'));
+							<?php echo $this->Html->link(__('Leer más...'), array('controller' => 'Benefits', 'action' => 'select2',$benefit['Benefit']['id'],$coun++), array('class' => 'btn btn-warning btn-large'));
 							 ?>
 								
 							</div>
@@ -85,6 +85,8 @@
 				<div class="row-fluid" style="text-align: right;border-bottom: 6px #E7E3E3 solid;">
 				<?php echo $this->Html->link(__('Leer todos los articulos'), array('controller' => 'Benefits', 'action' => 'select1'),array('style'=>'text-decoration: inherit;color: #147E67;'));
 							 ?>
+					<br><br>
+	               
 				</div>
 				
 				<div class="row-fluid" style="">
@@ -102,14 +104,14 @@
 								<?php foreach($supermarkets as $supermarket) { ?>
 									<li style="width:80px">
 									<?php 
-								echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
+								echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array('style'=>'outline: rgb(255, 255, 255) dashed 1px;',"alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
 						    	    ?>
 									</li>
 									<?php }	 ?>
 								<?php foreach($supermarkets as $supermarket) { ?>
 									<li style="width:80px">
 									<?php 
-								echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array("alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
+								echo $this->Html->link($this->Html->image("supermarket/filename/".$supermarket['Supermarket']['filename'], array('style'=>'outline: rgb(255, 255, 255) dashed 1px;',"alt" => "Empresa")),$supermarket['Supermarket']['link'],array('escape' => false , 'class' => 'brand','target'=>'_blank'));  
 						    	    ?>
 									</li>
 									<?php }	 ?>
@@ -132,15 +134,16 @@
 								}?>
 						<div class="row-fluid" style="text-align:left;" >
 							<div class="span12" >
-								<h2 class="recipedia">&nbsp;&nbsp;La receta del dia</h2>
+								<h1 class="recipedia">&nbsp;&nbsp;La receta del dia</h1>
 							</div>
 							
 						</div>
+						<?php if(isset($recipes['Recipe']['id'])){ ?>
 						<div class="row-fluid" >
 							<div class="span12">
 								<?php
 	                	 		if($this->Session->read('Auth.User.id')){ 
-								 echo $this->Html->link('Ver imagenes', array('controller' => 'ImagesRecipes', 'action' => 'index',$recipes['Recipe']['id'],'index'),array('class'=>'btn btn-primary')); 
+								 echo $this->Html->link('Agregar imagenes', array('controller' => 'ImagesRecipes', 'action' => 'index',$recipes['Recipe']['id'],'index'),array('class'=>'btn btn-primary')); 
 							}?>
 								<?php 
 								foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
@@ -153,15 +156,15 @@
 						</div>
 						<div class="row-fluid" >
 							<div class="span12">
-								<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
+								<h4 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
 								if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h4>
 							</div>
 						</div>
 						<div class="row-fluid" >
 							<div class="span12">
-								<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
+								<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minutos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 							</div>
 						</div>				
 						<div class="row-fluid">
@@ -171,6 +174,7 @@
 							</div>
 					
 						</div>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="row-fluid">
@@ -181,9 +185,10 @@
 						</div>
 					</div>
 				</div>
+				<br><br>
 			</div>	
 	</div>
-</div>
+
 
 
 

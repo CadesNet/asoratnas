@@ -33,7 +33,7 @@
 </section>
   </div>
 
-<div class="container">
+
 	<div class="row-fluid">
 		<div class="span9">
 			<div class="row-fluid">
@@ -83,31 +83,30 @@
 					
 				</div>
 				</div>
-					<p class="visible-desktop">&nbsp; </p>
-                	<p class="visible-desktop">&nbsp; </p>
+					
 				<div class="row-fluid">
 					<div class="span12">
-						<p class = "textoinfo"><?php echo html_entity_decode($tip['Tip']['description']) ?></p>
+						<p class = "textoinfo"><?php echo html_entity_decode(h($tip['Tip']['description'])) ?></p>
 					</div>
 					
 				</div>
 			
 			</div>
 			<?} ?>
-<div class="paginator" style="float: right;">
-<?php 
+				<div class="paginator" style="float: right;">
+				<?php 
 
 
-// Shows the next and previous links
-echo $this->Paginator->prev('« Anterior Consejo', null, null, array('class' => 'disabled'));
-  //Shows the page numbers
-echo "&nbsp;".$this->Paginator->numbers()."&nbsp;";
-echo $this->Paginator->next('Siguiente Consejo »', null, null, array('class' => 'disabled'));
+				// Shows the next and previous links
+				echo $this->Paginator->prev('« Anterior', null, null, array('class' => 'disabled'));
+				  //Shows the page numbers
+				echo "&nbsp;".$this->Paginator->numbers()."&nbsp;";
+				echo $this->Paginator->next('Siguiente »', null, null, array('class' => 'disabled'));
 
-// prints X of Y, where X is current page and Y is number of pages
-//echo $this->Paginator->counter();
-        ?>
-</div>
+				// prints X of Y, where X is current page and Y is number of pages
+				//echo $this->Paginator->counter();
+				        ?>
+				</div>
 
 
 			
@@ -146,7 +145,7 @@ echo $this->Paginator->next('Siguiente Consejo »', null, null, array('class' =>
 		</div>
 		</div>
 </div>
-</div>
-</div>
+
+
  <p>&nbsp; </p>
  <p>&nbsp; </p>

@@ -3,6 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Agregar Imagenes Presentaciones'); ?></legend>
 	<?php
+		echo(h("El tamaño de la imagen de las presentaciones tiene que ser 360 x 346 "));
 		echo $this->Form->input('filename',array('type' => 'file','label'=>'Seleccione una imagen'));
 		echo $this->Form->input('dir', array('type' => 'hidden','label'=>'Directorio'));
 		echo $this->Form->input('description',array('label'=>'Descripcion'));

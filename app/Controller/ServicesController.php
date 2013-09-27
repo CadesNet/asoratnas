@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 /**
  * Services Controller
  *
@@ -43,7 +44,7 @@ class ServicesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Service->create();
 			if ($this->Service->save($this->request->data)) {
-				$this->Session->setFlash(__('The service has been saved'));
+				//$this->Session->setFlash(__('The service has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The service could not be saved. Please, try again.'));
@@ -65,7 +66,7 @@ class ServicesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Service->save($this->request->data)) {
-				$this->Session->setFlash(__('The service has been saved'));
+				//$this->Session->setFlash(__('The service has been saved'));
 				$this->redirect(array('action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The service could not be saved. Please, try again.'));
@@ -97,10 +98,13 @@ class ServicesController extends AppController {
 		$this->Session->setFlash(__('Service was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
-		public function select(){
-				$menu = array('menu' => array(
-    'id' => 'nn','inferior'=>'','superior'=>'','color'=>''
-));
+	public function select(){
+					$menu1 = array('menu1' => array('id' => 'menu3'));
+
+		//menu
+		$this->Session->write($menu1);
+
+		$menu = array('menu' => array('id' => 'nn','inferior'=>'','superior'=>'','color'=>''));
 		//menu
 		$this->Session->write($menu);
 		//////////////
@@ -108,4 +112,8 @@ class ServicesController extends AppController {
 		$Service = $this->Service->find('all');
 		$this->set(compact('Service'));
 	}
+
+
+
+	
 }

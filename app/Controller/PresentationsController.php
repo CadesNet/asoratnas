@@ -92,7 +92,34 @@ class PresentationsController extends AppController {
  * @return void
  */
 	public function delete($idcategory=null,$item=null,$id = null,$vista=null) {
-		$this->loadModel('ImagesPresentation');
+
+		if (!$this->Presentation->exists($id)) {
+			throw new NotFoundException(__('Invalid category'));
+		}else{
+	
+		$datos = $this->Presentation->find('first',array('conditions' => array('Presentation.' . $this->Presentation->primaryKey => $id)));
+		
+
+			$data['Presentation']['id'] =  $datos['Presentation']['id']; 
+			$data['Presentation']['name'] =  $datos['Presentation']['name']; 
+			$data['Presentation']['category_id'] = $datos['Presentation']['category_id']; 
+			$data['Presentation']['removed'] = 'si';
+
+			if ($this->Presentation->save($data)) {
+			//$this->Session->setFlash(__('The category has been saved'));
+				if($vista=='categories'){
+					$this->redirect(array('controller'=>'Categories','action' => 'select1',$idcategory));
+
+				}else{
+					$this->redirect(array('controller'=>'Categories','action' => 'select1',$idcategory,$item));
+
+				}
+			} else {
+				$this->Session->setFlash(__('El producto no se a podido eliminar'));
+			}
+		}
+
+		/*$this->loadModel('ImagesPresentation');
 		$this->loadModel('PresentationsQuote');
 		$this->Presentation->id = $id;
 		if (!$this->Presentation->exists()) {
@@ -121,7 +148,7 @@ class PresentationsController extends AppController {
 			}
 		}
 		
-		$this->Session->setFlash(__('Presentation was not deleted'));
+		$this->Session->setFlash(__('Presentation was not deleted'));*/
 		
 	}
 }

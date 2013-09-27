@@ -1,10 +1,13 @@
 <div class="ads form">
 <?php echo $this->FormEnum->create('Ad',array('type' => 'file')); ?>
 	<fieldset>
-		<legend><?php echo __('Agregar notificacion'); ?></legend>
+		<legend><?php echo __('Agregar Publicidad'); ?></legend>
 	<?php
 		echo $this->FormEnum->input('type',array('label' => 'Tipo'));
+		echo ("Opcion video: ingrese la url (//www.youtube.com/embed/dF-rMYDo-LM) es requrido q selecciones una imagen que pese poco <br>");
+		echo ("Opcion foto seleccione una foto no es necesario una url");
 		echo $this->FormEnum->input('link',array('label' => 'Url'));
+		echo(h("El tamaño de la imagen de publicidad tiene que ser 276 x 389"));
 		echo $this->FormEnum->input('filename',array('type' => 'file','label' => 'Seleccione una imagen '));
 		echo $this->FormEnum->input('dir', array('type' => 'hidden'));
 	?>

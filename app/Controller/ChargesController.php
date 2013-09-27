@@ -5,6 +5,7 @@ App::uses('AppController', 'Controller');
  *
  * @property Charge $Charge
  */
+
 class ChargesController extends AppController {
 
 /**
@@ -46,7 +47,7 @@ class ChargesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Charge->create();
 			if ($this->Charge->save($this->request->data)) {
-				$this->Session->setFlash(__('The charge has been saved'));
+				//$this->Session->setFlash(__('The charge has been saved'));
 				$this->redirect(array('controller'=>'Branches','action' => 'select1',$idsucursal));
 			} else {
 				$this->Session->setFlash(__('The charge could not be saved. Please, try again.'));
@@ -70,7 +71,7 @@ class ChargesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Charge->save($this->request->data)) {
-				$this->Session->setFlash(__('The charge has been saved'));
+				//$this->Session->setFlash(__('The charge has been saved'));
 				$this->redirect(array('controller'=>'Branches','action' => 'select1',$idsucursal));
 			} else {
 				$this->Session->setFlash(__('The charge could not be saved. Please, try again.'));

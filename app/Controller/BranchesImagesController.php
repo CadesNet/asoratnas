@@ -41,7 +41,7 @@ class BranchesImagesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->BranchesImage->create();
 			if ($this->BranchesImage->save($this->request->data)) {
-				$this->Session->setFlash(__('The branches image has been saved'));
+				//$this->Session->setFlash(__('The branches image has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The branches image could not be saved. Please, try again.'));
@@ -64,7 +64,7 @@ class BranchesImagesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->BranchesImage->save($this->request->data)) {
-				$this->Session->setFlash(__('The branches image has been saved'));
+				//$this->Session->setFlash(__('The branches image has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The branches image could not be saved. Please, try again.'));

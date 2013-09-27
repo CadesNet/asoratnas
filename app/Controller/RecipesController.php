@@ -85,7 +85,7 @@ class RecipesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Recipe->save($this->request->data)) {
-				$this->Session->setFlash(__('The recipe has been saved'));
+				//$this->Session->setFlash(__('The recipe has been saved'));
 				switch ($vista) {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
@@ -173,6 +173,10 @@ class RecipesController extends AppController {
 
 //conulta propias
 	public function select(){
+		$menu1 = array('menu1' => array('id' => 'mm'));
+
+		//menu
+		$this->Session->write($menu1);
 		//menu
 		$menu = array('menu' => array(
     'id' => 'recetas','inferior'=>'#1A8DA2','superior'=>'#28C3DE','color'=>'#FFF'));

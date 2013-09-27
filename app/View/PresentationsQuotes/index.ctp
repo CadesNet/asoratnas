@@ -12,21 +12,22 @@
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	
+   <?php $i=0; foreach ($val as $value) { ?>
 
 	<tr>
-		<?php print_r($val); ?>
-		<td><?php echo h($val['id']); ?>&nbsp;</td>
-		<td><?php echo h($val['name']); ?>&nbsp;</td>
-		<td><?php echo $this->Html->image('images_presentation/filename/'.h($val['img'])); ?>&nbsp;</td>
-		<td><?php echo h($val['cantidad']); ?>&nbsp;</td>
-		<td><?php echo h($val['detalle']); ?>&nbsp;</td>
+		
+		<td><?php echo h($value['id']); ?>&nbsp;</td>
+		<td><?php echo h($value['name']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->image('images_presentation/filename/'.h($value['img'])); ?>&nbsp;</td>
+		<td><?php echo h($value['cantidad']); ?>&nbsp;</td>
+		<td><?php echo h($value['detalle']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php //echo $this->Html->link(__('View'), array('action' => 'view', $presentationsQuote['PresentationsQuote']['id']),array('class' => 'ok btn btn-info ')); ?>
 			<?php //echo $this->Html->link(__('Edit'), array('action' => 'edit', $presentationsQuote['PresentationsQuote']['id']),array('class' => 'ok btn btn-info ')); ?>
 			<?php //echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $presentationsQuote['PresentationsQuote']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $presentationsQuote['PresentationsQuote']['id'])); ?>
 		</td>
 	</tr>
-
+   <?php $i++; } ?>
 	</table>
 
 </div>

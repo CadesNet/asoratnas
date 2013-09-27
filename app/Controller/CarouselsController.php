@@ -43,7 +43,7 @@ class CarouselsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Carousel->create();
 			if ($this->Carousel->save($this->request->data)) {
-				$this->Session->setFlash(__('The carousel has been saved'));
+				//$this->Session->setFlash(__('The carousel has been saved'));
 					switch ($vista) {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));

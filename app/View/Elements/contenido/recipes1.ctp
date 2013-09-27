@@ -33,8 +33,6 @@
 </section>
   </div>
 
-
-<div class="container">
 	<div class="row-fluid">
 		<div class="span9">
 			<div class="row-fluid">
@@ -94,37 +92,42 @@
 					</div>
 				</div>
 				</div>
-					<p class="visible-desktop">&nbsp; </p>
-                	 <p class="visible-desktop">&nbsp; </p>
+					
 				<div class="row-fluid">
 					<div class="span12">
 						<h3 class = "recipeitemsubtitle">Ingredientes</h3>
-						<p class="textoinfo"><?php echo html_entity_decode($recipes['Recipe']['ingredients']) ?> </p>
+						<p class="textoinfo"><?php echo html_entity_decode(h($recipes['Recipe']['ingredients'])) ?> </p>
 					</div>
 					
 				</div>
 					<div class="row-fluid">
 					<div class="span12">
 						<h3 class = "recipeitemsubtitle">Preparacion</h3>
-						<p class="textoinfo"><?php echo html_entity_decode($recipes['Recipe']['preparation']); ?>personas</p>
+						<p class="textoinfo"><?php echo html_entity_decode(h($recipes['Recipe']['preparation'])); ?>personas</p>
 					</div>
 				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 			</div>
 			<?} ?>
-<div class="paginator" style="float: right;">
-<?php 
+			<div class="paginator" style="float: right;">
+			<?php 
 
 
-// Shows the next and previous links
-echo $this->Paginator->prev('« Anterior Receta', null, null, array('class' => 'disabled'));
-  //Shows the page numbers
-echo "&nbsp;".$this->Paginator->numbers()."&nbsp;";
-echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 'disabled'));
+			// Shows the next and previous links
+			echo $this->Paginator->prev('« Anterior', null, null, array('class' => 'disabled'));
+			  //Shows the page numbers
+			echo "&nbsp;".$this->Paginator->numbers()."&nbsp;";
+			echo $this->Paginator->next('Siguiente »', null, null, array('class' => 'disabled'));
 
-// prints X of Y, where X is current page and Y is number of pages
-//echo $this->Paginator->counter();
-        ?>
-</div>
+			// prints X of Y, where X is current page and Y is number of pages
+			//echo $this->Paginator->counter();
+			        ?>
+			</div>
 
 
 			
@@ -164,8 +167,7 @@ echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 
 	</div>
 </div>
 </div>
-</div>
 
 
-         <p>&nbsp; </p>
- <p>&nbsp; </p>
+<p>&nbsp; </p>
+<p>&nbsp; </p>

@@ -1,11 +1,12 @@
+<div class="container-fluid" style="min-height: 800px;">
 <div class="row-fluid">
 	<div class="span12">
-		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Lizta de cotizacion</h3>
+		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Lista de cotizacion</h3>
 	</div>
 </div>
 <br>
 <br>
-<div class="container" style="min-height: 800px;">
+
 	<div class="row-fluid" style="color:#25A781;border-bottom: 2px solid #25A781;">
 		<div class="span12">
 			<table  class="table table-striped span12">
@@ -70,7 +71,7 @@
 
 	</div>
 </div>
-</div>
+
 
 <div class="row-fluid" style="">
 	<p style="color: #889091;">Encuentranos en:</p>
@@ -111,6 +112,7 @@
 	
 
 </div>	
+</div>
 </div>
 
  <p>&nbsp; </p>

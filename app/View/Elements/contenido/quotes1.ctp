@@ -1,3 +1,4 @@
+<div class="container-fluid" >
 <div class="row-fluid">
 	<div class="span12">
 		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Contactos</h3>
@@ -5,7 +6,6 @@
 </div>
 <br>
 <br>
-<div class="container" style="min-height: 800px;">
 	<div class="row-fluid" style="color:#25A781;border-bottom: 2px solid #25A781;">
 		<div class="span12">
 
@@ -69,12 +69,11 @@
 	<br>
 	<div class="row-fluid">
 		<div class="span12" style="text-align: right;">
-			<?php echo $this->Html->link(__('Agrear mas productos'), array('controller' => 'Categories', 'action' => 'select'), array('class' => 'btn btn-warning btn-large')); ?>
+			<?php echo $this->Html->link(__('Agregar mas productos'), array('controller' => 'Categories', 'action' => 'select'), array('class' => 'btn btn-warning btn-large')); ?>
 			<?php echo $this->Html->link(__('Confirmar cotizacion'), array('controller' => 'Quotes', 'action' => 'cotizar'), array('class' => 'btn btn-warning btn-large')); ?>
 		</div>
 	</div>
 
-</div>
 
 <div class="row-fluid" style="">
 	<p style="color: #889091;">Encuentranos en:</p>
@@ -115,5 +114,6 @@
 	
 
 </div>	
+</div>
 </div>
  <p>&nbsp; </p>

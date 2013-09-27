@@ -33,7 +33,6 @@
 </section>
   </div>
 
-<div class="container">
 	<div class="row-fluid">
 		<div class="span9">
 			<div class="row-fluid">
@@ -81,16 +80,21 @@
 					<div class="span1">
 					</div>
 					</div>
-					<p class="visible-desktop">&nbsp; </p>
-                	 <p class="visible-desktop">&nbsp; </p>
+					
                 	
         
 					<div class="row-fluid">
 						<div class="span12">
-						<p class = "textoinfo"><?php echo html_entity_decode($benefit['Benefit']['description']) ?></p>
+						<p class = "textoinfo"><?php echo html_entity_decode(h($benefit['Benefit']['description'])) ?></p>
 						
 						</div>
 					</div>
+						<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 				</div>
 				<?} ?>
 				<div class="paginator" style="float: right;">
@@ -123,27 +127,27 @@
 						echo $this->Html->link('Agregar noticias', array('controller' => 'Ads', 'action' => 'add',$id_beneficio,$count,'1','beneficios1'),array('class'=>'btn btn-primary'));
 						
 					}?>
-		<div class="row-fluid">
+			<div class="row-fluid">
 			<?php foreach ($ads as $value) { ?>
 			
 				<div class="span12 " style="margin: 0;" >
 				<?php if($this->Session->read('Auth.User.id')){ 
-				 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$value['Ad']['id'],$id_beneficio,$count,'1','beneficios1'),array('class' => 'ok btn btn-info ','escape' => false)); 
-				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],$id_beneficio,$count,'1','beneficios1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$value['Ad']['id']));
+				 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$value['Ad']['id'],'1','1','1','beneficios'),array('class' => 'ok btn btn-info ','escape' => false)); 
+				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],'1','1','1','beneficios'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$value['Ad']['id']));
 				 }?>
 				<?php if($value['Ad']['type'] !='video'){
 				echo $this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('class'=>'noticias'));
 				} else{ ?>
 				<iframe class="noticiavideo" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				<?php } ?>
-				<br>
-				<br>
-				<br>
+				<p> </p>
 
-				</div>
+				</div> 
 			<?php } ?>	
-		</div>
+			</div>
 	</div>
  </div>
-</div>
 
+
+<p>&nbsp; </p>
+<p>&nbsp; </p>

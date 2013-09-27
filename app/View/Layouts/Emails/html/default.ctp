@@ -25,6 +25,6 @@
 <body>
 	<?php echo $this->fetch('content'); ?>
 
-	<p>This email was sent using the <a href="http://cakephp.org">CakePHP Framework</a></p>
+	<p style="color:#FFFFFF">Este mail fue enviado por <a href="http://new.avicola-santarosa.com/">Avicola-Santarosa</a></p>
 </body>
 </html>

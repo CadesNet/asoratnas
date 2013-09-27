@@ -41,7 +41,7 @@ class QuotesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Quote->create();
 			if ($this->Quote->save($this->request->data)) {
-				$this->Session->setFlash(__('The quote has been saved'));
+				//$this->Session->setFlash(__('The quote has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The quote could not be saved. Please, try again.'));
@@ -62,7 +62,7 @@ class QuotesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Quote->save($this->request->data)) {
-				$this->Session->setFlash(__('The quote has been saved'));
+				//$this->Session->setFlash(__('The quote has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The quote could not be saved. Please, try again.'));
@@ -221,23 +221,26 @@ class QuotesController extends AppController {
 	}
 
 	public function cotizar(){
+		$menu1 = array('menu1' => array('id' => 'menu5'));
+
+		//menu
+		$this->Session->write($menu1);
 
 		$menu = array('menu' => array(
-    'id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
+    'id' => 'nnn','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		
 		$this->loadModel('PresentationsQuote');
 		if(count($this->Session->read('pp'))>0){
 
-
 			if ($this->request->is('post')) {
 				$this->Quote->create();
 				if ($this->Quote->save($this->request->data)) {
-					$this->Session->setFlash(__('The quote has been saved'));
+					//$this->Session->setFlash(__('The quote has been saved'));
 
 					$quote = $this->Quote->find('first',array('order' => 'Quote.created DESC'));
-
+						$reporte=null;
 						foreach ($this->Session->read('pp') as $value) {
 							$data['PresentationsQuote']['id'] =  null; 
 							$data['PresentationsQuote']['presentation_id'] = $value['id'];
@@ -249,7 +252,8 @@ class QuotesController extends AppController {
 						}
 						$this->Session->delete('pp');
 
-					$this->redirect(array('controller' => 'Categories', 'action' => 'select'));
+					$this->redirect(array('controller' => 'PresentationsQuotes', 'action' => 'export_xls'));
+
 				} else {
 					$this->Session->setFlash(__('The quote could not be saved. Please, try again.'));
 				}		

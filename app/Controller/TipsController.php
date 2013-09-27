@@ -63,7 +63,7 @@ public $helpers = array('Js','Session');
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Tip->save($this->request->data)) {
-				$this->Session->setFlash(__('The tip has been saved'));
+				//$this->Session->setFlash(__('The tip has been saved'));
 				$this->redirect(array('action' => 'select1'));
 			} else {
 				$this->Session->setFlash(__('The tip could not be saved. Please, try again.'));
@@ -100,6 +100,10 @@ public $helpers = array('Js','Session');
 
 
 	public function select1(){
+		$menu1 = array('menu1' => array('id' => 'mm'));
+
+		//menu
+		$this->Session->write($menu1);
 				//menu
 		$menu = array('menu' => array(
     'id' => 'tips','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));

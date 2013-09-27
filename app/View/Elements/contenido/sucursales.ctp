@@ -1,4 +1,4 @@
-<div class="container" style="min-height: 800px;">
+<div class="container-fluid" style="min-height: 800px;">
 <div class="row-fluid">
 	<div class="span12">
 		<h3 class="otrostitle">Sucursales:<?php if($this->Session->read('Auth.User.id')){ 
@@ -6,18 +6,16 @@
 								}?></h3>
 	</div>
 </div>
-<br>
-<br>
+
 <div class="row-fluid">
 		<div class="span11 offset1">
+
 	<div class="row-fluid">
 			<ul class = "thumbnails">
-			<li class="span5">
-				
-			</li >
-			<li class="span5">
-				
-			</li>
+
+		
+			<li class="span5" style="min-height: 1px;"></li>
+			<li class="span5" style="min-height: 1px;"></li>
 			<?php  foreach ($branches as $branch) { ?>
 			
 			<li class="span5">
@@ -64,10 +62,10 @@
 			 </div>
 		
 </div>
-</div>
+
 <div class="row-fluid">
 	<div class="span12">
-		<h4 style="color:#979E9D">Encuentranos en</h4> 
+		<p style="color:#889091">Encuentranos en</p> 
 	</div>
 </div>
 <div class="row-fluid">

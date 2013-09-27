@@ -1,3 +1,6 @@
+
+<div class="container-fluid" style="min-height: 800px;">
+
 <?php foreach ($services as $value) { ?>
 <div class="row-fluid">
 	<div class="span12">
@@ -13,7 +16,7 @@
 	<div class="row-fluid">
 		<div class="span12">
 		
-		 	<?php 	echo $value['Service']['content'];?>
+		 	<?php 	echo html_entity_decode(h($value['Service']['content']));?>
 		 
 		</div>
 	</div>
@@ -64,6 +67,7 @@
 
 </div>
 <?php	} ?>
+</div>
  <p>&nbsp; </p>
   <p>&nbsp; </p>
    <p>&nbsp; </p>

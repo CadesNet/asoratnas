@@ -36,9 +36,9 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Carousel'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
+		<li><?php echo $this->Html->link(__('Neva imagen'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 	</ul>
 </div>
  <p>&nbsp; </p>

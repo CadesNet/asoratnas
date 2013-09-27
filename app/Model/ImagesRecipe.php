@@ -21,16 +21,6 @@ var $actsAs = array(
  * @var array
  */
 	public $validate = array(
-		'description' => array(
-			'maxlength' => array(
-				'rule' => array('maxlength',1500),
-				'message' => 'Maximo 1500 caracteres',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'recipe_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),

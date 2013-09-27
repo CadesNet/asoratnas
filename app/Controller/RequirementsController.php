@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 /**
 * Requirements Controller
 *
@@ -13,7 +14,8 @@ class RequirementsController extends AppController {
 * @return void
 */
 
-public $helpers = array('FormEnum','Js');
+
+
 public function index($id=null,$sucursal=null) {
 		 $requirements =  $this->Requirement->find('all', array('conditions' => array('Requirement.' . 'charge_id' => $id)));
 		$this->set(compact('requirements','sucursal'));
@@ -41,7 +43,7 @@ public function add() {
 if ($this->request->is('post')) {
 $this->Requirement->create();
 if ($this->Requirement->save($this->request->data)) {
-$this->Session->setFlash(__('The requirement has been saved'));
+//$this->Session->setFlash(__('The requirement has been saved'));
 $this->redirect(array('action' => 'index'));
 } else {
 $this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
@@ -65,7 +67,7 @@ throw new NotFoundException(__('Invalid requirement'));
 }
 if ($this->request->is('post') || $this->request->is('put')) {
 if ($this->Requirement->save($this->request->data)) {
-$this->Session->setFlash(__('The requirement has been saved'));
+//$this->Session->setFlash(__('The requirement has been saved'));
 $this->redirect(array('action' => 'index'));
 } else {
 $this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
@@ -100,73 +102,105 @@ $this->Session->setFlash(__('Requirement was not deleted'));
 $this->redirect(array('action' => 'index'));
 }
 
-public function select1(){
-$this->Session->write('cargo.id',$this->request->data['Requirement']['id']);
-$this->redirect(array('action' => 'select'));
-}
 
-public function select(){
+public function select($id=null){
+
+		$menu1 = array('menu1' => array('id' => 'menu2'));
+
+		//menu
+		$this->Session->write($menu1);
 		$menu = array('menu' => array(
-    'id' => 'ss','inferior'=>'','superior'=>'','color'=>''
-));
+    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''));
 		//menu
 		$this->Session->write($menu);
-		//////////////
-
-$id = $this->Session->read('cargo.id');
-///funcion q valide q id no pueda ser pos
-$filename=null;
-if ($this->request->is('post')) {
-//Subir archivos
-if ($this->request->data['Requirement']['curriculum']) {
-
-$file = new File($this->request->data['Requirement']['curriculum']['tmp_name']);
-$path_parts = pathinfo($this->request->data['Requirement']['curriculum']['name']);
-$ext = $path_parts['extension'];
 
 
-if ($ext != 'docx' /* && $ext != 'doc' && $ext != 'gif' && $ext != 'png'*/) {
-$this->Session->setFlash('Solo puedes subir docx.');
-$this->render();
-} else {
-$date = $this->request->data['Requirement']['curriculum']['name'];
-$filename = $this->request->data['Requirement']['charge_id'].$this->request->data['Requirement']['email'].$date;
-
-$data = $file->read();	
-$file = new File(WWW_ROOT.'img/Newrequirement/curriculum/'.$filename,true);
-$file->write($data);
-$file->close();
-}
-}
-//Fin subir archivos
-
-$this->request->data['Requirement']['curriculum'] = $filename;
 
 
-$this->Requirement->create();
-if ($this->Requirement->save($this->request->data)) {
-$this->Session->setFlash(__('The requirement has been saved'));
-$this->redirect(array('controller' => 'Branches','action' => 'select'));
-} else {
-$this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
+		$filename=null;
+		if ($this->request->is('post')) {
+		//Subir archivos
+		if ($this->request->data['Requirement']['curriculum']) {
 
-}
-}
-else{
-$this->loadModel('Charge');
-$this->loadModel('Supermarket');
+		$file = new File($this->request->data['Requirement']['curriculum']['tmp_name']);
+		$path_parts = pathinfo($this->request->data['Requirement']['curriculum']['name']);
+		$ext = $path_parts['extension'];
 
-if(!$this->Charge->exists($id)){
-$this->redirect(array('controller' => 'Branches', 'action' => 'select'));
 
-}else{
+		if ($ext != 'docx' /* && $ext != 'doc' && $ext != 'gif' && $ext != 'png'*/) {
+		$this->Session->setFlash('Solo puedes subir docx.');
+		$this->render();
+		} else {
+		$date = $this->request->data['Requirement']['curriculum']['name'];
+		$filename = $this->request->data['Requirement']['charge_id'].$this->request->data['Requirement']['email'].$date;
 
-$Charge = $this->Charge->find('all',array('conditions' => array('Charge.' . $this->Charge->primaryKey => $id)));
-$Supermarket = $this->Supermarket->find('all');	
-$this->set(compact('Charge','Supermarket'));
-}
-}
+		$data = $file->read();	
+		$file = new File(WWW_ROOT.'img/requirement/curriculum/'.$filename,true);
+		$file->write($data);
+		$file->close();
+		}
+		}
+		//Fin subir archivos
 
-}
+		$this->request->data['Requirement']['curriculum'] = $filename;
+
+
+		$this->Requirement->create();
+		if ($this->Requirement->save($this->request->data)) {
+		//$this->Session->setFlash(__('The requirement has been saved'));
+		$this->redirect(array('action' => 'email'));
+		} else {
+
+		$this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
+
+		}
+		}
+
+		else{
+			
+		$this->loadModel('Charge');
+		$this->loadModel('Supermarket');
+		if($this->Charge->exists($id)){
+		$Charge = $this->Charge->find('all',array('conditions' => array('Charge.' . $this->Charge->primaryKey => $id)));
+		$Supermarket = $this->Supermarket->find('all');	
+		$this->set(compact('Charge','Supermarket'));
+		}
+		else{
+			$this->redirect(array('controller'=>'Branches','action'=>'select'));
+		}
+	
+		}
+
+		}
+
+
+		public function email(){
+
+		$requirement = $this->Requirement->find('first',array('order' => 'Requirement.created DESC'));
+			
+
+				$datos = array('requirement' => array('datos' => $requirement));
+
+				//menu
+				$this->Session->write($datos);
+		
+		$this->Email = new CakeEmail();
+		$this->Email->from(array('oscar_7938074@hotmail.com' => 'Avicola Santatosa'));
+        $this->Email->to('oscar_7938074@hotmail.com');
+        $this->Email->subject('REQUERIMIENTO DE PERSONA');
+        $this->Email->attachments(array(WWW_ROOT."img/requirement/curriculum/".$requirement['Requirement']['curriculum']));
+        $this->Email->template('requirements');
+        $this->Email->emailFormat('html');
+        $val=null;
+        if($this->Email->send()){
+		  	$this->redirect(array('controller' => 'Branches','action' => 'select'));
+			
+		}else{
+		  $val="Mensaje no enviado";
+		 
+
+		}
+		// $this->set(compact('val'));
+		}
 
 }

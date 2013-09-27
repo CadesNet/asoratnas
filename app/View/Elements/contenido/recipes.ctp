@@ -34,8 +34,7 @@
   </div>
 
 
-<div class="container">
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span9">
 			<div class="row-fluid">
 				
@@ -66,7 +65,7 @@
 				<div class="span4 borderimg">
 					<?php
 	                	 		if($this->Session->read('Auth.User.id')){ 
-								 echo $this->Html->link('Ver imagenes', array('controller' => 'ImagesRecipes', 'action' => 'index',$recipes['Recipe']['id']),array('class'=>'btn btn-primary')); 
+								 echo $this->Html->link('Agregar imagenes', array('controller' => 'ImagesRecipes', 'action' => 'index',$recipes['Recipe']['id']),array('class'=>'btn btn-primary')); 
 							}?>
 						<?php 
 						foreach ($recipes['ImagesRecipe'] as $ImagesRecipe) {
@@ -74,18 +73,18 @@
 						break;
 						} ?>
 				</div>
-				<div class="span8">
+				<div class="span7">
 					<div class="row-fluid">
 						<div class="span12">
-							<h3 class = "recipeitemtitle"><?php echo $recipes['Recipe']['title']." ";
+							<h4 class = "recipeitemtitle"><?php echo  ((strlen(h($recipes['Recipe']['title']))>47) ? substr(h($recipes['Recipe']['title']), 0, 47)."..." : substr(h($recipes['Recipe']['title']), 0, 47));
 							if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'1','1','1','recetas'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','recetas'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','recetas'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h4>
 						</div>
 					</div>
 					<div class="row-fluid">
 							<div class="span12">
-								<div><p class = "recipetitledescription"> Tiempo de cocción:</p></div>
+							<p class = "recipetitledescription"> Tiempo de cocción:</p>
 								<div><p class="textoinfo">&nbsp;<?php echo $recipes['Recipe']['time'] ?>&nbsp;min</p></div> 
 							</div>
 					</div>
@@ -100,6 +99,7 @@
 					
 					<div class="row-fluid">
 					<p class="visible-desktop visi1">&nbsp; </p>
+					<br>
 						<div class="span12">
 							<?php echo $this->Html->link(__('Ver receta'), array('controller' => 'Recipes', 'action' => 'select1',$recipes['Recipe']['id'],$coun++), array('class' => 'btn btn-info btn-large')); ?>
 						</div>
@@ -110,20 +110,20 @@
 			<?} ?>
 				
 			<div class="paginator" style="float: right;">
-<?php 
+				<?php 
 
 
-// Shows the next and previous links
-echo $this->Paginator->prev('« Anterior Receta', null, null, array('class' => 'disabled'));
-  //Shows the page numbers
-echo "&nbsp;".$this->Paginator->numbers()."&nbsp;";
-echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 'disabled'));
+				// Shows the next and previous links
+				echo $this->Paginator->prev('« Anterior Receta', null, null, array('class' => 'disabled'));
+				  //Shows the page numbers
+				echo "&nbsp;".$this->Paginator->numbers()."&nbsp;";
+				echo $this->Paginator->next('Siguiente Receta »', null, null, array('class' => 'disabled'));
 
-// prints X of Y, where X is current page and Y is number of pages
-//echo $this->Paginator->counter();
-        ?>
-</div>
-				</div>
+				// prints X of Y, where X is current page and Y is number of pages
+				//echo $this->Paginator->counter();
+				        ?>
+			</div>
+			</div>
 			</div>
 
 			

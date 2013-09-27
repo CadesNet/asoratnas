@@ -99,8 +99,12 @@ class CompaniesController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	public function select(){
+			$menu1 = array('menu1' => array('id' => 'menu2'));
+
+		//menu
+		$this->Session->write($menu1);
 			$menu = array('menu' => array(
-    'id' => '','inferior'=>'','superior'=>'','color'=>''
+    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
 ));
 		//menu
 		$this->Session->write($menu);

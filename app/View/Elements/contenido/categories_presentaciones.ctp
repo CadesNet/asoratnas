@@ -34,7 +34,7 @@
   </div>
 
 
-<div class="container">
+
 	<div class="row-fluid">
 		<div class="span9">
 			
@@ -68,12 +68,14 @@
 				</div>
 			</div>
 			
-			<div class = "row">
+			<div class = "row-fluid">
 				<ul class = "thumbnails span12 offset1">
-				<li class="span5"></li>
-				<li class="span5"></li>
+				<li class="span5" style="min-height: 10px;"></li>
+				<li class="span5" style="min-height: 10px;"></li>
 				<?php foreach ($categories['Item'] as $item) { 
 						foreach ($item['Presentation'] as $presentation) { 
+							if($presentation['removed'] != 'si'){
+
 					?>
 
 				<li class="span5  cuadroproducto" style="margin-right: 25px;" >
@@ -81,7 +83,7 @@
 						<?php if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Presentations','action' => 'edit',$categories['Category']['id'],'m',$presentation['id'],'categories'),array('class' => 'ok btn btn-info ','escape' => false)); 
 							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Presentations','action' => 'delete',$categories['Category']['id'],'m',$presentation['id'],'categories'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$presentation['id'])); 
-							 echo $this->Html->link('Ver imagenes', array('controller' => 'ImagesPresentations', 'action' => 'index',$presentation['id']),array('class'=>'btn btn-primary')); 
+							 echo $this->Html->link('Agregar imagenes', array('controller' => 'ImagesPresentations', 'action' => 'index',$presentation['id']),array('class'=>'btn btn-primary')); 
 						}?>
 					</div>
 					<div class="row-fluid" style="text-align: center" ><!-- ie width 100%-->
@@ -107,6 +109,8 @@
 			
 			<?php
 			 }
+
+			}
 
 			 } ?>
 	
@@ -147,7 +151,7 @@
 								}?>
 				<div class="row-fluid" style="text-align:left;" >
 					<div class="span12" >
-						<h2 class="recipedia">&nbsp;&nbsp;La receta del dia</h3>
+						<h3 class="recipedia">&nbsp;&nbsp;La receta del dia</h3>
 					</div>
 					
 				</div>
@@ -168,15 +172,15 @@
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h3 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
+						<h5 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
 							if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h3>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h5>
 					</div>
 				</div>
 				<div class="row-fluid" >
 					<div class="span12">
-						<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minitos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
+						<h5 style="color: #2D6876" ><?php echo $recipes['Recipe']['time'] ?> Minutos - <?=$recipes['Recipe']['portion'] ?> Personas</h5>
 					</div>
 				</div>				
 				<div class="row-fluid">
@@ -196,5 +200,5 @@
 		</div>
 	</div>
 </div>
-</div>
+
 

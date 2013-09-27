@@ -1,5 +1,5 @@
 <div class="imagesPresentation index">
-	<h2><?php echo __('Images Presentations'); ?></h2>
+	<h2><?php echo __('Imagenes Presentacion'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo ('Seleccione una imagen'); ?></th>
@@ -21,7 +21,7 @@
 <?php endforeach; ?>
 	</table>
 	<div class="row">
-		<?php echo $this->Html->link(__('New Images Presentacion'), array('action' => 'add',$id_presentacion),array('class' => 'ok btn btn-info btn-large')); ?>
+		<?php echo $this->Html->link(__('Nueva imagen'), array('action' => 'add',$id_presentacion),array('class' => 'ok btn btn-info btn-large')); ?>
 	</div>
 </div>
 <br><br>
