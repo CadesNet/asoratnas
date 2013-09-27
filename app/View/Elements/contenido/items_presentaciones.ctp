@@ -98,7 +98,7 @@
 							<p class = "itemdescription">Presentacíon <?php echo $presentation['name'] ?> </p>
 						</div>
 						<div class="span12">
-							<?php echo $this->Html->link(__('Saber mas..'), array('controller' => 'Quotes', 'action' => 'select',$categories['Category']['id'],$categories['Item']['id'],$presentation['id']), array('class' => 'btn btn-large btn-danger','style' => "background:".$categories['Category']['description'].";")); ?>
+							<?php echo $this->Html->link(__('Saber mas'), array('controller' => 'Quotes', 'action' => 'select',$categories['Category']['id'],$categories['Item']['id'],$presentation['id']), array('class' => 'btn btn-large btn-danger','style' => "background:".$categories['Category']['description'].";")); ?>
 						</div>
 					</div>
 

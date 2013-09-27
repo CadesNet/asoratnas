@@ -55,7 +55,23 @@
 			<div class="row-fluid">
 				<div class="span11 offset1">
 					<?php
-						$coun = 1;
+						$coun = 0;
+						
+						switch (count($tips)) {
+							case 1:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'));
+								break;
+							case 2:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-1;
+								break;
+							case 3:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-2;
+								break;
+							case 4:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-3;
+								break;
+							
+						}
 					 foreach ($tips as $tip) { ?>
 			<div class= "tipssalud">
 				<div  class="row-fluid">
@@ -84,7 +100,7 @@
                 	 
 					<div class="row-fluid">
 						<div class="span5">
-							<?php echo $this->Html->link(__('Saber más'), array('controller' => 'Tips', 'action' => 'select2',$tip['Tip']['id'],$coun++), array('class' => 'btn btn-inverse btn-large')); ?>
+							<?php echo $this->Html->link(__('Saber más'), array('controller' => 'Tips', 'action' => 'select2',$tip['Tip']['id'],$coun++), array('class' => 'btn btn-inverse btn-large','style'=>'background: #90151A')); ?>
 						</div>
 					</div>
 				</div>

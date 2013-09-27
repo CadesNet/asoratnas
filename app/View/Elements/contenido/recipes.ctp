@@ -58,7 +58,23 @@
 			<div class="row-fluid">
 				<div class="span11 offset1">
 					<?php
-						$coun = 1;
+						$coun = 0;
+						
+						switch (count($recipes)) {
+							case 1:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'));
+								break;
+							case 2:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-1;
+								break;
+							case 3:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-2;
+								break;
+							case 4:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-3;
+								break;
+							
+						}
 					 foreach ($recipes as $recipes) { ?>
 			<div class= "itemreceta">
 				<div  class="row-fluid">

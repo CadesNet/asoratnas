@@ -55,8 +55,28 @@
 			<div class="row-fluid">
 				<div class="span11 offset1">
 					<?php
-						$coun = 1;
+					//sacar mas informacion del paginador 
+					//echo $paginator->counter(array('format' => 'Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on nd%'));
+						$coun = 0;
+						
+						switch (count($benefits)) {
+							case 1:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'));
+								break;
+							case 2:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-1;
+								break;
+							case 3:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-2;
+								break;
+							case 4:
+								$coun = (int)$this->Paginator->counter(array('format' => '%end%'))-3;
+								break;
+							
+						}
+						
 					 foreach ($benefits as $benefit) { ?>
+
 			<div class= "beneficiospavo">
 				<div  class="row-fluid">
 				<div class="span4">

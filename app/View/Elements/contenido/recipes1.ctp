@@ -63,7 +63,7 @@
 				<div class="span7">
 					<div class="row-fluid">
 						<div class="span12">
-							<h3 class = "recipeitemtitle"><?php echo $recipes['Recipe']['title'] ?></h3>
+							<h4 class = "recipeitemtitle"><?php echo $recipes['Recipe']['title'] ?></h4>
 						</div>
 					</div>
 					<div class="row-fluid">
@@ -82,7 +82,8 @@
 					</div>
 					<p class="visible-desktop visi">&nbsp; </p>
                 	 <p class="visible-desktop visi">&nbsp; </p>
-					<br>
+					 <p class="visible-desktop visi">&nbsp; </p>
+					 
 
 
 					<div class="row-fluid">
@@ -95,15 +96,15 @@
 					
 				<div class="row-fluid">
 					<div class="span12">
-						<h3 class = "recipeitemsubtitle">Ingredientes</h3>
+						<h4 class = "recipeitemsubtitle">Ingredientes</h4>
 						<p class="textoinfo"><?php echo html_entity_decode(h($recipes['Recipe']['ingredients'])) ?> </p>
 					</div>
 					
 				</div>
 					<div class="row-fluid">
 					<div class="span12">
-						<h3 class = "recipeitemsubtitle">Preparacion</h3>
-						<p class="textoinfo"><?php echo html_entity_decode(h($recipes['Recipe']['preparation'])); ?>personas</p>
+						<h4 class = "recipeitemsubtitle">Preparacion</h4>
+						<p class="textoinfo"><?php echo html_entity_decode(h($recipes['Recipe']['preparation'])); ?></p>
 					</div>
 				</div>
 				<br>

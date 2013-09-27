@@ -61,7 +61,7 @@
 					<div class="span7">
 						<div class="row-fluid">
 							<div class="span12">
-								<h3 class = "titlebeneficios"><?php echo $benefit['Benefit']['title'] ?></h3>
+								<h4 class = "titlebeneficios"><?php echo $benefit['Benefit']['title'] ?></h4>
 							</div>
 						</div>
 						<p class="visible-desktop visi">&nbsp; </p>

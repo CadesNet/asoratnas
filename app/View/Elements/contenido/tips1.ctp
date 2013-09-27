@@ -63,7 +63,7 @@
 				<div class="span7">
 					<div class="row-fluid">
 						<div class="span12">
-							<h3 class = "titletips"><?php echo $tip['Tip']['title'] ?></h3>
+							<h4 class = "titletips"><?php echo $tip['Tip']['title'] ?></h3>
 						</div>
 					</div>
 					<p class="visible-desktop visi">&nbsp; </p>
@@ -75,7 +75,7 @@
                 	 <br>
 					<div class="row-fluid">
 						<div class="span5">
-							<?php echo $this->Html->link(__('Volver'), array('controller' => 'Tips', 'action' => 'select1'), array('class' => 'btn btn-inverse btn-large')); ?>
+							<?php echo $this->Html->link(__('Volver'), array('controller' => 'Tips', 'action' => 'select1'), array('class' => 'btn btn-inverse btn-large','style'=>'background: #90151A')); ?>
 						</div>
 					</div>
 				</div>
