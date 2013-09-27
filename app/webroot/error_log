@@ -1,0 +1,1 @@
+[21-Sep-2013 12:30:43] PHP Fatal error:  Class 'AppHelper' not found in /home/avicolas/public_html/new/lib/Cake/View/Helper/JsHelper.php on line 35
