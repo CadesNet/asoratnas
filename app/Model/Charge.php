@@ -7,7 +7,13 @@ App::uses('AppModel', 'Model');
  * @property Requirement $Requirement
  */
 class Charge extends AppModel {
-
+/**
+ * img field
+ *
+ */
+var $actsAs = array(
+        'MeioUpload' => array('filename')
+    );
 /**
  * Display field
  *

@@ -151,7 +151,7 @@
 								}?>
 				<div class="row-fluid" style="text-align:left;" >
 					<div class="span12" >
-						<h3 class="recipedia">&nbsp;&nbsp;La receta del dia</h3>
+						<h3 class="recipedia">&nbsp;&nbsp;La receta del día</h3>
 					</div>
 					
 				</div>

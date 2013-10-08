@@ -106,8 +106,7 @@ class QuoteServicesController extends AppController {
 		//menu
 		$this->Session->write($menu1);
 
-				$menu = array('menu' => array(
-    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
+				$menu = array('menu' => array('id' => 'mm','inferior'=>'','superior'=>'','color'=>''
 ));
 		//menu
 		$this->Session->write($menu);

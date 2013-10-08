@@ -1,6 +1,7 @@
 <div class="container-fluid" style="min-height: 800px;">
 	<div class="row-fluid">
 		<div class="span12">
+		<?php  foreach ($charges as $charge) { ?>	
 			<div class="row-fluid">
 				
 			
@@ -8,7 +9,7 @@
 						<div class="span12">
 							<div class="row-fluid">
 								<div class="span12">
-									<h3 class = "otrostitle">Aplicar para <span style="float: right;"><?php echo $this->Html->link(h("Volver"),array('controller'=>'Branches','action'=>'select'),array('style'=>'color: #06816A;text-decoration: none;'));  ?></span></h3>
+									<h3 class = "otrostitle">Aplicar para <?php echo h($charge['Charge']['title']); ?> <span style="float: right;"><h4><?php echo $this->Html->link(h("Volver"),array('controller'=>'Branches','action'=>'select'),array('style'=>'color: #06816A;text-decoration: none;'));  ?></h4></span></h3>
 									 
 								</div>
 							</div>
@@ -17,19 +18,12 @@
 					
 						</div>
 			</div>
-		<?php  foreach ($charges as $charge) { ?>	
+		
 	<div class="row-fluid">
 		<div class="sapn12">
-			
-			<div class="row-fluid">
-			 <div style="text-align:center" class="span12">
-			 	<h3 style="color:#06816A"><?php echo $charge['Charge']['title']; ?> </h3>
-
-			 </div>
-			</div>
 			<div class="row-fluid">
 			 <div class="span12">
-			 	<p style="margin-bottom: 0px;color:#4D5351">Fecha limite de admicion del curriculum Vitae:</p> 
+			 	<p style="margin-bottom: 0px;color:#4D5351"><strong>Fecha limite de admicion del curriculum Vitae:</strong></p> 
 			 	<?php echo $charge['Charge']['deadline']; ?>
 			 	<br>
 			 	<br>
@@ -38,7 +32,7 @@
 			</div>
 			<div class="row-fluid">
 			 <div class="span12">
-			 	<p style="margin-bottom: 0px;color:#4D5351">DESCRIPCION DE LA VACANCIA</p>
+			 	<p style="margin-bottom: 0px;color:#4D5351"><strong>DESCRIPCIÓN DE LA VACANCIA</strong></p>
 			 	
 			 	<?php echo $charge['Charge']['description']; ?> 
 			 	<br>
@@ -47,7 +41,7 @@
 			</div>
 			<div class="row-fluid">
 			 <div class="span12">
-			  	<p style="margin-bottom: 0px;color:#4D5351">FORMACION REQUERIDA</p>
+			  	<p style="margin-bottom: 0px;color:#4D5351"><strong>FORMACIóN REQUERIDA</strong></p>
 			  	
 			 	<?php echo $charge['Charge']['formation']; ?> 
 			 	<br>

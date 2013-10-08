@@ -22,8 +22,7 @@ public function beforeFilter() {
 	}
 
 	public function login() {
-		$menu = array('menu' => array(
-    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
+		$menu = array('menu' => array('id' => 'mm','inferior'=>'','superior'=>'','color'=>''
 ));
 
 		//menu
@@ -41,8 +40,7 @@ public function beforeFilter() {
 	}
 
 	public function logout() { //sierra sesion 
-		$menu = array('menu' => array(
-    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
+		$menu = array('menu' => array('id' => 'mm','inferior'=>'','superior'=>'','color'=>''
 ));
 
 		//menu

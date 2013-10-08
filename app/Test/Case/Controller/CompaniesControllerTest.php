@@ -15,9 +15,9 @@ class CompaniesControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.company',
 		'app.branch',
-		'app.address',
 		'app.charge',
-		'app.requirement'
+		'app.requirement',
+		'app.new_requirement'
 	);
 
 /**

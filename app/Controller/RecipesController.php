@@ -173,13 +173,14 @@ class RecipesController extends AppController {
 
 //conulta propias
 	public function select(){
+		$this->Session->delete('pagina');
 		$menu1 = array('menu1' => array('id' => 'mm'));
 
 		//menu
 		$this->Session->write($menu1);
 		//menu
-		$menu = array('menu' => array(
-    'id' => 'recetas','inferior'=>'#1A8DA2','superior'=>'#28C3DE','color'=>'#FFF'));
+		//$menu = array('menu' => array('id' => 'recetas','inferior'=>'#1A8DA2','superior'=>'#28C3DE','color'=>'#FFF'));
+		$menu = array('menu' => array('id' => 'recetas','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		////////
@@ -209,8 +210,8 @@ class RecipesController extends AppController {
 
 	public function select1($id=null,$pagina){
 				//menu
-		$menu = array('menu' => array(
-    'id' => 'recetas','inferior'=>'#1A8DA2','superior'=>'#28C3DE','color'=>'#FFF'));
+		//$menu = array('menu' => array('id' => 'recetas','inferior'=>'#1A8DA2','superior'=>'#28C3DE','color'=>'#FFF'));
+		$menu = array('menu' => array('id' => 'recetas','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		////////
@@ -223,13 +224,28 @@ class RecipesController extends AppController {
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
 
-					$this->paginate = array(
+					if(!$this->Session->check('pagina')){
+						$this->paginate = array(
                                 'order' => array('Recipe.id' => 'DESC'), 
                                 'recursive' => 1,
                                 "limit" => 1,
                                 'page' => $pagina
                                 //'conditions' => $conditions
                                 );
+						$page = array('pagina' => 'val');
+					//menu
+					$this->Session->write($page);
+					}else{
+						
+
+				$this->paginate = array(
+                                'order' => array('Recipe.id' => 'DESC'), 
+                                'recursive' => 1,
+                                "limit" => 1,
+                                //'conditions' => $conditions
+                                );
+					}
+	
 
 		$Recipe = $this->paginate("Recipe");
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));

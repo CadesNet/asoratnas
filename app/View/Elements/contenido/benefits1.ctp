@@ -37,10 +37,10 @@
 		<div class="span9">
 			<div class="row-fluid">
 				<div class="span1">
-					<h3 style="float: right;"><?php echo $this->Html->image("beneficos-del-pavo.png")?></h3>
+					<h3 style="float: right;"><?php //echo $this->Html->image("beneficos-del-pavo.png")?></h3>
 				</div>
 				<div class="span11">
-					<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php echo $this->session->read('menu.inferior') ?>">Beneficios del pavo</h3>
+					<h3 style="color:<?php  echo '#73235E' //echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php  echo '#73235E' //echo $this->session->read('menu.inferior') ?>">Beneficios del pavo</h3>
 				<br>
 				</div>
 			</div>
@@ -48,7 +48,7 @@
 			<div class="row-fluid">
 				<div class="span11 offset1">
 				<?php
-				$coun = 1;
+			
 				foreach ($benefits as $benefit) {
 						$id_beneficio=$benefit['Benefit']['id'];
 				 ?>
@@ -108,7 +108,7 @@
 					echo $this->Paginator->next('Siguiente »', null, null, array('class' => 'disabled'));
 
 					// prints X of Y, where X is current page and Y is number of pages
-					//echo $this->Paginator->counter();
+					echo $this->Paginator->counter();
 					        ?>
 				</div>
 

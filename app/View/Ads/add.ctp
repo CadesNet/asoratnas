@@ -4,11 +4,12 @@
 		<legend><?php echo __('Agregar Publicidad'); ?></legend>
 	<?php
 		echo $this->FormEnum->input('type',array('label' => 'Tipo'));
-		echo ("Opcion video: ingrese la url (//www.youtube.com/embed/dF-rMYDo-LM) es requrido q selecciones una imagen que pese poco <br>");
+		echo h("Opcion video: ingrese la parte marcada con rojo")."<br>"?> 
+		<?php echo h("<iframe width='560' height='315' src='" )?><span style='color:#FF0000'>//www.youtube.com/embed/dF-rMYDo-LM </span> <?php echo h("' frameborder='0' allowfullscreen></iframe> es obligado que seleccione una imagen")."<br>";
 		echo ("Opcion foto seleccione una foto no es necesario una url");
 		echo $this->FormEnum->input('link',array('label' => 'Url'));
-		echo(h("El tamaño de la imagen de publicidad tiene que ser 276 x 389"));
-		echo $this->FormEnum->input('filename',array('type' => 'file','label' => 'Seleccione una imagen '));
+		echo (h("El tamaño de la imagen de publicidad tiene que ser 276 x 389"));
+		echo $this->FormEnum->input('filename',array('type' => 'file','label' => 'Seleccione una imagen obligadamente'));
 		echo $this->FormEnum->input('dir', array('type' => 'hidden'));
 	?>
 	</fieldset>

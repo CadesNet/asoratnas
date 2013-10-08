@@ -39,10 +39,10 @@
 			<div class="row-fluid">
 				
 			<div class="span1">
-						<h3 style="float: right;"><?php echo $this->Html->image("diseno-interfaz-avicola-CUIDA-TU-SALUD.png")?></h3>
+						<h3 style="float: right;"><?php //echo $this->Html->image("diseno-interfaz-avicola-CUIDA-TU-SALUD.png")?></h3>
 				</div>
 				<div class="span11">
-						<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php echo $this->session->read('menu.inferior') ?>">Cuida Tu Salud<?php if($this->Session->read('Auth.User.id')){ 
+						<h3 style="color:<?php echo '#710A0F' //echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php echo '#710A0F' //echo $this->session->read('menu.inferior') ?>">Cuida Tu Salud<?php if($this->Session->read('Auth.User.id')){ 
 								 echo " ".$this->Html->link('Agregar un nuevo consejo', array('controller' => 'Tips', 'action' => 'add'),array('class'=>'btn btn-primary'));
 
 
@@ -84,7 +84,7 @@
 							<h4 class = "titletips"><?php echo  ((strlen(h($tip['Tip']['title']))>47) ? substr(h($tip['Tip']['title']), 0, 47)."..." : substr(h($tip['Tip']['title']), 0, 47));
 							 if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Tips','action' => 'edit',$tip['Tip']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-home'></i>"), array('controller'=>'Tips','action' => 'delete', $tip['Tip']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$tip['Tip']['id'])); }?></h4>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Tips','action' => 'delete', $tip['Tip']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$tip['Tip']['id'])); }?></h4>
 						</div>
 					</div>
 					<div class="row-fluid">

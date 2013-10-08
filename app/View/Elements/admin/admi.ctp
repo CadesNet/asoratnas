@@ -4,7 +4,7 @@
                 <ul class="dropdown-menu" style="background-color: transparent;border: 0;">  
 					<li><?php echo $this->Html->link(__('Requerimiento Personal Sucursales'), array('controller' => 'Branches', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
 					<li><?php echo $this->Html->link(__('Consultas'), array('controller' => 'Consultations', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
-				 	<li><?php echo $this->Html->link(__('Cotizaciones'), array('controller' => 'Quotes', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
+				<!-- 	<li><?php  // echo$this->Html->link(__('Cotizaciones'), array('controller' => 'Quotes', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li> -->
 				 	<li><?php echo $this->Html->link(__('Servicios'), array('controller' => 'QuoteServices', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>
 				 	<li><?php echo $this->Html->link(__('Nuevos Requerimientos'), array('controller' => 'NewRequirements', 'action' => 'index'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li> 
 				 	<li><?php echo $this->Html->link(__('cerrar sesion '), array('controller' => 'Users', 'action' => 'logout'), array('class' => 'idamd modell btn btn-info btn-large')); ?> </li>   

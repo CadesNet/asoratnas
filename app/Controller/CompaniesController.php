@@ -4,8 +4,16 @@ App::uses('AppController', 'Controller');
  * Companies Controller
  *
  * @property Company $Company
+ * @property PaginatorComponent $Paginator
  */
 class CompaniesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -13,9 +21,8 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function index() {
-		
 		$this->Company->recursive = 0;
-		$this->set('companies', $this->paginate());
+		$this->set('companies', $this->Paginator->paginate());
 	}
 
 /**
@@ -26,7 +33,6 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		
 		if (!$this->Company->exists($id)) {
 			throw new NotFoundException(__('Invalid company'));
 		}
@@ -40,12 +46,11 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function add() {
-		
 		if ($this->request->is('post')) {
 			$this->Company->create();
 			if ($this->Company->save($this->request->data)) {
-				$this->Session->setFlash(__('The company has been saved'));
-				$this->redirect(array('action' => 'index'));
+				//$this->Session->setFlash(__('The company has been saved.'));
+				return $this->redirect(array('action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The company could not be saved. Please, try again.'));
 			}
@@ -60,14 +65,13 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		
 		if (!$this->Company->exists($id)) {
 			throw new NotFoundException(__('Invalid company'));
 		}
-		if ($this->request->is('post') || $this->request->is('put')) {
+		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Company->save($this->request->data)) {
-				$this->Session->setFlash(__('The company has been saved'));
-				$this->redirect(array('action' => 'select'));
+				//$this->Session->setFlash(__('The company has been saved.'));
+				return $this->redirect(array('controller'=>'Companies','action' => 'select'));
 			} else {
 				$this->Session->setFlash(__('The company could not be saved. Please, try again.'));
 			}
@@ -85,27 +89,25 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
-		
 		$this->Company->id = $id;
 		if (!$this->Company->exists()) {
 			throw new NotFoundException(__('Invalid company'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Company->delete()) {
-			$this->Session->setFlash(__('Company deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->Session->setFlash(__('The company has been deleted.'));
+		} else {
+			$this->Session->setFlash(__('The company could not be deleted. Please, try again.'));
 		}
-		$this->Session->setFlash(__('Company was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
-	public function select(){
+
+		public function select(){
 			$menu1 = array('menu1' => array('id' => 'menu2'));
 
 		//menu
 		$this->Session->write($menu1);
-			$menu = array('menu' => array(
-    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''
-));
+		$menu = array('menu' => array('id' => 'mm','inferior'=>'','superior'=>'','color'=>''));
 		//menu
 		$this->Session->write($menu);
 		//////////////
@@ -113,4 +115,7 @@ class CompaniesController extends AppController {
 		$Company = $this->Company->find('all');
 		$this->set(compact('Company'));
 	}
+
+
+
 }

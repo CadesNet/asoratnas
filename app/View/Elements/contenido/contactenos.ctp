@@ -2,7 +2,7 @@
 <div class="container-fluid" style="min-height: 800px;">
 <div class="row-fluid">
 	<div class="span12">
-		<h3 class="otrostitle">Contactenos<?php if($this->Session->read('Auth.User.id')){ 
+		<h3 class="otrostitle">Contáctenos<?php if($this->Session->read('Auth.User.id')){ 
 								 echo " ".$this->Html->link('Agregar sucursal', array('controller' => 'Branches', 'action' => 'add','contactenos'),array('class'=>'btn btn-primary'));
 								}?></h3>
 	</div>
@@ -38,7 +38,7 @@
 							<div class="row-fluid" style="text-align: center;">
 								<div class="span12">
 									<div class = "tipodedireccion">
-									Contacto: <?php echo $branch1['Branch']['contact'] ?>
+									Contácto: <?php echo $branch1['Branch']['contact'] ?>
 									</div>
 								</div>
 							</div>

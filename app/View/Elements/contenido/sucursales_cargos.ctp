@@ -9,7 +9,7 @@
 						<div class="span12">
 							<div class="row-fluid">
 								<div class="span12">
-									<h3 class="otrostitle">Cargos en:  <?php echo $branch['Branch']['name']; 
+									<h3 class="otrostitle">Posiciones disponibles - Sucursal <?php echo $branch['Branch']['name']; 
 									if($this->Session->read('Auth.User.id')){ 
 								 	echo " ".$this->Html->link('Agregar Cargo', array('controller' => 'Charges', 'action' => 'add',$branch['Branch']['id']),array('class'=>'btn btn-primary'));
 
@@ -38,15 +38,18 @@
 				
 		<li class="span5 ">
 		<div class="row-fluid cuadrovacantes">
-			<div class = "infovacantes">
+			
+			 <? if($this->Session->read('Auth.User.id')){ 
+							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Charges','action' => 'edit',$charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Charges','action' => 'delete', $charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$charge['id'])); }?>
+			 <div class = "infovacantes">
+
 			 <div class="span4">
-			 	<?php echo $this->Html->image("cargo.png")?>
+			 	<?php echo $this->Html->image("charge/filename/". $charge['filename'])?>
 			 </div>
 			 <div class="span8">
-			 	<h4 class = "titlevacantes"><?php echo $charge['title']." ";
-							if($this->Session->read('Auth.User.id')){ 
-							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Charges','action' => 'edit',$charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Charges','action' => 'delete', $charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$charge['id'])); }?> </h4>
+			 	<p style="font-weight: bold;color: #827370;"><?php echo $charge['title']." "; ?>
+							 </p>
 
 			 	<p class = "descriptionvacantes">Fecha Limite de Admision de Curriculum Vitae</p>
 

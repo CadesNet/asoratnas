@@ -158,8 +158,7 @@ class BranchesController extends AppController {
 
 		//menu
 		$this->Session->write($menu1);
-		$menu = array('menu' => array(
-    'id' => 'mm','inferior'=>'','superior'=>'','color'=>''));
+		$menu = array('menu' => array('id' => 'mm','inferior'=>'','superior'=>'','color'=>''));
 		//menu
 		$this->Session->write($menu);
 		////////
@@ -175,9 +174,8 @@ class BranchesController extends AppController {
 		$this->Session->write($menu1);
 
 		
-			$menu = array('menu' => array(
-    'id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''
-));
+			//$menu = array('menu' => array('id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''));
+		$menu = array('menu' => array('id' => 'beneficios','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		//////////////

@@ -59,11 +59,11 @@
 		                      <?php echo $this->Html->link(("Contactos"), array('controller' => 'consultations', 'action' => 'select'),array('id'=>'menu4','style'=>'margin: 0 20px 0 20px;')); 
 		                      ?>
 		                      </li>
-		                      <li class="visible-desktop margen" ></li>
+		                     <!--  <li class="visible-desktop margen" ></li>
 		                      <li>
-		                      	<?php $a = 'ppp'; echo $this->Html->link(("Cotizar: ".count($this->Session->read('pp'))." Items"), array('controller' => 'Quotes', 'action' => 'cotizar'),array('id'=>'menu5','style'=>'margin-left: 20px;')); 
+		                      	<?php// $a = 'ppp'; echo $this->Html->link(("Cotizar: ".count($this->Session->read('pp'))." Items"), array('controller' => 'Quotes', 'action' => 'cotizar'),array('id'=>'menu5','style'=>'margin-left: 20px;')); 
 		                      ?>
-		                      </li>
+		                      </li> -->
 	               	    </ul>
 	                </div>
 	               	<p class="visible-desktop ">&nbsp;</p>
@@ -78,14 +78,13 @@
 					  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
 					  fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));</script>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+					
 	                <div class="nav-collapse collapse nav pull-right" >
 	                  		<div class="row-fluid">
 	                  			
 	                  				
 	                  					<div class="span6"> <div class="fb-like" data-href="https://www.facebook.com/pages/Pavos-Santa-Rosa/294146160603097" data-width="550" data-layout="button_count" data-show-faces="true" data-send="false"></div></div>
-	                  					<div class="span6"> <?php echo $this->Html->link(("Twittear"), 'href="https://twitter.com/share',array('class'=>'twitter-share-button','data-via' => 'racso_XD' , 'data-lang' => 'es' , 'data-dnt'=> 'true' )); 
-	                                      ?></div>
+	                  				
 	                  			</div>
 	                </div>  
 	        	    <p class="visible-desktop ">&nbsp; </p>
@@ -157,15 +156,19 @@
 		}
 		if(ID == 'recetas'){
 			 $(this).removeClass('btn');
-		    $(this).addClass('recetasSuperior');
+		    //$(this).addClass('recetasSuperior');
+		     $(this).addClass('productosSuperior');
 		}
 		if(ID == 'beneficios'){
 			 $(this).removeClass('btn');
-		    $(this).addClass('beneficiosSuperior');
+		    //$(this).addClass('beneficiosSuperior');
+		     $(this).addClass('productosSuperior');
 		}
 		if(ID == 'tips'){
 			 $(this).removeClass('btn');
-		    $(this).addClass('tipsSuperior');
+
+		    //$(this).addClass('tipsSuperior');
+		     $(this).addClass('productosSuperior');
 		}
 		if(ID == 'menu1' || ID == 'menu2' || ID == 'menu3' || ID == 'menu4' || ID == 'menu5'){
 			  $(this).addClass('menusub1');
@@ -191,15 +194,18 @@
 		}
 		if(ID == 'recetas'){
 			 $(this).addClass('btn');
-		    $(this).removeClass('recetasSuperior');
+		   // $(this).removeClass('recetasSuperior');
+		    $(this).addClass('productosSuperior');
 		}
 		if(ID == 'beneficios'){
 			 $(this).addClass('btn');
-		    $(this).removeClass('beneficiosSuperior');
+			  $(this).addClass('productosSuperior');
+		    //$(this).removeClass('beneficiosSuperior');
 		}
 		if(ID == 'tips'){
 			 $(this).addClass('btn');
-		    $(this).removeClass('tipsSuperior');
+			  $(this).addClass('productosSuperior');
+		    //$(this).removeClass('tipsSuperior');
 		}
 	}
 

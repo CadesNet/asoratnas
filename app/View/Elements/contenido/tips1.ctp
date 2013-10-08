@@ -39,10 +39,10 @@
 			<div class="row-fluid">
 				
 			<div class="span1">
-						<h3 style="float: right;"><?php echo $this->Html->image("diseno-interfaz-avicola-CUIDA-TU-SALUD.png")?></h3>
+						<h3 style="float: right;"><?php // echo $this->Html->image("diseno-interfaz-avicola-CUIDA-TU-SALUD.png")?></h3>
 				</div>
 				<div class="span11">
-						<h3 style="color:<?php echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php echo $this->session->read('menu.inferior') ?>">Cuida Tu Salud</h3>
+						<h3 style="color:<?php echo '#710A0F' //echo $this->session->read('menu.inferior') ?>;border-bottom: 5px solid <?php echo '#710A0F' //echo $this->session->read('menu.inferior') ?>">Cuida Tu Salud</h3>
 						<br>
 					
 				</div>

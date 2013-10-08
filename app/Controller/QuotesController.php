@@ -226,8 +226,7 @@ class QuotesController extends AppController {
 		//menu
 		$this->Session->write($menu1);
 
-		$menu = array('menu' => array(
-    'id' => 'nnn','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
+		$menu = array('menu' => array('id' => 'nnn','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		

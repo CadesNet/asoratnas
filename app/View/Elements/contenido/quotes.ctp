@@ -105,9 +105,7 @@
 
 									
 								</div>
-								<script type="text/javascript">
 								
-								</script>
 								<div class="span6" >
 									<?php echo $this->Form->create(null, array('action' => 'select1')); ?>
 										<div class="row-fluid">
@@ -115,21 +113,21 @@
 												<h3 style = <?="color:".$categories['Category']['description'].";"?> ><?php echo $items['Presentation']['name'] ?> </h3>
 											</div>
 										</div>
-										
+										<!--
 										<div class="row-fluid">
 											
 											<div class="span3">
-												<p class="stylo_form" style =  <?="color:".$categories['Category']['description'].";"?> >Cantidad</p>
+												<p class="stylo_form" style =  <? // "color:".$categories['Category']['description'].";"?> >Cantidad</p>
 											</div>
 
 											<div class="span2">	  									
 				    										<?php 
-															echo $this->Form->input('id',array('type' => 'hidden','default'=>  $items['Presentation']['id']));
-															echo $this->Form->input('img',array('type' => 'hidden','default'=>  $img));
-															echo $this->Form->input('name',array('type' => 'hidden','default'=>  $categories['Category']['name']."<br>".$items['Item']['name']."<br>".$items['Presentation']['name']));
+															//echo $this->Form->input('id',array('type' => 'hidden','default'=>  $items['Presentation']['id']));
+															//echo $this->Form->input('img',array('type' => 'hidden','default'=>  $img));
+															//echo $this->Form->input('name',array('type' => 'hidden','default'=>  $categories['Category']['name']."<br>".$items['Item']['name']."<br>".$items['Presentation']['name']));
 
 
-															echo $this->Form->input('cantidad',array('label' => '','type' => 'text','default'=>1,'style'=>'width:60%'));
+															//echo $this->Form->input('cantidad',array('label' => '','type' => 'text','default'=>1,'style'=>'width:60%'));
 															?>
 											</div>
 
@@ -137,12 +135,12 @@
 											
 										</div>
 										<div class="row-fluid">
-											<div class="span12">
-												<?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Cotizar&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-large btn-danger','style' => "background:".$categories['Category']['description'].";")); ?>
+										 	<div class="span12">
+												<?php // echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Cotizar&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-large btn-danger','style' => "background:".$categories['Category']['description'].";")); ?>
 											</div>
-										</div>
+										</div> 
 
-								</div>
+								</div>-->
 							</div>
 
 							<div class="row-fluid">
@@ -168,7 +166,8 @@
 						</div>
 					
 					</div>
-			</div>				
+			</div>	
+				</div>		
 			<div class="span3">
 				<div class="row-fluid" >
 				<?php if($this->Session->read('Auth.User.id')){ 
@@ -195,7 +194,7 @@
 								}?>
 						<div class="row-fluid" style="text-align:left;" >
 							<div class="span12" >
-								<h3 class="recipedia">&nbsp;&nbsp;La receta del dia</h3>
+								<h3 class="recipedia">&nbsp;&nbsp;La receta del día</h3>
 							</div>
 							
 						</div>

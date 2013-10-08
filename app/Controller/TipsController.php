@@ -100,13 +100,14 @@ public $helpers = array('Js','Session');
 
 
 	public function select1(){
+		$this->Session->delete('pagina');
 		$menu1 = array('menu1' => array('id' => 'mm'));
 
 		//menu
 		$this->Session->write($menu1);
 				//menu
-		$menu = array('menu' => array(
-    'id' => 'tips','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));
+		//$menu = array('menu' => array('id' => 'tips','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));
+		$menu = array('menu' => array('id' => 'tips','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		////////
@@ -130,8 +131,8 @@ public $helpers = array('Js','Session');
 	}
 	public function select2($id=null,$pagina){
 				//menu
-		$menu = array('menu' => array(
-    'id' => 'tips','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));
+		//$menu = array('menu' => array('id' => 'tips','inferior'=>'#710A0F','superior'=>'#B40E15','color'=>'#FFF'));
+		$menu = array('menu' => array('id' => 'tips','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		////////
@@ -144,13 +145,37 @@ public $helpers = array('Js','Session');
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
 
-					$this->paginate = array(
+
+
+					if(!$this->Session->check('pagina')){
+						$this->paginate = array(
                                 'order' => array('Tip.id' => 'DESC'), 
                                 'recursive' => 1,
                                 "limit" => 1,
                                 'page' => $pagina
                                 //'conditions' => $conditions
                                 );
+						$page = array('pagina' => 'val');
+					//menu
+					$this->Session->write($page);
+					}else{
+						
+
+					$this->paginate = array(
+                                'order' => array('Tip.id' => 'DESC'), 
+                                'recursive' => 1,
+                                "limit" => 1,
+                               
+                                //'conditions' => $conditions
+                                );
+					}
+
+
+
+
+
+
+					
 
 		$Tip = $this->paginate("Tip");
 		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));

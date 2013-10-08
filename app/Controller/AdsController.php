@@ -55,7 +55,14 @@ class AdsController extends AppController {
 	public function add($id1=null,$id2=null,$id3=null,$vista=null) {
 		
 		if ($this->request->is('post')) {
-			$this->Ad->create();
+		
+
+		 	
+		 	//$this->request->data['Ad']['filename']['tmp_name'] = WWW_ROOT.'img/ad/filename/pavo.jpg';
+		 	//	$this->request->data['Ad']['filename']['name'] = 'pavo.jpg';
+		 	
+		$this->Ad->create();
+
 			if ($this->Ad->save($this->request->data)) {
 				//$this->Session->setFlash(__('The ad has been saved'));
 				switch ($vista) {

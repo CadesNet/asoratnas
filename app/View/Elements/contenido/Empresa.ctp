@@ -1,6 +1,8 @@
 
 <div class="container-fluid">	
 <?php foreach ($companies as $value) { ?>
+
+
 <div class="row-fluid">
 	<div class="span12">
 		<h3 style="color:#25A781;border-bottom: 8px solid #25A781;">Historia
@@ -8,6 +10,12 @@
 							 echo " ".$this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Companies','action' => 'edit',$value['Company']['id']),array('class' => 'ok btn btn-info ','escape' => false)); }?></h3>
 	</div>
 </div>
+<div class="row-fluid">
+	<div class = "span12">
+		 <?php echo $this->Html->image("company/filename/".$value['Company']['filename']."");  ?>
+	</div>
+</div>
+
 <br>
 <br>
 <div class="container-fluid">

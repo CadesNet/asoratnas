@@ -142,13 +142,14 @@ public $helpers = array('Js','Session');
 		$this->set(compact('Supermarket','Benefit','Recipe','Carousel'));
 	}
 	public function select1(){
+			$this->Session->delete('pagina');
 		$menu1 = array('menu1' => array('id' => 'mm'));
 
 		//menu
 		$this->Session->write($menu1);
 				//menu
-		$menu = array('menu' => array(
-    'id' => 'beneficios','inferior'=>'#74255F','superior'=>'#C34CA4','color'=>'#FFF'));
+		//$menu = array('menu' => array('id' => 'beneficios','inferior'=>'#74255F','superior'=>'#C34CA4','color'=>'#FFF'));
+		$menu = array('menu' => array('id' => 'beneficios','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		////////
@@ -169,10 +170,11 @@ public $helpers = array('Js','Session');
         $Benefit = $this->paginate("Benefit");
         $this->set(compact("Benefit",'Ad','Carousel'));
 	}
-	public function select2($id=null,$pagina){
+	public function select2($id=null,$pagina=1){
+		
 				//menu
-		$menu = array('menu' => array(
-    'id' => 'beneficios','inferior'=>'#74255F','superior'=>'#C34CA4','color'=>'#FFF'));
+		//$menu = array('menu' => array('id' => 'beneficios','inferior'=>'#74255F','superior'=>'#C34CA4','color'=>'#FFF'));
+		$menu = array('menu' => array('id' => 'beneficios','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		////////
@@ -185,13 +187,35 @@ public $helpers = array('Js','Session');
 			//throw new NotFoundException(__('Invalid Category'));
 		}else{
 
-					$this->paginate = array(
+				
+					if(!$this->Session->check('pagina')){
+						$this->paginate = array(
                                 'order' => array('Benefit.id' => 'DESC'), 
                                 'recursive' => 1,
                                 "limit" => 1,
                                 'page' => $pagina
                                 //'conditions' => $conditions
                                 );
+						$page = array('pagina' => 'val');
+					//menu
+					$this->Session->write($page);
+					}else{
+						
+
+					$this->paginate = array(
+                                'order' => array('Benefit.id' => 'DESC'), 
+                                'recursive' => 1,
+                                "limit" => 1,
+                                
+                                //'conditions' => $conditions
+                                );
+					}
+
+
+
+
+
+					
 		$Ad = $this->Ad->find('all',array('order' => 'Ad.created DESC', 'limit' => 3));
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
 		$Benefit = $this->paginate("Benefit");

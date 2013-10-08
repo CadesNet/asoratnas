@@ -6,7 +6,13 @@ App::uses('AppModel', 'Model');
  * @property Branch $Branch
  */
 class Company extends AppModel {
-
+/**
+ * img field
+ *
+ */
+var $actsAs = array(
+        'MeioUpload' => array('filename')
+    );
 /**
  * Validation rules
  *

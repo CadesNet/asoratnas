@@ -34,8 +34,8 @@
 				 	 </div>
 				 <div class="span8">
 				 	<div class="row-fluid">
-				 		<div class="span12">
-				 			<?php  echo 	$branch['Branch']['name'];?>
+				 		<div class="span12" style="font-weight: bold;color: #827370;">
+				 			<?php  echo $branch['Branch']['name'];?>
 				 		</div>
 				 	</div>
 				 	<div class="row-fluid">

@@ -103,8 +103,7 @@ class NewRequirementsController extends AppController {
 
 	
 	public function select(){
-		$menu = array('menu' => array(
-    'id' => 'vv','inferior'=>'','superior'=>'','color'=>''));
+		$menu = array('menu' => array('id' => 'vv','inferior'=>'','superior'=>'','color'=>''));
 		//menu
 		$this->Session->write($menu);
 		//////////////
