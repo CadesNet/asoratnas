@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('id',array('label'=>'id'));
 		echo $this->Form->input('name',array('label'=>'Nombre'));
-		echo ('Descipcion');
+		echo ('Descipción');
 		echo $this->Form->textarea('descripcion',array('class'=>'ckeditor'));
 		echo $this->Form->input('item_id');
 	?>

@@ -9,7 +9,7 @@
 		echo $this->Form->input('portion',array('label'=>'Numero de porciones'));
 		echo ('Ingredientes');
 		echo $this->Form->textarea('ingredients',array('class'=>'ckeditor'));
-		echo ('Preparacion');
+		echo ('Preparación');
 		echo $this->Form->textarea('preparation',array('class'=>'ckeditor'));
 	?>
 	</fieldset>

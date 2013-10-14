@@ -98,7 +98,7 @@
 							<h5 style = <?="color:".$categories['Category']['description'].";"?> ><?php echo $item['name'] ?> </h5>
 						</div>
 						<div class="span12 ">
-							<p class = "itemdescription">Presentacíon <?php echo $presentation['name'] ?> </p>
+							<p class = "itemdescription">Presentación <?php echo $presentation['name'] ?> </p>
 						</div>
 						<div class="span12">
 							<?php echo $this->Html->link(__('Saber mas'), array('controller' => 'Quotes', 'action' => 'select',$categories['Category']['id'],$item['id'],$presentation['id']), array('class' => 'btn btn-large btn-danger','style' => "background:".$categories['Category']['description'].";")); ?>

@@ -6,9 +6,9 @@
 		echo $this->Form->input('branch_id',array('label' => '','type' => 'hidden','default'=> $branches));
 		echo $this->Form->input('title',array('label' => 'Titulo'));
 		echo $this->Form->input('deadline',array('label' => 'Fecha limite'));
-		echo ('Descripcion');
+		echo ('Descripción');
 		echo $this->Form->textarea('description',array('class'=>'ckeditor'));
-		echo ('Formacion');
+		echo ('Formación');
 
 		echo $this->Form->textarea('formation',array('class'=>'ckeditor'));
 

@@ -30,6 +30,7 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			
 			<?php echo 'Avicola Santa Rosa - '. $title_for_layout; ?>
 	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php
 
 		  //minicarrusel css
@@ -40,7 +41,8 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 			echo $this->Html->css('customStyles');
 
 			echo $this->Html->meta('favicon.ico','http://new.avicola-santarosa.com/app/webroot/img/favicon.ico',array('type' => 'icon')); 
-
+			
+			
 			
 		echo $this->fetch('meta');
 
@@ -107,17 +109,13 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 
 			            <?php  echo $this->fetch('content');  ?>
 
-		</div>
-
-					
-
-
-						
-		</div>
+						</div>
+		
+					</div>
 			
-	</div>
+				</div>
 				<div id="footer" style="height: 100px;">
-					<?php //Silence is golden ?>
+					
 					
 					<?php echo $this->element('footer/footer1'); ?>
 					<?php  //echo $this->element('sql_dump'); ?>

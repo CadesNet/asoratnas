@@ -15,8 +15,8 @@
 		<td><?php echo h($carousel['Carousel']['number']); ?>&nbsp;</td>
 		<td class="actions">
 			
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info ')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info ')); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $carousel['Carousel']['id']),array('class' => 'ok btn btn-info ')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -36,7 +36,7 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
+	<h3><?php echo __('Acción'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Neva imagen'), array('action' => 'add'),array('class' => 'ok btn btn-info btn-large')); ?></li>
 	</ul>

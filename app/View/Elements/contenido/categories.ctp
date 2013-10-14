@@ -104,7 +104,7 @@
 										</div>
 										<div class="row-fluid">
 												<div class="span12">
-											 	<p style="color:#807F7C">Presentacíon: 
+											 	<p style="color:#807F7C">Presentación: 
 
 											 	<?php $con = count($item['Presentation']);
 											 		  $i=0;

@@ -2963,11 +2963,11 @@ table th[class*="span"],
   color: #ffffff;
   text-decoration: none;
   background-color: #588977;
-  background-image: -moz-linear-gradient(top, #3E8272, #C5BDA5);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3E8272), to(#C5BDA5));
-  background-image: -webkit-linear-gradient(top, #3E8272, #C5BDA5);
-  background-image: -o-linear-gradient(top, #3E8272, #C5BDA5);
-  background-image: linear-gradient(to bottom, #3E8272, #C5BDA5);
+  background-image: -moz-linear-gradient(top, #C5BDA5, #C5BDA5);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#C5BDA5), to(#C5BDA5));
+  background-image: -webkit-linear-gradient(top, #C5BDA5, #C5BDA5);
+  background-image: -o-linear-gradient(top, #C5BDA5, #C5BDA5);
+  background-image: linear-gradient(to bottom, #C5BDA5, #C5BDA5);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#558C7B', endColorstr='#B4B69F', GradientType=0);
 }

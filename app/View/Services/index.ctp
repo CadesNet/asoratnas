@@ -38,7 +38,7 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acción'); ?></h3>
 	<?php echo $this->Html->link(__('Nuevo Servicio'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?></li>
 	
 </div>

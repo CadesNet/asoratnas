@@ -13,8 +13,8 @@
 		<td><?php echo h($imagesCategory['ImagesCategory']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($imagesCategory['ImagesCategory']['type']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $imagesCategory['ImagesCategory']['id'],$id_category),array('class' => 'ok btn btn-info ')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete',$imagesCategory['ImagesCategory']['id'],$id_category),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $imagesCategory['ImagesCategory']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $imagesCategory['ImagesCategory']['id'],$id_category),array('class' => 'ok btn btn-info ')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete',$imagesCategory['ImagesCategory']['id'],$id_category),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $imagesCategory['ImagesCategory']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

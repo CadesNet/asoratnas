@@ -10,14 +10,16 @@
 <div class="row-fluid">
 		<div class="span11 offset1">
 
-	<div class="row-fluid">
+	<div class="row-fluid" style="min-height: 570px;">
 			<ul class = "thumbnails">
 
 		
 			<li class="span5" style="min-height: 1px;"></li>
 			<li class="span5" style="min-height: 1px;"></li>
-			<?php  foreach ($branches as $branch) { ?>
-			
+			<?php  foreach ($branches as $branch) { 
+				if($branch['Branch']['branch']=='Contactos y Requerimiento Personal'){
+				?>
+		
 			<li class="span5">
 			<div class="row-fluid">
 				<?php if($this->Session->read('Auth.User.id')){ 
@@ -56,7 +58,9 @@
 
 			 </li>
 	
-			 <?php	}?>
+			 <?php	}
+
+			 }?>
 			 </ul>
 			 </div>
 			 </div>

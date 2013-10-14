@@ -108,7 +108,7 @@
 					echo $this->Paginator->next('Siguiente »', null, null, array('class' => 'disabled'));
 
 					// prints X of Y, where X is current page and Y is number of pages
-					echo $this->Paginator->counter();
+					//echo $this->Paginator->counter();
 					        ?>
 				</div>
 

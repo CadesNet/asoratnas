@@ -40,7 +40,7 @@
 	</table>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acción'); ?></h3>
 	<ul>
 		
 		<li><?php echo $this->Html->link(__('List Cargos'), array('controller'=>'Charges','action' => 'index',$sucursal),array('class' => 'ok btn btn-info btn-large')); ?> </li>

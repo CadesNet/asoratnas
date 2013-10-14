@@ -12,6 +12,7 @@ class BranchesController extends AppController {
  *
  * @return void
  */
+public $helpers = array('FormEnum');
 	public function index() {
 		
 		$this->Branch->recursive = 0;

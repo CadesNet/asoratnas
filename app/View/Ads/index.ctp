@@ -8,7 +8,7 @@
 			<th><?php echo $this->Paginator->sort('modified','Modificado'); ?></th>
 			<th><?php echo $this->Paginator->sort('filename','Imagen'); ?></th>
 
-			<th class="actions"><?php echo __('Acciones'); ?></th>
+			<th class="actions"><?php echo __('Acción'); ?></th>
 	</tr>
 	<?php foreach ($ads as $ad): ?>
 	<tr>
@@ -40,7 +40,7 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
+	<h3><?php echo __('Acción'); ?></h3>
 	<?php echo $this->Html->link(__('Nueva Notificacion'), array('action' => 'add'),array('class' => 'ok btn btn-info  ')); ?>
 </div>
  <p>&nbsp; </p>

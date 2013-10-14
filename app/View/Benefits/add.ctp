@@ -4,7 +4,7 @@
 		<legend><?php echo __('Agregar Beneficio'); ?></legend>
 	<?php
 		echo $this->Form->input('title',array('label' => 'Titulo'));
-		echo ('Descipcion');
+		echo ('Descipción');
 		echo $this->Form->textarea('description',array('class'=>'ckeditor'));
 		echo(h("El tamaño de la imagen de beneficio tiene que ser 211 x 205"));
 		echo $this->Form->input('filename',array('type' => 'file','label'=>'Seleccione una imagen'));

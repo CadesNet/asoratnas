@@ -65,7 +65,8 @@
 							</div>
 							<div class="row-fluid" style="">
 								<p class ="benefitsdescription">
-								<?php echo substr(html_entity_decode(h($benefit['Benefit']['description'])), 0, 140)  ?> 
+								<?php echo $this->Text->truncate(html_entity_decode(h($benefit['Benefit']['description'])),100,array('ellipsis'=>'...','exact' => false,'html' => true)) ?>
+								
 								</p>
 							</div>
 							<div class="row-fluid" style="">

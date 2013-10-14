@@ -90,7 +90,7 @@
 					<div class="row-fluid">
 							
 							<div class="span12">
-									<p class = "textoinfo"><?php echo substr(html_entity_decode(h($tip['Tip']['description'])), 0, 220) ?> </p>
+									<p class = "textoinfo"><?php echo $this->Text->truncate(html_entity_decode(h($tip['Tip']['description'])),150,array('ellipsis'=>'...','exact' => false,'html' => true)) ?></p>
 							</div>
 					</div>
 					<p class="visible-desktop visi1">&nbsp; </p>

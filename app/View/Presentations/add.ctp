@@ -4,7 +4,7 @@
 		<legend><?php echo __('Agregar Presentacion Producto'); ?></legend>
 	<?php
 		echo $this->Form->input('name',array('label'=>'Nombre'));
-		echo ('Descipcion');
+		echo ('Descipción');
 		echo $this->Form->textarea('descripcion',array('class'=>'ckeditor'));
 		echo $this->Form->input('item_id',array('label' => '','type' => 'hidden','default'=> $items));
 		echo $this->Form->input('removed',array('label' => '','type' => 'hidden','default'=> 'no'));

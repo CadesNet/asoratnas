@@ -14,8 +14,8 @@
 		<td><?php echo h($imagesPresentation['ImagesPresentation']['dir']); ?>&nbsp;</td>
 		<td><?php echo h($imagesPresentation['ImagesPresentation']['description']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $imagesPresentation['ImagesPresentation']['id'],$id_presentacion),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $imagesPresentation['ImagesPresentation']['id'],$id_presentacion),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $imagesPresentation['ImagesPresentation']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $imagesPresentation['ImagesPresentation']['id'],$id_presentacion),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $imagesPresentation['ImagesPresentation']['id'],$id_presentacion),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $imagesPresentation['ImagesPresentation']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
