@@ -45,7 +45,7 @@ public $helpers = array('Js','Session');
 				//$this->Session->setFlash(__('The tip has been saved'));
 				$this->redirect(array('action' => 'select1'));
 			} else {
-				$this->Session->setFlash(__('The tip could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El consejo no se pudo guardar'));
 			}
 		}
 	}
@@ -66,7 +66,7 @@ public $helpers = array('Js','Session');
 				//$this->Session->setFlash(__('The tip has been saved'));
 				$this->redirect(array('action' => 'select1'));
 			} else {
-				$this->Session->setFlash(__('The tip could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El consejo no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Tip.' . $this->Tip->primaryKey => $id));
@@ -88,10 +88,10 @@ public $helpers = array('Js','Session');
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Tip->delete()) {
-			$this->Session->setFlash(__('Tip deleted'));
+			//$this->Session->setFlash(__('Tip deleted'));
 			$this->redirect(array('action' => 'select1'));
 		}
-		$this->Session->setFlash(__('Tip was not deleted'));
+		$this->Session->setFlash(__('El consejo no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 

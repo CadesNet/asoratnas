@@ -12,9 +12,8 @@
 
 		echo $this->Form->textarea('formation',array('class'=>'ckeditor'));
 
-		echo(h("El tamaño de la imagen de publicidad tiene que ser 134 x 115"));
-		
-		echo $this->Form->input('filename',array('type' => 'file','label' => 'Seleccione una imagen obligadamente'));
+		echo(h("El tamaño de la imagen de publicidad tiene que ser 134 x 115"));		 
+		echo $this->Form->input('filename',array('type' => 'file','label' => 'Seleccione una imagen cualquiera obligadamente'));
 		echo $this->Form->input('dir', array('type' => 'hidden'));
 	?>
 	</fieldset>

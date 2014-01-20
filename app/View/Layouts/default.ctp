@@ -28,7 +28,7 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 
 	<title>
 			
-			<?php echo 'Avicola Santa Rosa - '. $title_for_layout; ?>
+			<?php echo 'Avicola Santa Rosa' ?>
 	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php
@@ -118,7 +118,7 @@ $cakeDescription = __d('CADES', 'Centro de Asesoramiento y desarrollo de Sistema
 					
 					
 					<?php echo $this->element('footer/footer1'); ?>
-					<?php  //echo $this->element('sql_dump'); ?>
+					<?php // echo $this->element('sql_dump'); ?>
 				</div><!-- #footer .container -->
 			
 		</div><!-- #main-container -->

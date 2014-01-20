@@ -1,5 +1,5 @@
 <div class="ads index">
-	<h2><?php echo __('Ver notificación'); ?></h2>
+	<h2><?php echo __('Ver Notificación'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('type','Tipo'); ?></th>
@@ -20,24 +20,25 @@
 		<td class="actions">
 			
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $ad['Ad']['id']),array('class' => 'ok btn btn-info  ')); ?> 
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $ad['Ad']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $ad['Ad']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $ad['Ad']['id']),array('class' => 'ok btn btn-info'), __('¿Está seguro de que desea eliminar esta noticia?')); ?>
 		</td>
 	</tr>
-<?php endforeach; ?>
+	<?php endforeach; ?>
 	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('anteriores'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('siguiente') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
+		<div class="paginator" style="float: right;">
+			<?php
+
+
+			// Shows the next and previous links
+			echo $this->Paginator->prev('« Anterior', null, null, array('class' => 'disabled'));
+			  //Shows the page numbers
+			echo "&nbsp;".$this->Paginator->numbers()."&nbsp;";
+			echo $this->Paginator->next('Siguiente »', null, null, array('class' => 'disabled'));
+
+			// prints X of Y, where X is current page and Y is number of pages
+			//echo $this->Paginator->counter();
+			        ?>
+		</div>
 </div>
 <div class="actions">
 	<h3><?php echo __('Acción'); ?></h3>

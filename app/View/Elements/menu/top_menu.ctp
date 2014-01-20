@@ -40,7 +40,7 @@
 										<?php echo $this->Html->link(("Historia"), array('controller' => 'Companies', 'action' => 'select'),array('class'=>'sub_menu_empresa')); ?>
 	                                  </li>
 	                                  <li>
-										<?php echo $this->Html->link(("Requerimientos de personal"), array('controller' => 'Branches', 'action' => 'select'),array('class'=>'sub_menu_empresa')); ?>
+										<?php echo $this->Html->link(("Requerimiento de Personal"), array('controller' => 'Branches', 'action' => 'select'),array('class'=>'sub_menu_empresa')); ?>
 	                                 </li>
 	                                </ul>
 		                      </li>

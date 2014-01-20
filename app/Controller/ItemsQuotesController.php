@@ -47,7 +47,7 @@ class ItemsQuotesController extends AppController {
 				//$this->Session->setFlash(__('The items quote has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The items quote could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('la cotizacion del producto no se pudo guardar'));
 			}
 		}
 		$items = $this->ItemsQuote->Item->find('list');
@@ -72,7 +72,7 @@ class ItemsQuotesController extends AppController {
 				//$this->Session->setFlash(__('The items quote has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The items quote could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('la cotizacion del producto no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('ItemsQuote.' . $this->ItemsQuote->primaryKey => $id));
@@ -101,7 +101,7 @@ class ItemsQuotesController extends AppController {
 			$this->Session->setFlash(__('Items quote deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Items quote was not deleted'));
+		$this->Session->setFlash(__('la cotizacion del producto no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 

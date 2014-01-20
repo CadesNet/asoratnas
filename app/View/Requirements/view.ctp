@@ -6,32 +6,32 @@
 			<?php echo h($requirement['Requirement']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Charge'); ?></dt>
+		<dt><?php echo __('Cargo'); ?></dt>
 		<dd>
 			<?php echo h($requirement['Charge']['title']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Fullname'); ?></dt>
+		<dt><?php echo __('Nombre completo'); ?></dt>
 		<dd>
 			<?php echo h($requirement['Requirement']['fullname']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Date Of Birth'); ?></dt>
+		<dt><?php echo __('Fecha de nacimiento'); ?></dt>
 		<dd>
 			<?php echo h($requirement['Requirement']['date_of_birth']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Sex'); ?></dt>
+		<dt><?php echo __('Sexo'); ?></dt>
 		<dd>
 			<?php echo h($requirement['Requirement']['sex']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Address'); ?></dt>
+		<dt><?php echo __('Direccion'); ?></dt>
 		<dd>
 			<?php echo h($requirement['Requirement']['address']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Phone'); ?></dt>
+		<dt><?php echo __('Telefono'); ?></dt>
 		<dd>
 			<?php echo h($requirement['Requirement']['phone']); ?>
 			&nbsp;
@@ -41,13 +41,16 @@
 			<?php echo h($requirement['Requirement']['email']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Curriculum'); ?></dt>
+		<dt><?php echo __('Curriculum Descargar'); ?></dt>
 		<dd>
-			<?php $archivo = "http://new.avicola-santarosa.com/img/requirement/curriculum/".h($requirement['Requirement']['curriculum'])."";
-echo '<iframe src="http://docs.google.com/viewer?url='.$archivo.'&embedded=true" width="600" height="780" style="border: none;"></iframe>'; ?>
+		<?php 
+			echo $this->Html->link('Descargar', "http://new.avicola-santarosa.com/img/requirement/curriculum/".h($requirement['Requirement']['curriculum']));
+		 ?>
+			<?php //archivo = "http://new.avicola-santarosa.com/img/requirement/curriculum/".h($requirement['Requirement']['curriculum'])."";
+//echo '<iframe src="http://docs.google.com/viewer?url='.$archivo.'&embedded=true" width="600" height="780" style="border: none;"></iframe>'; ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Message'); ?></dt>
+		<dt><?php echo __('Mensaje'); ?></dt>
 		<dd>
 			<?php echo h($requirement['Requirement']['message']); ?>
 			&nbsp;
@@ -65,10 +68,10 @@ echo '<iframe src="http://docs.google.com/viewer?url='.$archivo.'&embedded=true"
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
 		
-		<li><?php echo $this->Html->link(__('List Requirements'), array('action' => 'index',$requirement['Charge']['id'],$sucursal),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Requerimientos'), array('action' => 'index',$requirement['Charge']['id'],$sucursal),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
  <p>&nbsp; </p>

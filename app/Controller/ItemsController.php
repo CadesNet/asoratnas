@@ -44,7 +44,7 @@ class ItemsController extends AppController {
 				//$this->Session->setFlash(__('El producto a sido guardado'));
 				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('El producto no a sido guardado'));
+				$this->Session->setFlash(__('El producto no se pudo guardar'));
 			}
 		}
 		$categories = $id;
@@ -67,13 +67,13 @@ class ItemsController extends AppController {
 				//$this->Session->setFlash(__('The item has been saved'));
 				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('The item could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El producto no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Item.' . $this->Item->primaryKey => $id));
 			$this->request->data = $this->Item->find('first', $options);
 		}
-		$categories = $this->Item->Category->find('list');
+		$categories = $this->Item->Category->find('list',array('conditions'=>array('Category.removed'=>'no')));
 		$this->set(compact('categories'));
 	}
 

@@ -67,7 +67,7 @@ class ImagesPresentationsController extends AppController {
 				//$this->Session->setFlash(__('La imagen de lapresenttacion se a guardado'));
 				$this->redirect(array('action' => 'index',$id));
 			} else {
-				$this->Session->setFlash(__('La imagen de lapresenttacion no se a guardado'));
+				$this->Session->setFlash(__('La imagen de la presenttacion no se pudo guardar'));
 			}
 		}
 		$presentations = $id;
@@ -89,7 +89,7 @@ class ImagesPresentationsController extends AppController {
 				//$this->Session->setFlash(__('The images presentation has been saved'));
 				$this->redirect(array('action' => 'index',$idpresentacion));
 			} else {
-				$this->Session->setFlash(__('The images presentation could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen de la presenttacion no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('ImagesPresentation.' . $this->ImagesPresentation->primaryKey => $id));
@@ -116,7 +116,7 @@ class ImagesPresentationsController extends AppController {
 			$this->Session->setFlash(__('Images presentation deleted'));
 			$this->redirect(array('action' => 'index',$idpresentacion));
 		}
-		$this->Session->setFlash(__('Images presentation was not deleted'));
+		$this->Session->setFlash(__('La imagen de la presenttacion no se pudo eliminar'));
 	
 	}
 }

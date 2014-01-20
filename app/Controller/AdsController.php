@@ -104,7 +104,7 @@ class AdsController extends AppController {
 				}
 				
 			} else {
-				$this->Session->setFlash(__('The ad could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La notificación no se pudo guardar'));
 			}
 		}
 	}
@@ -161,7 +161,7 @@ class AdsController extends AppController {
 
 				}
 			} else {
-				$this->Session->setFlash(__('The ad could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La notificación no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Ad.' . $this->Ad->primaryKey => $id));
@@ -184,7 +184,7 @@ class AdsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Ad->delete()) {
-			$this->Session->setFlash(__('Ad deleted'));
+			$this->Session->setFlash(__('La notificación se a eliminado'));
 			switch ($vista) {
 					case 'categorias':
 						$this->redirect(array('controller'=>'Categories','action' => 'select'));

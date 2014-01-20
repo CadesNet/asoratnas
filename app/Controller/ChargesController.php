@@ -50,7 +50,7 @@ class ChargesController extends AppController {
 				//$this->Session->setFlash(__('The charge has been saved'));
 				$this->redirect(array('controller'=>'Branches','action' => 'select1',$idsucursal));
 			} else {
-				$this->Session->setFlash(__('The charge could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El cargo no se puedo guardar'));
 			}
 		}
 		$branches = $idsucursal;
@@ -72,9 +72,9 @@ class ChargesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Charge->save($this->request->data)) {
 				//$this->Session->setFlash(__('The charge has been saved'));
-				$this->redirect(array('controller'=>'Branches','action' => 'select1',$idsucursal));
+				$this->redirect(array('controller'=>'Charges','action' => 'index',$idsucursal));
 			} else {
-				$this->Session->setFlash(__('The charge could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El cargo no se puedo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Charge.' . $this->Charge->primaryKey => $id));
@@ -110,7 +110,7 @@ class ChargesController extends AppController {
 
 		}
 		
-		$this->Session->setFlash(__('Charge was not deleted'));
+		$this->Session->setFlash(__('El cargo no se puedo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

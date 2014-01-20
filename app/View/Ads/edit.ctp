@@ -1,7 +1,7 @@
 <div class="ads form">
 <?php echo $this->FormEnum->create('Ad',array('type' => 'file')); ?>
 	<fieldset>
-		<legend><?php echo __('Editar notificación'); ?></legend>
+		<legend><?php echo __('Editar Notificación'); ?></legend>
 	<?php
 		echo $this->FormEnum->input('id');
 		echo $this->FormEnum->input('type',array('label' => 'Tipo'));

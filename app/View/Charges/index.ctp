@@ -9,21 +9,24 @@
 			<th><?php echo ('Formación'); ?></th>
 			
 			<th><?php echo ('Ultima modificación'); ?></th>
-			<th class="actions"><?php echo __('Acciones'); ?></th>
+			<th class="actions"><?php echo __('Acción'); ?></th>
 	</tr>
 	<?php foreach ($charges as $charge): ?>
 	<tr>
 		
 		<td>
-			<?php echo h($charge['Branch']['name']); ?>&nbsp;</td>
+		<?php echo h($charge['Branch']['name']); ?>&nbsp;</td>
 		<td><?php echo h($charge['Charge']['title']); ?>&nbsp;</td>
 		<td><?php echo h($charge['Charge']['deadline']); ?>&nbsp;</td>
-		<td><?php echo h($charge['Charge']['description']); ?>&nbsp;</td>
-		<td><?php echo h($charge['Charge']['formation']); ?>&nbsp;</td>
+		<td><?php echo html_entity_decode(h($charge['Charge']['description'])); ?>&nbsp;</td>
+		<td><?php echo html_entity_decode(h($charge['Charge']['formation'])); ?>&nbsp;</td>
 		
 		<td><?php echo h($charge['Charge']['modified']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Postulantes Requerimientos'), array('controller'=>'Requirements','action' => 'index', $charge['Charge']['id'],$charge['Branch']['id']),array('class' => 'ok btn btn-info ')); ?>
+		</td>
+		<td class="actions">
+			<?php echo $this->Html->link(__('Editar'), array('controller'=>'Charges','action' => 'edit', $charge['Charge']['id'],$charge['Branch']['id']),array('class' => 'ok btn btn-info ')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -31,10 +34,10 @@
 
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acción'); ?></h3>
 	<ul>
 		
-		<li><?php echo $this->Html->link(__('List Sucursales'), array('controller'=>'Branches','action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Sucursales'), array('controller'=>'Branches','action' => 'index'),array('class' => 'ok btn btn-info btn-large')); ?> </li>
 	</ul>
 </div>
 

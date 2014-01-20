@@ -4,7 +4,7 @@
 		<legend><?php echo __('Editar Cargo'); ?></legend>
 	<?php
 		echo $this->Form->input('id',array('label' => 'id'));
-		echo $this->Form->input('branch_id');
+		echo $this->Form->input('branch_id',array('type'=>'hidden'));
 		echo $this->Form->input('title',array('label' => 'Titulo'));
 		echo $this->Form->input('deadline',array('label' => 'Fecha limite'));
 		echo ('Descripción');
@@ -14,7 +14,7 @@
 		echo $this->Form->textarea('formation',array('class'=>'ckeditor'));
 		
 		echo(h("El tamaño de la imagen de publicidad tiene que ser 134 x 115"));
-		echo $this->Form->input('filename',array('type' => 'file','label' => 'Seleccione una imagen '));
+		echo $this->Form->input('filename',array('type' => 'file','label' => 'Seleccione una imagen'));
 		echo $this->Form->input('dir', array('type' => 'hidden'));
 	?>
 	</fieldset>

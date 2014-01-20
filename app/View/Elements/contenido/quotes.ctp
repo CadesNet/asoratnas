@@ -15,7 +15,7 @@
         	<?php if($this->Session->read('Auth.User.id')){ ?>
 											
 				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],$categories['Category']['id'],$items['Item']['id'],$items['Presentation']['id'],'presentacion'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
-				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],$categories['Category']['id'],$items['Item']['id'],$items['Presentation']['id'],'presentacion'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],$categories['Category']['id'],$items['Item']['id'],$items['Presentation']['id'],'presentacion'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta imagen?')); 
 			}?>
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
                     if($carousels['Carousel']['description']!=""){
@@ -55,7 +55,7 @@
 								<div class="row-fluid">
 									<div class="span12">
 										<h3>
-									<?php echo $this->Html->link($categories['Category']['name']."&nbsp;&nbsp;&nbsp;&nbsp;", array( 'controller' => 'Items', 'action' => "select",$categories['Category']['id']),array('escape' => false,'class' => 'brand producttitle','style' => "color:".$categories['Category']['description']."; text-decoration: none;border-bottom: 6px solid ".$categories['Category']['description'].";"));  
+									<?php echo $this->Html->link($categories['Category']['name']."&nbsp;&nbsp;&nbsp;&nbsp;", array( 'controller' => 'Categories', 'action' => "select1",$categories['Category']['id']),array('escape' => false,'class' => 'brand producttitle','style' => "color:".$categories['Category']['description']."; text-decoration: none;border-bottom: 6px solid ".$categories['Category']['description'].";"));  
 										?>
 									</h3>
 									</div>
@@ -107,12 +107,19 @@
 								</div>
 								
 								<div class="span6" >
-									<?php echo $this->Form->create(null, array('action' => 'select1')); ?>
+
+									<?php //echo $this->Form->create(null, array('action' => 'select1')); ?>
 										<div class="row-fluid">
 											<div class="span12">
 												<h3 style = <?="color:".$categories['Category']['description'].";"?> ><?php echo $items['Presentation']['name'] ?> </h3>
 											</div>
 										</div>
+										<div class='row-fluid'>
+											<div class="span12 itemtext">
+											  <?php echo html_entity_decode(h($items['Presentation']['description_1'])); ?>
+											</div>
+										</div>
+
 										<!--
 										<div class="row-fluid">
 											
@@ -156,7 +163,14 @@
 								<div class="span2" >
 								<h4>
 									<?php 
-								echo $this->Html->link("Volver", array( 'controller' => 'Items', 'action' => "select",$categories['Category']['id'],$items['Item']['id']),array('escape' => false , 'class' => 'brand','style'=>"color:".$categories['Category']['description'].";text-decoration: none"));  
+									if($val=='categoria'){
+										echo $this->Html->link("Volver", array( 'controller' => 'Categories', 'action' => "select1",$categories['Category']['id']),array('escape' => false , 'class' => 'brand','style'=>"color:".$categories['Category']['description'].";text-decoration: none"));  
+
+									}else if($val=='item'){
+										echo $this->Html->link("Volver", array( 'controller' => 'Items', 'action' => "select",$categories['Category']['id'],$items['Item']['id']),array('escape' => false , 'class' => 'brand','style'=>"color:".$categories['Category']['description'].";text-decoration: none")); 
+
+									}
+								
 						    	    ?>
 						    	 </h4>
 								</div>
@@ -177,10 +191,10 @@
 					<div class="span12 " style="margin: 0;"  >
 		 				<?php if($this->Session->read('Auth.User.id')){ 
 						 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$ads['Ad']['id'],$categories['Category']['id'],$items['Item']['id'],$items['Presentation']['id'],'presentacion'),array('class' => 'ok btn btn-info ','escape' => false)); 
-						 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $ads['Ad']['id'],$categories['Category']['id'],$items['Item']['id'],$items['Presentation']['id'],'presentacion'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$ads['Ad']['id']));
+						 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $ads['Ad']['id'],$categories['Category']['id'],$items['Item']['id'],$items['Presentation']['id'],'presentacion'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta noticia?'));
 						 }?>
 		 				  <?php if($ads['Ad']['type'] !='video'){ 
-						echo $this->Html->image(('ad/filename/'.$ads['Ad']['filename']),array('class'=>'noticias'));
+						echo $this->Html->link($this->Html->image(('ad/filename/'.$ads['Ad']['filename']),array('class'=>'noticias')),'http://new.avicola-santarosa.com/img/ad/filename/'.$ads['Ad']['filename'],array('escape' => false , 'class' => 'brand','target'=>'_blank')); 
 						} else{ ?>
 						<iframe class="noticiavideo" src= <?=$ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 						<?php } ?>
@@ -218,7 +232,7 @@
 								<h5 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
 							if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h5>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar %s?',$recipes['Recipe']['title'])); }?></h5>
 							</div>
 						</div>
 						<div class="row-fluid" >

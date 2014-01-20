@@ -4,7 +4,7 @@
 		<legend><?php echo __('Agregar Categoria'); ?></legend>
 	<?php
 		echo $this->Form->input('name',array('label' => 'Nombre'));
-		echo $this->Form->input('description',array('label' => 'Color'));
+		echo $this->Form->input('description',array('label' => 'Color en  hexadecimal',"placeholder"=>"#80BFFF"));
 		echo $this->Form->input('removed',array('label' => '','type' => 'hidden','default'=> 'no'));
 	?>
 	</fieldset>

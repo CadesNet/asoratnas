@@ -15,7 +15,7 @@
         	<?php if($this->Session->read('Auth.User.id')){ ?>
 											
 				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],'1','1','1','tips'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
-				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1','1','1','tips'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1','1','1','tips'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta imagen?')); 
 			}?>
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
                     if($carousels['Carousel']['description']!=""){
@@ -84,7 +84,7 @@
 							<h4 class = "titletips"><?php echo  ((strlen(h($tip['Tip']['title']))>47) ? substr(h($tip['Tip']['title']), 0, 47)."..." : substr(h($tip['Tip']['title']), 0, 47));
 							 if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Tips','action' => 'edit',$tip['Tip']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Tips','action' => 'delete', $tip['Tip']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$tip['Tip']['id'])); }?></h4>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Tips','action' => 'delete', $tip['Tip']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar %s?',$tip['Tip']['title'])); }?></h4>
 						</div>
 					</div>
 					<div class="row-fluid">
@@ -143,10 +143,11 @@
 				<div class="span12 " style="margin: 0;" >
 					<?php if($this->Session->read('Auth.User.id')){ 
 				 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$value['Ad']['id'],'1','1','1','tips'),array('class' => 'ok btn btn-info ','escape' => false)); 
-				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],'1','1','1','tips'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$value['Ad']['id']));
+				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],'1','1','1','tips'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta noticia?'));
 				 }?>
 				<?php if($value['Ad']['type'] !='video'){
-				echo $this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('class'=>'noticias'));
+				echo $this->Html->link($this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('class'=>'noticias')),'http://new.avicola-santarosa.com/img/ad/filename/'.$value['Ad']['filename'],array('escape' => false , 'class' => 'brand','target'=>'_blank')); 
+					
 				} else{ ?>
 				<iframe class="noticiavideo" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				<?php } ?>

@@ -44,7 +44,7 @@ class PresentationsController extends AppController {
 				//$this->Session->setFlash(__('La presentacion a sido guardada'));
 				$this->redirect(array('controller'=>'Items','action' => 'select',$idcategory,$id)); //redireccionar 
 			} else {
-				$this->Session->setFlash(__('La presentacion no a sido guardada'));
+				$this->Session->setFlash(__('La presentacion no se pudo guardar'));
 			}
 		}
 		$items = $id;
@@ -59,6 +59,7 @@ class PresentationsController extends AppController {
  * @return void
  */
 	public function edit($idcategory=null,$item=null,$id = null,$vista=null) {
+		$this->loadModel('Item');
 		if (!$this->Presentation->exists($id)) {
 			throw new NotFoundException(__('Invalid presentation'));
 		}
@@ -74,14 +75,23 @@ class PresentationsController extends AppController {
 				}
 				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('The presentation could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La presentacion no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Presentation.' . $this->Presentation->primaryKey => $id));
 			$this->request->data = $this->Presentation->find('first', $options);
 		}
-		$items = $this->Presentation->Item->find('list');
-		$this->set(compact('items'));
+
+		//crear un propio seled para aumntar la catgoria del iteem 
+		$items = $this->Item->find('all',array('conditions'=>array('Item.removed'=>'no'),'recursive'=>1));                
+        $array = null;      
+
+        foreach ($items as $item){
+            $array[$item['Item']['id']] = $item['Category']['name']."=>".$item['Item']['name'];
+        } 
+
+		//$items = $this->Presentation->Item->find('list',array('conditions'=>array('Item.removed'=>'no'),'recursive'=>2));
+		$this->set(compact('array'));
 	}
 
 /**
@@ -102,7 +112,7 @@ class PresentationsController extends AppController {
 
 			$data['Presentation']['id'] =  $datos['Presentation']['id']; 
 			$data['Presentation']['name'] =  $datos['Presentation']['name']; 
-			$data['Presentation']['category_id'] = $datos['Presentation']['category_id']; 
+			$data['Presentation']['category_id'] = $idcategory; 
 			$data['Presentation']['removed'] = 'si';
 
 			if ($this->Presentation->save($data)) {

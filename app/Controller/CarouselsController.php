@@ -15,6 +15,15 @@ class CarouselsController extends AppController {
 	public $helpers = array('FormEnum');
 	
 	public function index() {
+
+			$this->paginate = array(
+                                'order' => array('Carousel.number' => 'DESC'), 
+                                'recursive' => 0,
+                                "limit" => 4,
+                                'page' => 1
+                                //'conditions' => $conditions
+                                );
+
 		$this->Carousel->recursive = 0;
 		$this->set('carousels', $this->paginate());
 	}
@@ -86,7 +95,7 @@ class CarouselsController extends AppController {
 
 				}
 			} else {
-				$this->Session->setFlash(__('The carousel could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen del carousel no se puedo guardar'));
 			}
 		}
 	}
@@ -146,7 +155,7 @@ class CarouselsController extends AppController {
 
 				}
 			} else {
-				$this->Session->setFlash(__('The carousel could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen del carousel no se puedo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Carousel.' . $this->Carousel->primaryKey => $id));
@@ -164,11 +173,11 @@ class CarouselsController extends AppController {
 	public function delete($id = null,$id1=null,$id2=null,$id3=null,$vista=null) {
 		$this->Carousel->id = $id;
 		if (!$this->Carousel->exists()) {
-			throw new NotFoundException(__('Invalid carousel'));
+			throw new NotFoundException(__('Esa imagen no existe'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Carousel->delete()) {
-			$this->Session->setFlash(__('Carousel deleted'));
+			//$this->Session->setFlash(__('Carousel deleted'));
 			switch ($vista) {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
@@ -211,7 +220,7 @@ class CarouselsController extends AppController {
 
 				}
 		}
-		$this->Session->setFlash(__('Carousel was not deleted'));
+		$this->Session->setFlash(__('La imagen del carousel no se puedo eliminar'));
 		
 	}
 }

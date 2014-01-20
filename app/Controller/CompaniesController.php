@@ -52,7 +52,7 @@ class CompaniesController extends AppController {
 				//$this->Session->setFlash(__('The company has been saved.'));
 				return $this->redirect(array('action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('The company could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La empresa no se puedo guardar'));
 			}
 		}
 	}
@@ -65,6 +65,7 @@ class CompaniesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->loadModel('Image');
 		if (!$this->Company->exists($id)) {
 			throw new NotFoundException(__('Invalid company'));
 		}
@@ -73,12 +74,14 @@ class CompaniesController extends AppController {
 				//$this->Session->setFlash(__('The company has been saved.'));
 				return $this->redirect(array('controller'=>'Companies','action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('The company could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La empresa no se puedo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Company.' . $this->Company->primaryKey => $id));
 			$this->request->data = $this->Company->find('first', $options);
 		}
+		$images = $this->Image->find('all');
+		$this->set(compact("images"));
 	}
 
 /**
@@ -97,7 +100,7 @@ class CompaniesController extends AppController {
 		if ($this->Company->delete()) {
 			$this->Session->setFlash(__('The company has been deleted.'));
 		} else {
-			$this->Session->setFlash(__('The company could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('La empresa no se puedo eliminar'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

@@ -29,18 +29,18 @@
 			<div class="quoteServices cotizartext" style="width: 70%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
 			<?php echo $this->Form->create('QuoteService',array('action' => 'select' )); ?>
 				<fieldset class="offset1" >
-					<legend> <p class="legend_form"><?php echo __('Complete sus datos correctos gracias...'); ?></p></legend>
+					<legend> <p class="legend_form"><?php echo __('Complete sus datos correctos gracias'); ?></p></legend>
 					<?php echo $this->Form->input('service_id',array('type' => 'hidden','default'=> $value['Service']['id']));?>
 					<div class="row-fluid">
 						<div class="span3"><p class="stylo_form">Nombre Completo:</p></div>
 						<div class="span6" style="text-align: left;"><?php echo $this->Form->input('fullname',array('label'=>'','class' => 'cotizarfrm')); ?></div>
 					</div>
 					<div class="row-fluid">
-						<div class="span3"><p class="stylo_form">Direccion:</p></div>
+						<div class="span3"><p class="stylo_form">Dirección:</p></div>
 						<div class="span6" style="text-align: left;"><?php echo $this->Form->input('address',array('type'=>'text','label'=>'','class' => 'cotizarfrm')); ?></div>
 					</div>
 					<div class="row-fluid">
-						<div class="span3"><p class="stylo_form">Telefono/ Celular:</p></div>
+						<div class="span3"><p class="stylo_form">Teléfono/ Celular:</p></div>
 						<div class="span5" style="text-align: left;"><?php echo $this->Form->input('phone',array('label'=>'','class' => 'cotizarfrm')); ?></div>
 					</div>
 					<div class="row-fluid">

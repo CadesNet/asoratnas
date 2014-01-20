@@ -47,7 +47,7 @@ class ServicesController extends AppController {
 				//$this->Session->setFlash(__('The service has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The service could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El servicio no se pudo guardar'));
 			}
 		}
 	}
@@ -60,7 +60,7 @@ class ServicesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		
+		$this->loadModel('Image');
 		if (!$this->Service->exists($id)) {
 			throw new NotFoundException(__('Invalid service'));
 		}
@@ -69,12 +69,15 @@ class ServicesController extends AppController {
 				//$this->Session->setFlash(__('The service has been saved'));
 				$this->redirect(array('action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('The service could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El servicio no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Service.' . $this->Service->primaryKey => $id));
 			$this->request->data = $this->Service->find('first', $options);
 		}
+		$images = $this->Image->find('all');
+		$this->set(compact("images"));
+
 	}
 
 /**
@@ -92,10 +95,10 @@ class ServicesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Service->delete()) {
-			$this->Session->setFlash(__('Service deleted'));
+			//$this->Session->setFlash(__('Service deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Service was not deleted'));
+		$this->Session->setFlash(__('El servicio no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 	public function select(){

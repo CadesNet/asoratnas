@@ -56,10 +56,6 @@
 					          <?php echo $this->Form->end();?>
 							</tr>
 
-			           
-
-
-
 			               <?php } ?>
 			              </tbody>
 			</table>

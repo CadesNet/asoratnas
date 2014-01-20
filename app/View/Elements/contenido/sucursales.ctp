@@ -24,7 +24,7 @@
 			<div class="row-fluid">
 				<?php if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('Controller' => 'Branches','action' => 'edit',$branch['Branch']['id'],'personal'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Branches','action' => 'delete', $branch['Branch']['id'],'personal'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$branch['Branch']['id'])); }
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Branches','action' => 'delete', $branch['Branch']['id'],'personal'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar %s?',$branch['Branch']['name'])); }
 				?> 
 			</div>
 			<div class="row-fluid cuadrovacantes" style="min-height: 150px;">

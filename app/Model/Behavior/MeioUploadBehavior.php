@@ -202,7 +202,7 @@ class MeioUploadBehavior extends ModelBehavior {
         'message' => __d('meio_upload', 'no se pudo survir el archivo.')
       ),
       'MaxSize' => array(
-        'message' => __d('meio_upload', 'The maximum file size is exceeded.')
+        'message' => __d('meio_upload', 'Se ha excedido el tamaño máximo de archivo.')
       ),
       'InvalidMime' => array(
         'message' => __d('meio_upload', 'Invalid file type.')

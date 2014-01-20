@@ -656,3 +656,20 @@ a{
 .current{
 	color: #044036;
 }
+
+
+.imgproductos{	
+	/*	height: 346px;*/
+}
+.titutlocategoria{
+	padding-left: 20px;
+}
+
+@media (max-width: 767px){
+	.imgproductos{
+		height: auto;
+	}
+	.titutlocategoria{
+		padding-left: inherit;;
+	}
+}

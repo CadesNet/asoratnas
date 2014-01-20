@@ -49,7 +49,7 @@ class ImagesCategoriesController extends AppController {
 				//$this->Session->setFlash(__('The images category has been saved'));
 				$this->redirect(array('action' => 'index',$id));
 			} else {
-				$this->Session->setFlash(__('The images category could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen de la categoria no se puedo guardar'));
 			}
 		}
 		$categories = $id;
@@ -72,7 +72,7 @@ class ImagesCategoriesController extends AppController {
 				//$this->Session->setFlash(__('The images category has been saved'));
 				$this->redirect(array('action' => 'index',$id_category));
 			} else {
-				$this->Session->setFlash(__('The images category could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen de la categoria no se puedo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('ImagesCategory.' . $this->ImagesCategory->primaryKey => $id));
@@ -99,6 +99,6 @@ class ImagesCategoriesController extends AppController {
 			$this->Session->setFlash(__('Images category deleted'));
 			$this->redirect(array('action' => 'index',$id_category));
 		}
-		$this->Session->setFlash(__('Images category was not deleted'));
+		$this->Session->setFlash(__('La imagen de la categoria no se puedo eliminar'));
 	}
 }

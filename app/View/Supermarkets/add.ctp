@@ -8,7 +8,7 @@
 		echo $this->Form->input('filename',array('type' => 'file','label'=>'seleccione una imagen'));
 		echo $this->Form->input('dir', array('type' => 'hidden'));
 		echo $this->Form->input('link',array('label'=>'URL'));
-		echo $this->Form->input('description',array('label'=>'Descripcion'));
+		echo $this->Form->input('description',array('label'=>'Descripción'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(array('label' => __('&nbsp;&nbsp;&nbsp;&nbsp;Guardar datos&nbsp;&nbsp;&nbsp;&nbsp;', true), 'escape' => false ,'class' => 'ok btn btn-info btn-large')); ?>

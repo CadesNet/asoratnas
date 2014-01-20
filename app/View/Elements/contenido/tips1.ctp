@@ -15,7 +15,7 @@
         	<?php if($this->Session->read('Auth.User.id')){ ?>
 											
 				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
-				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta imagen?')); 
 			}?>
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
                     if($carousels['Carousel']['description']!=""){
@@ -73,11 +73,7 @@
                 	 <p class="visible-desktop visi">&nbsp; </p>
                 	 <p class="visible-desktop visi">&nbsp; </p>
                 	 <br>
-					<div class="row-fluid">
-						<div class="span5">
-							<?php echo $this->Html->link(__('Volver'), array('controller' => 'Tips', 'action' => 'select1'), array('class' => 'btn btn-inverse btn-large','style'=>'background: #90151A')); ?>
-						</div>
-					</div>
+	
 				</div>
 				<div class="span1">
 					
@@ -90,6 +86,12 @@
 					</div>
 					
 				</div>
+				<br>
+					<div class="row-fluid">
+						<div class="span5">
+							<?php echo $this->Html->link(__('Volver'), array('controller' => 'Tips', 'action' => 'select1'), array('class' => 'btn btn-inverse btn-large','style'=>'background: #90151A')); ?>
+						</div>
+					</div>
 			
 			</div>
 			<?} ?>
@@ -131,10 +133,11 @@
 				<div class="span12 " style="margin: 0;" >
 					<?php if($this->Session->read('Auth.User.id')){ 
 				 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$value['Ad']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false)); 
-				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$value['Ad']['id']));
+				 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $value['Ad']['id'],$id_tip,$count,'1','tips1'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta noticia?'));
 				 }?>
 				<?php if($value['Ad']['type'] !='video'){
-				echo $this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('class'=>'noticias'));
+				echo $this->Html->link($this->Html->image(('ad/filename/'.$value['Ad']['filename']),array('class'=>'noticias')),'http://new.avicola-santarosa.com/img/ad/filename/'.$value['Ad']['filename'],array('escape' => false , 'class' => 'brand','target'=>'_blank')); 
+					
 				} else{ ?>
 				<iframe class="noticiavideo" src= <?=$value['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 				<?php } ?>

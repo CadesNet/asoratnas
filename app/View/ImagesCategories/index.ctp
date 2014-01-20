@@ -5,7 +5,7 @@
 			<th><?php echo ('Imagenes'); ?></th>
 			<th><?php echo ('Direccion'); ?></th>
 			<th><?php echo ('Tipo'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th class="actions"><?php echo __('Acción'); ?></th>
 	</tr>
 	<?php foreach ($imagesCategores as $imagesCategory): ?>
 	<tr>
@@ -14,13 +14,13 @@
 		<td><?php echo h($imagesCategory['ImagesCategory']['type']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $imagesCategory['ImagesCategory']['id'],$id_category),array('class' => 'ok btn btn-info ')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete',$imagesCategory['ImagesCategory']['id'],$id_category),array('class' => 'ok btn btn-info '), __('Are you sure you want to delete # %s?', $imagesCategory['ImagesCategory']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete',$imagesCategory['ImagesCategory']['id'],$id_category),array('class' => 'ok btn btn-info '), __('¿Está seguro de que desea eliminar esta imagen?')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
 	</table>
 	<div class="row">
-		<?php echo $this->Html->link(__('New Images Category'), array('action' => 'add',$id_category),array('class' => 'ok btn btn-info btn-large')); ?>
+		<?php echo $this->Html->link(__('Nueva imagen'), array('action' => 'add',$id_category),array('class' => 'ok btn btn-info btn-large')); ?>
 	</div>
 </div>
  <p>&nbsp; </p>

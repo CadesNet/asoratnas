@@ -19,7 +19,7 @@
 		<td class="actions">
 			<!-- <?php echo $this->Html->link(__('Ver'), array('action' => 'view', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info  ')); ?> -->
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info  ')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info  ') ,array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $benefit['Benefit']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $benefit['Benefit']['id']),array('class' => 'ok btn btn-info  ') ,array('class' => 'ok btn btn-info  '), __('¿Está seguro de que desea eliminar esta noticia?')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

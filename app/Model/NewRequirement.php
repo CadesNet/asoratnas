@@ -64,8 +64,8 @@ class NewRequirement extends AppModel {
 			),
 		),
 		'phone' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

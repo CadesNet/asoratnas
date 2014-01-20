@@ -15,19 +15,19 @@
 								<?php echo $branch1['Branch']['name']."";
 								if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Branches','action' => 'edit',$branch1['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Branches','action' => 'delete', $branch1['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$branch1['Branch']['id'])); }?>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Branches','action' => 'delete', $branch1['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar la sucursal %s?',$branch1['Branch']['name'])); }?>
 							</div>
 							<p style = "text-align: center;color:#06816a"><?php echo $branch1['Branch']['type'] ?></p>
 							<div class="row-fluid" style="text-align: center;">
 								<div class="span12">
-									<div class = "tipodedireccion">Direccion: <?php echo $branch1['Branch']['address'] ?>
+									<div class = "tipodedireccion">Dirección: <?php echo $branch1['Branch']['address'] ?>
 									</div>
 								</div>
 							</div>
 						
 							<div class="row-fluid" style="text-align: center;">
 								<div class="span12">
-									<div class = "tipodedireccion">Telefono: <?php echo $branch1['Branch']['phone'] ?> Telf(fax): <?php echo $branch1['Branch']['fax'] ?>  Telf Movil: <?php echo $branch1['Branch']['movil'] ?> 
+									<div class = "tipodedireccion">Teléfono: <?php echo $branch1['Branch']['phone'] ?> Telf(fax): <?php echo $branch1['Branch']['fax'] ?>  Telf Movil: <?php echo $branch1['Branch']['movil'] ?> 
 									</div> 
 								</div>
 							</div>
@@ -38,7 +38,7 @@
 							<div class="row-fluid" style="text-align: center;">
 								<div class="span12">
 									<div class = "tipodedireccion">
-									Contácto: <?php echo $branch1['Branch']['contact'] ?>
+									Contacto: <?php echo $branch1['Branch']['contact'] ?>
 									</div>
 								</div>
 							</div>
@@ -61,7 +61,7 @@
 							<div class = "dirciudad">	<?php echo $branches['Branch']['name']." ";
 							if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Branches','action' => 'edit',$branches['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Branches','action' => 'delete', $branches['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$branches['Branch']['id'])); }?> 
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Branches','action' => 'delete', $branches['Branch']['id'],'contactenos'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar la sucursal %s?',$branches['Branch']['name'])); }?> 
 							</div>
 					
 							<div style = "color:#06816a"><?php echo $branches['Branch']['type'] ?></div>
@@ -70,13 +70,13 @@
 
 					<div class="row">
 						<div class="span3">
-							<div class = "tipodedireccion" style="float: left;">Direccion: <?php echo $branches['Branch']['address'] ?></div>
+							<div class = "tipodedireccion" style="float: left;">Dirección: <?php echo $branches['Branch']['address'] ?></div>
 							
 						</div>
 					</div>
 					<div class="row">
 						<div class="span3">
-						<div class = "tipodedireccion" style="float: left;">Telefono: 
+						<div class = "tipodedireccion" style="float: left;">Teléfono: 
 						<?php echo $branches['Branch']['phone'] ?>
 						</div> 
 						</div>
@@ -117,17 +117,17 @@
 			
 			<?php echo $this->Form->create('Consultation'); ?>
 				<fieldset class="offset1" >
-					<legend> <p class="legend_form"><?php echo __('Complete sus datos correctos para enviarle la el formulario, gracias...'); ?></p></legend>
+					<legend> <p class="legend_form"><?php echo __('Complete sus datos correctos para enviarle la el formulario, gracias'); ?></p></legend>
 					<div class="row-fluid">
 						<div class="span3"><p class="stylo_form">Nombre Completo:</p></div>
 						<div class="span6" style="text-align: left;"><?php echo $this->Form->input('name',array('label'=>'','class' => 'cotizarfrm')); ?></div>
 					</div>
 					<div class="row-fluid">
-						<div class="span3"><p class="stylo_form">Direccion:</p></div>
+						<div class="span3"><p class="stylo_form">Dirección:</p></div>
 						<div class="span6" style="text-align: left;"><?php echo $this->Form->input('address',array('type'=>'text','label'=>'','class' => 'cotizarfrm')); ?></div>
 					</div>
 					<div class="row-fluid">
-						<div class="span3"><p class="stylo_form">Telefono/ Celular:</p></div>
+						<div class="span3"><p class="stylo_form">Teléfono/ Celular:</p></div>
 						<div class="span5" style="text-align: left;"><?php echo $this->Form->input('phone',array('label'=>'','class' => 'cotizarfrm')); ?></div>
 					</div>
 					<div class="row-fluid">

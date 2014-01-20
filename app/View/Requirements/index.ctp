@@ -11,10 +11,9 @@
 			<th><?php echo ('Telefono'); ?></th>
 			<th><?php echo ('Email'); ?></th>
 			<th><?php echo ('Curriculum'); ?></th>
-			<th><?php echo ('Mensaje'); ?></th>
-			
-			<th><?php echo ('Modificado'); ?></th>
-			<th class="actions"><?php echo __('Acciones'); ?></th>
+			<th><?php echo ('Mensaje'); ?></th>			
+			<th><?php echo ('created'); ?></th>
+			<th class="actions"><?php echo __('Acción'); ?></th>
 	</tr>
 	<?php foreach ($requirements as $requirement): ?>
 	<tr>
@@ -27,13 +26,10 @@
 		<td><?php echo h($requirement['Requirement']['phone']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['email']); ?>&nbsp;</td>
 		<td><?php echo h($requirement['Requirement']['curriculum']); ?>&nbsp;</td>
-		<td><?php echo h($requirement['Requirement']['message']); ?>&nbsp;</td>
-		
-		<td><?php echo h($requirement['Requirement']['modified']); ?>&nbsp;</td>
+		<td><?php echo h($requirement['Requirement']['message']); ?>&nbsp;</td>		
+		<td><?php echo h($requirement['Requirement']['created']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $requirement['Requirement']['id'],$sucursal),array('class' => 'ok btn btn-info  ')); ?>
-		
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $requirement['Requirement']['id']),array('class' => 'ok btn btn-info  '), __('Are you sure you want to delete # %s?', $requirement['Requirement']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $requirement['Requirement']['id'],$sucursal),array('class' => 'ok btn btn-info  ')); ?>			
 		</td>
 	</tr>
 <?php endforeach; ?>

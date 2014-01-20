@@ -45,7 +45,7 @@ class ImagesItemsController extends AppController {
 				//$this->Session->setFlash(__('The images item has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The images item could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen del producto no se puedo guardar'));
 			}
 		}
 		$items = $this->ImagesItem->Item->find('list');
@@ -68,7 +68,7 @@ class ImagesItemsController extends AppController {
 				//$this->Session->setFlash(__('The images item has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The images item could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen del producto no se puedo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('ImagesItem.' . $this->ImagesItem->primaryKey => $id));
@@ -95,7 +95,7 @@ class ImagesItemsController extends AppController {
 			$this->Session->setFlash(__('Images item deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Images item was not deleted'));
+		$this->Session->setFlash(__('La imagen del producto no se puedo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

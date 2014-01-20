@@ -51,7 +51,7 @@
 
 			</div>
 			<div class="span2">
-			<?php echo $this->Html->link('Novedades',array('controller' => 'Tips', 'action' => 'select1'),array('escape' => false));
+			<?php echo $this->Html->link('Cuida tu Salud',array('controller' => 'Tips', 'action' => 'select1'),array('escape' => false));
 				?>
 				
 				<br>
@@ -66,11 +66,11 @@
 
 			</div>
 			<div class="span2" >
-			<?php echo $this->Html->link('Distribuidores',array('controller' => 'Services', 'action' => 'select'),array('escape' => false));
+			<?php echo $this->Html->link('Distribuidores',array('controller' => 'consultations', 'action' => 'select'),array('escape' => false));
 				?>
 				
 				<br>
-				<?php echo $this->Html->link('Proveedores',array('controller' => 'Services', 'action' => 'select'),array('escape' => false));
+				<?php echo $this->Html->link('Proveedores',array('controller' => 'consultations', 'action' => 'select'),array('escape' => false));
 				?>
 				
 				
@@ -81,8 +81,7 @@
 				?>
 				
 				<br>
-				<?php echo $this->Html->link('Twitter',array('controller' => 'Benefits', 'action' => 'select'),array('escape' => false,'target'=>'_blank'));
-				?>
+				
 				
 				
 

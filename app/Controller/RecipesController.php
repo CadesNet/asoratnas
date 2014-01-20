@@ -67,7 +67,7 @@ class RecipesController extends AppController {
 				}
 				
 			} else {
-				$this->Session->setFlash(__('The recipe could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La receta no se pudo guardar'));
 			}
 		}
 	}
@@ -110,7 +110,7 @@ class RecipesController extends AppController {
 					break;
 				}
 			} else {
-				$this->Session->setFlash(__('The recipe could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La receta no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Recipe.' . $this->Recipe->primaryKey => $id));
@@ -138,7 +138,7 @@ class RecipesController extends AppController {
 				$this->ImagesRecipe->delete();
 			}
 			if ($this->Recipe->delete()) {
-			$this->Session->setFlash(__('Recipe deleted'));
+			//$this->Session->setFlash(__('Recipe deleted'));
 			switch ($vista) {
 					case 'index':
 						$this->redirect(array('controller'=>'Benefits','action' => 'select'));
@@ -166,7 +166,7 @@ class RecipesController extends AppController {
 		}
 		
 		
-		$this->Session->setFlash(__('Recipe was not deleted'));
+		$this->Session->setFlash(__('La receta no se pudo eliminar'));
 	}
 
 

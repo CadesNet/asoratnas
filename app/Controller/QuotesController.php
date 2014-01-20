@@ -44,7 +44,7 @@ class QuotesController extends AppController {
 				//$this->Session->setFlash(__('The quote has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The quote could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La cotizacion no se pudo guardar'));
 			}
 		}
 	}
@@ -65,7 +65,7 @@ class QuotesController extends AppController {
 				//$this->Session->setFlash(__('The quote has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The quote could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La cotizacion no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Quote.' . $this->Quote->primaryKey => $id));
@@ -90,10 +90,10 @@ class QuotesController extends AppController {
 			$this->Session->setFlash(__('Quote deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Quote was not deleted'));
+		$this->Session->setFlash(__('La cotizacion no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}//conulta propias
-	public function select($id = null,$id2 = null,$id3=null){
+	public function select($id = null,$id2 = null,$id3=null,$val){
 		$menu = array('menu' => array('id' => 'productos','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
@@ -118,7 +118,8 @@ class QuotesController extends AppController {
 		$Recipes1 = $this->Recipe->find('all',array('order'=>'Recipe.id DESC'));
 		$Ad = $this->Ad->find('first',array('order' => 'Ad.created DESC'));
 		$Carousel = $this->Carousel->find('all',array('conditions'=>"Carousel.number = 'Dos'"));
-		$this->set(compact('Category','Item','Recipe','Recipes1','Ad','Carousel'));
+
+		$this->set(compact('Category','Item','Recipe','Recipes1','Ad','Carousel','val'));
 
 		}
 	}

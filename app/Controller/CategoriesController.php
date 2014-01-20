@@ -46,7 +46,7 @@ public $helpers = array('Js','Session');
 				//$this->Session->setFlash(__('La Categoria se a guardado'));
 				$this->redirect(array('action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('La Categoria no se a guardado'));
+				$this->Session->setFlash(__('La categoria no se puedo guardar'));
 			}
 		}
 	}
@@ -67,7 +67,7 @@ public $helpers = array('Js','Session');
 				//$this->Session->setFlash(__('The category has been saved'));
 				$this->redirect(array('controller'=>'Categories','action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('The category could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La categoria no se puedo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Category.' . $this->Category->primaryKey => $id));
@@ -99,7 +99,7 @@ public $helpers = array('Js','Session');
 			//$this->Session->setFlash(__('The category has been saved'));
 				$this->redirect(array('action' => 'select'));
 			} else {
-				$this->Session->setFlash(__('La catergoria no se a podido eliminar'));
+				$this->Session->setFlash(__('La categoria no se puedo eliminar'));
 			}
 		}
 		/*$this->loadModel('Item');

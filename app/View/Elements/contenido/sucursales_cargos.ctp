@@ -9,7 +9,7 @@
 						<div class="span12">
 							<div class="row-fluid">
 								<div class="span12">
-									<h3 class="otrostitle">Posiciones disponibles - Sucursal <?php echo $branch['Branch']['name']; 
+									<h3 class="otrostitle">Posiciones (Cargos) disponibles - Sucursal <?php echo $branch['Branch']['name']; 
 									if($this->Session->read('Auth.User.id')){ 
 								 	echo " ".$this->Html->link('Agregar Cargo', array('controller' => 'Charges', 'action' => 'add',$branch['Branch']['id']),array('class'=>'btn btn-primary'));
 
@@ -41,7 +41,7 @@
 			
 			 <? if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Charges','action' => 'edit',$charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Charges','action' => 'delete', $charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$charge['id'])); }?>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Charges','action' => 'delete', $charge['id'],$branch['Branch']['id']),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar el cargo %s?',$charge['title'])); }?>
 			 <div class = "infovacantes">
 
 			 <div class="span4">
@@ -51,7 +51,7 @@
 			 	<p style="font-weight: bold;color: #827370;"><?php echo $charge['title']." "; ?>
 							 </p>
 
-			 	<p class = "descriptionvacantes">Fecha Limite de Admision de Curriculum Vitae</p>
+			 	<p class = "descriptionvacantes">Fecha Limite de Admisión de Currículum Vitae</p>
 
 			 	<p class = "modificacionvacantes"><?php echo $charge['deadline']  ?></p>
 			 	<br>
@@ -95,12 +95,12 @@
 				<div class="NewRequirement  cotizartext" style="width: 85%;background-color: #E4DDCA;margin-left: auto;margin-right: auto;">
 					<?php echo $this->FormEnum->create('NewRequirement',array('type' => 'file','controller'=>'newRequirements','action' => 'select',1)); ?>
 					<fieldset class="offset1" >
-					<legend style="tex"> <p class="legend_form"><?php echo __('Si usted desea enviar su Curriculum y aplicar fuera de estas areas, llene el siguiente formulario:'); ?></p>
+					<legend style="tex"> <p class="legend_form"><?php echo __('Si usted desea enviar su Currículum y aplicar fuera de estas áreas, llene el siguiente formulario:'); ?></p>
 					</legend>
 					<?php
 					 	 echo $this->FormEnum->input('branch_id',array('type' => 'hidden','default'=>  $branch['Branch']['id']));?>
 					<div class="row-fluid">
-							<div class="span3"><p class="stylo_form">Cargo de Interes:</p></div>
+							<div class="span3"><p class="stylo_form">Cargo de Interés:</p></div>
 							<div class="span6" style="text-align: left;"><?php echo $this->FormEnum->input('charge',array('label'=>'','class' => 'cotizarfrm')); ?></div>
 					</div>
 					<div class="row-fluid">
@@ -116,26 +116,28 @@
 							<div class="span4" style="text-align: left;"><?php echo $this->FormEnum->input('sex',array('label'=>'','class' => 'cotizarfrm')); ?></div>
 						</div>
 						<div class="row-fluid">
-							<div class="span3"><p class="stylo_form">Direccion:</p></div>
+							<div class="span3"><p class="stylo_form">Dirección:</p></div>
 							<div class="span6" style="text-align: left;"><?php echo $this->FormEnum->input('address',array('type'=>'text','label'=>'','class' => 'cotizarfrm')); ?></div>
 						</div>
 						<div class="row-fluid">
-							<div class="span3"><p class="stylo_form">Telefono/ Celular:</p></div>
-							<div class="span5" style="text-align: left;"><?php echo $this->FormEnum->input('phone',array('type'=>'text','label'=>'','class' => 'cotizarfrm')); ?></div>
+							<div class="span3"><p class="stylo_form">Teléfono/ Celular:</p></div>
+							<div class="span5" style="text-align: left;"><?php echo $this->FormEnum->input('phone',array('label'=>'','class' => 'cotizarfrm','type'=>"tel")); ?></div>
 						</div>
 						<div class="row-fluid">
 							<div class="span3"><p class="stylo_form">E-mail:</p></div>
-							<div class="span6" style="text-align: left;"><?php echo $this->FormEnum->input('email',array('type'=>'text','label'=>'','class' => 'cotizarfrm')); ?></div>
+							<div class="span6" style="text-align: left;"><?php echo $this->FormEnum->input('email',array('label'=>'','class' => 'cotizarfrm')); ?></div>
 						</div>
 
 						<div class="row-fluid">
-							<div class="span4"><p class="stylo_form">Adjuntar Curriculum Vitae:</p></div>
+							<div class="span4"><p class="stylo_form">Adjuntar Currículum Vitae:</p></div>
 
 							<div class="span7" style="text-align: left;">
 								<?php echo $this->FormEnum->input('curriculum',array('type'=>'file','label'=>'', 'style'=>"display:none;" )); ?>
 								<div class="input-append">
-								    <input type="text" name="subfile" id="subfile" class="input-xlarge">
+
+								    <input type="text" name="subfile" id="subfile" class="input-xlarge" required="required" >
 								    <a class="btn" style="color: #50615C;" onclick="$('#NewRequirementCurriculum').click();"> Subir Archivo</a>
+								
 								</div>
 						
 								<script type="text/javascript">

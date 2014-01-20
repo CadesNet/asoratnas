@@ -54,7 +54,7 @@ public $helpers = array('Js','Session');
 					$this->redirect(array('action' => 'select1'));
 				}
 			} else {
-				$this->Session->setFlash(__('The benefit could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El beneficio no se puedo guardar'));
 			}
 		}
 	}
@@ -81,7 +81,7 @@ public $helpers = array('Js','Session');
 				}
 				
 			} else {
-				$this->Session->setFlash(__('The benefit could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El beneficio no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Benefit.' . $this->Benefit->primaryKey => $id));
@@ -104,14 +104,14 @@ public $helpers = array('Js','Session');
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Benefit->delete()) {
-			$this->Session->setFlash(__('Benefit deleted'));
+			//$this->Session->setFlash(__('Benefit deleted'));
 			if($vista=="index"){
 					$this->redirect(array('action' => 'select'));
 				}else{
 					$this->redirect(array('action' => 'select1'));
 				}
 		}
-		$this->Session->setFlash(__('Benefit was not deleted'));
+		
 		
 	}
 	//conulta propias

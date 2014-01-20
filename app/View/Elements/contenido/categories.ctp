@@ -15,7 +15,7 @@
 		        	<?php if($this->Session->read('Auth.User.id')){ ?>
 											
 				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
-				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta imagen?')); 
 			}?>
 		               <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
 		                    if($carousels['Carousel']['description']!=""){
@@ -112,15 +112,21 @@
 											 		$i++;
 											 		switch ($i) {
 											 			case $con-1:
-											 				echo $presentacion['name']." y ";
+											 			if($presentacion['removed'] != 'si'){
+																echo $presentacion['name']." y ";
+											 			}																 		
 											 				break;
 											 			case $con:
-											 				echo $presentacion['name'];
+											 			if($presentacion['removed'] != 'si'){
+																echo $presentacion['name'];
+											 			}											 				
 											 				break;
 											 			
 											 			default:
-											 				echo $presentacion['name']." , ";
-											 				break;
+											 			if($presentacion['removed'] != 'si'){
+																echo $presentacion['name']." , ";
+											 			}	
+											 			break;
 											 		}
 											 			 
 											 	}
@@ -188,10 +194,11 @@
 				<div class="span12 " style="margin: 0;" >
 					<?php if($this->Session->read('Auth.User.id')){ 
 					 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Ads','action' => 'edit',$ads['Ad']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false)); 
-					 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $ads['Ad']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$ads['Ad']['id']));
+					 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Ads','action' => 'delete', $ads['Ad']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta noticia?'));
 					 }?>
 					 <?php if($ads['Ad']['type'] !='video'){ 
-					echo $this->Html->image(('ad/filename/'.$ads['Ad']['filename']),array('class'=>'noticias'));
+					 	echo $this->Html->link($this->Html->image(('ad/filename/'.$ads['Ad']['filename']),array('class'=>'noticias')),'http://new.avicola-santarosa.com/img/ad/filename/'.$ads['Ad']['filename'],array('escape' => false , 'class' => 'brand','target'=>'_blank')); 
+
 					} else{ ?>
 					<iframe class="noticiavideo" src= <?=$ads['Ad']['link'] ?> frameborder="0" allowfullscreen></iframe>
 					<?php } ?>
@@ -233,7 +240,7 @@
 							<h5 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
 							if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h5>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','categorias'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar la receta  %s?',$recipes['Recipe']['title'])); }?></h5>
 						</div>
 					</div>
 					<div class="row-fluid" >

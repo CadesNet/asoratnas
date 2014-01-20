@@ -86,7 +86,7 @@ public $helpers = array('PhpExcel');
 				//$this->Session->setFlash(__('The presentations quote has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The presentations quote could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La cotizacion de la presentacion no se pudo guardar'));
 			}
 		}
 		$presentations = $this->PresentationsQuote->Presentation->find('list');
@@ -110,7 +110,7 @@ public $helpers = array('PhpExcel');
 				//$this->Session->setFlash(__('The presentations quote has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The presentations quote could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La cotizacion de la presentacion no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('PresentationsQuote.' . $this->PresentationsQuote->primaryKey => $id));
@@ -138,7 +138,7 @@ public $helpers = array('PhpExcel');
 			$this->Session->setFlash(__('Presentations quote deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Presentations quote was not deleted'));
+		$this->Session->setFlash(__('La cotizacion de la presentacion no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 	public function export_xls(){

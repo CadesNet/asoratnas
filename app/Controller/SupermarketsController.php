@@ -62,7 +62,7 @@ class SupermarketsController extends AppController {
 				//$this->Session->setFlash(__('The supermarket has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The supermarket could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El Super Mercado no se pudo guardar'));
 			}
 			
 		}
@@ -86,7 +86,7 @@ class SupermarketsController extends AppController {
 				//$this->Session->setFlash(__('The supermarket has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The supermarket could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El Super Mercado no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Supermarket.' . $this->Supermarket->primaryKey => $id));
@@ -109,10 +109,10 @@ class SupermarketsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Supermarket->delete()) {
-			$this->Session->setFlash(__('Supermarket deleted'));
+			//$this->Session->setFlash(__('Supermarket deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Supermarket was not deleted'));
+		$this->Session->setFlash(__('El Super Mercado no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

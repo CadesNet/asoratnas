@@ -46,7 +46,7 @@ class QuoteServicesController extends AppController {
 				//$this->Session->setFlash(__('The quote service has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The quote service could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La cotizacion del servicio no se pudo guardar'));
 			}
 		}
 		$services = $this->QuoteService->Service->find('list');
@@ -69,7 +69,7 @@ class QuoteServicesController extends AppController {
 				//$this->Session->setFlash(__('The quote service has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The quote service could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La cotizacion del servicio no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('QuoteService.' . $this->QuoteService->primaryKey => $id));
@@ -96,7 +96,7 @@ class QuoteServicesController extends AppController {
 			$this->Session->setFlash(__('Quote service deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Quote service was not deleted'));
+		$this->Session->setFlash(__('La cotizacion del servicio no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 	public function select(){

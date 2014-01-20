@@ -46,12 +46,11 @@
 			<?php echo h($newRequirement['NewRequirement']['email']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Curriculum'); ?></dt>
+			<dt><?php echo __('Curriculum Descargar'); ?></dt>
 		<dd>
-			<?php $archivo = "http://new.avicola-santarosa.com/img/Newrequirement/curriculum/".h($newRequirement['NewRequirement']['curriculum'])."";
-echo '<iframe src="http://docs.google.com/viewer?url='.$archivo.'&embedded=true" width="600" height="780" style="border: none;"></iframe>'; ?>
-			&nbsp;
-		</dd>
+		<?php 
+			echo $this->Html->link('Descargar', "http://new.avicola-santarosa.com/img/Newrequirement/curriculum/".h($newRequirement['NewRequirement']['curriculum']));
+		 ?>
 		<dt><?php echo __('Message'); ?></dt>
 		<dd>
 			<?php echo h($newRequirement['NewRequirement']['message']); ?>

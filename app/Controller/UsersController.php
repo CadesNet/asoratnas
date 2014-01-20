@@ -17,7 +17,7 @@ public $helpers = array('Js','Session');
 public function beforeFilter() {
 
     parent::beforeFilter();//lo q puede hacer cualquier usuario sin login
-    //$this->Auth->allow('add'); // / / Dejar que los usuarios se registran 
+   // $this->Auth->allow('add'); // / / Dejar que los usuarios se registran 
     $this->Auth->autorediRect=false;
 	}
 
@@ -34,7 +34,7 @@ public function beforeFilter() {
 	        if ($this->Auth->login()) {
 	            $this->redirect($this->Auth->redirect());
 	        } else {
-	            $this->Session->setFlash(__('Invalid username or password, try again'));
+	            $this->Session->setFlash(__('Invalido el usuario o contrseña, intentelo de nuevo'));
 	        }
 	    }
 	}
@@ -49,23 +49,6 @@ public function beforeFilter() {
 	//	carrusel1
 	    $this->redirect($this->Auth->logout());
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	public function index() {
@@ -100,10 +83,10 @@ public function beforeFilter() {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'));
+				//$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El usuario no se pudo guardar'));
 			}
 		}
 	}
@@ -121,10 +104,10 @@ public function beforeFilter() {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'));
+				//$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El usuario no se pudo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
@@ -146,10 +129,10 @@ public function beforeFilter() {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->User->delete()) {
-			$this->Session->setFlash(__('User deleted'));
+			//$this->Session->setFlash(__('User deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('User was not deleted'));
+		$this->Session->setFlash(__('El usuario no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

@@ -44,7 +44,7 @@ class BranchesImagesController extends AppController {
 				//$this->Session->setFlash(__('The branches image has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The branches image could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen de la sucursal no se puedo guardar'));
 			}
 		}
 		$branches = $this->BranchesImage->Branch->find('list');
@@ -67,7 +67,7 @@ class BranchesImagesController extends AppController {
 				//$this->Session->setFlash(__('The branches image has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The branches image could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La imagen de la sucursal no se puedo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('BranchesImage.' . $this->BranchesImage->primaryKey => $id));
@@ -91,10 +91,10 @@ class BranchesImagesController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->BranchesImage->delete()) {
-			$this->Session->setFlash(__('Branches image deleted'));
+			//$this->Session->setFlash(__('Branches image deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Branches image was not deleted'));
+		$this->Session->setFlash(__('La imagen de la sucursal no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

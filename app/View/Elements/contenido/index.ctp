@@ -16,7 +16,7 @@
         	<?php if($this->Session->read('Auth.User.id')){ ?>
 											
 				<?php echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller'=>'Carousels','action' => 'edit', $carousels['Carousel']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false)); ?>
-				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?', $carousels['Carousel']['id'])); 
+				<?php echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Carousels','action' => 'delete', $carousels['Carousel']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar esta imagen?')); 
 				}?>
 
                <?php echo $this->Html->image("carousel/filename/".$carousels['Carousel']['filename']."");  
@@ -61,7 +61,7 @@
 								<h4 class = "benefitssubtitle"><?  echo  ((strlen(h($benefit['Benefit']['title']))>46) ? substr(h($benefit['Benefit']['title']), 0, 46)."..." : substr(h($benefit['Benefit']['title']), 0, 46));
 								  if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('Controller' => 'Benefits','action' => 'edit',$benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$benefit['Benefit']['id'])); }?></h4>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('Controller'=>'Benefits','action' => 'delete', $benefit['Benefit']['id'],'index'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar %s?',$benefit['Benefit']['title'])); }?></h4>
 							</div>
 							<div class="row-fluid" style="">
 								<p class ="benefitsdescription">
@@ -160,7 +160,7 @@
 								<h4 style="color: #2FA4B8"><?php echo $recipes['Recipe']['title']." ";
 								if($this->Session->read('Auth.User.id')){ 
 							 echo $this->Html->link(__("<i class='icon-pencil'></i>"), array('controller' => 'Recipes','action' => 'edit',$recipes['Recipe']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false)); 
-							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false), __('Are you sure you want to delete # %s?',$recipes['Recipe']['id'])); }?></h4>
+							 echo $this->Form->postLink(__("<i class='icon-remove'></i>"), array('controller'=>'Recipes','action' => 'delete', $recipes['Recipe']['id'],'1','1','1','index'),array('class' => 'ok btn btn-info ','escape' => false), __('¿Está seguro de que desea eliminar %s?',$recipes['Recipe']['title'])); }?></h4>
 							</div>
 						</div>
 						<div class="row-fluid" >

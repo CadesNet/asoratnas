@@ -1,27 +1,23 @@
 <div class="quoteServices view">
-<h2><?php  echo __('Quote Service'); ?></h2>
+<h2><?php  echo __('Servicio'); ?></h2>
 	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($quoteService['QuoteService']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Service'); ?></dt>
+
+		<dt><?php echo __('Servicio'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($quoteService['Service']['id'], array('controller' => 'services', 'action' => 'view', $quoteService['Service']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Fullname'); ?></dt>
+		<dt><?php echo __('Nombre Completo'); ?></dt>
 		<dd>
 			<?php echo h($quoteService['QuoteService']['fullname']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Address'); ?></dt>
+		<dt><?php echo __('Dirección'); ?></dt>
 		<dd>
 			<?php echo h($quoteService['QuoteService']['address']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Phone'); ?></dt>
+		<dt><?php echo __('Teléfono'); ?></dt>
 		<dd>
 			<?php echo h($quoteService['QuoteService']['phone']); ?>
 			&nbsp;
@@ -31,32 +27,27 @@
 			<?php echo h($quoteService['QuoteService']['email']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Issue'); ?></dt>
+		<dt><?php echo __('Cuestión'); ?></dt>
 		<dd>
 			<?php echo h($quoteService['QuoteService']['issue']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Message'); ?></dt>
+		<dt><?php echo __('Mensaje'); ?></dt>
 		<dd>
 			<?php echo h($quoteService['QuoteService']['message']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Created'); ?></dt>
+		<dt><?php echo __('Fecha de Creación'); ?></dt>
 		<dd>
 			<?php echo h($quoteService['QuoteService']['created']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($quoteService['QuoteService']['modified']); ?>
-			&nbsp;
-		</dd>
+		</dd>		
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acción'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('List Quote Services'), array('action' => 'index'),array('class' => 'ok btn btn-info ')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Servicios'), array('action' => 'index'),array('class' => 'ok btn btn-info ')); ?> </li>
 		
 	</ul>
 </div>

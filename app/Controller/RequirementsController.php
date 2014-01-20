@@ -46,7 +46,7 @@ if ($this->Requirement->save($this->request->data)) {
 //$this->Session->setFlash(__('The requirement has been saved'));
 $this->redirect(array('action' => 'index'));
 } else {
-$this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
+$this->Session->setFlash(__('El requerimiento no se pudo guardar'));
 }
 }
 $charges = $this->Requirement->Charge->find('list');
@@ -70,7 +70,7 @@ if ($this->Requirement->save($this->request->data)) {
 //$this->Session->setFlash(__('The requirement has been saved'));
 $this->redirect(array('action' => 'index'));
 } else {
-$this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
+$this->Session->setFlash(__('El requerimiento no se pudo editar'));
 }
 } else {
 $options = array('conditions' => array('Requirement.' . $this->Requirement->primaryKey => $id));
@@ -95,10 +95,10 @@ throw new NotFoundException(__('Invalid requirement'));
 }
 $this->request->onlyAllow('post', 'delete');
 if ($this->Requirement->delete()) {
-$this->Session->setFlash(__('Requirement deleted'));
+//$this->Session->setFlash(__('Requirement deleted'));
 $this->redirect(array('action' => 'index'));
 }
-$this->Session->setFlash(__('Requirement was not deleted'));
+$this->Session->setFlash(__('El requerimiento no se pudo eliminar'));
 $this->redirect(array('action' => 'index'));
 }
 
@@ -120,16 +120,11 @@ public function select($id=null){
 		if ($this->request->is('post')) {
 		//Subir archivos
 		if ($this->request->data['Requirement']['curriculum']) {
-
+		  try {
 		$file = new File($this->request->data['Requirement']['curriculum']['tmp_name']);
 		$path_parts = pathinfo($this->request->data['Requirement']['curriculum']['name']);
-		$ext = $path_parts['extension'];
+		//$ext = $path_parts['extension'];
 
-
-		if ($ext != 'docx' /* && $ext != 'doc' && $ext != 'gif' && $ext != 'png'*/) {
-		$this->Session->setFlash('Solo puedes subir docx.');
-		$this->render();
-		} else {
 		$date = $this->request->data['Requirement']['curriculum']['name'];
 		$filename = $this->request->data['Requirement']['charge_id'].$this->request->data['Requirement']['email'].$date;
 
@@ -137,8 +132,6 @@ public function select($id=null){
 		$file = new File(WWW_ROOT.'img/requirement/curriculum/'.$filename,true);
 		$file->write($data);
 		$file->close();
-		}
-		}
 		//Fin subir archivos
 
 		$this->request->data['Requirement']['curriculum'] = $filename;
@@ -149,10 +142,20 @@ public function select($id=null){
 		//$this->Session->setFlash(__('The requirement has been saved'));
 		$this->redirect(array('action' => 'email'));
 		} else {
+			$this->Session->setFlash(__('El requerimiento no se pudo guardar'));
+			$this->redirect(array('controller' => 'Requirements','action' => 'select',$data['Requirement']['charge_id']));
+			}
 
-		$this->Session->setFlash(__('The requirement could not be saved. Please, try again.'));
-
-		}
+			}catch (Exception $e) {
+		   		$this->Session->setFlash(__('Seleccione un archivo valido'));
+				$this->redirect(array('controller' => 'Requirements','action' => 'select',$data['Requirement']['charge_id']));
+		   }
+				
+			
+			}else{		
+			$this->Session->setFlash(__('Seleccione un archivo'));
+			$this->redirect(array('controller' => 'Requirements','action' => 'select',$data['Requirement']['charge_id']));
+			}
 		}
 
 		else{
@@ -165,7 +168,7 @@ public function select($id=null){
 		$this->set(compact('Charge','Supermarket'));
 		}
 		else{
-			$this->redirect(array('controller'=>'Branches','action'=>'select'));
+			$this->redirect(array('controller'=>'Requirements','action'=>'select'));
 		}
 	
 		}
@@ -195,7 +198,7 @@ public function select($id=null){
 		  	$this->redirect(array('controller' => 'Branches','action' => 'select'));
 			
 		}else{
-		  $val="Mensaje no enviado";
+		  $val="Email no enviado";
 		 
 
 		}

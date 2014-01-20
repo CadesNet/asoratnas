@@ -45,7 +45,7 @@ class NewRequirementsController extends AppController {
 				//$this->Session->setFlash(__('The new requirement has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The new requirement could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El requerimiento no se pudo guardar'));
 			}
 		}
 		$branches = $this->NewRequirement->Branch->find('list');
@@ -68,7 +68,7 @@ class NewRequirementsController extends AppController {
 				//$this->Session->setFlash(__('The new requirement has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The new requirement could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El requerimiento no se pudo guardar'));
 			}
 		} else {
 			$options = array('conditions' => array('NewRequirement.' . $this->NewRequirement->primaryKey => $id));
@@ -92,10 +92,10 @@ class NewRequirementsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->NewRequirement->delete()) {
-			$this->Session->setFlash(__('New requirement deleted'));
+			//$this->Session->setFlash(__('New requirement deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('New requirement was not deleted'));
+		$this->Session->setFlash(__('El requerimiento no se pudo eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 
@@ -111,49 +111,50 @@ class NewRequirementsController extends AppController {
 		///funcion q valide q id no pueda ser pos
 		$filename=null;
 		if ($this->request->is('post')) {
-		//Subir archivos
-		if ($this->request->data['NewRequirement']['curriculum']) {
+			//Subir archivos
+			if ($this->request->data['NewRequirement']['curriculum']) {
+		   try {
+		   			  
+			$file = new File($this->request->data['NewRequirement']['curriculum']['tmp_name']);
+			$path_parts = pathinfo($this->request->data['NewRequirement']['curriculum']['name']);
+			//$ext = $path_parts['extension'];		
 
-		$file = new File($this->request->data['NewRequirement']['curriculum']['tmp_name']);
-		$path_parts = pathinfo($this->request->data['NewRequirement']['curriculum']['name']);
-		$ext = $path_parts['extension'];
+			$date = $this->request->data['NewRequirement']['curriculum']['name'];
+			$filename = $this->request->data['NewRequirement']['branch_id'].$this->request->data['NewRequirement']['email'].$date;
 
-
-		if ($ext != 'docx' /* && $ext != 'doc' && $ext != 'gif' && $ext != 'png'*/) {
-		$this->Session->setFlash('Solo puedes subir archivos .docx');
-		//$this->render();
-		$this->redirect(array('controller'=>'Branches','action'=>'select1',$this->request->data['NewRequirement']['branch_id']));
-		} else {
-		$date = $this->request->data['NewRequirement']['curriculum']['name'];
-		$filename = $this->request->data['NewRequirement']['branch_id'].$this->request->data['NewRequirement']['email'].$date;
-
-		$data = $file->read();	
-		$file = new File(WWW_ROOT.'img/Newrequirement/curriculum/'.$filename,true);
-		$file->write($data);
-		$file->close();
-		}
-		}
-		//Fin subir archivos
-
-		$this->request->data['NewRequirement']['curriculum'] = $filename;
-
-
-		$this->NewRequirement->create();
-		if ($this->NewRequirement->save($this->request->data)) {
+			$data = $file->read();	
+			$file = new File(WWW_ROOT.'img/Newrequirement/curriculum/'.$filename,true);
+			$file->write($data);
+			$file->close();
+			//}
 			
+			//Fin subir archivos
+
+			$this->request->data['NewRequirement']['curriculum'] = $filename;
+
+
+			$this->NewRequirement->create();
+			if ($this->NewRequirement->save($this->request->data)) {
+							
+			//$this->Session->setFlash(__('The newrequirement has been saved'));
+			$this->redirect(array('action' => 'email'));
+			} else {
+			$this->Session->setFlash(__('El requerimiento no se pudo guardar'));
+			$this->redirect(array('controller' => 'Branches','action' => 'select1',$data['NewRequirement']['branch_id']));
+			}
+
+			}catch (Exception $e) {
+		   		$this->Session->setFlash(__('Seleccione un archivo valido'));
+				$this->redirect(array('controller' => 'Branches','action' => 'select1',$data['NewRequirement']['branch_id']));
+		   }
+				
 			
-		//$this->Session->setFlash(__('The newrequirement has been saved'));
-		$this->redirect(array('action' => 'email'));
-		} else {
-		$this->Session->setFlash(__('The newrequirement could not be saved. Please, try again.'));
-		$this->redirect(array('controller' => 'Branches','action' => 'select1',$data['NewRequirement']['branch_id']));
+			}else{		
+			$this->Session->setFlash(__('Seleccione un archivo'));
+			$this->redirect(array('controller' => 'Branches','action' => 'select1',$data['NewRequirement']['branch_id']));
+			}
 		}
-		}
-		else{
-
-		$this->redirect(array('controller' => 'Branches', 'action' => 'select'));
-
-		}
+		
 
 		}
 

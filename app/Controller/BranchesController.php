@@ -59,7 +59,7 @@ public $helpers = array('FormEnum');
 				}
 				
 			} else {
-				$this->Session->setFlash(__('The branch could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La sucursal no se puedo guardar'));
 			}
 		}
 		$companies = $this->Branch->Company->find('list');
@@ -93,7 +93,7 @@ public $helpers = array('FormEnum');
 						break;
 				}
 			} else {
-				$this->Session->setFlash(__('The branch could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La sucursal no se puedo editar'));
 			}
 		} else {
 			$options = array('conditions' => array('Branch.' . $this->Branch->primaryKey => $id));
@@ -137,7 +137,7 @@ public $helpers = array('FormEnum');
 					}
 				}
 		if ($this->Branch->delete()) {
-			$this->Session->setFlash(__('Branch deleted'));
+			//$this->Session->setFlash(__('Branch deleted'));
 			switch ($vista) {
 					case 'contactenos':
 						$this->redirect(array('controller'=>'Consultations','action' => 'select'));
@@ -151,7 +151,7 @@ public $helpers = array('FormEnum');
 				}
 		}
 	
-		$this->Session->setFlash(__('Branch was not deleted'));
+		$this->Session->setFlash(__('La sucursal no se pudo eliminar'));
 		
 	}
 	public function select(){
@@ -176,7 +176,7 @@ public $helpers = array('FormEnum');
 
 		
 			//$menu = array('menu' => array('id' => 'beneficios','inferior'=>'','superior'=>'','color'=>''));
-		$menu = array('menu' => array('id' => 'beneficios','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
+		$menu = array('menu' => array('id' => 'nn','inferior'=>'#096357','superior'=>'#22A18C','color'=>'#FFF'));
 		//menu
 		$this->Session->write($menu);
 		//////////////

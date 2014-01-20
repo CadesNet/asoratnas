@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Editar Imagenes Categoria'); ?></legend>
 	<?php
-		echo $this->FormEnum->input('id',array('label' => 'id'));
+		echo $this->FormEnum->input('id');
 		echo $this->FormEnum->input('category_id',array('label' => 'Categoria'));
 		echo(h("opción Uno para la imagen a aparecera alado del nombre. tamaño 75 x 53")."<br>");
 		echo(h("opción Dos para la imagen a aparecera en el carousel, tamaño 222 x 223")."<br>");

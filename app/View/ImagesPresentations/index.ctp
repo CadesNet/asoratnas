@@ -2,10 +2,10 @@
 	<h2><?php echo __('Imagenes Presentacion'); ?></h2>
 	<table class = "table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo ('Seleccione una imagen'); ?></th>
+			<th><?php echo ('Imagen'); ?></th>
 			<th><?php echo ('Directorio'); ?></th>
-			<th><?php echo ('Descripcion'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo ('Descripción'); ?></th>
+			<th class="actions"><?php echo __('Acción'); ?></th>
 	</tr>
 	<?php foreach ($imagesPresentation as $imagesPresentation): ?>
 	<tr>
@@ -15,7 +15,7 @@
 		<td><?php echo h($imagesPresentation['ImagesPresentation']['description']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $imagesPresentation['ImagesPresentation']['id'],$id_presentacion),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $imagesPresentation['ImagesPresentation']['id'],$id_presentacion),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $imagesPresentation['ImagesPresentation']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $imagesPresentation['ImagesPresentation']['id'],$id_presentacion),array('class' => 'ok btn btn-info btn-large'), __('¿Está seguro de que desea eliminar esta imagen?')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

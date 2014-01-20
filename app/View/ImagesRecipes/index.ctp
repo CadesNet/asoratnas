@@ -14,7 +14,7 @@
 		<td><?php echo h($imagesRecipe['ImagesRecipe']['description']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $imagesRecipe['ImagesRecipe']['id'],$id_receta),array('class' => 'ok btn btn-info btn-large')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $imagesRecipe['ImagesRecipe']['id'],$id_receta),array('class' => 'ok btn btn-info btn-large'), __('Are you sure you want to delete # %s?', $imagesRecipe['ImagesRecipe']['id']),array('class' => 'ok btn btn-info btn-large')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $imagesRecipe['ImagesRecipe']['id'],$id_receta),array('class' => 'ok btn btn-info btn-large'), __('¿Está seguro de que desea eliminar esta imagen?'),array('class' => 'ok btn btn-info btn-large')); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
